@@ -7,12 +7,15 @@
 //
 
 #import "MFAppDelegate.h"
+#import "MFCustomTabBarControllerViewController.h"
 
 @implementation MFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    MFCustomTabBarControllerViewController *rootTabBarController = [[MFCustomTabBarControllerViewController alloc] init];
+    self.window.rootViewController = rootTabBarController;
+    
     return YES;
 }
 							

@@ -1,5 +1,5 @@
 //
-//  MFViewController.h
+//  MFUploadRootViewController.h
 //  MakersFinders_Master
 //
 //  Created by Daniel Sun on 7/30/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MFViewController : UIViewController
+@interface MFUploadRootViewController : UIViewController
 
 @end
