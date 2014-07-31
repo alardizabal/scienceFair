@@ -10,6 +10,8 @@
 
 @interface FISConstants : NSObject
 
-extern NSString *const PUG_URL; 
+extern NSString *const PUG_URL;
+extern NSString *const ETSY_KEYSTRING;
+extern NSString *const ETSY_SECRET; 
 
 @end

@@ -8,7 +8,10 @@
 
 #import "MFCustomTabBarControllerViewController.h"
 #import "MFUploadRootViewController.h"
+#import "MFExploreRootViewController.h"
+#import "AALTestViewController.h"
 #import "FISFeedTableViewController.h"
+#import "MPSProfileViewController.h"
 
 @interface MFCustomTabBarControllerViewController ()
 
@@ -28,23 +31,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tabBar.layer.borderWidth = 0.50;
+    self.tabBar.layer.borderColor = self.tabBarController.tabBar.tintColor.CGColor;
+    
     UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIStoryboard *alMain = [UIStoryboard storyboardWithName:@"AALMain" bundle:nil];
+    UIStoryboard *mattMain = [UIStoryboard storyboardWithName:@"Main_Matt" bundle:nil];
+//    UIStoryboard *detail = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
+//    FISFeedTableViewController *vc1 = [detail instantiateViewControllerWithIdentifier:@"feed"];
     FISFeedTableViewController *vc1 = [[FISFeedTableViewController alloc] init];
     UINavigationController *navvc1 = [[UINavigationController alloc] initWithRootViewController:vc1];
     
-    UIViewController *vc2 = [main instantiateViewControllerWithIdentifier:@"temp"];
+    MFExploreRootViewController *vc2 = [main instantiateViewControllerWithIdentifier:@"exploreRoot"];
+    UINavigationController *navvc2 = [[UINavigationController alloc] initWithRootViewController:vc2];
     
     MFUploadRootViewController *vc3 = [main instantiateViewControllerWithIdentifier:@"uploadRoot"];
     UINavigationController *navvc3 = [[UINavigationController alloc] initWithRootViewController:vc3];
     
-    UIViewController *vc4 = [main instantiateViewControllerWithIdentifier:@"temp"];
-    UIViewController *vc5 = [main instantiateViewControllerWithIdentifier:@"temp"];
-    self.viewControllers = @[navvc1, vc2, navvc3, vc4, vc5];
+    AALTestViewController *vc4 = [alMain instantiateViewControllerWithIdentifier:@"interests"];
+    UINavigationController *navvc4 = [[UINavigationController alloc] initWithRootViewController:vc4];
     
-
+    MPSProfileViewController *vc5 = [mattMain instantiateViewControllerWithIdentifier:@"profileRoot"];
+    UINavigationController *navvc5 = [[UINavigationController alloc] initWithRootViewController:vc5];
+    self.viewControllers = @[navvc1, navvc2, navvc3, navvc4, navvc5];
+    
     UITabBarItem *item0 = [self.tabBar.items objectAtIndex:0];
     item0.image = [UIImage imageNamed:@"home.png"];
-    item0.selectedImage = [UIImage imageNamed:@"home_selected"];
     item0.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
 //    item0.title = @"Home";
     
@@ -62,14 +74,12 @@
     
     UITabBarItem *item3 = [self.tabBar.items objectAtIndex:3];
     item3.image = [UIImage imageNamed:@"notifications.png"];
-    item3.selectedImage = [UIImage imageNamed:@"notifications_selected"];
     item3.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
 
 //    item3.title = @"Notifications";
     
     UITabBarItem *item4 = [self.tabBar.items objectAtIndex:4];
     item4.image = [UIImage imageNamed:@"user.png"];
-    item4.selectedImage = [UIImage imageNamed:@"user_selected"];
     item4.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
 
 //    item4.title = @"Profile";

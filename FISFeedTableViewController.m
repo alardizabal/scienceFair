@@ -38,24 +38,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     static NSString *CellIdentifier = @"pugCell";
     [self.tableView registerNib:[UINib nibWithNibName:@"FISCustomPugCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:CellIdentifier];
 
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:19.0/255.0 green:42.0/255.0 blue:82.0/255.0 alpha:0.5];
+    self.navigationItem.title = @"Your Curated Feed";
+    self.navigationController.navigationBar.titleTextAttributes = @{
+                                                                    NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                                    NSFontAttributeName: [UIFont fontWithName:@"NeutraText-BookSC" size:25.0f]
+                                                                    };
+    
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/225.0 green:62/225.0 blue:81/225.0 alpha:1];
+    
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    
-    //Making the title of the nav item
-    CGRect frame = CGRectMake(0, 0, 400, 44);
-    UILabel *titleOfNavigationItem = [[UILabel alloc] initWithFrame:frame];
-    titleOfNavigationItem.backgroundColor = [UIColor clearColor];
-    titleOfNavigationItem.font = [UIFont fontWithName:@"Avenir Light" size:22.0];
-    titleOfNavigationItem.textColor = [UIColor whiteColor];
-    titleOfNavigationItem.textAlignment = NSTextAlignmentCenter;
-    titleOfNavigationItem.text = @"Your Curated Feed";
-    self.navigationItem.titleView = titleOfNavigationItem;
-    
-    self.tabBarController.tabBar.barTintColor = [UIColor colorWithRed:87.0/255.0 green:85.0/255.0 blue:92.0/255.0 alpha:0.8];
     
     self.store = [FISDataStore sharedDataStore];
     [self.store makePugImagesPugObjects:^{
@@ -75,7 +71,7 @@
 {
     [super viewDidAppear:animated];
     
-    [self.tabBarController setTabBarHidden:hidden animated:NO];
+//    [self.tabBarController setTabBarHidden:hidden animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -113,7 +109,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.tabBarController setTabBarHidden:NO animated:YES];
+//    [self.tabBarController setTabBarHidden:NO animated:YES];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     UIStoryboard *productDetailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:[NSBundle mainBundle]];
     FISProductDetailViewController *productDetailVC = [productDetailStoryboard instantiateViewControllerWithIdentifier:@"productDetailVC"];
@@ -131,7 +127,7 @@
     
     hidden = YES;
     
-    [self.tabBarController setTabBarHidden:YES animated:YES];
+//    [self.tabBarController setTabBarHidden:YES animated:YES];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
@@ -143,7 +139,7 @@
     
     hidden = NO;
     
-    [self.tabBarController setTabBarHidden:NO animated:YES];
+//    [self.tabBarController setTabBarHidden:NO animated:YES];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
 }

@@ -18,7 +18,7 @@
     NSOperationQueue *pugImageDownloadQueue = [NSOperationQueue new];
     pugImageDownloadQueue.maxConcurrentOperationCount = 15;
     
-    for (NSInteger i=0; i<10; i++) {
+    for (NSInteger i=0; i<100; i++) {
         NSString *pugAPIURLString = [NSString stringWithFormat:@"%@", PUG_URL];
         
         NSURL *pugAPIURL = [NSURL URLWithString:pugAPIURLString];
@@ -56,6 +56,10 @@
             NSLog(@"%@", error.localizedDescription);
         }];
     }
+}
+
+-(void)testingEtsyAPICall:(void (^)())completionHandler
+{
     
 }
 

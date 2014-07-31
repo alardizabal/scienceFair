@@ -29,13 +29,13 @@
 {
     [super viewDidLoad];
 
-    self.navigationItem.title = @"UPLOAD";
+    self.navigationItem.title = @"Upload";
     self.navigationController.navigationBar.titleTextAttributes = @{
                                                             NSForegroundColorAttributeName: [UIColor whiteColor],
-                                                            NSFontAttributeName: [UIFont fontWithName:@"NeutraText-BookSC" size:20.0f]
+                                                            NSFontAttributeName: [UIFont fontWithName:@"NeutraText-BookSC" size:25.0f]
                                                             };
     
-    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/225.0 green:62/225.0 blue:81/225.0 alpha:1];
     
     self.view.backgroundColor = [UIColor colorWithRed:0.0 green:80/225.0 blue:86/225.0 alpha:1];
@@ -45,6 +45,10 @@
     
     self.rightCircle.layer.cornerRadius = self.rightCircle.frame.size.height/2;
     self.rightCircle.clipsToBounds = YES;
+    
+    
+    
+    
     
     // Do any additional setup after loading the view.
 }

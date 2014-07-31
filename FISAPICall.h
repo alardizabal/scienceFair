@@ -11,5 +11,6 @@
 @interface FISAPICall : NSObject
 
 -(void)retrievePugAPIAndImageFromBackend:(void(^)(UIImage *coolPugImage))completionHandler;
+-(void)testingEtsyAPICall:(void(^)())completionHandler; 
 
 @end

@@ -36,22 +36,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    CGRect frame = CGRectMake(100, 0, 400, 44);
-    UILabel *titleOfNavigationItem = [[UILabel alloc] initWithFrame:frame];
-    titleOfNavigationItem.backgroundColor = [UIColor clearColor];
-    titleOfNavigationItem.font = [UIFont fontWithName:@"Avenir Light" size:22.0];
-    titleOfNavigationItem.textColor = [UIColor whiteColor];
-    titleOfNavigationItem.textAlignment = NSTextAlignmentCenter;
-    titleOfNavigationItem.text = @"makersfinders";
-    [titleOfNavigationItem sizeToFit];
-    self.navigationItem.titleView = titleOfNavigationItem;
+    self.navigationItem.title = @"Your Curated Feed";
+    self.navigationController.navigationBar.titleTextAttributes = @{
+                                                                    NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                                    NSFontAttributeName: [UIFont fontWithName:@"NeutraText-BookSC" size:25.0f]
+                                                                    };
     
-    self.profileImage.layer.cornerRadius = 25.0;
-    self.profileImage.layer.masksToBounds = YES;
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/225.0 green:62/225.0 blue:81/225.0 alpha:1];
     
     self.mainImageOfInterest.image = self.pugWithImage.pugImage;
     
-    [self.tabBarController setTabBarHidden:NO animated:YES]; 
+//    [self.tabBarController setTabBarHidden:NO animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
