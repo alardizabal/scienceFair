@@ -27,6 +27,15 @@
 {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"Profile";
+    self.navigationController.navigationBar.titleTextAttributes = @{
+                                                                    NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                                    NSFontAttributeName: [UIFont fontWithName:@"NeutraText-BookSC" size:25.0f]
+                                                                    };
+    
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/225.0 green:62/225.0 blue:81/225.0 alpha:1];
+    
     //this sets the profil image properties to be a radial view.
     //if square image is 100 then the corner radius is (divided) / 2
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
