@@ -36,7 +36,7 @@
                                                             };
     
     self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/225.0 green:62/225.0 blue:81/225.0 alpha:1];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/255.0 green:62/255.0 blue:81/255.0 alpha:1];
     
     self.view.backgroundColor = [UIColor colorWithRed:0.0 green:80/225.0 blue:86/225.0 alpha:1];
     

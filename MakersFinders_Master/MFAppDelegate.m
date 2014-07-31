@@ -15,7 +15,12 @@
 {
     MFCustomTabBarControllerViewController *rootTabBarController = [[MFCustomTabBarControllerViewController alloc] init];
     self.window.rootViewController = rootTabBarController;
-    
+    [application setStatusBarHidden:NO];
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    UIView *statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+    statusBarView.backgroundColor = [UIColor colorWithRed:45/255.0 green:62/255.0 blue:81/255.0 alpha:1];
+    [self.window.rootViewController.view addSubview:statusBarView];
+                             
     return YES;
 }
 							

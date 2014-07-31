@@ -40,10 +40,10 @@
                                                                     };
     
     self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/225.0 green:62/225.0 blue:81/225.0 alpha:1];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/255.0 green:62/255.0 blue:81/255.0 alpha:1];
     
     //Setting up menu button images and text
-    self.makersFindersButton.backgroundColor = [UIColor colorWithRed:0 green:119/225.0 blue:126/225.0 alpha:1];
+    self.makersFindersButton.backgroundColor = [UIColor colorWithRed:0 green:119/255.0 blue:126/255.0 alpha:1];
     self.makersFindersLabel.text = @"Makers & Finders";
     self.makersFindersImage.image = [UIImage imageNamed:@"explore@2x"];
     
