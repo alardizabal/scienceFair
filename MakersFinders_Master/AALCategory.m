@@ -17,12 +17,15 @@
 
 - (instancetype)initWithCategoryName:(NSString *)categoryName
                        categoryImage:(UIImage *)categoryImage
-                           interests:(NSArray *)interests
+                           interests:(NSMutableArray *)interests
 {
     self = [super init];
     if (self) {
         _categoryName = categoryName;
         _categoryImage = categoryImage;
+        
+        _interests = [[NSMutableArray alloc]init];
+        
         _interests = interests;
     }
     return self;

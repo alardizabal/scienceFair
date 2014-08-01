@@ -13,11 +13,11 @@
 
 @property (nonatomic) NSString *categoryName;
 @property (nonatomic) UIImage *categoryImage;
-@property (nonatomic) NSArray *interests;
+@property (nonatomic) NSMutableArray *interests;
 
 - (instancetype)init;
 - (instancetype)initWithCategoryName:(NSString *)categoryName
                        categoryImage:(UIImage *)categoryImage
-                           interests:(NSArray *)interests;
+                           interests:(NSMutableArray *)interests;
 
 @end

@@ -12,4 +12,6 @@
 
 @property (nonatomic) NSMutableArray *selectedInterests;
 
+- (void) showCategories;
+
 @end

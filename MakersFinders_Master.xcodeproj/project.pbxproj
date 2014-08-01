@@ -97,6 +97,7 @@
 		65D1580F198AE8B4000F958D /* collectives@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580D198AE8B4000F958D /* collectives@2x.png */; };
 		65D15810198AE8B4000F958D /* explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580E198AE8B4000F958D /* explore@2x.png */; };
 		65D15819198AEC82000F958D /* MFExploreCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */; };
+		A2A631BB198C0C5500C5ECD2 /* AALAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A631BA198C0C5500C5ECD2 /* AALAPIClient.m */; };
 		C56655F0365F48A6B3D637EA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F66FE788A7C4C7DB8EB1BC8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -230,6 +231,8 @@
 		65D1580E198AE8B4000F958D /* explore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explore@2x.png"; sourceTree = "<group>"; };
 		65D15817198AEC82000F958D /* MFExploreCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFExploreCustomTableViewCell.h; sourceTree = "<group>"; };
 		65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFExploreCustomTableViewCell.m; sourceTree = "<group>"; };
+		A2A631B9198C0C5500C5ECD2 /* AALAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AALAPIClient.h; sourceTree = "<group>"; };
+		A2A631BA198C0C5500C5ECD2 /* AALAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AALAPIClient.m; sourceTree = "<group>"; };
 		DF6266BC6CDE494AB53F6BAC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -407,6 +410,8 @@
 				65CF9AE9198AA984009ACA3D /* AALCategory.m */,
 				65CF9AEA198AA984009ACA3D /* AALInterest.h */,
 				65CF9AEB198AA984009ACA3D /* AALInterest.m */,
+				A2A631B9198C0C5500C5ECD2 /* AALAPIClient.h */,
+				A2A631BA198C0C5500C5ECD2 /* AALAPIClient.m */,
 				65CF9AEC198AA984009ACA3D /* AALTestViewController.h */,
 				65CF9AED198AA984009ACA3D /* AALTestViewController.m */,
 				65CF9AF2198AAAF7009ACA3D /* checkmark.imageset */,
@@ -715,6 +720,7 @@
 				65C6EE411989615200E7DD13 /* main.m in Sources */,
 				65CF9B4C198AB5C6009ACA3D /* MPSAPICall.m in Sources */,
 				65CF9AE1198A8D10009ACA3D /* MFLoginViewController.m in Sources */,
+				A2A631BB198C0C5500C5ECD2 /* AALAPIClient.m in Sources */,
 				65CF9B4F198AB5C6009ACA3D /* MPSConstants.m in Sources */,
 				65CF9B50198AB5C6009ACA3D /* MPSProfileViewController.m in Sources */,
 				65ACF8C9198BD691002CDBED /* MFConstants.m in Sources */,
