@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface MFAPIClient : NSObject
--(void)createNewUserWithName:(NSString *)name Email:(NSString *)email Password:(NSString *)password PasswordConfirmation:(NSString *)passwordConfirmation Completion:(void (^)())completionBlock;
+-(void)createNewUserWithName:(NSString *)name Email:(NSString *)email Password:(NSString *)password PasswordConfirmation:(NSString *)passwordConfirmation Completion:(void (^)(id responseObject))completionBlock;
 
 -(void)loginNewUserWithEmail:(NSString *)email Password:(NSString *)password  Completion:(void (^)())completionBlock;
 

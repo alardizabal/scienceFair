@@ -10,7 +10,7 @@
 
 @implementation MFAPIClient
 
--(void)createNewUserWithName:(NSString *)name Email:(NSString *)email Password:(NSString *)password PasswordConfirmation:(NSString *)passwordConfirmation Completion:(void (^)())completionBlock
+-(void)createNewUserWithName:(NSString *)name Email:(NSString *)email Password:(NSString *)password PasswordConfirmation:(NSString *)passwordConfirmation Completion:(void (^)(id responseObject))completionBlock
 {
     NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
     [backgroundQueue addOperationWithBlock:^{
@@ -20,9 +20,9 @@
         NSDictionary *params = @{@"user[name]":name, @"user[email]":email, @"user[password]": password, @"user[password_confirmation]":passwordConfirmation};
         
         [manager POST:createUserURLString parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
-            completionBlock();
+            completionBlock(responseObject);
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"Error signing up, %@",error);
+            NSLog(@"Error signing up, %@",error.localizedDescription);
         }];
     }];
 }
@@ -39,7 +39,7 @@
         [manager POST:loginUserURLString parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
             completionBlock();
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"Error signing up, %@",error);
+            NSLog(@"Error signing up, %@",error.localizedDescription);
         }];
     }];
 }
