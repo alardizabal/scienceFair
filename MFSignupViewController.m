@@ -10,11 +10,11 @@
 #import "MFAPIClient.h"
 
 @interface MFSignupViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *firstnameField;
-@property (weak, nonatomic) IBOutlet UITextField *lastnameField;
-@property (weak, nonatomic) IBOutlet UITextField *usernameField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UITextField *fullNameField;
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordConfirmField;
+
 - (IBAction)signupTapped:(id)sender;
 
 @end
@@ -33,6 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.passwordField.secureTextEntry = YES;
+    self.passwordConfirmField.secureTextEntry = YES;
     // Do any additional setup after loading the view.
 }
 
@@ -55,7 +57,7 @@
 
 - (IBAction)signupTapped:(id)sender {
     MFAPIClient *client = [[MFAPIClient alloc] init];
-    [client createNewUserWithName:self.firstnameField.text Email:self.emailField.text Password:self.passwordField.text PasswordConfirmation:self.passwordField.text Completion:^{
+    [client createNewUserWithName:self.fullNameField.text Email:self.emailField.text Password:self.passwordField.text PasswordConfirmation:self.passwordConfirmField.text Completion:^{
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }

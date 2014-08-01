@@ -11,7 +11,8 @@
 #import "MFCustomTabBarControllerViewController.h"
 
 @interface MFLoginViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *usernameField;
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
+
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 - (IBAction)loginTapped:(id)sender;
 
@@ -32,6 +33,7 @@
 {
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = YES;
+    self.passwordField.secureTextEntry = YES;
     // Do any additional setup after loading the view.
 }
 
@@ -54,7 +56,7 @@
 
 - (IBAction)loginTapped:(id)sender {
     MFAPIClient *client = [[MFAPIClient alloc] init];
-    [client loginNewUserWithEmail:self.usernameField.text Password:self.passwordField.text Completion:^{
+    [client loginNewUserWithEmail:self.emailField.text Password:self.passwordField.text Completion:^{
         MFCustomTabBarControllerViewController *tabBarController = [[MFCustomTabBarControllerViewController alloc] init];
         [self.navigationController pushViewController:tabBarController animated:YES];
     }];
