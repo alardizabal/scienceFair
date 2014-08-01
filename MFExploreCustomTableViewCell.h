@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MFExploreCustomTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *categoryImage;
+@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 
 @end

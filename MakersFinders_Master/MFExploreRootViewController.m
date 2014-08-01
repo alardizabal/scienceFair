@@ -7,6 +7,7 @@
 //
 
 #import "MFExploreRootViewController.h"
+#import "MFExploreCustomTableViewCell.h"
 
 @interface MFExploreRootViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *makersFindersButton;
@@ -14,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *collectivesImage;
 @property (weak, nonatomic) IBOutlet UIImageView *makersFindersImage;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *searchField;
 
 
 @end
@@ -49,7 +51,7 @@
     self.makersFindersButton.backgroundColor = [UIColor colorWithRed:0 green:119/255.0 blue:126/255.0 alpha:1];
     self.makersFindersImage.image = [UIImage imageNamed:@"explore"];
     self.collectivesImage.image = [UIImage imageNamed:@"collectives"];
-    
+    self.searchField.backgroundColor = [UIColor colorWithRed:115/255.0 green:115/255.0 blue:115/255.0 alpha:1];
     
     //Add tap gesture recognizers to the two menu items: Makers & Finder and Collectives.
     
@@ -63,6 +65,42 @@
 }
 
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    
+    // Return the number of sections.
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == 1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 10;
+    }
+    
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MFExploreCustomTableViewCell *exploreCell = [tableView dequeueReusableCellWithIdentifier:@"exploreCell" forIndexPath:indexPath];
+    
+    [self tableView:tableView heightForRowAtIndexPath:indexPath];
+    exploreCell.categoryImage.image = [UIImage imageNamed:@"yosemite"];
+    exploreCell.categoryLabel.text = @"Yosemite";
+    
+    return exploreCell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+}
 
 
 /*
