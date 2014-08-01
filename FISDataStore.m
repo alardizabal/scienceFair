@@ -8,7 +8,9 @@
 
 #import "FISDataStore.h"
 #import "FISAPICall.h"
-#import "FISPug.h"
+//Delete after feed data is provided
+#import "Flickr.h"
+#import "FlickrPhoto.h"
 
 @implementation FISDataStore
 
@@ -27,19 +29,24 @@
     self = [super self];
     
     if (self) {
-        _pugImagesArray = [NSMutableArray new];
+        _flickrPhotoFeed = [NSMutableArray new];
     }
     return self; 
 }
 
--(void)makePugImagesPugObjects:(void (^)())completionHandler
+-(void)flickrFeedImages:(void (^)())completionHandler
 {
-    FISAPICall *tempAPICall = [[FISAPICall alloc] init];
-    [tempAPICall retrievePugAPIAndImageFromBackend:^(UIImage *coolPugImage) {
-        FISPug *eachPug = [[FISPug alloc] initPugWithImage:coolPugImage];
-        [self.pugImagesArray addObject:eachPug];
-        completionHandler(); 
-    }];
+    Flickr *tempFlickrtoProvideFeedImages = [[Flickr alloc] init];
+    NSInteger random = arc4random_uniform(5);
+    NSArray *artistsToDisplayFeedImages = @[@"96dpi", @"jeroenbennink", @"spettacolopuro", @"artinteschner", @"shironekoeuro", @"pedrosz"];
+    [tempFlickrtoProvideFeedImages searchFlickrForTerm:artistsToDisplayFeedImages[random]
+                                       completionBlock:^(NSArray *results, NSError *error) {
+                                           for (NSInteger i=0; i<[results count]; i++) {
+                                               FlickrPhoto *photoToPass = results[i]; 
+                                               [self.flickrPhotoFeed addObject:photoToPass];
+                                           }
+                                           completionHandler();
+                                       }];
 }
 
 @end
