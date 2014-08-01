@@ -5,48 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>55A3B590-2CA8-41E9-89AC-1EEDEA24A8C4</string>
+	<string>C419048A-22C0-471D-A193-D2C8A98BD0B1</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MakersFinders_Master</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>8F8A6EBF-7CB5-4C66-84B3-1AED6CC735D3</key>
-		<string>ssh://github.com/danielwmsun/tempRepoForMarcus.git</string>
-		<key>E2B8B595-3B65-47CB-9F54-252EB9EF9033</key>
-		<string>https://github.com/sevendreamz/tempRepo.git</string>
+		<key>9B89D8F9-68AF-456A-AD69-E8DB9A1A9F2F</key>
+		<string>ssh://github.com/flatiron-school-students/firehawk-project.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MakersFinders_Master.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>8F8A6EBF-7CB5-4C66-84B3-1AED6CC735D3</key>
+		<key>9B89D8F9-68AF-456A-AD69-E8DB9A1A9F2F</key>
 		<string>..</string>
-		<key>E2B8B595-3B65-47CB-9F54-252EB9EF9033</key>
-		<string>../../../../../Desktop/tempRepo</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/danielwmsun/tempRepoForMarcus.git</string>
+	<string>ssh://github.com/flatiron-school-students/firehawk-project.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8F8A6EBF-7CB5-4C66-84B3-1AED6CC735D3</string>
+	<string>9B89D8F9-68AF-456A-AD69-E8DB9A1A9F2F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>8F8A6EBF-7CB5-4C66-84B3-1AED6CC735D3</string>
+			<string>9B89D8F9-68AF-456A-AD69-E8DB9A1A9F2F</string>
 			<key>IDESourceControlWCCName</key>
-			<string>MakersFinders_Master</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E2B8B595-3B65-47CB-9F54-252EB9EF9033</string>
-			<key>IDESourceControlWCCName</key>
-			<string>tempRepo</string>
+			<string>firehawk-project</string>
 		</dict>
 	</array>
 </dict>

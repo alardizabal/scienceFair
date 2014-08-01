@@ -43,7 +43,7 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/255.0 green:62/255.0 blue:81/255.0 alpha:1];
     // Do any additional setup after loading the view.
     
-    UILabel *followYourInterestsLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 20)];
+    UILabel *followYourInterestsLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 3, self.view.frame.size.width, 20)];
     followYourInterestsLabel.text = @"Follow your interests:";
     followYourInterestsLabel.accessibilityLabel = @"Follow your interests";
     followYourInterestsLabel.font = [UIFont boldSystemFontOfSize:12];
@@ -130,7 +130,7 @@
         startXvalueScrollView += categoryViewWidth + categoryPadding;
     }
     
-    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 150, 320, categoryViewHeight)];
+    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 25, 320, categoryViewHeight)];
     scrollView.accessibilityLabel = @"Category Scrollview";
     scrollView.scrollEnabled = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -200,7 +200,7 @@
         
     }
     
-    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 375, 320, 150)];
+    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 230, 320, 150)];
     scrollView.accessibilityLabel = category;
     scrollView.scrollEnabled = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
