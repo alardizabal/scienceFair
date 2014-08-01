@@ -37,9 +37,6 @@
     UIStoryboard *mattMain = [UIStoryboard storyboardWithName:@"Main_Matt" bundle:nil];
     
     
-    MFLoginViewController *loginVC = [main instantiateViewControllerWithIdentifier:@"login"];
-    [self presentViewController:loginVC animated:NO completion:nil];
-    
     self.tabBar.layer.borderWidth = 0.50;
     self.tabBar.layer.borderColor = self.tabBarController.tabBar.tintColor.CGColor;
     

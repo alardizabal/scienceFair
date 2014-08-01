@@ -102,6 +102,7 @@
 		65D15810198AE8B4000F958D /* explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580E198AE8B4000F958D /* explore@2x.png */; };
 		65D15819198AEC82000F958D /* MFExploreCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */; };
 		65E65521198C18B5003DA661 /* MFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E65520198C18B5003DA661 /* MFUser.m */; };
+		65E65524198C3A56003DA661 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E65523198C3A56003DA661 /* KeychainItemWrapper.m */; };
 		C56655F0365F48A6B3D637EA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F66FE788A7C4C7DB8EB1BC8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -244,6 +245,8 @@
 		65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFExploreCustomTableViewCell.m; sourceTree = "<group>"; };
 		65E6551F198C18B5003DA661 /* MFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUser.h; sourceTree = "<group>"; };
 		65E65520198C18B5003DA661 /* MFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFUser.m; sourceTree = "<group>"; };
+		65E65522198C3A56003DA661 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		65E65523198C3A56003DA661 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		DF6266BC6CDE494AB53F6BAC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -287,6 +290,8 @@
 				659E5C31198BFBA400A4EE77 /* MFAPIClient.m */,
 				659E5C37198C0C6200A4EE77 /* MFDataStore.h */,
 				659E5C38198C0C6200A4EE77 /* MFDataStore.m */,
+				65E65522198C3A56003DA661 /* KeychainItemWrapper.h */,
+				65E65523198C3A56003DA661 /* KeychainItemWrapper.m */,
 			);
 			name = Global;
 			path = ..;
@@ -741,6 +746,7 @@
 				65CF9B26198AAE8B009ACA3D /* FISDataStore.m in Sources */,
 				65CF9B51198AB5C6009ACA3D /* MPSViewController.m in Sources */,
 				65CF9B4E198AB5C6009ACA3D /* MPSCollectionLandscapeViewController.m in Sources */,
+				65E65524198C3A56003DA661 /* KeychainItemWrapper.m in Sources */,
 				659E5C32198BFBA400A4EE77 /* MFAPIClient.m in Sources */,
 				65CF9AEE198AA984009ACA3D /* AALCategory.m in Sources */,
 				65CF9B22198AAE8B009ACA3D /* FISCollectionLandscapeViewController.m in Sources */,
