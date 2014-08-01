@@ -8,13 +8,17 @@
 
 #import "MFAppDelegate.h"
 #import "MFCustomTabBarControllerViewController.h"
+#import "MFLoginViewController.h"
 
 @implementation MFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    MFCustomTabBarControllerViewController *rootTabBarController = [[MFCustomTabBarControllerViewController alloc] init];
-    self.window.rootViewController = rootTabBarController;
+    MFLoginViewController *loginVC = [[MFLoginViewController alloc] init];
+    self.window.rootViewController = loginVC;
+    
+//    MFCustomTabBarControllerViewController *rootTabBarController = [[MFCustomTabBarControllerViewController alloc] init];
+//    self.window.rootViewController = rootTabBarController;
     [application setStatusBarHidden:NO];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     UIView *statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
