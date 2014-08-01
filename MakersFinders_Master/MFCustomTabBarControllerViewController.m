@@ -12,9 +12,10 @@
 #import "AALTestViewController.h"
 #import "FISFeedTableViewController.h"
 #import "MPSProfileViewController.h"
+#import "MFLoginViewController.h"
 
 @interface MFCustomTabBarControllerViewController ()
-
+@property (nonatomic) BOOL loggedIn;
 @end
 
 @implementation MFCustomTabBarControllerViewController
@@ -31,14 +32,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tabBar.layer.borderWidth = 0.50;
-    self.tabBar.layer.borderColor = self.tabBarController.tabBar.tintColor.CGColor;
-    
     UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIStoryboard *alMain = [UIStoryboard storyboardWithName:@"AALMain" bundle:nil];
     UIStoryboard *mattMain = [UIStoryboard storyboardWithName:@"Main_Matt" bundle:nil];
-//    UIStoryboard *detail = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
-//    FISFeedTableViewController *vc1 = [detail instantiateViewControllerWithIdentifier:@"feed"];
+    
+    
+    MFLoginViewController *loginVC = [main instantiateViewControllerWithIdentifier:@"login"];
+    [self presentViewController:loginVC animated:NO completion:nil];
+    
+    self.tabBar.layer.borderWidth = 0.50;
+    self.tabBar.layer.borderColor = self.tabBarController.tabBar.tintColor.CGColor;
+    
+    
+    //    UIStoryboard *detail = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
+    //    FISFeedTableViewController *vc1 = [detail instantiateViewControllerWithIdentifier:@"feed"];
     FISFeedTableViewController *vc1 = [[FISFeedTableViewController alloc] init];
     UINavigationController *navvc1 = [[UINavigationController alloc] initWithRootViewController:vc1];
     
@@ -58,38 +65,36 @@
     UITabBarItem *item0 = [self.tabBar.items objectAtIndex:0];
     item0.image = [UIImage imageNamed:@"home.png"];
     item0.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
-//    item0.title = @"Home";
+    //    item0.title = @"Home";
     
     UITabBarItem *item1 = [self.tabBar.items objectAtIndex:1];
     item1.image = [UIImage imageNamed:@"search.png"];
     item1.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
-//    item1.title = @"Search";
+    //    item1.title = @"Search";
     
     UITabBarItem *item2 = [self.tabBar.items objectAtIndex:2];
     item2.image = [UIImage imageNamed:@"upload.png"];
     item2.selectedImage = [UIImage imageNamed:@"upload_selected"];
     item2.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
-
-//    item2.title = @"Upload";
+    
+    //    item2.title = @"Upload";
     
     UITabBarItem *item3 = [self.tabBar.items objectAtIndex:3];
     item3.image = [UIImage imageNamed:@"notifications.png"];
     item3.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
-
-//    item3.title = @"Notifications";
+    
+    //    item3.title = @"Notifications";
     
     UITabBarItem *item4 = [self.tabBar.items objectAtIndex:4];
     item4.image = [UIImage imageNamed:@"user.png"];
     item4.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
-
-//    item4.title = @"Profile";
+    
+    //    item4.title = @"Profile";
     
     self.tabBar.backgroundImage = [UIImage imageNamed:@"tabbarbackground"];
     self.tabBar.translucent = NO;
     self.tabBar.tintColor = [UIColor colorWithRed:2/225.0 green:211/225.0 blue:224/225.0 alpha:1];
-    
-    
-    // Do any additional setup after loading the view.
+// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

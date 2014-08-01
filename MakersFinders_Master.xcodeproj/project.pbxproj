@@ -10,6 +10,8 @@
 		6509068D1989811000E02CB1 /* Neutra-Text-SC.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6509068C198980FD00E02CB1 /* Neutra-Text-SC.ttf */; };
 		650906BF19898ADC00E02CB1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650906BE19898ADC00E02CB1 /* QuartzCore.framework */; };
 		653786A0198AC580000B0A62 /* LaunchImage4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6537869F198AC580000B0A62 /* LaunchImage4@2x.png */; };
+		659E5C2F198BF0A800A4EE77 /* MFSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E5C2E198BF0A800A4EE77 /* MFSignupViewController.m */; };
+		659E5C32198BFBA400A4EE77 /* MFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E5C31198BFBA400A4EE77 /* MFAPIClient.m */; };
 		65ACF8C6198BD44C002CDBED /* yosemite.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ACF8C5198BD44C002CDBED /* yosemite.png */; };
 		65ACF8C9198BD691002CDBED /* MFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ACF8C8198BD691002CDBED /* MFConstants.m */; };
 		65C6EE351989615200E7DD13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C6EE341989615200E7DD13 /* Foundation.framework */; };
@@ -117,6 +119,10 @@
 		6509068C198980FD00E02CB1 /* Neutra-Text-SC.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neutra-Text-SC.ttf"; sourceTree = "<group>"; };
 		650906BE19898ADC00E02CB1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6537869F198AC580000B0A62 /* LaunchImage4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LaunchImage4@2x.png"; path = "MakersFinders_Master/LaunchImage4@2x.png"; sourceTree = "<group>"; };
+		659E5C2D198BF0A800A4EE77 /* MFSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSignupViewController.h; sourceTree = "<group>"; };
+		659E5C2E198BF0A800A4EE77 /* MFSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSignupViewController.m; sourceTree = "<group>"; };
+		659E5C30198BFBA400A4EE77 /* MFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAPIClient.h; sourceTree = "<group>"; };
+		659E5C31198BFBA400A4EE77 /* MFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAPIClient.m; sourceTree = "<group>"; };
 		65ACF8C5198BD44C002CDBED /* yosemite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yosemite.png; sourceTree = "<group>"; };
 		65ACF8C7198BD691002CDBED /* MFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFConstants.h; sourceTree = "<group>"; };
 		65ACF8C8198BD691002CDBED /* MFConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFConstants.m; sourceTree = "<group>"; };
@@ -265,6 +271,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		659E5C33198BFBBA00A4EE77 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				65C6EE431989615200E7DD13 /* MFAppDelegate.h */,
+				65C6EE441989615200E7DD13 /* MFAppDelegate.m */,
+				65ACF8C7198BD691002CDBED /* MFConstants.h */,
+				65ACF8C8198BD691002CDBED /* MFConstants.m */,
+				659E5C30198BFBA400A4EE77 /* MFAPIClient.h */,
+				659E5C31198BFBA400A4EE77 /* MFAPIClient.m */,
+			);
+			name = Global;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		65C6EE281989615200E7DD13 = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +321,7 @@
 		65C6EE3A1989615200E7DD13 /* MakersFinders_Master */ = {
 			isa = PBXGroup;
 			children = (
+				659E5C33198BFBBA00A4EE77 /* Global */,
 				65CF9AFE198AADE2009ACA3D /* Dan */,
 				65CF9B33198AB13E009ACA3D /* Matt */,
 				65CF9AFF198AAE78009ACA3D /* Marcus */,
@@ -425,11 +446,9 @@
 		65CF9AFE198AADE2009ACA3D /* Dan */ = {
 			isa = PBXGroup;
 			children = (
-				65C6EE431989615200E7DD13 /* MFAppDelegate.h */,
-				65C6EE441989615200E7DD13 /* MFAppDelegate.m */,
-				65ACF8C7198BD691002CDBED /* MFConstants.h */,
-				65ACF8C8198BD691002CDBED /* MFConstants.m */,
 				65C6EE461989615200E7DD13 /* Main.storyboard */,
+				659E5C2D198BF0A800A4EE77 /* MFSignupViewController.h */,
+				659E5C2E198BF0A800A4EE77 /* MFSignupViewController.m */,
 				65C6EE691989616D00E7DD13 /* MFCustomTabBarControllerViewController.h */,
 				65C6EE6A1989616D00E7DD13 /* MFCustomTabBarControllerViewController.m */,
 				65CF9AE2198A9174009ACA3D /* MFExploreRootViewController.h */,
@@ -719,6 +738,7 @@
 				65CF9B26198AAE8B009ACA3D /* FISDataStore.m in Sources */,
 				65CF9B51198AB5C6009ACA3D /* MPSViewController.m in Sources */,
 				65CF9B4E198AB5C6009ACA3D /* MPSCollectionLandscapeViewController.m in Sources */,
+				659E5C32198BFBA400A4EE77 /* MFAPIClient.m in Sources */,
 				65CF9AEE198AA984009ACA3D /* AALCategory.m in Sources */,
 				65CF9B22198AAE8B009ACA3D /* FISCollectionLandscapeViewController.m in Sources */,
 				65CF9AF0198AA984009ACA3D /* AALTestViewController.m in Sources */,
@@ -727,6 +747,7 @@
 				65CF9B4C198AB5C6009ACA3D /* MPSAPICall.m in Sources */,
 				65CF9AE1198A8D10009ACA3D /* MFLoginViewController.m in Sources */,
 				65CF9B4F198AB5C6009ACA3D /* MPSConstants.m in Sources */,
+				659E5C2F198BF0A800A4EE77 /* MFSignupViewController.m in Sources */,
 				65CF9B50198AB5C6009ACA3D /* MPSProfileViewController.m in Sources */,
 				F8DC8A64198C03E400197301 /* FlickrPhoto.m in Sources */,
 				65ACF8C9198BD691002CDBED /* MFConstants.m in Sources */,

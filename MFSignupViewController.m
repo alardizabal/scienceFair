@@ -1,24 +1,25 @@
 //
-//  MFLoginViewController.m
+//  MFSignupViewController.m
 //  MakersFinders_Master
 //
-//  Created by Daniel Sun on 7/31/14.
+//  Created by Daniel Sun on 8/1/14.
 //  Copyright (c) 2014 ADMM. All rights reserved.
 //
 
-#import "MFLoginViewController.h"
+#import "MFSignupViewController.h"
 #import "MFAPIClient.h"
-#import "MFCustomTabBarControllerViewController.h"
 
-@interface MFLoginViewController ()
+@interface MFSignupViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *fullNameField;
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
-
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
-- (IBAction)loginTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *passwordConfirmField;
+
+- (IBAction)signupTapped:(id)sender;
 
 @end
 
-@implementation MFLoginViewController
+@implementation MFSignupViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,8 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = YES;
     self.passwordField.secureTextEntry = YES;
+    self.passwordConfirmField.secureTextEntry = YES;
     // Do any additional setup after loading the view.
 }
 
@@ -54,13 +55,10 @@
 }
 */
 
-- (IBAction)loginTapped:(id)sender {
+- (IBAction)signupTapped:(id)sender {
     MFAPIClient *client = [[MFAPIClient alloc] init];
-    [client loginNewUserWithEmail:self.emailField.text Password:self.passwordField.text Completion:^{
-        MFCustomTabBarControllerViewController *tabBarController = [[MFCustomTabBarControllerViewController alloc] init];
-        [self.navigationController pushViewController:tabBarController animated:YES];
+    [client createNewUserWithName:self.fullNameField.text Email:self.emailField.text Password:self.passwordField.text PasswordConfirmation:self.passwordConfirmField.text Completion:^{
+        [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }
-
-
 @end

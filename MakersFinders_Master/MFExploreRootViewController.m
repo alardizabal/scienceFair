@@ -8,7 +8,6 @@
 
 #import "MFExploreRootViewController.h"
 #import "MFExploreCustomTableViewCell.h"
-#import "MFConstants.h"
 
 @interface MFExploreRootViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *makersFindersButton;
@@ -16,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *collectivesImage;
 @property (weak, nonatomic) IBOutlet UIImageView *makersFindersImage;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView *searchField;
 
 
 @end
@@ -54,7 +52,6 @@
     self.collectivesButton.backgroundColor = MFdarkTealColor;
     self.makersFindersImage.image = [UIImage imageNamed:@"explore"];
     self.collectivesImage.image = [UIImage imageNamed:@"collectives"];
-    self.searchField.backgroundColor = [UIColor colorWithRed:115/255.0 green:115/255.0 blue:115/255.0 alpha:1];
     
     //Add tap gesture recognizers to the two menu items: Makers & Finder and Collectives.
     
