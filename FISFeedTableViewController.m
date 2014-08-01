@@ -12,6 +12,8 @@
 #import "FISCustomPugCell.h"
 #import "UITabBarController+hideMeh.h"
 #import "FISProductDetailViewController.h"
+//Delete after feed test data is finished
+#import "FlickrPhoto.h"
 
 @interface FISFeedTableViewController ()
 
@@ -55,7 +57,7 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     self.store = [FISDataStore sharedDataStore];
-    [self.store makePugImagesPugObjects:^{
+    [self.store flickrFeedImages:^{
         [self.tableView reloadData];
     }];
 
@@ -89,7 +91,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.store.pugImagesArray count];
+    return [self.store.flickrPhotoFeed count];
 }
 
 
@@ -97,8 +99,8 @@
 {
     FISCustomPugCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pugCell" forIndexPath:indexPath];
     
-    FISPug *eachPug = self.store.pugImagesArray[indexPath.row];
-    cell.pugCellImageView.image = eachPug.pugImage;
+    FlickrPhoto *eachPhoto = self.store.flickrPhotoFeed[indexPath.row];
+    cell.pugCellImageView.image = eachPhoto.thumbnail;
     
     return cell;
 }
@@ -114,7 +116,7 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     UIStoryboard *productDetailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:[NSBundle mainBundle]];
     FISProductDetailViewController *productDetailVC = [productDetailStoryboard instantiateViewControllerWithIdentifier:@"productDetailVC"];
-    productDetailVC.pugWithImage = self.store.pugImagesArray[indexPath.row]; 
+    productDetailVC.flickrPhoto = self.store.flickrPhotoFeed[indexPath.row];
     [self.navigationController pushViewController:productDetailVC animated:YES];
 }
 

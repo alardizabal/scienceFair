@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class FISPug;
+//Delete afterwards
+@class FlickrPhoto;
 
 @interface FISProductDetailViewController : UIViewController
 
-@property (strong, nonatomic) FISPug *pugWithImage;
+@property (strong, nonatomic) FlickrPhoto *flickrPhoto;
 
 @end

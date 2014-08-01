@@ -98,6 +98,8 @@
 		65D15810198AE8B4000F958D /* explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580E198AE8B4000F958D /* explore@2x.png */; };
 		65D15819198AEC82000F958D /* MFExploreCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */; };
 		C56655F0365F48A6B3D637EA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F66FE788A7C4C7DB8EB1BC8 /* libPods.a */; };
+		F8DC8A63198C03E400197301 /* Flickr.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DC8A60198C03E400197301 /* Flickr.m */; };
+		F8DC8A64198C03E400197301 /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DC8A62198C03E400197301 /* FlickrPhoto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,6 +233,10 @@
 		65D15817198AEC82000F958D /* MFExploreCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFExploreCustomTableViewCell.h; sourceTree = "<group>"; };
 		65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFExploreCustomTableViewCell.m; sourceTree = "<group>"; };
 		DF6266BC6CDE494AB53F6BAC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		F8DC8A5F198C03E400197301 /* Flickr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flickr.h; sourceTree = "<group>"; };
+		F8DC8A60198C03E400197301 /* Flickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flickr.m; sourceTree = "<group>"; };
+		F8DC8A61198C03E400197301 /* FlickrPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhoto.h; sourceTree = "<group>"; };
+		F8DC8A62198C03E400197301 /* FlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhoto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -478,6 +484,10 @@
 				65CF9B1A198AAE8B009ACA3D /* ProfileImageDefault.png */,
 				65CF9B1B198AAE8B009ACA3D /* UITabBarController+hideMeh.h */,
 				65CF9B1C198AAE8B009ACA3D /* UITabBarController+hideMeh.m */,
+				F8DC8A5F198C03E400197301 /* Flickr.h */,
+				F8DC8A60198C03E400197301 /* Flickr.m */,
+				F8DC8A61198C03E400197301 /* FlickrPhoto.h */,
+				F8DC8A62198C03E400197301 /* FlickrPhoto.m */,
 			);
 			name = Marcus;
 			path = ..;
@@ -713,10 +723,12 @@
 				65CF9B22198AAE8B009ACA3D /* FISCollectionLandscapeViewController.m in Sources */,
 				65CF9AF0198AA984009ACA3D /* AALTestViewController.m in Sources */,
 				65C6EE411989615200E7DD13 /* main.m in Sources */,
+				F8DC8A63198C03E400197301 /* Flickr.m in Sources */,
 				65CF9B4C198AB5C6009ACA3D /* MPSAPICall.m in Sources */,
 				65CF9AE1198A8D10009ACA3D /* MFLoginViewController.m in Sources */,
 				65CF9B4F198AB5C6009ACA3D /* MPSConstants.m in Sources */,
 				65CF9B50198AB5C6009ACA3D /* MPSProfileViewController.m in Sources */,
+				F8DC8A64198C03E400197301 /* FlickrPhoto.m in Sources */,
 				65ACF8C9198BD691002CDBED /* MFConstants.m in Sources */,
 				65C6EE451989615200E7DD13 /* MFAppDelegate.m in Sources */,
 				65CF9AEF198AA984009ACA3D /* AALInterest.m in Sources */,

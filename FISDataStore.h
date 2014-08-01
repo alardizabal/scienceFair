@@ -10,10 +10,10 @@
 
 @interface FISDataStore : NSObject
 
-@property (strong, nonatomic) NSMutableArray *pugImagesArray;
+@property (strong, nonatomic) NSMutableArray *flickrPhotoFeed;
 
 -(instancetype)init; 
 +(instancetype)sharedDataStore;
--(void)makePugImagesPugObjects:(void(^)())completionHandler;
+-(void)flickrFeedImages:(void (^)())completionHandler;
 
 @end
