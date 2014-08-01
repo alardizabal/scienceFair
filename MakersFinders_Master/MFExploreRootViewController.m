@@ -42,15 +42,16 @@
     self.navigationItem.title = @"Explore";
     self.navigationController.navigationBar.titleTextAttributes = @{
                                                                     NSForegroundColorAttributeName: [UIColor whiteColor],
-                                                                    NSFontAttributeName: [UIFont fontWithName:@"NeutraText-BookSC" size:25.0f]
+                                                                    NSFontAttributeName: MFmenuFont
                                                                     };
+    
     
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = MFnavBarColor;
+    
     //Setting up menu button images and text
     self.makersFindersButton.backgroundColor = MFtealColor;
     self.collectivesButton.backgroundColor = MFdarkTealColor;
-    
     self.makersFindersImage.image = [UIImage imageNamed:@"explore"];
     self.collectivesImage.image = [UIImage imageNamed:@"collectives"];
     self.searchField.backgroundColor = [UIColor colorWithRed:115/255.0 green:115/255.0 blue:115/255.0 alpha:1];
@@ -76,7 +77,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 1)
+    if (section == 0)
     {
         return 1;
     }
@@ -87,6 +88,13 @@
     
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    if(section == 0)
+        return @"Recent Searches";
+    else
+        return @"Categories";
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -101,7 +109,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80;
+    return 70;
 }
 
 
