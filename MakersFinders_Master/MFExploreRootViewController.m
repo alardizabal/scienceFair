@@ -8,7 +8,6 @@
 
 #import "MFExploreRootViewController.h"
 #import "MFExploreCustomTableViewCell.h"
-#import "MFConstants.h"
 
 @interface MFExploreRootViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *makersFindersButton;
@@ -16,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *collectivesImage;
 @property (weak, nonatomic) IBOutlet UIImageView *makersFindersImage;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView *searchField;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchField;
 
 
 @end
@@ -54,11 +53,41 @@
     self.collectivesButton.backgroundColor = MFdarkTealColor;
     self.makersFindersImage.image = [UIImage imageNamed:@"explore"];
     self.collectivesImage.image = [UIImage imageNamed:@"collectives"];
-    self.searchField.backgroundColor = [UIColor colorWithRed:115/255.0 green:115/255.0 blue:115/255.0 alpha:1];
     
     //Add tap gesture recognizers to the two menu items: Makers & Finder and Collectives.
+
+    UITapGestureRecognizer *tapRecognizerForMakersFindersButton = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleMakersFindersButtonTapped:)];
+    [self.makersFindersButton addGestureRecognizer:tapRecognizerForMakersFindersButton];
     
+    UITapGestureRecognizer *tapRecognizerForCollectivesButton = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleCollectivesButtonTapped:)];
+    [self.collectivesButton addGestureRecognizer:tapRecognizerForCollectivesButton];
     
+    //Add tap gesture to hide keyboard to get out of search
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+}
+
+
+- (void) dismissKeyboard
+{
+    // add self
+    [self.searchField resignFirstResponder];
+}
+
+
+- (void)handleMakersFindersButtonTapped:(UITapGestureRecognizer *)recognizer
+{
+    self.makersFindersButton.backgroundColor = MFtealColor;
+    self.collectivesButton.backgroundColor = MFdarkTealColor;
+}
+
+-(void)handleCollectivesButtonTapped:(UITapGestureRecognizer *)recognizer
+{
+    self.makersFindersButton.backgroundColor = MFdarkTealColor;
+    self.collectivesButton.backgroundColor = MFtealColor;
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,7 +122,7 @@
     if(section == 0)
         return @"Recent Searches";
     else
-        return @"Categories";
+        return @"All Categories";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

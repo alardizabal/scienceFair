@@ -14,4 +14,6 @@
 
 @interface MFConstants : NSObject
 
+extern NSString *const kUSER_CREATE_URL;
+extern NSString *const kUSER_LOGIN_URL;
 @end

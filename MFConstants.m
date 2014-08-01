@@ -12,5 +12,6 @@
 
 @implementation MFConstants
 
-
+NSString *const kUSER_CREATE_URL = @"http://makersfinders.firehawkcreative.com/api/v1/users";
+NSString *const kUSER_LOGIN_URL =  @"http://makersfinders.firehawkcreative.com/api/v1/sessions";
 @end

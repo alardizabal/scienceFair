@@ -10,6 +10,10 @@
 		6509068D1989811000E02CB1 /* Neutra-Text-SC.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6509068C198980FD00E02CB1 /* Neutra-Text-SC.ttf */; };
 		650906BF19898ADC00E02CB1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650906BE19898ADC00E02CB1 /* QuartzCore.framework */; };
 		653786A0198AC580000B0A62 /* LaunchImage4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6537869F198AC580000B0A62 /* LaunchImage4@2x.png */; };
+		659E5C2F198BF0A800A4EE77 /* MFSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E5C2E198BF0A800A4EE77 /* MFSignupViewController.m */; };
+		659E5C32198BFBA400A4EE77 /* MFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E5C31198BFBA400A4EE77 /* MFAPIClient.m */; };
+		659E5C39198C0C6200A4EE77 /* MFDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E5C38198C0C6200A4EE77 /* MFDataStore.m */; };
+		659E5C4B198C108000A4EE77 /* MakersFinders_Master.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 659E5C49198C108000A4EE77 /* MakersFinders_Master.xcdatamodeld */; };
 		65ACF8C6198BD44C002CDBED /* yosemite.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ACF8C5198BD44C002CDBED /* yosemite.png */; };
 		65ACF8C9198BD691002CDBED /* MFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ACF8C8198BD691002CDBED /* MFConstants.m */; };
 		65C6EE351989615200E7DD13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C6EE341989615200E7DD13 /* Foundation.framework */; };
@@ -68,7 +72,6 @@
 		65CF9B26198AAE8B009ACA3D /* FISDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B0E198AAE8B009ACA3D /* FISDataStore.m */; };
 		65CF9B27198AAE8B009ACA3D /* FISFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B10198AAE8B009ACA3D /* FISFeedTableViewController.m */; };
 		65CF9B28198AAE8B009ACA3D /* FISProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B12198AAE8B009ACA3D /* FISProductDetailViewController.m */; };
-		65CF9B29198AAE8B009ACA3D /* FISPug.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B14198AAE8B009ACA3D /* FISPug.m */; };
 		65CF9B2A198AAE8B009ACA3D /* FISPugCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B15198AAE8B009ACA3D /* FISPugCollectionViewCell.xib */; };
 		65CF9B2B198AAE8B009ACA3D /* HeartIcon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B16198AAE8B009ACA3D /* HeartIcon.ico */; };
 		65CF9B2C198AAE8B009ACA3D /* hearts-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B17198AAE8B009ACA3D /* hearts-512.png */; };
@@ -97,8 +100,11 @@
 		65D1580F198AE8B4000F958D /* collectives@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580D198AE8B4000F958D /* collectives@2x.png */; };
 		65D15810198AE8B4000F958D /* explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580E198AE8B4000F958D /* explore@2x.png */; };
 		65D15819198AEC82000F958D /* MFExploreCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */; };
-		A2A631BB198C0C5500C5ECD2 /* AALAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A631BA198C0C5500C5ECD2 /* AALAPIClient.m */; };
+		65E65521198C18B5003DA661 /* MFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E65520198C18B5003DA661 /* MFUser.m */; };
+		65E65524198C3A56003DA661 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E65523198C3A56003DA661 /* KeychainItemWrapper.m */; };
 		C56655F0365F48A6B3D637EA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F66FE788A7C4C7DB8EB1BC8 /* libPods.a */; };
+		F8DC8A63198C03E400197301 /* Flickr.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DC8A60198C03E400197301 /* Flickr.m */; };
+		F8DC8A64198C03E400197301 /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DC8A62198C03E400197301 /* FlickrPhoto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +122,13 @@
 		6509068C198980FD00E02CB1 /* Neutra-Text-SC.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neutra-Text-SC.ttf"; sourceTree = "<group>"; };
 		650906BE19898ADC00E02CB1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6537869F198AC580000B0A62 /* LaunchImage4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LaunchImage4@2x.png"; path = "MakersFinders_Master/LaunchImage4@2x.png"; sourceTree = "<group>"; };
+		659E5C2D198BF0A800A4EE77 /* MFSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSignupViewController.h; sourceTree = "<group>"; };
+		659E5C2E198BF0A800A4EE77 /* MFSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSignupViewController.m; sourceTree = "<group>"; };
+		659E5C30198BFBA400A4EE77 /* MFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAPIClient.h; sourceTree = "<group>"; };
+		659E5C31198BFBA400A4EE77 /* MFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAPIClient.m; sourceTree = "<group>"; };
+		659E5C37198C0C6200A4EE77 /* MFDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDataStore.h; sourceTree = "<group>"; };
+		659E5C38198C0C6200A4EE77 /* MFDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFDataStore.m; sourceTree = "<group>"; };
+		659E5C4A198C108000A4EE77 /* MakersFinders_Master.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MakersFinders_Master.xcdatamodel; sourceTree = "<group>"; };
 		65ACF8C5198BD44C002CDBED /* yosemite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yosemite.png; sourceTree = "<group>"; };
 		65ACF8C7198BD691002CDBED /* MFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFConstants.h; sourceTree = "<group>"; };
 		65ACF8C8198BD691002CDBED /* MFConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFConstants.m; sourceTree = "<group>"; };
@@ -194,8 +207,6 @@
 		65CF9B10198AAE8B009ACA3D /* FISFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISFeedTableViewController.m; sourceTree = "<group>"; };
 		65CF9B11198AAE8B009ACA3D /* FISProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISProductDetailViewController.h; sourceTree = "<group>"; };
 		65CF9B12198AAE8B009ACA3D /* FISProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISProductDetailViewController.m; sourceTree = "<group>"; };
-		65CF9B13198AAE8B009ACA3D /* FISPug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISPug.h; sourceTree = "<group>"; };
-		65CF9B14198AAE8B009ACA3D /* FISPug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISPug.m; sourceTree = "<group>"; };
 		65CF9B15198AAE8B009ACA3D /* FISPugCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FISPugCollectionViewCell.xib; sourceTree = "<group>"; };
 		65CF9B16198AAE8B009ACA3D /* HeartIcon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = HeartIcon.ico; sourceTree = "<group>"; };
 		65CF9B17198AAE8B009ACA3D /* hearts-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hearts-512.png"; sourceTree = "<group>"; };
@@ -231,9 +242,15 @@
 		65D1580E198AE8B4000F958D /* explore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explore@2x.png"; sourceTree = "<group>"; };
 		65D15817198AEC82000F958D /* MFExploreCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFExploreCustomTableViewCell.h; sourceTree = "<group>"; };
 		65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFExploreCustomTableViewCell.m; sourceTree = "<group>"; };
-		A2A631B9198C0C5500C5ECD2 /* AALAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AALAPIClient.h; sourceTree = "<group>"; };
-		A2A631BA198C0C5500C5ECD2 /* AALAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AALAPIClient.m; sourceTree = "<group>"; };
+		65E6551F198C18B5003DA661 /* MFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUser.h; sourceTree = "<group>"; };
+		65E65520198C18B5003DA661 /* MFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFUser.m; sourceTree = "<group>"; };
+		65E65522198C3A56003DA661 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		65E65523198C3A56003DA661 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		DF6266BC6CDE494AB53F6BAC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		F8DC8A5F198C03E400197301 /* Flickr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flickr.h; sourceTree = "<group>"; };
+		F8DC8A60198C03E400197301 /* Flickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flickr.m; sourceTree = "<group>"; };
+		F8DC8A61198C03E400197301 /* FlickrPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhoto.h; sourceTree = "<group>"; };
+		F8DC8A62198C03E400197301 /* FlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhoto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +279,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		659E5C33198BFBBA00A4EE77 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				65E6551F198C18B5003DA661 /* MFUser.h */,
+				65E65520198C18B5003DA661 /* MFUser.m */,
+				659E5C49198C108000A4EE77 /* MakersFinders_Master.xcdatamodeld */,
+				65C6EE431989615200E7DD13 /* MFAppDelegate.h */,
+				65C6EE441989615200E7DD13 /* MFAppDelegate.m */,
+				65ACF8C7198BD691002CDBED /* MFConstants.h */,
+				65ACF8C8198BD691002CDBED /* MFConstants.m */,
+				659E5C30198BFBA400A4EE77 /* MFAPIClient.h */,
+				659E5C31198BFBA400A4EE77 /* MFAPIClient.m */,
+				659E5C37198C0C6200A4EE77 /* MFDataStore.h */,
+				659E5C38198C0C6200A4EE77 /* MFDataStore.m */,
+				65E65522198C3A56003DA661 /* KeychainItemWrapper.h */,
+				65E65523198C3A56003DA661 /* KeychainItemWrapper.m */,
+			);
+			name = Global;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		65C6EE281989615200E7DD13 = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +336,7 @@
 		65C6EE3A1989615200E7DD13 /* MakersFinders_Master */ = {
 			isa = PBXGroup;
 			children = (
+				659E5C33198BFBBA00A4EE77 /* Global */,
 				65CF9AFE198AADE2009ACA3D /* Dan */,
 				65CF9B33198AB13E009ACA3D /* Matt */,
 				65CF9AFF198AAE78009ACA3D /* Marcus */,
@@ -410,8 +449,6 @@
 				65CF9AE9198AA984009ACA3D /* AALCategory.m */,
 				65CF9AEA198AA984009ACA3D /* AALInterest.h */,
 				65CF9AEB198AA984009ACA3D /* AALInterest.m */,
-				A2A631B9198C0C5500C5ECD2 /* AALAPIClient.h */,
-				A2A631BA198C0C5500C5ECD2 /* AALAPIClient.m */,
 				65CF9AEC198AA984009ACA3D /* AALTestViewController.h */,
 				65CF9AED198AA984009ACA3D /* AALTestViewController.m */,
 				65CF9AF2198AAAF7009ACA3D /* checkmark.imageset */,
@@ -424,11 +461,9 @@
 		65CF9AFE198AADE2009ACA3D /* Dan */ = {
 			isa = PBXGroup;
 			children = (
-				65C6EE431989615200E7DD13 /* MFAppDelegate.h */,
-				65C6EE441989615200E7DD13 /* MFAppDelegate.m */,
-				65ACF8C7198BD691002CDBED /* MFConstants.h */,
-				65ACF8C8198BD691002CDBED /* MFConstants.m */,
 				65C6EE461989615200E7DD13 /* Main.storyboard */,
+				659E5C2D198BF0A800A4EE77 /* MFSignupViewController.h */,
+				659E5C2E198BF0A800A4EE77 /* MFSignupViewController.m */,
 				65C6EE691989616D00E7DD13 /* MFCustomTabBarControllerViewController.h */,
 				65C6EE6A1989616D00E7DD13 /* MFCustomTabBarControllerViewController.m */,
 				65CF9AE2198A9174009ACA3D /* MFExploreRootViewController.h */,
@@ -473,8 +508,6 @@
 				65CF9B10198AAE8B009ACA3D /* FISFeedTableViewController.m */,
 				65CF9B11198AAE8B009ACA3D /* FISProductDetailViewController.h */,
 				65CF9B12198AAE8B009ACA3D /* FISProductDetailViewController.m */,
-				65CF9B13198AAE8B009ACA3D /* FISPug.h */,
-				65CF9B14198AAE8B009ACA3D /* FISPug.m */,
 				65CF9B15198AAE8B009ACA3D /* FISPugCollectionViewCell.xib */,
 				65CF9B16198AAE8B009ACA3D /* HeartIcon.ico */,
 				65CF9B17198AAE8B009ACA3D /* hearts-512.png */,
@@ -483,6 +516,10 @@
 				65CF9B1A198AAE8B009ACA3D /* ProfileImageDefault.png */,
 				65CF9B1B198AAE8B009ACA3D /* UITabBarController+hideMeh.h */,
 				65CF9B1C198AAE8B009ACA3D /* UITabBarController+hideMeh.m */,
+				F8DC8A5F198C03E400197301 /* Flickr.h */,
+				F8DC8A60198C03E400197301 /* Flickr.m */,
+				F8DC8A61198C03E400197301 /* FlickrPhoto.h */,
+				F8DC8A62198C03E400197301 /* FlickrPhoto.m */,
 			);
 			name = Marcus;
 			path = ..;
@@ -714,23 +751,29 @@
 				65CF9B26198AAE8B009ACA3D /* FISDataStore.m in Sources */,
 				65CF9B51198AB5C6009ACA3D /* MPSViewController.m in Sources */,
 				65CF9B4E198AB5C6009ACA3D /* MPSCollectionLandscapeViewController.m in Sources */,
+				65E65524198C3A56003DA661 /* KeychainItemWrapper.m in Sources */,
+				659E5C32198BFBA400A4EE77 /* MFAPIClient.m in Sources */,
 				65CF9AEE198AA984009ACA3D /* AALCategory.m in Sources */,
 				65CF9B22198AAE8B009ACA3D /* FISCollectionLandscapeViewController.m in Sources */,
 				65CF9AF0198AA984009ACA3D /* AALTestViewController.m in Sources */,
 				65C6EE411989615200E7DD13 /* main.m in Sources */,
+				F8DC8A63198C03E400197301 /* Flickr.m in Sources */,
 				65CF9B4C198AB5C6009ACA3D /* MPSAPICall.m in Sources */,
 				65CF9AE1198A8D10009ACA3D /* MFLoginViewController.m in Sources */,
-				A2A631BB198C0C5500C5ECD2 /* AALAPIClient.m in Sources */,
 				65CF9B4F198AB5C6009ACA3D /* MPSConstants.m in Sources */,
+				659E5C2F198BF0A800A4EE77 /* MFSignupViewController.m in Sources */,
+				659E5C4B198C108000A4EE77 /* MakersFinders_Master.xcdatamodeld in Sources */,
 				65CF9B50198AB5C6009ACA3D /* MPSProfileViewController.m in Sources */,
+				F8DC8A64198C03E400197301 /* FlickrPhoto.m in Sources */,
 				65ACF8C9198BD691002CDBED /* MFConstants.m in Sources */,
 				65C6EE451989615200E7DD13 /* MFAppDelegate.m in Sources */,
+				65E65521198C18B5003DA661 /* MFUser.m in Sources */,
 				65CF9AEF198AA984009ACA3D /* AALInterest.m in Sources */,
-				65CF9B29198AAE8B009ACA3D /* FISPug.m in Sources */,
 				65D15819198AEC82000F958D /* MFExploreCustomTableViewCell.m in Sources */,
 				65CF9AE4198A9174009ACA3D /* MFExploreRootViewController.m in Sources */,
 				65CF9B23198AAE8B009ACA3D /* FISConstants.m in Sources */,
 				65CF9B24198AAE8B009ACA3D /* FISCustomPugCell.m in Sources */,
+				659E5C39198C0C6200A4EE77 /* MFDataStore.m in Sources */,
 				65CF9B21198AAE8B009ACA3D /* FISAPICall.m in Sources */,
 				65C6EE8A198971BB00E7DD13 /* MFUploadRootViewController.m in Sources */,
 				65C6EE6B1989616D00E7DD13 /* MFCustomTabBarControllerViewController.m in Sources */,
@@ -959,6 +1002,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		659E5C49198C108000A4EE77 /* MakersFinders_Master.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				659E5C4A198C108000A4EE77 /* MakersFinders_Master.xcdatamodel */,
+			);
+			currentVersion = 659E5C4A198C108000A4EE77 /* MakersFinders_Master.xcdatamodel */;
+			path = MakersFinders_Master.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 65C6EE291989615200E7DD13 /* Project object */;
 }
