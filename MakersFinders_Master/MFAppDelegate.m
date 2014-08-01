@@ -14,8 +14,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    MFLoginViewController *loginVC = [[MFLoginViewController alloc] init];
-    self.window.rootViewController = loginVC;
+    UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MFLoginViewController *loginVC = [main instantiateViewControllerWithIdentifier:@"login"];
+    UINavigationController *loginNavvc = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    self.window.rootViewController = loginNavvc;
     
 //    MFCustomTabBarControllerViewController *rootTabBarController = [[MFCustomTabBarControllerViewController alloc] init];
 //    self.window.rootViewController = rootTabBarController;
