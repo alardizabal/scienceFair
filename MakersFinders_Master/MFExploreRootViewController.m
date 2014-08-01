@@ -8,6 +8,7 @@
 
 #import "MFExploreRootViewController.h"
 #import "MFExploreCustomTableViewCell.h"
+#import "MFConstants.h"
 
 @interface MFExploreRootViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *makersFindersButton;
@@ -45,10 +46,11 @@
                                                                     };
     
     self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/255.0 green:62/255.0 blue:81/255.0 alpha:1];
-    
+    self.navigationController.navigationBar.barTintColor = MFnavBarColor;
     //Setting up menu button images and text
-    self.makersFindersButton.backgroundColor = [UIColor colorWithRed:0 green:119/255.0 blue:126/255.0 alpha:1];
+    self.makersFindersButton.backgroundColor = MFtealColor;
+    self.collectivesButton.backgroundColor = MFdarkTealColor;
+    
     self.makersFindersImage.image = [UIImage imageNamed:@"explore"];
     self.collectivesImage.image = [UIImage imageNamed:@"collectives"];
     self.searchField.backgroundColor = [UIColor colorWithRed:115/255.0 green:115/255.0 blue:115/255.0 alpha:1];
