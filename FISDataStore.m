@@ -8,8 +8,7 @@
 
 #import "FISDataStore.h"
 #import "FISAPICall.h"
-#import "FISPug.h"
-//Delete after feed data is provided 
+//Delete after feed data is provided
 #import "Flickr.h"
 #import "FlickrPhoto.h"
 
@@ -43,7 +42,7 @@
     [tempFlickrtoProvideFeedImages searchFlickrForTerm:artistsToDisplayFeedImages[random]
                                        completionBlock:^(NSArray *results, NSError *error) {
                                            for (NSInteger i=0; i<[results count]; i++) {
-                                               FlickrPhoto *photoToPass = results[i];
+                                               FlickrPhoto *photoToPass = results[i]; 
                                                [self.flickrPhotoFeed addObject:photoToPass];
                                            }
                                            completionHandler();

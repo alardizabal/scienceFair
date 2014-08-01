@@ -70,7 +70,6 @@
 		65CF9B26198AAE8B009ACA3D /* FISDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B0E198AAE8B009ACA3D /* FISDataStore.m */; };
 		65CF9B27198AAE8B009ACA3D /* FISFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B10198AAE8B009ACA3D /* FISFeedTableViewController.m */; };
 		65CF9B28198AAE8B009ACA3D /* FISProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B12198AAE8B009ACA3D /* FISProductDetailViewController.m */; };
-		65CF9B29198AAE8B009ACA3D /* FISPug.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B14198AAE8B009ACA3D /* FISPug.m */; };
 		65CF9B2A198AAE8B009ACA3D /* FISPugCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B15198AAE8B009ACA3D /* FISPugCollectionViewCell.xib */; };
 		65CF9B2B198AAE8B009ACA3D /* HeartIcon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B16198AAE8B009ACA3D /* HeartIcon.ico */; };
 		65CF9B2C198AAE8B009ACA3D /* hearts-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B17198AAE8B009ACA3D /* hearts-512.png */; };
@@ -201,8 +200,6 @@
 		65CF9B10198AAE8B009ACA3D /* FISFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISFeedTableViewController.m; sourceTree = "<group>"; };
 		65CF9B11198AAE8B009ACA3D /* FISProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISProductDetailViewController.h; sourceTree = "<group>"; };
 		65CF9B12198AAE8B009ACA3D /* FISProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISProductDetailViewController.m; sourceTree = "<group>"; };
-		65CF9B13198AAE8B009ACA3D /* FISPug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISPug.h; sourceTree = "<group>"; };
-		65CF9B14198AAE8B009ACA3D /* FISPug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISPug.m; sourceTree = "<group>"; };
 		65CF9B15198AAE8B009ACA3D /* FISPugCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FISPugCollectionViewCell.xib; sourceTree = "<group>"; };
 		65CF9B16198AAE8B009ACA3D /* HeartIcon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = HeartIcon.ico; sourceTree = "<group>"; };
 		65CF9B17198AAE8B009ACA3D /* hearts-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hearts-512.png"; sourceTree = "<group>"; };
@@ -493,8 +490,6 @@
 				65CF9B10198AAE8B009ACA3D /* FISFeedTableViewController.m */,
 				65CF9B11198AAE8B009ACA3D /* FISProductDetailViewController.h */,
 				65CF9B12198AAE8B009ACA3D /* FISProductDetailViewController.m */,
-				65CF9B13198AAE8B009ACA3D /* FISPug.h */,
-				65CF9B14198AAE8B009ACA3D /* FISPug.m */,
 				65CF9B15198AAE8B009ACA3D /* FISPugCollectionViewCell.xib */,
 				65CF9B16198AAE8B009ACA3D /* HeartIcon.ico */,
 				65CF9B17198AAE8B009ACA3D /* hearts-512.png */,
@@ -753,7 +748,6 @@
 				65ACF8C9198BD691002CDBED /* MFConstants.m in Sources */,
 				65C6EE451989615200E7DD13 /* MFAppDelegate.m in Sources */,
 				65CF9AEF198AA984009ACA3D /* AALInterest.m in Sources */,
-				65CF9B29198AAE8B009ACA3D /* FISPug.m in Sources */,
 				65D15819198AEC82000F958D /* MFExploreCustomTableViewCell.m in Sources */,
 				65CF9AE4198A9174009ACA3D /* MFExploreRootViewController.m in Sources */,
 				65CF9B23198AAE8B009ACA3D /* FISConstants.m in Sources */,

@@ -8,7 +8,6 @@
 
 #import "FISFeedTableViewController.h"
 #import "FISDataStore.h"
-#import "FISPug.h"
 #import "FISCustomPugCell.h"
 #import "UITabBarController+hideMeh.h"
 #import "FISProductDetailViewController.h"
@@ -100,7 +99,7 @@
     FISCustomPugCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pugCell" forIndexPath:indexPath];
     
     FlickrPhoto *eachPhoto = self.store.flickrPhotoFeed[indexPath.row];
-    cell.pugCellImageView.image = eachPhoto.thumbnail;
+    cell.pugCellImageView.image = eachPhoto.thumbnail; 
     
     return cell;
 }

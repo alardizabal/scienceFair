@@ -10,4 +10,18 @@
 
 @implementation FlickrPhoto
 
+-(instancetype)init
+{
+    return [self initWithFlikrImage:[UIImage new]];
+}
+
+-(instancetype)initWithFlikrImage:(UIImage *)flickrArtist
+{
+    self = [super init];
+    if (self) {
+        _thumbnail = flickrArtist;
+    }
+    return self;
+}
+
 @end

@@ -18,4 +18,7 @@
 @property(nonatomic) NSInteger server;
 @property(nonatomic,strong) NSString *secret;
 
+//-(instancetype)init;
+//-(instancetype)initWithFlikrImage:(UIImage *)flickrArtist;
+
 @end

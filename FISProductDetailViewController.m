@@ -8,7 +8,6 @@
 
 #import "FISProductDetailViewController.h"
 #import "UITabBarController+hideMeh.h"
-#import "FISPug.h"
 //Delete after test data is done
 #import "FlickrPhoto.h"
 
