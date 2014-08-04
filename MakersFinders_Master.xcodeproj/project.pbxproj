@@ -83,7 +83,6 @@
 		65CF9B2D198AAE8B009ACA3D /* pen-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B18198AAE8B009ACA3D /* pen-512.png */; };
 		65CF9B2E198AAE8B009ACA3D /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B19198AAE8B009ACA3D /* placeholder.png */; };
 		65CF9B2F198AAE8B009ACA3D /* ProfileImageDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B1A198AAE8B009ACA3D /* ProfileImageDefault.png */; };
-		65CF9B30198AAE8B009ACA3D /* UITabBarController+hideMeh.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B1C198AAE8B009ACA3D /* UITabBarController+hideMeh.m */; };
 		65D1580F198AE8B4000F958D /* collectives@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580D198AE8B4000F958D /* collectives@2x.png */; };
 		65D15810198AE8B4000F958D /* explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580E198AE8B4000F958D /* explore@2x.png */; };
 		65D15819198AEC82000F958D /* MFExploreCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */; };
@@ -214,8 +213,6 @@
 		65CF9B18198AAE8B009ACA3D /* pen-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pen-512.png"; sourceTree = "<group>"; };
 		65CF9B19198AAE8B009ACA3D /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		65CF9B1A198AAE8B009ACA3D /* ProfileImageDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfileImageDefault.png; sourceTree = "<group>"; };
-		65CF9B1B198AAE8B009ACA3D /* UITabBarController+hideMeh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+hideMeh.h"; sourceTree = "<group>"; };
-		65CF9B1C198AAE8B009ACA3D /* UITabBarController+hideMeh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+hideMeh.m"; sourceTree = "<group>"; };
 		65D1580D198AE8B4000F958D /* collectives@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "collectives@2x.png"; sourceTree = "<group>"; };
 		65D1580E198AE8B4000F958D /* explore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explore@2x.png"; sourceTree = "<group>"; };
 		65D15817198AEC82000F958D /* MFExploreCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFExploreCustomTableViewCell.h; sourceTree = "<group>"; };
@@ -519,8 +516,6 @@
 				65CF9B18198AAE8B009ACA3D /* pen-512.png */,
 				65CF9B19198AAE8B009ACA3D /* placeholder.png */,
 				65CF9B1A198AAE8B009ACA3D /* ProfileImageDefault.png */,
-				65CF9B1B198AAE8B009ACA3D /* UITabBarController+hideMeh.h */,
-				65CF9B1C198AAE8B009ACA3D /* UITabBarController+hideMeh.m */,
 				F8DC8A5F198C03E400197301 /* Flickr.h */,
 				F8DC8A60198C03E400197301 /* Flickr.m */,
 				F8DC8A61198C03E400197301 /* FlickrPhoto.h */,
@@ -736,7 +731,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C99B5D63198FE2D90079F2B6 /* MPSProfileViewController.m in Sources */,
-				65CF9B30198AAE8B009ACA3D /* UITabBarController+hideMeh.m in Sources */,
 				65CF9B28198AAE8B009ACA3D /* FISProductDetailViewController.m in Sources */,
 				65CF9B27198AAE8B009ACA3D /* FISFeedTableViewController.m in Sources */,
 				65CF9B26198AAE8B009ACA3D /* FISDataStore.m in Sources */,

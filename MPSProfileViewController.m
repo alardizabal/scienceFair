@@ -131,22 +131,20 @@
     
     
     FISDataStore *store = [FISDataStore sharedDataStore];
-    [store flickrFeedImages:^{
+    [store flickrFeedImages:^(NSArray *flickrPhotosArray) {
         for (NSInteger i = 0; i<4; i++) {
             UIImageView *makerImageView = makerImageViews[i];
             FlickrPhoto *flickrmake = store.flickrPhotoFeed[i];
-            makerImageView.image = flickrmake.thumbnail;
-            
+
             UIImageView *findsImageView = findsImageViews[i];
             FlickrPhoto *flickrfind = store.flickrPhotoFeed[i+4];
-            findsImageView.image = flickrfind.thumbnail;
-        }
-        
-    }];
-    
 
-    
-    
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                makerImageView.image = flickrmake.thumbnail;
+                findsImageView.image = flickrfind.thumbnail;
+            }];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
