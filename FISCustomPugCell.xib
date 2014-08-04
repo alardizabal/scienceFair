@@ -37,16 +37,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DG8-Vj-cgo">
-                        <rect key="frame" x="277" y="242" width="43" height="25"/>
+                        <rect key="frame" x="277" y="242" width="31" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" image="heart_empty.png">
+                        <state key="normal" image="binoculars.png">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3E-5H-q3J">
-                        <rect key="frame" x="233" y="238" width="36" height="30"/>
+                        <rect key="frame" x="233" y="237" width="36" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" image="Drinks.png">
+                        <state key="normal" image="hammer_1.png">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
@@ -62,8 +62,8 @@
     </objects>
     <resources>
         <image name="DefaultProfilePic.png" width="217" height="249"/>
-        <image name="Drinks.png" width="36" height="36"/>
-        <image name="heart_empty.png" width="16" height="16"/>
+        <image name="binoculars.png" width="512" height="512"/>
+        <image name="hammer_1.png" width="512" height="512"/>
         <image name="placeholder.png" width="1280" height="800"/>
     </resources>
 </document>
