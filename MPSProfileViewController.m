@@ -9,6 +9,7 @@
 #import "MPSProfileViewController.h"
 #import "FISDataStore.h"
 #import "FlickrPhoto.h"
+#import "FISFeedTableViewController.h"
 
 @interface MPSProfileViewController ()
 
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView *findContainerView;
 @property (strong, nonatomic) NSString *userImageURL;
 - (IBAction)makerIsTapped:(id)sender;
+- (IBAction)finderIsTapped:(id)sender;
 @property (strong, nonatomic) NSString *userHeaderURL;
 @end
 
@@ -176,5 +178,13 @@
 - (IBAction)followButton:(id)sender {
 }
 - (IBAction)makerIsTapped:(id)sender {
+    FISFeedTableViewController *feedTVC = [[FISFeedTableViewController alloc]init];
+    [self.navigationController pushViewController:feedTVC animated:YES];
+}
+
+- (IBAction)finderIsTapped:(id)sender {
+    FISFeedTableViewController *feedTVC = [[FISFeedTableViewController alloc]init];
+    [self.navigationController pushViewController:feedTVC animated:YES];
+
 }
 @end

@@ -594,7 +594,7 @@
 				ORGANIZATIONNAME = ADMM;
 				TargetAttributes = {
 					65C6EE301989615200E7DD13 = {
-						DevelopmentTeam = KXY9EDFTF5;
+						DevelopmentTeam = 78N35Y6K9P;
 					};
 					65C6EE511989615200E7DD13 = {
 						TestTargetID = 65C6EE301989615200E7DD13;
