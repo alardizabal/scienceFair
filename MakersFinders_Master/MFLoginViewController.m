@@ -10,11 +10,15 @@
 #import "MFAPIClient.h"
 #import "MFCustomTabBarControllerViewController.h"
 
-@interface MFLoginViewController ()
+@interface MFLoginViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 - (IBAction)loginTapped:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIView *bottomContainer;
+@property (weak, nonatomic) IBOutlet UILabel *MakersFindersLogo;
+@property (weak, nonatomic) IBOutlet UIView *loginButton;
 
 @end
 
@@ -34,7 +38,26 @@
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = YES;
     self.passwordField.secureTextEntry = YES;
+    
+    self.emailField.delegate = self;
+    self.passwordField.delegate = self;
+    
+    self.bottomContainer.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"loginMainImage"]];
+    self.MakersFindersLogo.text = @"MakersFinders";
+    self.MakersFindersLogo.font = [UIFont fontWithName:@"NeutraText-BookSC" size:40];
+    self.MakersFindersLogo.textColor = [UIColor whiteColor];
+    self.MakersFindersLogo.shadowColor = [UIColor blackColor];
+    self.MakersFindersLogo.shadowOffset = CGSizeMake(1,1);
+    self.loginButton.layer.cornerRadius = 6.0f;
+    
+    
     // Do any additional setup after loading the view.
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning

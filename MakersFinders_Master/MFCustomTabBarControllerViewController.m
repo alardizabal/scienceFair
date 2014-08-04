@@ -85,8 +85,7 @@
     UITabBarItem *item4 = [self.tabBar.items objectAtIndex:4];
     item4.image = [UIImage imageNamed:@"user.png"];
     item4.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
-    
-    //    item4.title = @"Profile";
+    item4.title = @"";
     
     self.tabBar.backgroundImage = [UIImage imageNamed:@"tabbarbackground"];
     self.tabBar.translucent = NO;

@@ -20,6 +20,8 @@
 
 - (IBAction)signupTapped:(id)sender;
 
+- (IBAction)cancelTapped:(id)sender;
+
 @end
 
 @implementation MFSignupViewController
@@ -70,6 +72,10 @@
         createdUser.email = response[@"email"];
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
+}
+
+- (IBAction)cancelTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
