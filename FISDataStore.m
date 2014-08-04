@@ -38,7 +38,7 @@
 {
     for (NSInteger i=0; i<30; i++)
     {
-        UIImage *placeHolderImage = [UIImage imageNamed:@"DefaultProfilePic.png"];
+        UIImage *placeHolderImage = [UIImage imageNamed:@"placeholder.png"];
         FlickrPhoto *newPhoto = [[FlickrPhoto alloc] init];
         newPhoto.thumbnail = placeHolderImage;
         [self.flickrPhotoFeed addObject:newPhoto];
