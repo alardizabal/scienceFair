@@ -13,11 +13,13 @@
 
 @interface AALTestViewController ()
 
-@property (strong, nonatomic) NSMutableArray *categoryArray;
-@property (nonatomic) NSMutableArray *interestsArray;
-
 @property (nonatomic) UIScrollView *categoryScrollView;
 @property (nonatomic) UIScrollView *interestScrollView;
+
+@property (nonatomic) NSMutableArray *categoryArray;
+@property (nonatomic) NSMutableArray *interestsArray;
+
+@property (nonatomic) UIView *containerView;
 
 - (void) showInterests:(NSString *)category;
 
@@ -38,6 +40,100 @@
 {
     [super viewDidLoad];
     
+    self.containerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 568)];
+    self.containerView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.containerView];
+    
+    //    [self.view removeConstraints:self.view.constraints];
+    //    self.view.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.containerView removeConstraints:self.containerView.constraints];
+    self.containerView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSDictionary *views = NSDictionaryOfVariableBindings(_containerView);
+    //
+    //    NSLayoutConstraint *containerViewTopConstraint =
+    //    [NSLayoutConstraint constraintWithItem:self.containerView
+    //                                 attribute:NSLayoutAttributeTop
+    //                                 relatedBy:NSLayoutRelationEqual
+    //                                    toItem:self.view
+    //                                 attribute:NSLayoutAttributeTop
+    //                                multiplier:1.0
+    //                                  constant:0.0];
+    //    [self.view addConstraint:containerViewTopConstraint];
+    
+    //    NSArray *topContainerViewVerticalConstraints =
+    //    [NSLayoutConstraint constraintsWithVisualFormat:@"V:[_containerView]"
+    //                                            options:0
+    //                                            metrics:nil
+    //                                              views:views];
+    //    [self.view addConstraints:topContainerViewVerticalConstraints];
+    //
+    //    NSArray *topContainerViewHorizontalConstraints =
+    //    [NSLayoutConstraint constraintsWithVisualFormat:@"H:[_containerView]"
+    //                                            options:0
+    //                                            metrics:nil
+    //                                              views:views];
+    //    [self.view addConstraints:topContainerViewHorizontalConstraints];
+    
+    //        NSArray *containerViewVerticalConstraints =
+    //        [NSLayoutConstraint constraintsWithVisualFormat:@"V:[_containerView]|"
+    //                                                options:0
+    //                                                metrics:nil
+    //                                                  views:views];
+    //        [self.view addConstraints:containerViewVerticalConstraints];
+    //
+    //        NSLayoutConstraint *containerViewTopConstraint =
+    //        [NSLayoutConstraint constraintWithItem:self.containerView
+    //                                     attribute:NSLayoutAttributeTop
+    //                                     relatedBy:NSLayoutRelationEqual
+    //                                        toItem:self.topLayoutGuide
+    //                                     attribute:NSLayoutAttributeBottom
+    //                                    multiplier:1.5
+    //                                      constant:0.0];
+    //        [self.view addConstraint:containerViewTopConstraint];
+    
+    NSLayoutConstraint *topContainerViewCenterXConstraint =
+    [NSLayoutConstraint constraintWithItem:self.containerView
+                                 attribute:NSLayoutAttributeCenterX
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.view
+                                 attribute:NSLayoutAttributeCenterX
+                                multiplier:1.0
+                                  constant:0.0];
+    [self.view addConstraint:topContainerViewCenterXConstraint];
+    
+    NSLayoutConstraint *topContainerViewYConstraint =
+    [NSLayoutConstraint constraintWithItem:self.containerView
+                                 attribute:NSLayoutAttributeCenterY
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.view
+                                 attribute:NSLayoutAttributeCenterY
+                                multiplier:1.0
+                                  constant:40.0];
+    [self.view addConstraint:topContainerViewYConstraint];
+    
+    NSLayoutConstraint *topContainerViewHeight =
+    [NSLayoutConstraint constraintWithItem:self.containerView
+                                 attribute:NSLayoutAttributeHeight
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.view
+                                 attribute:NSLayoutAttributeHeight
+                                multiplier:1.0
+                                  constant:0.0];
+    [self.view addConstraint:topContainerViewHeight];
+    
+    NSLayoutConstraint *topContainerViewWidth =
+    [NSLayoutConstraint constraintWithItem:self.containerView
+                                 attribute:NSLayoutAttributeWidth
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.view
+                                 attribute:NSLayoutAttributeWidth
+                                multiplier:1.0
+                                  constant:0.0];
+    [self.view addConstraint:topContainerViewWidth];
+    
+    
     self.categoryArray = [[NSMutableArray alloc]init];
     self.interestsArray = [NSMutableArray array];
     
@@ -51,25 +147,12 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/255.0 green:62/255.0 blue:81/255.0 alpha:1];
     
     
-    UILabel *followYourInterestsLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 3, self.view.frame.size.width, 20)];
+    UILabel *followYourInterestsLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
     followYourInterestsLabel.text = @"Follow your interests:";
     followYourInterestsLabel.accessibilityLabel = @"Follow your interests";
     followYourInterestsLabel.font = [UIFont boldSystemFontOfSize:12];
     followYourInterestsLabel.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:followYourInterestsLabel];
-    
-    //Do any additional setup after loading the view.
-    
-//    followYourInterestsLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    
-//    NSDictionary *nameMap = @{@"followYourInterestsLabel" : self.categoryScrollView,
-//                              @"interestScrollView" : self.interestScrollView};
-//    
-//    NSArray *verticalConstraintCategoryScrollView = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[categoryScrollView]-"
-//                                                                                            options:0
-//                                                                                            metrics:nil
-//                                                                                              views:nameMap];
-//    [self.view addConstraints:verticalConstraintCategoryScrollView];
+    [self.containerView addSubview:followYourInterestsLabel];
     
     [self stageData];
     
@@ -93,6 +176,12 @@
     //    AALInterest *interest10 = [[AALInterest alloc]initWithInterestName:@"Camping" interestImage:[UIImage imageNamed:@"times_square"]];
     //
     //    AALCategory *category2 = [[AALCategory alloc]initWithCategoryName:@"Outdoors" categoryImage:[UIImage imageNamed:@"times_square"] interests:@[interest5, interest6, interest7, interest8, interest9, interest10]];
+    
+    
+    //    NSOperationQueue *apiDownloader = [[NSOperationQueue alloc]init];
+    //    apiDownloader.maxConcurrentOperationCount = 10;
+    
+    //    AFHTTPRequestOperation *getImageOperation = [[AFHTTPRequestOperation alloc]initWithRequest:imageRequest];
     
     [AALAPIClient getCategoryImagesWithCompletion:^(NSDictionary *dictionary) {
         
@@ -121,8 +210,10 @@
             
             [self.categoryArray addObject:tempCategory];
         }
+        
         [self showCategories];
     }];
+    
 }
 
 - (void) showCategories
@@ -196,7 +287,7 @@
     self.categoryScrollView.contentSize = CGSizeMake([self.categoryArray count] * (categoryViewWidth + categoryPadding), categoryViewHeight);
     
     [self.categoryScrollView addSubview:contentView];
-    [self.view addSubview:self.categoryScrollView];
+    [self.containerView addSubview:self.categoryScrollView];
 }
 
 - (void) showInterests:(NSString *)category
@@ -266,7 +357,7 @@
     scrollView.contentSize = CGSizeMake([self.interestsArray count] * (100 + interestPadding), 150);
     
     [scrollView addSubview:contentView];
-    [self.view addSubview:scrollView];
+    [self.containerView addSubview:scrollView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -279,9 +370,9 @@
 {
     NSString *categoryTapped = recognizer.view.accessibilityLabel;
     
-    NSLog(@"%@", self.view.subviews);
+    NSLog(@"%@", self.containerView.subviews);
     
-    for (UIView *tempView in self.view.subviews) {
+    for (UIView *tempView in self.containerView.subviews) {
         
         NSString *tempViewClass = (NSString *)tempView.class;
         
