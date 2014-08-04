@@ -14,6 +14,7 @@
 
 -(instancetype)init; 
 +(instancetype)sharedDataStore;
--(void)flickrFeedImages:(void (^)())completionHandler;
+-(void)placeHolderImages;
+-(void)flickrFeedImages:(void (^)(NSArray *flickrPhotosArray))completionHandler;
 
 @end

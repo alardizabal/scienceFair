@@ -16,7 +16,7 @@
 + (NSString *)flickrSearchURLForSearchTerm:(NSString *) searchTerm
 {
     searchTerm = [searchTerm stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    return [NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&text=%@&per_page=20&format=json&nojsoncallback=1",kFlickrAPIKey,searchTerm];
+    return [NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&text=%@&per_page=30&format=json&nojsoncallback=1",kFlickrAPIKey,searchTerm];
 }
 
 + (NSString *)flickrPhotoURLForFlickrPhoto:(FlickrPhoto *) flickrPhoto size:(NSString *) size
@@ -79,7 +79,6 @@
                         
                         [flickrPhotos addObject:photo];
                     }
-                    
                     completionBlock(flickrPhotos,nil);
                 }
             }

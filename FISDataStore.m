@@ -34,18 +34,23 @@
     return self; 
 }
 
--(void)flickrFeedImages:(void (^)())completionHandler
+-(void)placeHolderImages
+{
+    for (NSInteger i=0; i<30; i++)
+    {
+        UIImage *placeHolderImage = [UIImage imageNamed:@"DefaultProfilePic.png"];
+        FlickrPhoto *newPhoto = [[FlickrPhoto alloc] init];
+        newPhoto.thumbnail = placeHolderImage;
+        [self.flickrPhotoFeed addObject:newPhoto];
+    }
+}
+
+-(void)flickrFeedImages:(void (^)(NSArray *))completionHandler
 {
     Flickr *tempFlickrtoProvideFeedImages = [[Flickr alloc] init];
-    NSInteger random = arc4random_uniform(5);
-    NSArray *artistsToDisplayFeedImages = @[@"96dpi", @"jeroenbennink", @"spettacolopuro", @"artinteschner", @"shironekoeuro", @"pedrosz"];
-    [tempFlickrtoProvideFeedImages searchFlickrForTerm:artistsToDisplayFeedImages[random]
+    [tempFlickrtoProvideFeedImages searchFlickrForTerm:@"likedaffodils"
                                        completionBlock:^(NSArray *results, NSError *error) {
-                                           for (NSInteger i=0; i<[results count]; i++) {
-                                               FlickrPhoto *photoToPass = results[i]; 
-                                               [self.flickrPhotoFeed addObject:photoToPass];
-                                           }
-                                           completionHandler();
+                                           completionHandler(results); 
                                        }];
 }
 

@@ -76,7 +76,6 @@
 		65CF9B2D198AAE8B009ACA3D /* pen-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B18198AAE8B009ACA3D /* pen-512.png */; };
 		65CF9B2E198AAE8B009ACA3D /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B19198AAE8B009ACA3D /* placeholder.png */; };
 		65CF9B2F198AAE8B009ACA3D /* ProfileImageDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B1A198AAE8B009ACA3D /* ProfileImageDefault.png */; };
-		65CF9B30198AAE8B009ACA3D /* UITabBarController+hideMeh.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B1C198AAE8B009ACA3D /* UITabBarController+hideMeh.m */; };
 		65CF9B4C198AB5C6009ACA3D /* MPSAPICall.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B35198AB5C6009ACA3D /* MPSAPICall.m */; };
 		65CF9B4E198AB5C6009ACA3D /* MPSCollectionLandscapeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B39198AB5C6009ACA3D /* MPSCollectionLandscapeViewController.m */; };
 		65CF9B4F198AB5C6009ACA3D /* MPSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B3B198AB5C6009ACA3D /* MPSConstants.m */; };
@@ -206,8 +205,6 @@
 		65CF9B18198AAE8B009ACA3D /* pen-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pen-512.png"; sourceTree = "<group>"; };
 		65CF9B19198AAE8B009ACA3D /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		65CF9B1A198AAE8B009ACA3D /* ProfileImageDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfileImageDefault.png; sourceTree = "<group>"; };
-		65CF9B1B198AAE8B009ACA3D /* UITabBarController+hideMeh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+hideMeh.h"; sourceTree = "<group>"; };
-		65CF9B1C198AAE8B009ACA3D /* UITabBarController+hideMeh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+hideMeh.m"; sourceTree = "<group>"; };
 		65CF9B34198AB5C6009ACA3D /* MPSAPICall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSAPICall.h; sourceTree = "<group>"; };
 		65CF9B35198AB5C6009ACA3D /* MPSAPICall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSAPICall.m; sourceTree = "<group>"; };
 		65CF9B38198AB5C6009ACA3D /* MPSCollectionLandscapeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSCollectionLandscapeViewController.h; sourceTree = "<group>"; };
@@ -496,8 +493,6 @@
 				65CF9B18198AAE8B009ACA3D /* pen-512.png */,
 				65CF9B19198AAE8B009ACA3D /* placeholder.png */,
 				65CF9B1A198AAE8B009ACA3D /* ProfileImageDefault.png */,
-				65CF9B1B198AAE8B009ACA3D /* UITabBarController+hideMeh.h */,
-				65CF9B1C198AAE8B009ACA3D /* UITabBarController+hideMeh.m */,
 				F8DC8A5F198C03E400197301 /* Flickr.h */,
 				F8DC8A60198C03E400197301 /* Flickr.m */,
 				F8DC8A61198C03E400197301 /* FlickrPhoto.h */,
@@ -727,7 +722,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65CF9B30198AAE8B009ACA3D /* UITabBarController+hideMeh.m in Sources */,
 				65CF9B28198AAE8B009ACA3D /* FISProductDetailViewController.m in Sources */,
 				65CF9B27198AAE8B009ACA3D /* FISFeedTableViewController.m in Sources */,
 				65CF9B26198AAE8B009ACA3D /* FISDataStore.m in Sources */,
