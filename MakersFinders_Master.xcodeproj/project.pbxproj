@@ -104,6 +104,7 @@
 		65D15819198AEC82000F958D /* MFExploreCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */; };
 		65E65521198C18B5003DA661 /* MFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E65520198C18B5003DA661 /* MFUser.m */; };
 		65E65524198C3A56003DA661 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E65523198C3A56003DA661 /* KeychainItemWrapper.m */; };
+		A2A631BE198C4DAB00C5ECD2 /* AALAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A631BD198C4DAB00C5ECD2 /* AALAPIClient.m */; };
 		C56655F0365F48A6B3D637EA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F66FE788A7C4C7DB8EB1BC8 /* libPods.a */; };
 		F8DC8A63198C03E400197301 /* Flickr.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DC8A60198C03E400197301 /* Flickr.m */; };
 		F8DC8A64198C03E400197301 /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DC8A62198C03E400197301 /* FlickrPhoto.m */; };
@@ -250,6 +251,8 @@
 		65E65520198C18B5003DA661 /* MFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFUser.m; sourceTree = "<group>"; };
 		65E65522198C3A56003DA661 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		65E65523198C3A56003DA661 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		A2A631BC198C4DAB00C5ECD2 /* AALAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AALAPIClient.h; sourceTree = "<group>"; };
+		A2A631BD198C4DAB00C5ECD2 /* AALAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AALAPIClient.m; sourceTree = "<group>"; };
 		DF6266BC6CDE494AB53F6BAC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		F8DC8A5F198C03E400197301 /* Flickr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flickr.h; sourceTree = "<group>"; };
 		F8DC8A60198C03E400197301 /* Flickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flickr.m; sourceTree = "<group>"; };
@@ -459,6 +462,8 @@
 			children = (
 				65CF9AF1198AAAF7009ACA3D /* AALMain.storyboard */,
 				65CF9AE8198AA984009ACA3D /* AALCategory.h */,
+				A2A631BC198C4DAB00C5ECD2 /* AALAPIClient.h */,
+				A2A631BD198C4DAB00C5ECD2 /* AALAPIClient.m */,
 				65CF9AE9198AA984009ACA3D /* AALCategory.m */,
 				65CF9AEA198AA984009ACA3D /* AALInterest.h */,
 				65CF9AEB198AA984009ACA3D /* AALInterest.m */,
@@ -776,6 +781,7 @@
 				F8DC8A63198C03E400197301 /* Flickr.m in Sources */,
 				65CF9B4C198AB5C6009ACA3D /* MPSAPICall.m in Sources */,
 				65CF9AE1198A8D10009ACA3D /* MFLoginViewController.m in Sources */,
+				A2A631BE198C4DAB00C5ECD2 /* AALAPIClient.m in Sources */,
 				65CF9B4F198AB5C6009ACA3D /* MPSConstants.m in Sources */,
 				659E5C2F198BF0A800A4EE77 /* MFSignupViewController.m in Sources */,
 				659E5C4B198C108000A4EE77 /* MakersFinders_Master.xcdatamodeld in Sources */,
