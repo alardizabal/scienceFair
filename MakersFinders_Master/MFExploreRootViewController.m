@@ -8,6 +8,7 @@
 
 #import "MFExploreRootViewController.h"
 #import "MFExploreCustomTableViewCell.h"
+#import "AALTestViewController.h"
 
 @interface MFExploreRootViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *makersFindersButton;
@@ -48,6 +49,22 @@
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = MFnavBarColor;
     
+    //Setting up custom buttons on navigation bar
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftButton setBackgroundImage:[UIImage imageNamed:@"peoplebutton"] forState:UIControlStateNormal];
+    leftButton.frame = CGRectMake(0, 0, 25, 25);
+    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
+    [leftButton addTarget:self action:@selector(peopleButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = leftButtonItem;
+    
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightButton setBackgroundImage:[UIImage imageNamed:@"heartbutton"] forState:UIControlStateNormal];
+    rightButton.frame = CGRectMake(0, 0, 22, 25);
+    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+    [rightButton addTarget:self action:@selector(heartButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = rightButtonItem;
+    
+    
     //Setting up menu button images and text
     self.makersFindersButton.backgroundColor = MFtealColor;
     self.collectivesButton.backgroundColor = MFdarkTealColor;
@@ -70,6 +87,18 @@
     [self.view addGestureRecognizer:tap];
 }
 
+-(void)peopleButtonTapped:(id)sender
+{
+    
+}
+
+-(void)heartButtonTapped:(id)sender
+{
+    UIStoryboard *alMain = [UIStoryboard storyboardWithName:@"AALMain" bundle:nil];
+    AALTestViewController *vc1 = [alMain instantiateViewControllerWithIdentifier:@"interests"];
+    UINavigationController *navvc1 = [[UINavigationController alloc] initWithRootViewController:vc1];
+    [self presentViewController:navvc1 animated:YES completion:nil];
+}
 
 - (void) dismissKeyboard
 {
