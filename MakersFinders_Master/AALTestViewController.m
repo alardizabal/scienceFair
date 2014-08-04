@@ -60,16 +60,16 @@
     
     //Do any additional setup after loading the view.
     
-    followYourInterestsLabel.translatesAutoresizingMaskIntoConstraints = NO;
+//    followYourInterestsLabel.translatesAutoresizingMaskIntoConstraints = NO;
     
-    NSDictionary *nameMap = @{@"followYourInterestsLabel" : self.categoryScrollView,
-                              @"interestScrollView" : self.interestScrollView};
-    
-    NSArray *verticalConstraintCategoryScrollView = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[categoryScrollView]-"
-                                                                                            options:0
-                                                                                            metrics:nil
-                                                                                              views:nameMap];
-    [self.view addConstraints:verticalConstraintCategoryScrollView];
+//    NSDictionary *nameMap = @{@"followYourInterestsLabel" : self.categoryScrollView,
+//                              @"interestScrollView" : self.interestScrollView};
+//    
+//    NSArray *verticalConstraintCategoryScrollView = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[categoryScrollView]-"
+//                                                                                            options:0
+//                                                                                            metrics:nil
+//                                                                                              views:nameMap];
+//    [self.view addConstraints:verticalConstraintCategoryScrollView];
     
     [self stageData];
     
