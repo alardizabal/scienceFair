@@ -22,6 +22,9 @@
 - (void)awakeFromNib
 {
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    self.categoryImage.image = [UIImage imageNamed:@"categoryImagePlaceholder"];
+    
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

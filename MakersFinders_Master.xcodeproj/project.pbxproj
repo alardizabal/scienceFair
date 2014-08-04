@@ -52,6 +52,7 @@
 		65C6EE9C198975C700E7DD13 /* bottom_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 65C6EE93198975C700E7DD13 /* bottom_bar.png */; };
 		65CF8534198FC59C001A77BE /* heartbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF8532198FC59C001A77BE /* heartbutton.png */; };
 		65CF8535198FC59C001A77BE /* peoplebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF8533198FC59C001A77BE /* peoplebutton.png */; };
+		65CF8537198FD8EC001A77BE /* categoryImagePlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF8536198FD8EC001A77BE /* categoryImagePlaceholder.png */; };
 		65CF9AD8198A877D009ACA3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C6EE461989615200E7DD13 /* Main.storyboard */; };
 		65CF9ADE198A8BAF009ACA3D /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9ADD198A8BAF009ACA3D /* LaunchImage@2x.png */; };
 		65CF9AE1198A8D10009ACA3D /* MFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9AE0198A8D10009ACA3D /* MFLoginViewController.m */; };
@@ -181,6 +182,7 @@
 		65C6EE93198975C700E7DD13 /* bottom_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_bar.png; sourceTree = "<group>"; };
 		65CF8532198FC59C001A77BE /* heartbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartbutton.png; sourceTree = "<group>"; };
 		65CF8533198FC59C001A77BE /* peoplebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peoplebutton.png; sourceTree = "<group>"; };
+		65CF8536198FD8EC001A77BE /* categoryImagePlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryImagePlaceholder.png; sourceTree = "<group>"; };
 		65CF9ADD198A8BAF009ACA3D /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LaunchImage@2x.png"; path = "MakersFinders_Master/LaunchImage@2x.png"; sourceTree = "<group>"; };
 		65CF9ADF198A8D10009ACA3D /* MFLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFLoginViewController.h; path = MakersFinders_Master/MFLoginViewController.h; sourceTree = "<group>"; };
 		65CF9AE0198A8D10009ACA3D /* MFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFLoginViewController.m; path = MakersFinders_Master/MFLoginViewController.m; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 				65C6EE89198971BB00E7DD13 /* MFUploadRootViewController.m */,
 				65ACF8C5198BD44C002CDBED /* yosemite.png */,
 				65CF8532198FC59C001A77BE /* heartbutton.png */,
+				65CF8536198FD8EC001A77BE /* categoryImagePlaceholder.png */,
 				65CF8533198FC59C001A77BE /* peoplebutton.png */,
 				65C6EE4C1989615200E7DD13 /* Images.xcassets */,
 				65CF9ADD198A8BAF009ACA3D /* LaunchImage@2x.png */,
@@ -697,6 +700,7 @@
 				65CF9AF8198AAAF7009ACA3D /* AALMain.storyboard in Resources */,
 				65CF9B58198AB5C6009ACA3D /* wine5.jpg in Resources */,
 				65C6EE8519896F9600E7DD13 /* notifications_selected@2x.png in Resources */,
+				65CF8537198FD8EC001A77BE /* categoryImagePlaceholder.png in Resources */,
 				65C6EE98198975C700E7DD13 /* found.png in Resources */,
 				65CF9B1D198AAE8B009ACA3D /* clipboard-512.png in Resources */,
 				65CF9ADE198A8BAF009ACA3D /* LaunchImage@2x.png in Resources */,

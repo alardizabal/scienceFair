@@ -9,6 +9,7 @@
 #import "MFExploreRootViewController.h"
 #import "MFExploreCustomTableViewCell.h"
 #import "AALTestViewController.h"
+#import "AALAPIClient.h"
 
 @interface MFExploreRootViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *makersFindersButton;
@@ -17,7 +18,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *makersFindersImage;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchField;
-
+@property (strong, nonatomic) NSMutableArray *recentSearchesArray;
+@property (strong, nonatomic) NSMutableArray *categoryImagesArray;
+@property (strong, nonatomic) NSMutableArray *categoryNamesArray;
+@property (nonatomic) NSInteger counter;
 
 @end
 
@@ -38,6 +42,14 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    self.categoryImagesArray = [[NSMutableArray alloc] init];
+    self.categoryNamesArray = [[NSMutableArray alloc] init];
+    for (NSInteger x = 0; x<9; x++)
+    {
+        [self.categoryImagesArray addObject:[UIImage imageNamed:@"categoryImagePlaceholder"]];
+        [self.categoryNamesArray addObject:@""];
+    }
     
     self.navigationItem.title = @"Explore";
     self.navigationController.navigationBar.titleTextAttributes = @{
@@ -85,6 +97,27 @@
                                    action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:tap];
+    
+    //Calling API for categories
+    self.counter = 0;
+
+    [AALAPIClient getCategoryImagesWithCompletion:^(NSDictionary *dictionary) {
+        for (NSDictionary *category in dictionary) {
+            
+            NSString *name = category[@"name"];
+            NSString *tempImageURLString = category[@"images"][@"retina"];
+            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tempImageURLString]]];
+            
+            [self.categoryNamesArray replaceObjectAtIndex:self.counter withObject:name];
+            [self.categoryImagesArray replaceObjectAtIndex:self.counter withObject:image];
+            
+            NSIndexPath *insertIndexpath = [NSIndexPath indexPathForRow:self.counter inSection:1];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.tableView reloadRowsAtIndexPaths:@[insertIndexpath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }];
+            self.counter ++;
+        }
+    }];
 }
 
 -(void)peopleButtonTapped:(id)sender
@@ -138,10 +171,12 @@
     if (section == 0)
     {
         return 1;
+        //return [self.recentSearch count]
     }
     else
     {
-        return 10;
+//        return 10;
+        return [self.categoryNamesArray count];
     }
     
 }
@@ -156,11 +191,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     MFExploreCustomTableViewCell *exploreCell = [tableView dequeueReusableCellWithIdentifier:@"exploreCell" forIndexPath:indexPath];
     
     [self tableView:tableView heightForRowAtIndexPath:indexPath];
-    exploreCell.categoryImage.image = [UIImage imageNamed:@"yosemite"];
-    exploreCell.categoryLabel.text = @"Yosemite";
+    if (indexPath.section == 0)
+    {
+        exploreCell.categoryImage.image = [UIImage imageNamed:@"yosemite"];
+        exploreCell.categoryLabel.text = @"Yosemite";
+    }
+    else if (indexPath.section == 1)
+    {
+        exploreCell.categoryImage.image = self.categoryImagesArray[indexPath.row];
+        exploreCell.categoryLabel.text = self.categoryNamesArray[indexPath.row];
+    }
     
     return exploreCell;
 }

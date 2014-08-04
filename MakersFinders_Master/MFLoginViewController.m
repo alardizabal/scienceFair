@@ -49,8 +49,7 @@
     self.MakersFindersLogo.shadowColor = [UIColor blackColor];
     self.MakersFindersLogo.shadowOffset = CGSizeMake(1,1);
     self.loginButton.layer.cornerRadius = 6.0f;
-    
-    
+
     // Do any additional setup after loading the view.
 }
 
@@ -84,6 +83,5 @@
         [self.navigationController pushViewController:tabBarController animated:YES];
     }];
 }
-
 
 @end
