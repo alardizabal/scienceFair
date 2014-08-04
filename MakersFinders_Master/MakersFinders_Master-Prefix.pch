@@ -15,5 +15,6 @@
     #import <Foundation/Foundation.h>
     #import <AFNetworking.h>
     #import "MFConstants.h"
+    #import <CoreData/CoreData.h>
 
 #endif

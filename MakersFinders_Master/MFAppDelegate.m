@@ -9,6 +9,7 @@
 #import "MFAppDelegate.h"
 #import "MFCustomTabBarControllerViewController.h"
 #import "MFLoginViewController.h"
+#import "AALTestViewController.h"
 
 @implementation MFAppDelegate
 
@@ -17,6 +18,11 @@
     UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     MFLoginViewController *loginVC = [main instantiateViewControllerWithIdentifier:@"login"];
     UINavigationController *loginNavvc = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    //Navigation Bar Setup
+    
+    
+    
+    
     self.window.rootViewController = loginNavvc;
     
 //    MFCustomTabBarControllerViewController *rootTabBarController = [[MFCustomTabBarControllerViewController alloc] init];

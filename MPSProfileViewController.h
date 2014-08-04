@@ -7,15 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MFUser.h"
+
 @import UIKit;
 @interface MPSProfileViewController : UIViewController
 
-//property for the profile image view
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 
-@property (weak, nonatomic) IBOutlet UIImageView *blurredUserHeader;
+//@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
+@property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
+@property (weak, nonatomic) IBOutlet UILabel *profileName;
+@property (weak, nonatomic) IBOutlet UILabel *profileJobTitle;
+- (IBAction)followButton:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
+@property (strong, nonatomic)MFUser *user;
+
 
 
 @end

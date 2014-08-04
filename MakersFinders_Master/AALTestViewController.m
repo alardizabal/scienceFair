@@ -7,13 +7,17 @@
 //
 
 #import "AALTestViewController.h"
+#import "AALAPIClient.h"
 #import "AALCategory.h"
 #import "AALInterest.h"
 
 @interface AALTestViewController ()
 
-@property (nonatomic) NSArray *categoryArray;
-@property (nonatomic) NSArray *interestsArray;
+@property (strong, nonatomic) NSMutableArray *categoryArray;
+@property (nonatomic) NSMutableArray *interestsArray;
+
+@property (nonatomic) UIScrollView *categoryScrollView;
+@property (nonatomic) UIScrollView *interestScrollView;
 
 - (void) showInterests:(NSString *)category;
 
@@ -33,6 +37,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.categoryArray = [[NSMutableArray alloc]init];
+    self.interestsArray = [NSMutableArray array];
+    
     self.navigationItem.title = @"makersfinders";
     self.navigationController.navigationBar.titleTextAttributes = @{
                                                                     NSForegroundColorAttributeName: [UIColor whiteColor],
@@ -41,7 +49,7 @@
     
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/255.0 green:62/255.0 blue:81/255.0 alpha:1];
-    // Do any additional setup after loading the view.
+    
     
     UILabel *followYourInterestsLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 3, self.view.frame.size.width, 20)];
     followYourInterestsLabel.text = @"Follow your interests:";
@@ -50,32 +58,71 @@
     followYourInterestsLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:followYourInterestsLabel];
     
+    //Do any additional setup after loading the view.
+    
+//    followYourInterestsLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    
+//    NSDictionary *nameMap = @{@"followYourInterestsLabel" : self.categoryScrollView,
+//                              @"interestScrollView" : self.interestScrollView};
+//    
+//    NSArray *verticalConstraintCategoryScrollView = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[categoryScrollView]-"
+//                                                                                            options:0
+//                                                                                            metrics:nil
+//                                                                                              views:nameMap];
+//    [self.view addConstraints:verticalConstraintCategoryScrollView];
+    
     [self stageData];
-    [self showCategories];
     
 }
 
 - (void) stageData
 {
     
-    AALInterest *interest1 = [[AALInterest alloc]initWithInterestName:@"Yoga" interestImage:[UIImage imageNamed:@"times_square"]];
-    AALInterest *interest2 = [[AALInterest alloc]initWithInterestName:@"Juices" interestImage:[UIImage imageNamed:@"times_square"]];
-    AALInterest *interest3 = [[AALInterest alloc]initWithInterestName:@"Herbs" interestImage:[UIImage imageNamed:@"times_square"]];
-    AALInterest *interest4 = [[AALInterest alloc]initWithInterestName:@"Bodywork" interestImage:[UIImage imageNamed:@"times_square"]];
+    //    AALInterest *interest1 = [[AALInterest alloc]initWithInterestName:@"Yoga" interestImage:[UIImage imageNamed:@"times_square"]];
+    //    AALInterest *interest2 = [[AALInterest alloc]initWithInterestName:@"Juices" interestImage:[UIImage imageNamed:@"times_square"]];
+    //    AALInterest *interest3 = [[AALInterest alloc]initWithInterestName:@"Herbs" interestImage:[UIImage imageNamed:@"times_square"]];
+    //    AALInterest *interest4 = [[AALInterest alloc]initWithInterestName:@"Bodywork" interestImage:[UIImage imageNamed:@"times_square"]];
+    //
+    //    AALCategory *category1 = [[AALCategory alloc]initWithCategoryName:@"Health & Wellness" categoryImage:[UIImage imageNamed:@"times_square"] interests:@[interest1, interest2, interest3, interest4]];
+    //
+    //    AALInterest *interest5 = [[AALInterest alloc]initWithInterestName:@"Hiking" interestImage:[UIImage imageNamed:@"times_square"]];
+    //    AALInterest *interest6 = [[AALInterest alloc]initWithInterestName:@"Mountaineering" interestImage:[UIImage imageNamed:@"times_square"]];
+    //    AALInterest *interest7 = [[AALInterest alloc]initWithInterestName:@"Fishing" interestImage:[UIImage imageNamed:@"times_square"]];
+    //    AALInterest *interest8 = [[AALInterest alloc]initWithInterestName:@"Boating" interestImage:[UIImage imageNamed:@"times_square"]];
+    //    AALInterest *interest9 = [[AALInterest alloc]initWithInterestName:@"Biking" interestImage:[UIImage imageNamed:@"times_square"]];
+    //    AALInterest *interest10 = [[AALInterest alloc]initWithInterestName:@"Camping" interestImage:[UIImage imageNamed:@"times_square"]];
+    //
+    //    AALCategory *category2 = [[AALCategory alloc]initWithCategoryName:@"Outdoors" categoryImage:[UIImage imageNamed:@"times_square"] interests:@[interest5, interest6, interest7, interest8, interest9, interest10]];
     
-    AALCategory *category1 = [[AALCategory alloc]initWithCategoryName:@"Health & Wellness" categoryImage:[UIImage imageNamed:@"times_square"] interests:@[interest1, interest2, interest3, interest4]];
-    
-    AALInterest *interest5 = [[AALInterest alloc]initWithInterestName:@"Hiking" interestImage:[UIImage imageNamed:@"times_square"]];
-    AALInterest *interest6 = [[AALInterest alloc]initWithInterestName:@"Mountaineering" interestImage:[UIImage imageNamed:@"times_square"]];
-    AALInterest *interest7 = [[AALInterest alloc]initWithInterestName:@"Fishing" interestImage:[UIImage imageNamed:@"times_square"]];
-    AALInterest *interest8 = [[AALInterest alloc]initWithInterestName:@"Boating" interestImage:[UIImage imageNamed:@"times_square"]];
-    AALInterest *interest9 = [[AALInterest alloc]initWithInterestName:@"Biking" interestImage:[UIImage imageNamed:@"times_square"]];
-    AALInterest *interest10 = [[AALInterest alloc]initWithInterestName:@"Camping" interestImage:[UIImage imageNamed:@"times_square"]];
-    
-    AALCategory *category2 = [[AALCategory alloc]initWithCategoryName:@"Outdoors" categoryImage:[UIImage imageNamed:@"times_square"] interests:@[interest5, interest6, interest7, interest8, interest9, interest10]];
-    
-    self.categoryArray = [[NSArray alloc]initWithObjects:category1, category2, category1, category2, nil];
-    
+    [AALAPIClient getCategoryImagesWithCompletion:^(NSDictionary *dictionary) {
+        
+        for (NSDictionary *category in dictionary) {
+            
+            AALCategory *tempCategory = [[AALCategory alloc]init];
+            tempCategory.categoryName = category[@"name"];
+            tempCategory.interests = [[NSMutableArray alloc]init];
+            
+            NSString *tempImageURLString = category[@"images"][@"retina"];
+            tempCategory.categoryImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tempImageURLString]]];
+            
+            NSArray *interestDictionary = category[@"categories"];
+            
+            for (NSUInteger i = 0; i < [interestDictionary count]; i++) {
+                
+                AALInterest *tempInterest = [[AALInterest alloc]init];
+                
+                NSString *tempImageURLString = interestDictionary[i][@"images"][@"retina"];
+                
+                tempInterest.interestName = interestDictionary[i][@"name"];
+                tempInterest.interestImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tempImageURLString]]];
+                
+                [tempCategory.interests addObject:tempInterest];
+            }
+            
+            [self.categoryArray addObject:tempCategory];
+        }
+        [self showCategories];
+    }];
 }
 
 - (void) showCategories
@@ -130,14 +177,26 @@
         startXvalueScrollView += categoryViewWidth + categoryPadding;
     }
     
-    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 25, 320, categoryViewHeight)];
-    scrollView.accessibilityLabel = @"Category Scrollview";
-    scrollView.scrollEnabled = YES;
-    scrollView.showsHorizontalScrollIndicator = NO;
-    scrollView.contentSize = CGSizeMake([self.categoryArray count] * (categoryViewWidth + categoryPadding), categoryViewHeight);
+    self.categoryScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 25, 320, categoryViewHeight)];
     
-    [scrollView addSubview:contentView];
-    [self.view addSubview:scrollView];
+    //    self.categoryScrollView.translatesAutoresizingMaskIntoConstraints = NO;
+    //
+    //    NSDictionary *nameMap = @{@"categoryScrollView" : self.categoryScrollView,
+    //                              @"interestScrollView" : self.interestScrollView};
+    //
+    //    NSArray *verticalConstraintCategoryScrollView = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[categoryScrollView]-"
+    //                                                                                            options:0
+    //                                                                                            metrics:nil
+    //                                                                                              views:nameMap];
+    //    [self.view addConstraints:verticalConstraintCategoryScrollView];
+    
+    self.categoryScrollView.accessibilityLabel = @"Category Scrollview";
+    self.categoryScrollView.scrollEnabled = YES;
+    self.categoryScrollView.showsHorizontalScrollIndicator = NO;
+    self.categoryScrollView.contentSize = CGSizeMake([self.categoryArray count] * (categoryViewWidth + categoryPadding), categoryViewHeight);
+    
+    [self.categoryScrollView addSubview:contentView];
+    [self.view addSubview:self.categoryScrollView];
 }
 
 - (void) showInterests:(NSString *)category
@@ -187,7 +246,7 @@
                 
                 UILabel *interestLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 110, interestContainerView.frame.size.width, 20)];
                 interestLabel.text = tempInterest.interestName;
-                interestLabel.font = [UIFont boldSystemFontOfSize:12];
+                interestLabel.font = [UIFont boldSystemFontOfSize:10];
                 interestLabel.textColor = [UIColor colorWithRed:0 green:119.0/255.0 blue:126.0/255.0 alpha:1.0];
                 interestLabel.textAlignment = NSTextAlignmentCenter;
                 [interestContainerView addSubview:interestLabel];
@@ -248,7 +307,6 @@
     }
     
     [self showInterests:categoryTapped];
-    
 }
 
 - (void)handleInterestTap:(UITapGestureRecognizer *)recognizer

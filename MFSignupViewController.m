@@ -8,14 +8,19 @@
 
 #import "MFSignupViewController.h"
 #import "MFAPIClient.h"
+#import "MFUser.h"
+#import "MFDataStore.h"
 
 @interface MFSignupViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *fullNameField;
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordConfirmField;
+@property (strong, nonatomic) MFDataStore *store;
 
 - (IBAction)signupTapped:(id)sender;
+
+- (IBAction)cancelTapped:(id)sender;
 
 @end
 
@@ -35,6 +40,7 @@
     [super viewDidLoad];
     self.passwordField.secureTextEntry = YES;
     self.passwordConfirmField.secureTextEntry = YES;
+    self.store = [MFDataStore sharedStore];
     // Do any additional setup after loading the view.
 }
 
@@ -57,8 +63,19 @@
 
 - (IBAction)signupTapped:(id)sender {
     MFAPIClient *client = [[MFAPIClient alloc] init];
-    [client createNewUserWithName:self.fullNameField.text Email:self.emailField.text Password:self.passwordField.text PasswordConfirmation:self.passwordConfirmField.text Completion:^{
+    [client createNewUserWithName:self.fullNameField.text Email:self.emailField.text Password:self.passwordField.text PasswordConfirmation:self.passwordConfirmField.text Completion:^(id responseObject) {
+        NSDictionary *response = responseObject;
+        MFUser *createdUser = [self.store createUser];
+        createdUser.name = response[@"name"];
+        createdUser.userID = response[@"id"];
+        createdUser.token = response[@"token"];
+        createdUser.email = response[@"email"];
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }
+
+- (IBAction)cancelTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
