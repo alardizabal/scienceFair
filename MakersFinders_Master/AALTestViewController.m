@@ -49,7 +49,7 @@
     
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/255.0 green:62/255.0 blue:81/255.0 alpha:1];
-    // Do any additional setup after loading the view.
+    
     
     UILabel *followYourInterestsLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 3, self.view.frame.size.width, 20)];
     followYourInterestsLabel.text = @"Follow your interests:";
@@ -57,6 +57,19 @@
     followYourInterestsLabel.font = [UIFont boldSystemFontOfSize:12];
     followYourInterestsLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:followYourInterestsLabel];
+    
+    //Do any additional setup after loading the view.
+    
+    followYourInterestsLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSDictionary *nameMap = @{@"followYourInterestsLabel" : self.categoryScrollView,
+                              @"interestScrollView" : self.interestScrollView};
+    
+    NSArray *verticalConstraintCategoryScrollView = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[categoryScrollView]-"
+                                                                                            options:0
+                                                                                            metrics:nil
+                                                                                              views:nameMap];
+    [self.view addConstraints:verticalConstraintCategoryScrollView];
     
     [self stageData];
     
