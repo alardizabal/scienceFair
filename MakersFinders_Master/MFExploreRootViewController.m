@@ -10,8 +10,9 @@
 #import "MFExploreCustomTableViewCell.h"
 #import "AALTestViewController.h"
 #import "AALAPIClient.h"
+#import "MFDataStore.h"
 
-@interface MFExploreRootViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface MFExploreRootViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *makersFindersButton;
 @property (weak, nonatomic) IBOutlet UIView *collectivesButton;
 @property (weak, nonatomic) IBOutlet UIImageView *collectivesImage;
@@ -22,6 +23,7 @@
 @property (strong, nonatomic) NSMutableArray *categoryImagesArray;
 @property (strong, nonatomic) NSMutableArray *categoryNamesArray;
 @property (nonatomic) NSInteger counter;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -98,26 +100,35 @@
     
     [self.view addGestureRecognizer:tap];
     
+    MFDataStore *store = [MFDataStore sharedStore];
+    NSFetchRequest *categoryFetch = [NSFetchRequest fetchRequestWithEntityName:@"MFCategory"];
+    NSSortDescriptor *categorySort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    categoryFetch.sortDescriptors = @[categorySort];
+    
+    self.fetchedResultsController.delegate = self;
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:categoryFetch managedObjectContext:store.context sectionNameKeyPath:nil cacheName:nil];
+    [self.fetchedResultsController performFetch:nil];
+    
     //Calling API for categories
-    self.counter = 0;
-
-    [AALAPIClient getCategoryImagesWithCompletion:^(NSDictionary *dictionary) {
-        for (NSDictionary *category in dictionary) {
-            
-            NSString *name = category[@"name"];
-            NSString *tempImageURLString = category[@"images"][@"retina"];
-            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tempImageURLString]]];
-            
-            [self.categoryNamesArray replaceObjectAtIndex:self.counter withObject:name];
-            [self.categoryImagesArray replaceObjectAtIndex:self.counter withObject:image];
-            
-            NSIndexPath *insertIndexpath = [NSIndexPath indexPathForRow:self.counter inSection:1];
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [self.tableView reloadRowsAtIndexPaths:@[insertIndexpath] withRowAnimation:UITableViewRowAnimationAutomatic];
-            }];
-            self.counter ++;
-        }
-    }];
+//    self.counter = 0;
+//
+//    [AALAPIClient getCategoryImagesWithCompletion:^(NSDictionary *dictionary) {
+//        for (NSDictionary *category in dictionary) {
+//            
+//            NSString *name = category[@"name"];
+//            NSString *tempImageURLString = category[@"images"][@"retina"];
+//            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tempImageURLString]]];
+//            
+//            [self.categoryNamesArray replaceObjectAtIndex:self.counter withObject:name];
+//            [self.categoryImagesArray replaceObjectAtIndex:self.counter withObject:image];
+//            
+//            NSIndexPath *insertIndexpath = [NSIndexPath indexPathForRow:self.counter inSection:1];
+//            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//                [self.tableView reloadRowsAtIndexPaths:@[insertIndexpath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//            }];
+//            self.counter ++;
+//        }
+//    }];
 }
 
 -(void)peopleButtonTapped:(UITapGestureRecognizer *)recognizer
@@ -176,7 +187,7 @@
     else
     {
 //        return 10;
-        return [self.categoryNamesArray count];
+        return [self.fetchedResultsController.fetchedObjects count];
     }
     
 }
@@ -203,8 +214,10 @@
     }
     else if (indexPath.section == 1)
     {
-        exploreCell.categoryImage.image = self.categoryImagesArray[indexPath.row];
-        exploreCell.categoryLabel.text = self.categoryNamesArray[indexPath.row];
+        MFCategory *category = self.fetchedResultsController.fetchedObjects[indexPath.row];
+        UIImage *image = [self getImageWithName:category.name];
+        exploreCell.categoryImage.image = image;
+        exploreCell.categoryLabel.text = category.name;
     }
     
     return exploreCell;
@@ -215,6 +228,15 @@
     return 70;
 }
 
+-(UIImage *)getImageWithName:(NSString *)name
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    NSString *filePath = [documentsPath stringByAppendingPathComponent:name];
+    NSData *pngData = [NSData dataWithContentsOfFile:filePath];
+    UIImage *image = [UIImage imageWithData:pngData];
+    return image;
+}
 
 /*
 #pragma mark - Navigation
