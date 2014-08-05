@@ -13,26 +13,30 @@
 
 + (void) getCategoryImagesWithCompletion:(void (^)(NSDictionary *dictionary))completionBlock {
     
-    NSString *getCategoryImagesURL = [NSString stringWithFormat:@"http://makersfinders.firehawkcreative.com/api/v1/sectors"];
     
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
 //    AFHTTPRequestSerializer *serializer = [[AFHTTPRequestSerializer alloc] init];
 //    [serializer setAuthorizationHeaderFieldWithUsername:kGITHUB_API_TOKEN password:@""];
 //    manager.requestSerializer = serializer;
+    NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
+        NSString *getCategoryImagesURL = [NSString stringWithFormat:@"http://makersfinders.firehawkcreative.com/api/v1/sectors"];
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        [manager GET:getCategoryImagesURL
+          parameters:nil
+             success:^(NSURLSessionDataTask *task, id responseObject)
+         {
+//             NSLog(@"%@", responseObject);
+//             NSLog(@"Albert %@", responseObject[1][@"name"]);
+             [backgroundQueue addOperationWithBlock:^{
+                 completionBlock(responseObject);
+             }];
+             
+             
+         } failure:^(NSURLSessionDataTask *task, NSError *error)
+         {
+//             NSLog(@"Fail: %@",error.localizedDescription);
+    }];
     
-    [manager GET:getCategoryImagesURL
-      parameters:nil
-         success:^(NSURLSessionDataTask *task, id responseObject)
-     {
-         NSLog(@"%@", responseObject);
-         NSLog(@"Albert %@", responseObject[1][@"name"]);
-         completionBlock(responseObject);
-         
-     } failure:^(NSURLSessionDataTask *task, NSError *error)
-     {
-         NSLog(@"Fail: %@",error.localizedDescription);
-     }];
 }
 
 @end

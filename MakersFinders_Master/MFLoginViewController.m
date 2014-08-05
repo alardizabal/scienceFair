@@ -9,11 +9,9 @@
 #import "MFLoginViewController.h"
 #import "MFAPIClient.h"
 #import "MFCustomTabBarControllerViewController.h"
-#import "AALAPIClient.h"
-#import "MFDataStore.h"
-#import "MFUser.h"
-#import "MFCategory.h"
-#import "MFInterest.h"
+#import "MFBackground.h"
+
+
 
 @interface MFLoginViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
@@ -41,24 +39,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [MFBackground LoadCategoryAndInterestImagesInBackGround];
+
     
-    NSOperationQueue *imageFetchingQueue = [[NSOperationQueue alloc] init];
-    MFDataStore *store = [MFDataStore sharedStore];
-    
-    [imageFetchingQueue addOperationWithBlock:^{
-        [AALAPIClient getCategoryImagesWithCompletion:^(NSDictionary *dictionary) {
-            for (NSDictionary *category in dictionary) {
-                
-                NSString *name = category[@"name"];
-                NSString *tempImageURLString = category[@"images"][@"retina"];
-                UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tempImageURLString]]];
-                NSString *path = [self saveImage:image WithName:name];
-                MFCategory *category = [store createCategory];
-                category.name = name;
-                category.imageURL = path;
-            }
-        }];
-    }];
     
     self.navigationController.navigationBarHidden = YES;
     self.passwordField.secureTextEntry = YES;
@@ -112,17 +96,6 @@
     }];
 }
 
--(NSString *)saveImage: (UIImage*)image WithName:(NSString *)name;
-{
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                         NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString* path = [documentsDirectory stringByAppendingPathComponent:
-                      [NSString stringWithFormat: @"%@",name]];
-    NSData* data = UIImagePNGRepresentation(image);
-    [data writeToFile:path atomically:YES];
-    return path;
-}
+
 
 @end

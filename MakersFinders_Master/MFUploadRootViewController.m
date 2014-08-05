@@ -117,31 +117,31 @@
 }
 */
 
-- (IBAction)tempTest:(id)sender {
-    MFDataStore *store = [MFDataStore sharedStore];
-    NSFetchRequest *fetchCategories = [[NSFetchRequest alloc] initWithEntityName:@"MFCategory"];
-    NSSortDescriptor *sortByName = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-    fetchCategories.sortDescriptors = @[sortByName];
-    NSArray *categories = [store.context executeFetchRequest:fetchCategories error:nil];
-    NSLog(@"%d",[categories count]);
-  
-    
-    for (MFCategory *category in categories)
-    {
-        UIImage *image = [self loadImageWithPathName:category.imageURL];
-        [self.images addObject:image];
-        self.imageView.image = image;
-    }
-    NSLog(@"%d", [self.images count]);
-}
-
-- (UIImage*)loadImageWithPathName: (NSString *)pathName
-{
-    NSData *pngData = [NSData dataWithContentsOfFile:pathName];
-    UIImage *image = [UIImage imageWithData:pngData];
-    
-    return image;
-}
+//- (IBAction)tempTest:(id)sender {
+//    MFDataStore *store = [MFDataStore sharedStore];
+//    NSFetchRequest *fetchCategories = [[NSFetchRequest alloc] initWithEntityName:@"MFCategory"];
+//    NSSortDescriptor *sortByName = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+//    fetchCategories.sortDescriptors = @[sortByName];
+//    NSArray *categories = [store.context executeFetchRequest:fetchCategories error:nil];
+//    NSLog(@"%d",[categories count]);
+//
+//    
+//    for (MFCategory *category in categories)
+//    {
+//        UIImage *image = [self loadImageWithPathName:category.imageURL];
+//        [self.images addObject:image];
+//        self.imageView.image = image;
+//    }
+//    NSLog(@"%d", [self.images count]);
+//}
+//
+//- (UIImage*)loadImageWithPathName: (NSString *)pathName
+//{
+//    NSData *pngData = [NSData dataWithContentsOfFile:pathName];
+//    UIImage *image = [UIImage imageWithData:pngData];
+//    
+//    return image;
+//}
 
 
 @end

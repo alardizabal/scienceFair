@@ -55,6 +55,7 @@
 		65CF8537198FD8EC001A77BE /* categoryImagePlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF8536198FD8EC001A77BE /* categoryImagePlaceholder.png */; };
 		65CF853A199140DB001A77BE /* MFInterest.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF8539199140DB001A77BE /* MFInterest.m */; };
 		65CF853D199140DB001A77BE /* MFCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF853C199140DB001A77BE /* MFCategory.m */; };
+		65CF8540199155A1001A77BE /* MFBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF853F199155A1001A77BE /* MFBackground.m */; };
 		65CF9AD8198A877D009ACA3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C6EE461989615200E7DD13 /* Main.storyboard */; };
 		65CF9ADE198A8BAF009ACA3D /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9ADD198A8BAF009ACA3D /* LaunchImage@2x.png */; };
 		65CF9AE1198A8D10009ACA3D /* MFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9AE0198A8D10009ACA3D /* MFLoginViewController.m */; };
@@ -179,6 +180,8 @@
 		65CF8539199140DB001A77BE /* MFInterest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFInterest.m; sourceTree = "<group>"; };
 		65CF853B199140DB001A77BE /* MFCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCategory.h; sourceTree = "<group>"; };
 		65CF853C199140DB001A77BE /* MFCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCategory.m; sourceTree = "<group>"; };
+		65CF853E199155A1001A77BE /* MFBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFBackground.h; sourceTree = "<group>"; };
+		65CF853F199155A1001A77BE /* MFBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFBackground.m; sourceTree = "<group>"; };
 		65CF9ADD198A8BAF009ACA3D /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LaunchImage@2x.png"; path = "MakersFinders_Master/LaunchImage@2x.png"; sourceTree = "<group>"; };
 		65CF9ADF198A8D10009ACA3D /* MFLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFLoginViewController.h; path = MakersFinders_Master/MFLoginViewController.h; sourceTree = "<group>"; };
 		65CF9AE0198A8D10009ACA3D /* MFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFLoginViewController.m; path = MakersFinders_Master/MFLoginViewController.m; sourceTree = "<group>"; };
@@ -287,6 +290,8 @@
 		659E5C33198BFBBA00A4EE77 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				65CF853E199155A1001A77BE /* MFBackground.h */,
+				65CF853F199155A1001A77BE /* MFBackground.m */,
 				65CF853B199140DB001A77BE /* MFCategory.h */,
 				65CF853C199140DB001A77BE /* MFCategory.m */,
 				65CF8538199140DB001A77BE /* MFInterest.h */,
@@ -753,6 +758,7 @@
 				65E65524198C3A56003DA661 /* KeychainItemWrapper.m in Sources */,
 				659E5C32198BFBA400A4EE77 /* MFAPIClient.m in Sources */,
 				65CF9AEE198AA984009ACA3D /* AALCategory.m in Sources */,
+				65CF8540199155A1001A77BE /* MFBackground.m in Sources */,
 				65CF9B22198AAE8B009ACA3D /* FISCollectionLandscapeViewController.m in Sources */,
 				65CF9AF0198AA984009ACA3D /* AALTestViewController.m in Sources */,
 				65C6EE411989615200E7DD13 /* main.m in Sources */,
