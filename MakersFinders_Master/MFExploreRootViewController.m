@@ -208,7 +208,9 @@
     [self tableView:tableView heightForRowAtIndexPath:indexPath];
     if (indexPath.section == 0)
     {
-        exploreCell.categoryImage.image = [UIImage imageNamed:@"yosemite"];
+        MFCategory *category = self.fetchedResultsController.fetchedObjects[indexPath.row];
+        UIImage *image = [self getImageWithName:category.name];
+        exploreCell.categoryImage.image = image;
         
         exploreCell.categoryLabel.text = @"Recent Search";
     }
@@ -225,7 +227,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 70;
+    return 65;
 }
 
 -(UIImage *)getImageWithName:(NSString *)name

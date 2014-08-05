@@ -259,32 +259,37 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="exploreCell" rowHeight="80" id="tfX-yX-Cbf" customClass="MFExploreCustomTableViewCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="80"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="exploreCell" rowHeight="65" id="tfX-yX-Cbf" customClass="MFExploreCustomTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tfX-yX-Cbf" id="R26-nN-6Ix">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uEI-qx-cS1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="37" height="70"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uEI-qx-cS1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="70" id="3jx-1Y-i9t"/>
-                                                        <constraint firstAttribute="width" constant="70" id="4VP-Ri-CXk"/>
+                                                        <constraint firstAttribute="height" constant="65" id="C3c-DX-REZ"/>
+                                                        <constraint firstAttribute="width" constant="65" id="gcJ-tP-yRp"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBA-Ok-TRe">
-                                                    <rect key="frame" x="120" y="29" width="141" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBA-Ok-TRe">
+                                                    <rect key="frame" x="85" y="21" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="130" id="0B3-za-9eX"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="RBA-Ok-TRe" secondAttribute="centerY" id="0Ka-qk-X5F"/>
+                                                <constraint firstItem="RBA-Ok-TRe" firstAttribute="leading" secondItem="uEI-qx-cS1" secondAttribute="trailing" constant="55" id="4I0-SY-OIy"/>
+                                                <constraint firstAttribute="bottom" secondItem="uEI-qx-cS1" secondAttribute="bottom" id="4Zw-2u-4QC"/>
+                                                <constraint firstItem="RBA-Ok-TRe" firstAttribute="leading" secondItem="uEI-qx-cS1" secondAttribute="trailing" constant="20" id="5Jh-An-yEZ"/>
+                                                <constraint firstItem="uEI-qx-cS1" firstAttribute="top" secondItem="R26-nN-6Ix" secondAttribute="top" id="Qib-Vi-GsB"/>
+                                                <constraint firstItem="uEI-qx-cS1" firstAttribute="leading" secondItem="R26-nN-6Ix" secondAttribute="leading" id="XMO-Ty-AHT"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="categoryImage" destination="uEI-qx-cS1" id="rvZ-oj-Muk"/>
