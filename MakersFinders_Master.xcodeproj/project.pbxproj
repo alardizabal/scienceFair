@@ -594,7 +594,7 @@
 				ORGANIZATIONNAME = ADMM;
 				TargetAttributes = {
 					65C6EE301989615200E7DD13 = {
-						DevelopmentTeam = 78N35Y6K9P;
+						DevelopmentTeam = KXY9EDFTF5;
 					};
 					65C6EE511989615200E7DD13 = {
 						TestTargetID = 65C6EE301989615200E7DD13;
@@ -661,7 +661,6 @@
 				C99B5D69198FE2D90079F2B6 /* binoculars.png in Resources */,
 				65CF9B2D198AAE8B009ACA3D /* pen-512.png in Resources */,
 				65CF9B20198AAE8B009ACA3D /* Drinks.png in Resources */,
-				65ACF8C6198BD44C002CDBED /* yosemite.png in Resources */,
 				65C6EE7F19896CED00E7DD13 /* tabbarbackground@2x.png in Resources */,
 				65C6EE8719896F9600E7DD13 /* user_selected@2x.png in Resources */,
 				65CF9AFA198AAAF7009ACA3D /* checkmark.png in Resources */,
@@ -672,6 +671,7 @@
 				65CF8535198FC59C001A77BE /* peoplebutton.png in Resources */,
 				65C6EE94198975C700E7DD13 /* circle.png in Resources */,
 				65436D5F198EE3E00038C985 /* loginMainImage.png in Resources */,
+				65ACF8C6198BD44C002CDBED /* yosemite.png in Resources */,
 				65CF9B1F198AAE8B009ACA3D /* Detail.storyboard in Resources */,
 				65C6EE8419896F9600E7DD13 /* home_selected@2x.png in Resources */,
 				65C6EE99198975C700E7DD13 /* hammer.png in Resources */,

@@ -198,7 +198,8 @@
     if (indexPath.section == 0)
     {
         exploreCell.categoryImage.image = [UIImage imageNamed:@"yosemite"];
-        exploreCell.categoryLabel.text = @"Yosemite";
+        
+        exploreCell.categoryLabel.text = @"Recent Search";
     }
     else if (indexPath.section == 1)
     {
