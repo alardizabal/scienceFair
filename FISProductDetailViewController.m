@@ -36,6 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+//    [self.navigationController setNavigationBarHidden:NO animated:NO]; 
     self.navigationItem.title = @"Your Curated Feed";
     self.navigationController.navigationBar.titleTextAttributes = @{
                                                                     NSForegroundColorAttributeName: [UIColor whiteColor],
