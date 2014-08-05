@@ -11,6 +11,7 @@
 #import "AALTestViewController.h"
 #import "AALAPIClient.h"
 #import "MFDataStore.h"
+#import "FISFeedTableViewController.h"
 
 @interface MFExploreRootViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *makersFindersButton;
@@ -94,11 +95,12 @@
     [self.collectivesButton addGestureRecognizer:tapRecognizerForCollectivesButton];
     
     //Add tap gesture to hide keyboard to get out of search
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
     
-    [self.view addGestureRecognizer:tap];
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+//                                   initWithTarget:self
+//                                   action:@selector(dismissKeyboard)];
+//    
+//    [self.view addGestureRecognizer:tap];
     
     MFDataStore *store = [MFDataStore sharedStore];
     NSFetchRequest *categoryFetch = [NSFetchRequest fetchRequestWithEntityName:@"MFCategory"];
@@ -223,6 +225,12 @@
     }
     
     return exploreCell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    FISFeedTableViewController *feedTVC = [[FISFeedTableViewController alloc]init];
+    [self.navigationController pushViewController:feedTVC animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

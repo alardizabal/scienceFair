@@ -71,8 +71,9 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
                                                          NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *fixedString = [name stringByReplacingOccurrencesOfString:@"/" withString:@""];
     NSString* path = [documentsDirectory stringByAppendingPathComponent:
-                      [NSString stringWithFormat: @"%@",name]];
+                      [NSString stringWithFormat: @"%@",fixedString]];
     NSData* data = UIImagePNGRepresentation(image);
     [data writeToFile:path atomically:YES];
 }
@@ -82,8 +83,9 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
                                                          NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *fixedString = [name stringByReplacingOccurrencesOfString:@"/" withString:@""];
     NSString* path = [documentsDirectory stringByAppendingPathComponent:
-                      [NSString stringWithFormat: @"%@",name]];
+                      [NSString stringWithFormat: @"%@",fixedString]];
     return path;
 }
 

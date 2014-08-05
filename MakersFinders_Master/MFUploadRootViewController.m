@@ -11,6 +11,7 @@
 
 #import "MFUploadRootViewController.h"
 #import "MFDataStore.h"
+#import "AALTestViewController.h"
 
 @interface MFUploadRootViewController ()
 @property (weak, nonatomic) IBOutlet UIView *rightButton;
@@ -18,8 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *topTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *madeTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *foundTextLabel;
-- (IBAction)tempTest:(id)sender;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @property (strong, nonatomic) NSMutableArray *images;
 
 
@@ -49,6 +49,20 @@
     
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/255.0 green:62/255.0 blue:81/255.0 alpha:1];
+    
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftButton setBackgroundImage:[UIImage imageNamed:@"peoplebutton"] forState:UIControlStateNormal];
+    leftButton.frame = CGRectMake(0, 0, 25, 25);
+    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
+    [leftButton addTarget:self action:@selector(peopleButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = leftButtonItem;
+    
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightButton setBackgroundImage:[UIImage imageNamed:@"heartbutton"] forState:UIControlStateNormal];
+    rightButton.frame = CGRectMake(0, 0, 22, 25);
+    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+    [rightButton addTarget:self action:@selector(heartButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = rightButtonItem;
     
     
     //View Setup
@@ -84,6 +98,19 @@
     
 
     // Do any additional setup after loading the view.
+}
+
+-(void)peopleButtonTapped:(UITapGestureRecognizer *)recognizer
+{
+    
+}
+
+-(void)heartButtonTapped:(UITapGestureRecognizer *)recognizer
+{
+    UIStoryboard *alMain = [UIStoryboard storyboardWithName:@"AALMain" bundle:nil];
+    AALTestViewController *vc1 = [alMain instantiateViewControllerWithIdentifier:@"interests"];
+    UINavigationController *navvc1 = [[UINavigationController alloc] initWithRootViewController:vc1];
+    [self presentViewController:navvc1 animated:YES completion:nil];
 }
 
 -(void)handleMadeButtonTapped:(UITapGestureRecognizer *)recognizer
