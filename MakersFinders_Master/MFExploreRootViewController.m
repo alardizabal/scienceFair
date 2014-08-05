@@ -120,12 +120,12 @@
     }];
 }
 
--(void)peopleButtonTapped:(id)sender
+-(void)peopleButtonTapped:(UITapGestureRecognizer *)recognizer
 {
     
 }
 
--(void)heartButtonTapped:(id)sender
+-(void)heartButtonTapped:(UITapGestureRecognizer *)recognizer
 {
     UIStoryboard *alMain = [UIStoryboard storyboardWithName:@"AALMain" bundle:nil];
     AALTestViewController *vc1 = [alMain instantiateViewControllerWithIdentifier:@"interests"];
@@ -198,7 +198,8 @@
     if (indexPath.section == 0)
     {
         exploreCell.categoryImage.image = [UIImage imageNamed:@"yosemite"];
-        exploreCell.categoryLabel.text = @"Yosemite";
+        
+        exploreCell.categoryLabel.text = @"Recent Search";
     }
     else if (indexPath.section == 1)
     {

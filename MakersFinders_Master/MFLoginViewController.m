@@ -78,7 +78,7 @@
 
 - (IBAction)loginTapped:(id)sender {
     MFAPIClient *client = [[MFAPIClient alloc] init];
-    [client loginNewUserWithEmail:self.emailField.text Password:self.passwordField.text Completion:^{
+    [client loginNewUserWithEmail:@"dansundsun@gmail.com" Password:@"test" Completion:^{
         MFCustomTabBarControllerViewController *tabBarController = [[MFCustomTabBarControllerViewController alloc] init];
         [self.navigationController pushViewController:tabBarController animated:YES];
     }];
