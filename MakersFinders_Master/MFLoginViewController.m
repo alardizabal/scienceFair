@@ -52,9 +52,10 @@
                 NSString *name = category[@"name"];
                 NSString *tempImageURLString = category[@"images"][@"retina"];
                 UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tempImageURLString]]];
-                [self saveImage:image WithName:name];
+                NSString *path = [self saveImage:image WithName:name];
                 MFCategory *category = [store createCategory];
                 category.name = name;
+                category.imageURL = path;
             }
         }];
     }];
@@ -111,7 +112,7 @@
     }];
 }
 
-- (void)saveImage: (UIImage*)image WithName:(NSString *)name;
+-(NSString *)saveImage: (UIImage*)image WithName:(NSString *)name;
 {
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
@@ -121,6 +122,7 @@
                       [NSString stringWithFormat: @"%@",name]];
     NSData* data = UIImagePNGRepresentation(image);
     [data writeToFile:path atomically:YES];
+    return path;
 }
 
 @end

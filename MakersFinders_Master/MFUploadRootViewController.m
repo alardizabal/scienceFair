@@ -128,7 +128,7 @@
     
     for (MFCategory *category in categories)
     {
-        UIImage *image = [self loadImageWithPathName:category.name];
+        UIImage *image = [self loadImageWithPathName:category.imageURL];
         [self.images addObject:image];
         self.imageView.image = image;
     }
@@ -137,14 +137,8 @@
 
 - (UIImage*)loadImageWithPathName: (NSString *)pathName
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                         NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString* path = [documentsDirectory stringByAppendingPathComponent:
-                      [NSString stringWithFormat:@"%@",pathName]];
-    NSData *pngData = [NSData dataWithContentsOfFile:path];
+    NSData *pngData = [NSData dataWithContentsOfFile:pathName];
     UIImage *image = [UIImage imageWithData:pngData];
-//    UIImage* image = [UIImage imageWithContentsOfFile:path];
     
     return image;
 }
