@@ -9,6 +9,11 @@
 #import "MFLoginViewController.h"
 #import "MFAPIClient.h"
 #import "MFCustomTabBarControllerViewController.h"
+#import "AALAPIClient.h"
+#import "MFDataStore.h"
+#import "MFUser.h"
+#import "MFCategory.h"
+#import "MFInterest.h"
 
 @interface MFLoginViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
@@ -36,6 +41,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSOperationQueue *imageFetchingQueue = [[NSOperationQueue alloc] init];
+    MFDataStore *store = [MFDataStore sharedStore];
+    
+    [imageFetchingQueue addOperationWithBlock:^{
+        [AALAPIClient getCategoryImagesWithCompletion:^(NSDictionary *dictionary) {
+            for (NSDictionary *category in dictionary) {
+                
+                NSString *name = category[@"name"];
+                NSString *tempImageURLString = category[@"images"][@"retina"];
+                UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tempImageURLString]]];
+                [self saveImage:image WithName:name];
+                MFCategory *category = [store createCategory];
+                category.name = name;
+            }
+        }];
+    }];
+    
     self.navigationController.navigationBarHidden = YES;
     self.passwordField.secureTextEntry = YES;
     
@@ -52,6 +75,8 @@
     
     UITapGestureRecognizer *loginTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loginTapped:)];
     [self.loginButton addGestureRecognizer:loginTapped];
+    
+    
 
 }
 
@@ -84,6 +109,18 @@
         MFCustomTabBarControllerViewController *tabBarController = [[MFCustomTabBarControllerViewController alloc] init];
         [self.navigationController pushViewController:tabBarController animated:YES];
     }];
+}
+
+- (void)saveImage: (UIImage*)image WithName:(NSString *)name;
+{
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                      [NSString stringWithFormat: @"%@",name]];
+    NSData* data = UIImagePNGRepresentation(image);
+    [data writeToFile:path atomically:YES];
 }
 
 @end

@@ -32,7 +32,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQc-yO-qYe">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQc-yO-qYe">
                                         <rect key="frame" x="64" y="504" width="192" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Sign Up For MakersFinders">
@@ -74,6 +74,7 @@
                                     <constraint firstAttribute="bottom" secondItem="rQc-yO-qYe" secondAttribute="bottom" constant="10" id="KtC-W7-VOE"/>
                                     <constraint firstAttribute="trailing" secondItem="ukE-3S-VVY" secondAttribute="trailing" constant="25" id="TFH-19-2M5"/>
                                     <constraint firstItem="ukE-3S-VVY" firstAttribute="leading" secondItem="WvJ-Kh-K8c" secondAttribute="leading" constant="25" id="gUJ-yB-zLX"/>
+                                    <constraint firstAttribute="centerX" secondItem="rQc-yO-qYe" secondAttribute="centerX" id="p10-mm-oDI"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -319,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5q-Ei-Too" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1579" y="-1541"/>
+            <point key="canvasLocation" x="1195" y="-797"/>
         </scene>
         <!--Upload Root View Controller-->
         <scene sceneID="JMi-5y-QEu">
@@ -417,6 +418,20 @@
                                     <constraint firstAttribute="bottom" secondItem="m9k-Nb-Ork" secondAttribute="bottom" id="zyJ-qD-V4G"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DE5-Xk-Lh1">
+                                <rect key="frame" x="137" y="90" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tempTest:" destination="BQz-nb-bHv" eventType="touchUpInside" id="8Kl-6o-jKc"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="crs-S9-OJL">
+                                <rect key="frame" x="40" y="389" width="240" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -428,6 +443,7 @@
                     <navigationItem key="navigationItem" id="IXe-mc-A22"/>
                     <connections>
                         <outlet property="foundTextLabel" destination="aVV-2e-ord" id="E8X-5R-mOs"/>
+                        <outlet property="imageView" destination="crs-S9-OJL" id="hWx-7c-RqB"/>
                         <outlet property="leftButton" destination="s7j-wL-Tlm" id="v3U-R5-BW6"/>
                         <outlet property="madeTextLabel" destination="m9k-Nb-Ork" id="raU-ha-wCA"/>
                         <outlet property="rightButton" destination="WzH-ud-tg4" id="376-wq-LQp"/>
@@ -436,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43N-S4-wVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="710" y="230"/>
+            <point key="canvasLocation" x="651" y="229"/>
         </scene>
         <!--Temp View Controller-->
         <scene sceneID="ufC-wZ-h7g">

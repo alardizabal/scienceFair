@@ -10,6 +10,7 @@
 //THIS SCREEN HAS TO BE AUTOLAYOUTED! 8/5/14
 
 #import "MFUploadRootViewController.h"
+#import "MFDataStore.h"
 
 @interface MFUploadRootViewController ()
 @property (weak, nonatomic) IBOutlet UIView *rightButton;
@@ -17,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *topTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *madeTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *foundTextLabel;
+- (IBAction)tempTest:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) NSMutableArray *images;
 
 
 @end
@@ -35,7 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.images = [[NSMutableArray alloc] init];
     //NavigationBar Setup
     self.navigationItem.title = @"Upload";
     self.navigationController.navigationBar.titleTextAttributes = @{
@@ -112,5 +116,38 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)tempTest:(id)sender {
+    MFDataStore *store = [MFDataStore sharedStore];
+    NSFetchRequest *fetchCategories = [[NSFetchRequest alloc] initWithEntityName:@"MFCategory"];
+    NSSortDescriptor *sortByName = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    fetchCategories.sortDescriptors = @[sortByName];
+    NSArray *categories = [store.context executeFetchRequest:fetchCategories error:nil];
+    NSLog(@"%d",[categories count]);
+  
+    
+    for (MFCategory *category in categories)
+    {
+        UIImage *image = [self loadImageWithPathName:category.name];
+        [self.images addObject:image];
+        self.imageView.image = image;
+    }
+    NSLog(@"%d", [self.images count]);
+}
+
+- (UIImage*)loadImageWithPathName: (NSString *)pathName
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                      [NSString stringWithFormat:@"%@",pathName]];
+    NSData *pngData = [NSData dataWithContentsOfFile:path];
+    UIImage *image = [UIImage imageWithData:pngData];
+//    UIImage* image = [UIImage imageWithContentsOfFile:path];
+    
+    return image;
+}
+
 
 @end
