@@ -16,6 +16,13 @@
 		65436D5F198EE3E00038C985 /* loginMainImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 65436D5D198EE3E00038C985 /* loginMainImage.png */; };
 		657238CB1992A12D00C1F023 /* MPSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238CA1992A12D00C1F023 /* MPSProfileViewController.m */; };
 		657238CF1992A1E400C1F023 /* Main_Matt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657238CE1992A1E400C1F023 /* Main_Matt.storyboard */; };
+		657238F11992ABE300C1F023 /* MFNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238F01992ABE300C1F023 /* MFNotification.m */; };
+		657238F41992ABE400C1F023 /* MFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238F31992ABE400C1F023 /* MFUser.m */; };
+		657238F71992ABE400C1F023 /* MFCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238F61992ABE400C1F023 /* MFCategory.m */; };
+		657238FA1992ABE400C1F023 /* MFMake.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238F91992ABE400C1F023 /* MFMake.m */; };
+		657238FD1992ABE400C1F023 /* MFFind.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238FC1992ABE400C1F023 /* MFFind.m */; };
+		657239001992ABE400C1F023 /* MFComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238FF1992ABE400C1F023 /* MFComment.m */; };
+		657239031992ABE400C1F023 /* MFInterest.m in Sources */ = {isa = PBXBuildFile; fileRef = 657239021992ABE400C1F023 /* MFInterest.m */; };
 		659E5C2F198BF0A800A4EE77 /* MFSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E5C2E198BF0A800A4EE77 /* MFSignupViewController.m */; };
 		659E5C32198BFBA400A4EE77 /* MFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E5C31198BFBA400A4EE77 /* MFAPIClient.m */; };
 		659E5C39198C0C6200A4EE77 /* MFDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E5C38198C0C6200A4EE77 /* MFDataStore.m */; };
@@ -56,8 +63,6 @@
 		65CF8534198FC59C001A77BE /* heartbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF8532198FC59C001A77BE /* heartbutton.png */; };
 		65CF8535198FC59C001A77BE /* peoplebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF8533198FC59C001A77BE /* peoplebutton.png */; };
 		65CF8537198FD8EC001A77BE /* categoryImagePlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF8536198FD8EC001A77BE /* categoryImagePlaceholder.png */; };
-		65CF853A199140DB001A77BE /* MFInterest.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF8539199140DB001A77BE /* MFInterest.m */; };
-		65CF853D199140DB001A77BE /* MFCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF853C199140DB001A77BE /* MFCategory.m */; };
 		65CF8540199155A1001A77BE /* MFBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF853F199155A1001A77BE /* MFBackground.m */; };
 		65CF9AD8198A877D009ACA3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C6EE461989615200E7DD13 /* Main.storyboard */; };
 		65CF9ADE198A8BAF009ACA3D /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9ADD198A8BAF009ACA3D /* LaunchImage@2x.png */; };
@@ -91,8 +96,6 @@
 		65D1580F198AE8B4000F958D /* collectives@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580D198AE8B4000F958D /* collectives@2x.png */; };
 		65D15810198AE8B4000F958D /* explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580E198AE8B4000F958D /* explore@2x.png */; };
 		65D15819198AEC82000F958D /* MFExploreCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */; };
-		65E65521198C18B5003DA661 /* MFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E65520198C18B5003DA661 /* MFUser.m */; };
-		65E65524198C3A56003DA661 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E65523198C3A56003DA661 /* KeychainItemWrapper.m */; };
 		A2A631BE198C4DAB00C5ECD2 /* AALAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A631BD198C4DAB00C5ECD2 /* AALAPIClient.m */; };
 		C56655F0365F48A6B3D637EA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F66FE788A7C4C7DB8EB1BC8 /* libPods.a */; };
 		C99B5D64198FE2D90079F2B6 /* MPSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C99B5D5C198FE2D90079F2B6 /* MPSViewController.m */; };
@@ -131,6 +134,20 @@
 		657238C91992A12D00C1F023 /* MPSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSProfileViewController.h; sourceTree = "<group>"; };
 		657238CA1992A12D00C1F023 /* MPSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSProfileViewController.m; sourceTree = "<group>"; };
 		657238CE1992A1E400C1F023 /* Main_Matt.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_Matt.storyboard; sourceTree = "<group>"; };
+		657238EF1992ABE300C1F023 /* MFNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFNotification.h; sourceTree = "<group>"; };
+		657238F01992ABE300C1F023 /* MFNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFNotification.m; sourceTree = "<group>"; };
+		657238F21992ABE400C1F023 /* MFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUser.h; sourceTree = "<group>"; };
+		657238F31992ABE400C1F023 /* MFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFUser.m; sourceTree = "<group>"; };
+		657238F51992ABE400C1F023 /* MFCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCategory.h; sourceTree = "<group>"; };
+		657238F61992ABE400C1F023 /* MFCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCategory.m; sourceTree = "<group>"; };
+		657238F81992ABE400C1F023 /* MFMake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFMake.h; sourceTree = "<group>"; };
+		657238F91992ABE400C1F023 /* MFMake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFMake.m; sourceTree = "<group>"; };
+		657238FB1992ABE400C1F023 /* MFFind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFFind.h; sourceTree = "<group>"; };
+		657238FC1992ABE400C1F023 /* MFFind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFFind.m; sourceTree = "<group>"; };
+		657238FE1992ABE400C1F023 /* MFComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFComment.h; sourceTree = "<group>"; };
+		657238FF1992ABE400C1F023 /* MFComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFComment.m; sourceTree = "<group>"; };
+		657239011992ABE400C1F023 /* MFInterest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFInterest.h; sourceTree = "<group>"; };
+		657239021992ABE400C1F023 /* MFInterest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFInterest.m; sourceTree = "<group>"; };
 		659E5C2D198BF0A800A4EE77 /* MFSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSignupViewController.h; sourceTree = "<group>"; };
 		659E5C2E198BF0A800A4EE77 /* MFSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSignupViewController.m; sourceTree = "<group>"; };
 		659E5C30198BFBA400A4EE77 /* MFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAPIClient.h; sourceTree = "<group>"; };
@@ -183,10 +200,6 @@
 		65CF8532198FC59C001A77BE /* heartbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartbutton.png; sourceTree = "<group>"; };
 		65CF8533198FC59C001A77BE /* peoplebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peoplebutton.png; sourceTree = "<group>"; };
 		65CF8536198FD8EC001A77BE /* categoryImagePlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryImagePlaceholder.png; sourceTree = "<group>"; };
-		65CF8538199140DB001A77BE /* MFInterest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFInterest.h; sourceTree = "<group>"; };
-		65CF8539199140DB001A77BE /* MFInterest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFInterest.m; sourceTree = "<group>"; };
-		65CF853B199140DB001A77BE /* MFCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCategory.h; sourceTree = "<group>"; };
-		65CF853C199140DB001A77BE /* MFCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCategory.m; sourceTree = "<group>"; };
 		65CF853E199155A1001A77BE /* MFBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFBackground.h; sourceTree = "<group>"; };
 		65CF853F199155A1001A77BE /* MFBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFBackground.m; sourceTree = "<group>"; };
 		65CF9ADD198A8BAF009ACA3D /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LaunchImage@2x.png"; path = "MakersFinders_Master/LaunchImage@2x.png"; sourceTree = "<group>"; };
@@ -234,10 +247,6 @@
 		65D1580E198AE8B4000F958D /* explore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explore@2x.png"; sourceTree = "<group>"; };
 		65D15817198AEC82000F958D /* MFExploreCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFExploreCustomTableViewCell.h; sourceTree = "<group>"; };
 		65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFExploreCustomTableViewCell.m; sourceTree = "<group>"; };
-		65E6551F198C18B5003DA661 /* MFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUser.h; sourceTree = "<group>"; };
-		65E65520198C18B5003DA661 /* MFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFUser.m; sourceTree = "<group>"; };
-		65E65522198C3A56003DA661 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
-		65E65523198C3A56003DA661 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		A2A631BC198C4DAB00C5ECD2 /* AALAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AALAPIClient.h; sourceTree = "<group>"; };
 		A2A631BD198C4DAB00C5ECD2 /* AALAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AALAPIClient.m; sourceTree = "<group>"; };
 		C99B5D5B198FE2D90079F2B6 /* MPSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSViewController.h; sourceTree = "<group>"; };
@@ -293,28 +302,42 @@
 			name = loginScreenImages;
 			sourceTree = "<group>";
 		};
-		659E5C33198BFBBA00A4EE77 /* Global */ = {
+		657238D01992A35300C1F023 /* Core Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				65CF853E199155A1001A77BE /* MFBackground.h */,
-				65CF853F199155A1001A77BE /* MFBackground.m */,
-				65CF853B199140DB001A77BE /* MFCategory.h */,
-				65CF853C199140DB001A77BE /* MFCategory.m */,
-				65CF8538199140DB001A77BE /* MFInterest.h */,
-				65CF8539199140DB001A77BE /* MFInterest.m */,
-				65E6551F198C18B5003DA661 /* MFUser.h */,
-				65E65520198C18B5003DA661 /* MFUser.m */,
 				659E5C37198C0C6200A4EE77 /* MFDataStore.h */,
 				659E5C38198C0C6200A4EE77 /* MFDataStore.m */,
 				659E5C49198C108000A4EE77 /* MakersFinders_Master.xcdatamodeld */,
+				657239011992ABE400C1F023 /* MFInterest.h */,
+				657239021992ABE400C1F023 /* MFInterest.m */,
+				657238FE1992ABE400C1F023 /* MFComment.h */,
+				657238FF1992ABE400C1F023 /* MFComment.m */,
+				657238FB1992ABE400C1F023 /* MFFind.h */,
+				657238FC1992ABE400C1F023 /* MFFind.m */,
+				657238F81992ABE400C1F023 /* MFMake.h */,
+				657238F91992ABE400C1F023 /* MFMake.m */,
+				657238F51992ABE400C1F023 /* MFCategory.h */,
+				657238F61992ABE400C1F023 /* MFCategory.m */,
+				657238F21992ABE400C1F023 /* MFUser.h */,
+				657238F31992ABE400C1F023 /* MFUser.m */,
+				657238EF1992ABE300C1F023 /* MFNotification.h */,
+				657238F01992ABE300C1F023 /* MFNotification.m */,
+			);
+			name = "Core Data Model";
+			sourceTree = "<group>";
+		};
+		659E5C33198BFBBA00A4EE77 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				657238D01992A35300C1F023 /* Core Data Model */,
 				65C6EE431989615200E7DD13 /* MFAppDelegate.h */,
 				65C6EE441989615200E7DD13 /* MFAppDelegate.m */,
+				65CF853E199155A1001A77BE /* MFBackground.h */,
+				65CF853F199155A1001A77BE /* MFBackground.m */,
 				65ACF8C7198BD691002CDBED /* MFConstants.h */,
 				65ACF8C8198BD691002CDBED /* MFConstants.m */,
 				659E5C30198BFBA400A4EE77 /* MFAPIClient.h */,
 				659E5C31198BFBA400A4EE77 /* MFAPIClient.m */,
-				65E65522198C3A56003DA661 /* KeychainItemWrapper.h */,
-				65E65523198C3A56003DA661 /* KeychainItemWrapper.m */,
 			);
 			name = Global;
 			path = ..;
@@ -762,11 +785,14 @@
 				65CF9B28198AAE8B009ACA3D /* FISProductDetailViewController.m in Sources */,
 				65CF9B27198AAE8B009ACA3D /* FISFeedTableViewController.m in Sources */,
 				65CF9B26198AAE8B009ACA3D /* FISDataStore.m in Sources */,
-				65E65524198C3A56003DA661 /* KeychainItemWrapper.m in Sources */,
+				657238F41992ABE400C1F023 /* MFUser.m in Sources */,
 				659E5C32198BFBA400A4EE77 /* MFAPIClient.m in Sources */,
 				65CF9AEE198AA984009ACA3D /* AALCategory.m in Sources */,
+				657238FD1992ABE400C1F023 /* MFFind.m in Sources */,
 				6543483019927FC500324F59 /* MFNotificationsTableViewCell.m in Sources */,
 				65CF8540199155A1001A77BE /* MFBackground.m in Sources */,
+				657238FA1992ABE400C1F023 /* MFMake.m in Sources */,
+				657239001992ABE400C1F023 /* MFComment.m in Sources */,
 				65CF9B22198AAE8B009ACA3D /* FISCollectionLandscapeViewController.m in Sources */,
 				F8384DEF199270AF000F7D80 /* MFAddMakeTableViewController.m in Sources */,
 				65CF9AF0198AA984009ACA3D /* AALTestViewController.m in Sources */,
@@ -781,16 +807,16 @@
 				65ACF8C9198BD691002CDBED /* MFConstants.m in Sources */,
 				657238CB1992A12D00C1F023 /* MPSProfileViewController.m in Sources */,
 				65C6EE451989615200E7DD13 /* MFAppDelegate.m in Sources */,
-				65E65521198C18B5003DA661 /* MFUser.m in Sources */,
+				657239031992ABE400C1F023 /* MFInterest.m in Sources */,
 				65CF9AEF198AA984009ACA3D /* AALInterest.m in Sources */,
+				657238F71992ABE400C1F023 /* MFCategory.m in Sources */,
 				65D15819198AEC82000F958D /* MFExploreCustomTableViewCell.m in Sources */,
 				65CF9AE4198A9174009ACA3D /* MFExploreRootViewController.m in Sources */,
+				657238F11992ABE300C1F023 /* MFNotification.m in Sources */,
 				C99B5D64198FE2D90079F2B6 /* MPSViewController.m in Sources */,
-				65CF853D199140DB001A77BE /* MFCategory.m in Sources */,
 				65CF9B23198AAE8B009ACA3D /* FISConstants.m in Sources */,
 				65CF9B24198AAE8B009ACA3D /* FISCustomPugCell.m in Sources */,
 				659E5C39198C0C6200A4EE77 /* MFDataStore.m in Sources */,
-				65CF853A199140DB001A77BE /* MFInterest.m in Sources */,
 				65CF9B21198AAE8B009ACA3D /* FISAPICall.m in Sources */,
 				F8384DEC199269F8000F7D80 /* MFAddFindTableViewController.m in Sources */,
 				65C6EE8A198971BB00E7DD13 /* MFUploadRootViewController.m in Sources */,

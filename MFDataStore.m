@@ -64,6 +64,10 @@
 {
     return [MFInterest interestWithContext:self.context];
 }
+-(MFMake *)createMake
+{
+    return [MFMake makeWithContext:self.context];
+}
 
 
 

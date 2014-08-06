@@ -1,25 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="MFCategory" representedClassName="MFCategory" syncable="YES">
-        <attribute name="actualImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="interests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MFInterest" inverseName="category" inverseEntity="MFInterest" syncable="YES"/>
+    </entity>
+    <entity name="MFComment" representedClassName="MFComment" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MFUser" inverseName="comments" inverseEntity="MFUser" syncable="YES"/>
+    </entity>
+    <entity name="MFFind" representedClassName="MFFind" syncable="YES">
+        <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="findDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MFUser" inverseName="finds" inverseEntity="MFUser" syncable="YES"/>
     </entity>
     <entity name="MFInterest" representedClassName="MFInterest" syncable="YES">
         <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MFCategory" inverseName="interests" inverseEntity="MFCategory" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MFUser" inverseName="interests" inverseEntity="MFUser" syncable="YES"/>
+    </entity>
+    <entity name="MFMake" representedClassName="MFMake" syncable="YES">
+        <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="makeDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MFUser" inverseName="makes" inverseEntity="MFUser" syncable="YES"/>
+    </entity>
+    <entity name="MFNotification" representedClassName="MFNotification" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="MFUser" representedClassName="MFUser" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="headerImageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileImageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MFComment" inverseName="user" inverseEntity="MFComment" syncable="YES"/>
+        <relationship name="finds" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MFFind" inverseName="user" inverseEntity="MFFind" syncable="YES"/>
+        <relationship name="followers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MFUser" inverseName="following" inverseEntity="MFUser" syncable="YES"/>
+        <relationship name="following" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MFUser" inverseName="followers" inverseEntity="MFUser" syncable="YES"/>
+        <relationship name="interests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MFInterest" inverseName="users" inverseEntity="MFInterest" syncable="YES"/>
+        <relationship name="makes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MFMake" inverseName="user" inverseEntity="MFMake" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MFUser" positionX="-36" positionY="9" width="128" height="105"/>
-        <element name="MFInterest" positionX="-27" positionY="45" width="128" height="88"/>
-        <element name="MFCategory" positionX="-9" positionY="54" width="128" height="103"/>
+        <element name="MFCategory" positionX="-63" positionY="167" width="128" height="88"/>
+        <element name="MFInterest" positionX="-74" positionY="-63" width="128" height="103"/>
+        <element name="MFUser" positionX="-369" positionY="14" width="128" height="253"/>
+        <element name="MFNotification" positionX="-2" positionY="306" width="128" height="58"/>
+        <element name="MFMake" positionX="-119" positionY="401" width="128" height="133"/>
+        <element name="MFFind" positionX="-416" positionY="-94" width="128" height="118"/>
+        <element name="MFComment" positionX="-468" positionY="423" width="128" height="73"/>
     </elements>
 </model>
