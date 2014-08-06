@@ -44,7 +44,7 @@
     self.navigationItem.title = @"Upload";
     self.navigationController.navigationBar.titleTextAttributes = @{
                                                             NSForegroundColorAttributeName: [UIColor whiteColor],
-                                                            NSFontAttributeName: [UIFont fontWithName:@"NeutraText-BookSC" size:25.0f]
+                                                            NSFontAttributeName: MFmenuFont
                                                             };
     
     self.navigationController.navigationBar.translucent = NO;
@@ -78,15 +78,15 @@
     self.rightButton.backgroundColor = MFtealColor;
     
     self.topTextLabel.textColor = [UIColor whiteColor];
-    self.topTextLabel.font = MFhelvetica;
+    self.topTextLabel.font = MFhelveticaUploadScreen;
     self.topTextLabel.text = @"What would you like to upload?";
     
     self.madeTextLabel.textColor = [UIColor whiteColor];
-    self.madeTextLabel.font = MFhelvetica;
+    self.madeTextLabel.font = MFhelveticaUploadScreen;
     self.madeTextLabel.text = @"I made this"; //eventually make this bold in the middle
     
     self.foundTextLabel.textColor = [UIColor whiteColor];
-    self.foundTextLabel.font = MFhelvetica;
+    self.foundTextLabel.font = MFhelveticaUploadScreen;
     self.foundTextLabel.text = @"I found this"; //eventually make this bold in the middle
     
     //Add tap recognition to two buttons
