@@ -86,14 +86,14 @@
 {
     UIStoryboard *marcusStoryBoard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
     UIViewController *tempVC = [marcusStoryBoard instantiateViewControllerWithIdentifier:@"madeUpload"];
-    [self presentViewController:tempVC animated:NO completion:nil];
+    [self presentViewController:tempVC animated:YES completion:nil];
 }
 
 -(void)handleFoundButtonTapped:(UITapGestureRecognizer *)recognizer
 {
     UIStoryboard *marcusStoryBoard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
     UIViewController *tempVC2 = [marcusStoryBoard instantiateViewControllerWithIdentifier:@"foundUpload"];
-    [self presentViewController:tempVC2 animated:NO completion:nil];
+    [self presentViewController:tempVC2 animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
