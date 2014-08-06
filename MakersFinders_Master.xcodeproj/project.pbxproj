@@ -76,23 +76,15 @@
 		65CF9AFA198AAAF7009ACA3D /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9AF4198AAAF7009ACA3D /* checkmark.png */; };
 		65CF9AFC198AAAF7009ACA3D /* times_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9AF7198AAAF7009ACA3D /* times_square.png */; };
 		65CF9B1D198AAE8B009ACA3D /* clipboard-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B00198AAE8B009ACA3D /* clipboard-512.png */; };
-		65CF9B1E198AAE8B009ACA3D /* DefaultProfilePic.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B01198AAE8B009ACA3D /* DefaultProfilePic.png */; };
 		65CF9B1F198AAE8B009ACA3D /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B02198AAE8B009ACA3D /* Detail.storyboard */; };
-		65CF9B20198AAE8B009ACA3D /* Drinks.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B03198AAE8B009ACA3D /* Drinks.png */; };
-		65CF9B21198AAE8B009ACA3D /* FISAPICall.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B05198AAE8B009ACA3D /* FISAPICall.m */; };
-		65CF9B22198AAE8B009ACA3D /* FISCollectionLandscapeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B07198AAE8B009ACA3D /* FISCollectionLandscapeViewController.m */; };
-		65CF9B23198AAE8B009ACA3D /* FISConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B09198AAE8B009ACA3D /* FISConstants.m */; };
 		65CF9B24198AAE8B009ACA3D /* FISCustomPugCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B0B198AAE8B009ACA3D /* FISCustomPugCell.m */; };
 		65CF9B25198AAE8B009ACA3D /* FISCustomPugCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B0C198AAE8B009ACA3D /* FISCustomPugCell.xib */; };
 		65CF9B26198AAE8B009ACA3D /* FISDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B0E198AAE8B009ACA3D /* FISDataStore.m */; };
 		65CF9B27198AAE8B009ACA3D /* FISFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B10198AAE8B009ACA3D /* FISFeedTableViewController.m */; };
 		65CF9B28198AAE8B009ACA3D /* FISProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CF9B12198AAE8B009ACA3D /* FISProductDetailViewController.m */; };
-		65CF9B2A198AAE8B009ACA3D /* FISPugCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B15198AAE8B009ACA3D /* FISPugCollectionViewCell.xib */; };
-		65CF9B2B198AAE8B009ACA3D /* HeartIcon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B16198AAE8B009ACA3D /* HeartIcon.ico */; };
 		65CF9B2C198AAE8B009ACA3D /* hearts-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B17198AAE8B009ACA3D /* hearts-512.png */; };
 		65CF9B2D198AAE8B009ACA3D /* pen-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B18198AAE8B009ACA3D /* pen-512.png */; };
 		65CF9B2E198AAE8B009ACA3D /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B19198AAE8B009ACA3D /* placeholder.png */; };
-		65CF9B2F198AAE8B009ACA3D /* ProfileImageDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B1A198AAE8B009ACA3D /* ProfileImageDefault.png */; };
 		65D1580F198AE8B4000F958D /* collectives@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580D198AE8B4000F958D /* collectives@2x.png */; };
 		65D15810198AE8B4000F958D /* explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580E198AE8B4000F958D /* explore@2x.png */; };
 		65D15819198AEC82000F958D /* MFExploreCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */; };
@@ -219,15 +211,7 @@
 		65CF9AF6198AAAF7009ACA3D /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		65CF9AF7198AAAF7009ACA3D /* times_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = times_square.png; sourceTree = "<group>"; };
 		65CF9B00198AAE8B009ACA3D /* clipboard-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clipboard-512.png"; sourceTree = "<group>"; };
-		65CF9B01198AAE8B009ACA3D /* DefaultProfilePic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefaultProfilePic.png; sourceTree = "<group>"; };
 		65CF9B02198AAE8B009ACA3D /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
-		65CF9B03198AAE8B009ACA3D /* Drinks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Drinks.png; sourceTree = "<group>"; };
-		65CF9B04198AAE8B009ACA3D /* FISAPICall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISAPICall.h; sourceTree = "<group>"; };
-		65CF9B05198AAE8B009ACA3D /* FISAPICall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISAPICall.m; sourceTree = "<group>"; };
-		65CF9B06198AAE8B009ACA3D /* FISCollectionLandscapeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISCollectionLandscapeViewController.h; sourceTree = "<group>"; };
-		65CF9B07198AAE8B009ACA3D /* FISCollectionLandscapeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISCollectionLandscapeViewController.m; sourceTree = "<group>"; };
-		65CF9B08198AAE8B009ACA3D /* FISConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISConstants.h; sourceTree = "<group>"; };
-		65CF9B09198AAE8B009ACA3D /* FISConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISConstants.m; sourceTree = "<group>"; };
 		65CF9B0A198AAE8B009ACA3D /* FISCustomPugCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISCustomPugCell.h; sourceTree = "<group>"; };
 		65CF9B0B198AAE8B009ACA3D /* FISCustomPugCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISCustomPugCell.m; sourceTree = "<group>"; };
 		65CF9B0C198AAE8B009ACA3D /* FISCustomPugCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FISCustomPugCell.xib; sourceTree = "<group>"; };
@@ -237,12 +221,9 @@
 		65CF9B10198AAE8B009ACA3D /* FISFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISFeedTableViewController.m; sourceTree = "<group>"; };
 		65CF9B11198AAE8B009ACA3D /* FISProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISProductDetailViewController.h; sourceTree = "<group>"; };
 		65CF9B12198AAE8B009ACA3D /* FISProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISProductDetailViewController.m; sourceTree = "<group>"; };
-		65CF9B15198AAE8B009ACA3D /* FISPugCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FISPugCollectionViewCell.xib; sourceTree = "<group>"; };
-		65CF9B16198AAE8B009ACA3D /* HeartIcon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = HeartIcon.ico; sourceTree = "<group>"; };
 		65CF9B17198AAE8B009ACA3D /* hearts-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hearts-512.png"; sourceTree = "<group>"; };
 		65CF9B18198AAE8B009ACA3D /* pen-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pen-512.png"; sourceTree = "<group>"; };
 		65CF9B19198AAE8B009ACA3D /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
-		65CF9B1A198AAE8B009ACA3D /* ProfileImageDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfileImageDefault.png; sourceTree = "<group>"; };
 		65D1580D198AE8B4000F958D /* collectives@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "collectives@2x.png"; sourceTree = "<group>"; };
 		65D1580E198AE8B4000F958D /* explore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explore@2x.png"; sourceTree = "<group>"; };
 		65D15817198AEC82000F958D /* MFExploreCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFExploreCustomTableViewCell.h; sourceTree = "<group>"; };
@@ -541,20 +522,11 @@
 		65CF9AFF198AAE78009ACA3D /* Marcus */ = {
 			isa = PBXGroup;
 			children = (
-				65CF9B00198AAE8B009ACA3D /* clipboard-512.png */,
-				65CF9B01198AAE8B009ACA3D /* DefaultProfilePic.png */,
 				65CF9B02198AAE8B009ACA3D /* Detail.storyboard */,
 				F8384DEA199269F8000F7D80 /* MFAddFindTableViewController.h */,
 				F8384DEB199269F8000F7D80 /* MFAddFindTableViewController.m */,
 				F8384DED199270AF000F7D80 /* MFAddMakeTableViewController.h */,
 				F8384DEE199270AF000F7D80 /* MFAddMakeTableViewController.m */,
-				65CF9B03198AAE8B009ACA3D /* Drinks.png */,
-				65CF9B04198AAE8B009ACA3D /* FISAPICall.h */,
-				65CF9B05198AAE8B009ACA3D /* FISAPICall.m */,
-				65CF9B06198AAE8B009ACA3D /* FISCollectionLandscapeViewController.h */,
-				65CF9B07198AAE8B009ACA3D /* FISCollectionLandscapeViewController.m */,
-				65CF9B08198AAE8B009ACA3D /* FISConstants.h */,
-				65CF9B09198AAE8B009ACA3D /* FISConstants.m */,
 				65CF9B0A198AAE8B009ACA3D /* FISCustomPugCell.h */,
 				65CF9B0B198AAE8B009ACA3D /* FISCustomPugCell.m */,
 				65CF9B0C198AAE8B009ACA3D /* FISCustomPugCell.xib */,
@@ -564,12 +536,10 @@
 				65CF9B10198AAE8B009ACA3D /* FISFeedTableViewController.m */,
 				65CF9B11198AAE8B009ACA3D /* FISProductDetailViewController.h */,
 				65CF9B12198AAE8B009ACA3D /* FISProductDetailViewController.m */,
-				65CF9B15198AAE8B009ACA3D /* FISPugCollectionViewCell.xib */,
-				65CF9B16198AAE8B009ACA3D /* HeartIcon.ico */,
 				65CF9B17198AAE8B009ACA3D /* hearts-512.png */,
 				65CF9B18198AAE8B009ACA3D /* pen-512.png */,
 				65CF9B19198AAE8B009ACA3D /* placeholder.png */,
-				65CF9B1A198AAE8B009ACA3D /* ProfileImageDefault.png */,
+				65CF9B00198AAE8B009ACA3D /* clipboard-512.png */,
 				F8DC8A5F198C03E400197301 /* Flickr.h */,
 				F8DC8A60198C03E400197301 /* Flickr.m */,
 				F8DC8A61198C03E400197301 /* FlickrPhoto.h */,
@@ -680,13 +650,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				65CF9AD8198A877D009ACA3D /* Main.storyboard in Resources */,
-				65CF9B1E198AAE8B009ACA3D /* DefaultProfilePic.png in Resources */,
 				6509068D1989811000E02CB1 /* Neutra-Text-SC.ttf in Resources */,
-				65CF9B2F198AAE8B009ACA3D /* ProfileImageDefault.png in Resources */,
 				65C6EE9C198975C700E7DD13 /* bottom_bar.png in Resources */,
 				65C6EE7C19896A2400E7DD13 /* search@2x.png in Resources */,
 				65CF9B25198AAE8B009ACA3D /* FISCustomPugCell.xib in Resources */,
-				65CF9B2B198AAE8B009ACA3D /* HeartIcon.ico in Resources */,
 				65CF9B2C198AAE8B009ACA3D /* hearts-512.png in Resources */,
 				65C6EE4D1989615200E7DD13 /* Images.xcassets in Resources */,
 				65C6EE7B19896A2400E7DD13 /* notifications@2x.png in Resources */,
@@ -701,7 +668,6 @@
 				65C6EE77198969F800E7DD13 /* upload@2x.png in Resources */,
 				65CF9B2E198AAE8B009ACA3D /* placeholder.png in Resources */,
 				C99B5D68198FE2D90079F2B6 /* hearts.png in Resources */,
-				65CF9B2A198AAE8B009ACA3D /* FISPugCollectionViewCell.xib in Resources */,
 				65C6EE3F1989615200E7DD13 /* InfoPlist.strings in Resources */,
 				65D15810198AE8B4000F958D /* explore@2x.png in Resources */,
 				65C6EE97198975C700E7DD13 /* madetext.png in Resources */,
@@ -713,7 +679,6 @@
 				65CF9ADE198A8BAF009ACA3D /* LaunchImage@2x.png in Resources */,
 				C99B5D69198FE2D90079F2B6 /* binoculars.png in Resources */,
 				65CF9B2D198AAE8B009ACA3D /* pen-512.png in Resources */,
-				65CF9B20198AAE8B009ACA3D /* Drinks.png in Resources */,
 				65C6EE7F19896CED00E7DD13 /* tabbarbackground@2x.png in Resources */,
 				65C6EE8719896F9600E7DD13 /* user_selected@2x.png in Resources */,
 				657238CF1992A1E400C1F023 /* Main_Matt.storyboard in Resources */,
@@ -793,7 +758,6 @@
 				65CF8540199155A1001A77BE /* MFBackground.m in Sources */,
 				657238FA1992ABE400C1F023 /* MFMake.m in Sources */,
 				657239001992ABE400C1F023 /* MFComment.m in Sources */,
-				65CF9B22198AAE8B009ACA3D /* FISCollectionLandscapeViewController.m in Sources */,
 				F8384DEF199270AF000F7D80 /* MFAddMakeTableViewController.m in Sources */,
 				65CF9AF0198AA984009ACA3D /* AALTestViewController.m in Sources */,
 				65C6EE411989615200E7DD13 /* main.m in Sources */,
@@ -814,10 +778,8 @@
 				65CF9AE4198A9174009ACA3D /* MFExploreRootViewController.m in Sources */,
 				657238F11992ABE300C1F023 /* MFNotification.m in Sources */,
 				C99B5D64198FE2D90079F2B6 /* MPSViewController.m in Sources */,
-				65CF9B23198AAE8B009ACA3D /* FISConstants.m in Sources */,
 				65CF9B24198AAE8B009ACA3D /* FISCustomPugCell.m in Sources */,
 				659E5C39198C0C6200A4EE77 /* MFDataStore.m in Sources */,
-				65CF9B21198AAE8B009ACA3D /* FISAPICall.m in Sources */,
 				F8384DEC199269F8000F7D80 /* MFAddFindTableViewController.m in Sources */,
 				65C6EE8A198971BB00E7DD13 /* MFUploadRootViewController.m in Sources */,
 				65C6EE6B1989616D00E7DD13 /* MFCustomTabBarControllerViewController.m in Sources */,

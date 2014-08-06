@@ -51,11 +51,11 @@
     </entity>
     <elements>
         <element name="MFCategory" positionX="-63" positionY="167" width="128" height="88"/>
-        <element name="MFInterest" positionX="-74" positionY="-63" width="128" height="103"/>
-        <element name="MFUser" positionX="-369" positionY="14" width="128" height="253"/>
-        <element name="MFNotification" positionX="-2" positionY="306" width="128" height="58"/>
-        <element name="MFMake" positionX="-119" positionY="401" width="128" height="133"/>
-        <element name="MFFind" positionX="-416" positionY="-94" width="128" height="118"/>
         <element name="MFComment" positionX="-468" positionY="423" width="128" height="73"/>
+        <element name="MFFind" positionX="-416" positionY="-94" width="128" height="118"/>
+        <element name="MFInterest" positionX="-74" positionY="-63" width="128" height="103"/>
+        <element name="MFMake" positionX="-119" positionY="401" width="128" height="133"/>
+        <element name="MFNotification" positionX="-2" positionY="306" width="128" height="58"/>
+        <element name="MFUser" positionX="-369" positionY="14" width="128" height="253"/>
     </elements>
 </model>

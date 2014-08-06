@@ -7,7 +7,6 @@
 //
 
 #import "FISDataStore.h"
-#import "FISAPICall.h"
 //Delete after feed data is provided
 #import "Flickr.h"
 #import "FlickrPhoto.h"
