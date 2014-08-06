@@ -10,6 +10,9 @@
 #import "AALAPIClient.h"
 #import "AALCategory.h"
 #import "AALInterest.h"
+#import "MFInterest.h"
+#import "MFDataStore.h"
+#import "MFCategory.h"
 
 @interface AALTestViewController ()
 
@@ -40,7 +43,7 @@
 {
     [super viewDidLoad];
     
-    self.containerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 568)];
+    self.containerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 44)];
     self.containerView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.containerView];
     
@@ -154,8 +157,39 @@
     followYourInterestsLabel.textAlignment = NSTextAlignmentCenter;
     [self.containerView addSubview:followYourInterestsLabel];
     
-    [self stageData];
     
+    UIToolbar *toolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, self.view.bounds.size.height - 20 - 44 - 44, self.view.bounds.size.width, 44)];
+    
+    toolbar.backgroundColor = [UIColor grayColor];
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(dismissVC:)];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithTitle:@"Next" style:UIBarButtonItemStyleDone target:nil action:nil];
+    
+    UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    toolbar.items = [NSArray arrayWithObjects:cancelButton, flexibleSpace, doneButton, nil];
+    
+    [self.view addSubview:toolbar];
+    
+//    
+//    [button setTranslatesAutoresizingMaskIntoConstraints: NO];
+//    id bottomGuide = .bottomLayoutGuide;
+//    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings (button, bottomGuide);
+//    [myViewController.view addConstraints:
+//     [NSLayoutConstraint constraintsWithVisualFormat: @"V: [button]-20-[bottomGuide]"
+//                                             options: 0
+//                                             metrics: nil
+//                                               views: viewsDictionary]
+//     self.view layoutSubviews; // You must call this method here or the system raises an exception
+//     ];
+    
+//    [self stageData];
+    [self showCategories];
+}
+
+- (IBAction)dismissVC:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void) stageData
@@ -224,11 +258,17 @@
     NSUInteger startXvalueScrollView = 80;
     NSUInteger categoryPadding = 20;
     
+    MFDataStore *store = [MFDataStore sharedStore];
+    NSFetchRequest *fetchCategories = [[NSFetchRequest alloc] initWithEntityName:@"MFCategory"];
+    NSSortDescriptor *sortByName = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    fetchCategories.sortDescriptors = @[sortByName];
+    self.categoryArray = [store.context executeFetchRequest:fetchCategories error:nil];
+
     UIView *contentView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [self.categoryArray count] * (categoryViewWidth + categoryPadding), categoryViewHeight)];
     
     for (NSUInteger i = 0; i < [self.categoryArray count]; i++) {
-        AALCategory *tempCategory = [[AALCategory alloc]init];
-        tempCategory = self.categoryArray[i];
+
+        MFCategory *tempCategory = self.categoryArray[i];
         
         UIView *categoryContainerView = [[UIView alloc]initWithFrame:CGRectMake(startXvalueScrollView, 0, categoryViewWidth, categoryViewHeight)];
         
@@ -241,17 +281,18 @@
         categorySelectedHighlight.hidden = YES;
         
         UIImageView *categoryImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 150, 150)];
-        UIImage *categoryImage = tempCategory.categoryImage;
+//        UIImage *categoryImage = tempCategory.categoryImage;
         
         categoryImageView.layer.cornerRadius = categoryImageView.frame.size.height/2;
         categoryImageView.clipsToBounds = YES;
         
-        [categoryImageView setImage:categoryImage];
+        UIImage *image = [self getImageWithName:tempCategory.name];
+        [categoryImageView setImage:image];
         
         [categoryContainerView addSubview:categorySelectedHighlight];
         [categoryContainerView addSubview:categoryImageView];
         
-        categoryContainerView.accessibilityLabel = tempCategory.categoryName;
+        categoryContainerView.accessibilityLabel = tempCategory.name;
         
         UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleCategoryTap:)];
         [categoryContainerView addGestureRecognizer:tapRecognizer];
@@ -259,7 +300,7 @@
         [contentView addSubview:categoryContainerView];
         
         UILabel *categoryLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 175, categoryContainerView.frame.size.width, 20)];
-        categoryLabel.text = tempCategory.categoryName;
+        categoryLabel.text = tempCategory.name;
         categoryLabel.font = [UIFont boldSystemFontOfSize:12];
         categoryLabel.textColor = [UIColor colorWithRed:0 green:119.0/255.0 blue:126.0/255.0 alpha:1.0];
         categoryLabel.textAlignment = NSTextAlignmentCenter;
@@ -284,7 +325,7 @@
     self.categoryScrollView.accessibilityLabel = @"Category Scrollview";
     self.categoryScrollView.scrollEnabled = YES;
     self.categoryScrollView.showsHorizontalScrollIndicator = NO;
-    self.categoryScrollView.contentSize = CGSizeMake([self.categoryArray count] * (categoryViewWidth + categoryPadding), categoryViewHeight);
+    self.categoryScrollView.contentSize = CGSizeMake([self.categoryArray count] * (categoryViewWidth + categoryPadding) + 140, categoryViewHeight);
     
     [self.categoryScrollView addSubview:contentView];
     [self.containerView addSubview:self.categoryScrollView];
@@ -300,11 +341,11 @@
     UIView *contentView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [self.categoryArray count] * (100 + interestPadding), 150)];
     
     for (NSUInteger i = 0; i < [self.categoryArray count]; i++) {
-        AALCategory *tempCategory = [[AALCategory alloc]init];
-        tempCategory = self.categoryArray[i];
+
+        MFCategory *tempCategory = self.categoryArray[i];
         
-        if ([tempCategory.categoryName isEqualToString:category]) {
-            self.interestsArray = tempCategory.interests;
+        if ([tempCategory.name isEqualToString:category]) {
+            self.interestsArray = [tempCategory.interests allObjects];
             
             for (NSUInteger i = 0; i < [self.interestsArray count]; i++) {
                 
@@ -312,13 +353,15 @@
                 UIImageView *interestImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
                 UIImageView *selectedImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
                 
-                AALInterest *tempInterest = self.interestsArray[i];
-                UIImage *interestImage = tempInterest.interestImage;
+                MFInterest *tempInterest = self.interestsArray[i];
+//                UIImage *interestImage = tempInterest.interestImage;
                 
                 interestImageView.layer.cornerRadius = interestImageView.frame.size.height/2;
                 interestImageView.clipsToBounds = YES;
                 
-                [interestImageView setImage:interestImage];
+//                [interestImageView setImage:interestImage];
+                UIImage *image = [self getImageWithName:tempInterest.name];
+                [interestImageView setImage:image];
                 [interestContainerView addSubview:interestImageView];
                 
                 [selectedImageView setImage:[UIImage imageNamed:@"checkmark"]];
@@ -328,7 +371,7 @@
                 selectedImageView.hidden = YES;
                 [interestContainerView addSubview:selectedImageView];
                 
-                interestContainerView.accessibilityLabel = tempInterest.interestName;
+                interestContainerView.accessibilityLabel = tempInterest.name;
                 
                 UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleInterestTap:)];
                 [interestContainerView addGestureRecognizer:tapRecognizer];
@@ -336,7 +379,7 @@
                 [contentView addSubview:interestContainerView];
                 
                 UILabel *interestLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 110, interestContainerView.frame.size.width, 20)];
-                interestLabel.text = tempInterest.interestName;
+                interestLabel.text = tempInterest.name;
                 interestLabel.font = [UIFont boldSystemFontOfSize:10];
                 interestLabel.textColor = [UIColor colorWithRed:0 green:119.0/255.0 blue:126.0/255.0 alpha:1.0];
                 interestLabel.textAlignment = NSTextAlignmentCenter;
@@ -432,5 +475,16 @@
  // Pass the selected object to the new view controller.
  }
  */
+
+-(UIImage *)getImageWithName:(NSString *)name
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    NSString *fixedString = [name stringByReplacingOccurrencesOfString:@"/" withString:@""];
+    NSString *filePath = [documentsPath stringByAppendingPathComponent:fixedString];
+    NSData *pngData = [NSData dataWithContentsOfFile:filePath];
+    UIImage *image = [UIImage imageWithData:pngData];
+    return image;
+}
 
 @end

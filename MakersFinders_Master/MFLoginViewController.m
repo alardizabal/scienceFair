@@ -9,12 +9,15 @@
 #import "MFLoginViewController.h"
 #import "MFAPIClient.h"
 #import "MFCustomTabBarControllerViewController.h"
+#import "MFBackground.h"
+
+
 
 @interface MFLoginViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
-- (IBAction)loginTapped:(id)sender;
+
 
 @property (weak, nonatomic) IBOutlet UIView *bottomContainer;
 @property (weak, nonatomic) IBOutlet UILabel *MakersFindersLogo;
@@ -36,6 +39,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [MFBackground LoadCategoryAndInterestImagesInBackGround];
+
+    
+    
     self.navigationController.navigationBarHidden = YES;
     self.passwordField.secureTextEntry = YES;
     
@@ -49,8 +57,12 @@
     self.MakersFindersLogo.shadowColor = [UIColor blackColor];
     self.MakersFindersLogo.shadowOffset = CGSizeMake(1,1);
     self.loginButton.layer.cornerRadius = 6.0f;
+    
+    UITapGestureRecognizer *loginTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loginTapped:)];
+    [self.loginButton addGestureRecognizer:loginTapped];
+    
+    
 
-    // Do any additional setup after loading the view.
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -75,13 +87,15 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (IBAction)loginTapped:(id)sender {
+-(void)loginTapped:(UITapGestureRecognizer *)recognizer
+{
     MFAPIClient *client = [[MFAPIClient alloc] init];
     [client loginNewUserWithEmail:@"dansundsun@gmail.com" Password:@"test" Completion:^{
         MFCustomTabBarControllerViewController *tabBarController = [[MFCustomTabBarControllerViewController alloc] init];
         [self.navigationController pushViewController:tabBarController animated:YES];
     }];
 }
+
+
 
 @end

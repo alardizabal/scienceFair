@@ -52,7 +52,7 @@
     MFUploadRootViewController *vc3 = [main instantiateViewControllerWithIdentifier:@"uploadRoot"];
     UINavigationController *navvc3 = [[UINavigationController alloc] initWithRootViewController:vc3];
     
-    AALTestViewController *vc4 = [alMain instantiateViewControllerWithIdentifier:@"interests"];
+    AALTestViewController *vc4 = [main instantiateViewControllerWithIdentifier:@"notificationsFollowing"];
     UINavigationController *navvc4 = [[UINavigationController alloc] initWithRootViewController:vc4];
     
     MPSProfileViewController *vc5 = [mattMain instantiateViewControllerWithIdentifier:@"profileRoot"];

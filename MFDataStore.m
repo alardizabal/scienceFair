@@ -55,5 +55,17 @@
 {
     return [MFUser userWithContext:self.context];
 }
+-(MFCategory *)createCategory
+{
+    return [MFCategory categoryWithContext:self.context];
+}
+
+-(MFInterest *)createInterest
+{
+    return [MFInterest interestWithContext:self.context];
+}
+
+
+
 
 @end

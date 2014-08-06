@@ -12,6 +12,7 @@
 #import "FISProductDetailViewController.h"
 //Delete after feed test data is finished
 #import "FlickrPhoto.h"
+#import "AALTestViewController.h"
 
 @interface FISFeedTableViewController ()
 
@@ -45,11 +46,24 @@
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.titleTextAttributes = @{
                                                                     NSForegroundColorAttributeName: [UIColor whiteColor],
-                                                                    NSFontAttributeName: [UIFont fontWithName:@"NeutraText-BookSC" size:25.0f]
-                                                                    };
+                                                                    NSFontAttributeName:MFmenuFont};
     
     
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/255.0 green:62/255.0 blue:81/255.0 alpha:1];
+    
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftButton setBackgroundImage:[UIImage imageNamed:@"peoplebutton"] forState:UIControlStateNormal];
+    leftButton.frame = CGRectMake(0, 0, 25, 25);
+    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
+    [leftButton addTarget:self action:@selector(peopleButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = leftButtonItem;
+    
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightButton setBackgroundImage:[UIImage imageNamed:@"heartbutton"] forState:UIControlStateNormal];
+    rightButton.frame = CGRectMake(0, 0, 22, 25);
+    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+    [rightButton addTarget:self action:@selector(heartButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = rightButtonItem;
     
     self.store = [FISDataStore sharedDataStore];
     [self.store placeHolderImages];
@@ -65,6 +79,19 @@
     }];
     //Added here
 //    hidden = NO;
+}
+
+-(void)peopleButtonTapped:(UITapGestureRecognizer *)recognizer
+{
+    
+}
+
+-(void)heartButtonTapped:(UITapGestureRecognizer *)recognizer
+{
+    UIStoryboard *alMain = [UIStoryboard storyboardWithName:@"AALMain" bundle:nil];
+    AALTestViewController *vc1 = [alMain instantiateViewControllerWithIdentifier:@"interests"];
+    UINavigationController *navvc1 = [[UINavigationController alloc] initWithRootViewController:vc1];
+    [self presentViewController:navvc1 animated:YES completion:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated
