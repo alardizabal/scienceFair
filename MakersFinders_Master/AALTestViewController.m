@@ -43,7 +43,7 @@
 {
     [super viewDidLoad];
     
-    self.containerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 568)];
+    self.containerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 44)];
     self.containerView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.containerView];
     
@@ -157,8 +157,39 @@
     followYourInterestsLabel.textAlignment = NSTextAlignmentCenter;
     [self.containerView addSubview:followYourInterestsLabel];
     
+    
+    UIToolbar *toolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, self.view.bounds.size.height - 20 - 44 - 44, self.view.bounds.size.width, 44)];
+    
+    toolbar.backgroundColor = [UIColor grayColor];
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(dismissVC:)];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithTitle:@"Next" style:UIBarButtonItemStyleDone target:nil action:nil];
+    
+    UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    toolbar.items = [NSArray arrayWithObjects:cancelButton, flexibleSpace, doneButton, nil];
+    
+    [self.view addSubview:toolbar];
+    
+//    
+//    [button setTranslatesAutoresizingMaskIntoConstraints: NO];
+//    id bottomGuide = .bottomLayoutGuide;
+//    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings (button, bottomGuide);
+//    [myViewController.view addConstraints:
+//     [NSLayoutConstraint constraintsWithVisualFormat: @"V: [button]-20-[bottomGuide]"
+//                                             options: 0
+//                                             metrics: nil
+//                                               views: viewsDictionary]
+//     self.view layoutSubviews; // You must call this method here or the system raises an exception
+//     ];
+    
 //    [self stageData];
     [self showCategories];
+}
+
+- (IBAction)dismissVC:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void) stageData
