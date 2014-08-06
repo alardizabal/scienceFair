@@ -33,7 +33,6 @@
 {
     [super viewDidLoad];
     UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIStoryboard *alMain = [UIStoryboard storyboardWithName:@"AALMain" bundle:nil];
     UIStoryboard *mattMain = [UIStoryboard storyboardWithName:@"Main_Matt" bundle:nil];
     
     

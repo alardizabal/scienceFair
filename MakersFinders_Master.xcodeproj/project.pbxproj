@@ -14,6 +14,8 @@
 		6543483019927FC500324F59 /* MFNotificationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6543482F19927FC500324F59 /* MFNotificationsTableViewCell.m */; };
 		65436D5E198EE3E00038C985 /* makersfinderslogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 65436D5C198EE3E00038C985 /* makersfinderslogo.png */; };
 		65436D5F198EE3E00038C985 /* loginMainImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 65436D5D198EE3E00038C985 /* loginMainImage.png */; };
+		657238CB1992A12D00C1F023 /* MPSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238CA1992A12D00C1F023 /* MPSProfileViewController.m */; };
+		657238CF1992A1E400C1F023 /* Main_Matt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657238CE1992A1E400C1F023 /* Main_Matt.storyboard */; };
 		659E5C2F198BF0A800A4EE77 /* MFSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E5C2E198BF0A800A4EE77 /* MFSignupViewController.m */; };
 		659E5C32198BFBA400A4EE77 /* MFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E5C31198BFBA400A4EE77 /* MFAPIClient.m */; };
 		659E5C39198C0C6200A4EE77 /* MFDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E5C38198C0C6200A4EE77 /* MFDataStore.m */; };
@@ -67,7 +69,6 @@
 		65CF9AF8198AAAF7009ACA3D /* AALMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9AF1198AAAF7009ACA3D /* AALMain.storyboard */; };
 		65CF9AF9198AAAF7009ACA3D /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9AF3198AAAF7009ACA3D /* Contents.json */; };
 		65CF9AFA198AAAF7009ACA3D /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9AF4198AAAF7009ACA3D /* checkmark.png */; };
-		65CF9AFB198AAAF7009ACA3D /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9AF6198AAAF7009ACA3D /* Contents.json */; };
 		65CF9AFC198AAAF7009ACA3D /* times_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9AF7198AAAF7009ACA3D /* times_square.png */; };
 		65CF9B1D198AAE8B009ACA3D /* clipboard-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B00198AAE8B009ACA3D /* clipboard-512.png */; };
 		65CF9B1E198AAE8B009ACA3D /* DefaultProfilePic.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9B01198AAE8B009ACA3D /* DefaultProfilePic.png */; };
@@ -94,8 +95,6 @@
 		65E65524198C3A56003DA661 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E65523198C3A56003DA661 /* KeychainItemWrapper.m */; };
 		A2A631BE198C4DAB00C5ECD2 /* AALAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A631BD198C4DAB00C5ECD2 /* AALAPIClient.m */; };
 		C56655F0365F48A6B3D637EA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F66FE788A7C4C7DB8EB1BC8 /* libPods.a */; };
-		C99B5D62198FE2D90079F2B6 /* Main_Matt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99B5D58198FE2D90079F2B6 /* Main_Matt.storyboard */; };
-		C99B5D63198FE2D90079F2B6 /* MPSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C99B5D5A198FE2D90079F2B6 /* MPSProfileViewController.m */; };
 		C99B5D64198FE2D90079F2B6 /* MPSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C99B5D5C198FE2D90079F2B6 /* MPSViewController.m */; };
 		C99B5D65198FE2D90079F2B6 /* hammer_1.png in Resources */ = {isa = PBXBuildFile; fileRef = C99B5D5D198FE2D90079F2B6 /* hammer_1.png */; };
 		C99B5D66198FE2D90079F2B6 /* roundedRectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = C99B5D5E198FE2D90079F2B6 /* roundedRectangle.png */; };
@@ -129,6 +128,9 @@
 		6543482F19927FC500324F59 /* MFNotificationsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFNotificationsTableViewCell.m; sourceTree = "<group>"; };
 		65436D5C198EE3E00038C985 /* makersfinderslogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makersfinderslogo.png; sourceTree = "<group>"; };
 		65436D5D198EE3E00038C985 /* loginMainImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginMainImage.png; sourceTree = "<group>"; };
+		657238C91992A12D00C1F023 /* MPSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSProfileViewController.h; sourceTree = "<group>"; };
+		657238CA1992A12D00C1F023 /* MPSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSProfileViewController.m; sourceTree = "<group>"; };
+		657238CE1992A1E400C1F023 /* Main_Matt.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_Matt.storyboard; sourceTree = "<group>"; };
 		659E5C2D198BF0A800A4EE77 /* MFSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSignupViewController.h; sourceTree = "<group>"; };
 		659E5C2E198BF0A800A4EE77 /* MFSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSignupViewController.m; sourceTree = "<group>"; };
 		659E5C30198BFBA400A4EE77 /* MFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAPIClient.h; sourceTree = "<group>"; };
@@ -238,9 +240,6 @@
 		65E65523198C3A56003DA661 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		A2A631BC198C4DAB00C5ECD2 /* AALAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AALAPIClient.h; sourceTree = "<group>"; };
 		A2A631BD198C4DAB00C5ECD2 /* AALAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AALAPIClient.m; sourceTree = "<group>"; };
-		C99B5D58198FE2D90079F2B6 /* Main_Matt.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_Matt.storyboard; sourceTree = "<group>"; };
-		C99B5D59198FE2D90079F2B6 /* MPSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSProfileViewController.h; sourceTree = "<group>"; };
-		C99B5D5A198FE2D90079F2B6 /* MPSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSProfileViewController.m; sourceTree = "<group>"; };
 		C99B5D5B198FE2D90079F2B6 /* MPSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSViewController.h; sourceTree = "<group>"; };
 		C99B5D5C198FE2D90079F2B6 /* MPSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSViewController.m; sourceTree = "<group>"; };
 		C99B5D5D198FE2D90079F2B6 /* hammer_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hammer_1.png; sourceTree = "<group>"; };
@@ -560,9 +559,9 @@
 		65CF9B33198AB13E009ACA3D /* Matt */ = {
 			isa = PBXGroup;
 			children = (
-				C99B5D58198FE2D90079F2B6 /* Main_Matt.storyboard */,
-				C99B5D59198FE2D90079F2B6 /* MPSProfileViewController.h */,
-				C99B5D5A198FE2D90079F2B6 /* MPSProfileViewController.m */,
+				657238CE1992A1E400C1F023 /* Main_Matt.storyboard */,
+				657238C91992A12D00C1F023 /* MPSProfileViewController.h */,
+				657238CA1992A12D00C1F023 /* MPSProfileViewController.m */,
 				C99B5D5B198FE2D90079F2B6 /* MPSViewController.h */,
 				C99B5D5C198FE2D90079F2B6 /* MPSViewController.m */,
 				C99B5D5D198FE2D90079F2B6 /* hammer_1.png */,
@@ -677,7 +676,6 @@
 				65D1580F198AE8B4000F958D /* collectives@2x.png in Resources */,
 				65C6EE95198975C700E7DD13 /* foundtext.png in Resources */,
 				65C6EE77198969F800E7DD13 /* upload@2x.png in Resources */,
-				C99B5D62198FE2D90079F2B6 /* Main_Matt.storyboard in Resources */,
 				65CF9B2E198AAE8B009ACA3D /* placeholder.png in Resources */,
 				C99B5D68198FE2D90079F2B6 /* hearts.png in Resources */,
 				65CF9B2A198AAE8B009ACA3D /* FISPugCollectionViewCell.xib in Resources */,
@@ -695,6 +693,7 @@
 				65CF9B20198AAE8B009ACA3D /* Drinks.png in Resources */,
 				65C6EE7F19896CED00E7DD13 /* tabbarbackground@2x.png in Resources */,
 				65C6EE8719896F9600E7DD13 /* user_selected@2x.png in Resources */,
+				657238CF1992A1E400C1F023 /* Main_Matt.storyboard in Resources */,
 				65CF9AFA198AAAF7009ACA3D /* checkmark.png in Resources */,
 				65C6EE9B198975C700E7DD13 /* top_bar.png in Resources */,
 				65CF9AFC198AAAF7009ACA3D /* times_square.png in Resources */,
@@ -708,7 +707,6 @@
 				65C6EE99198975C700E7DD13 /* hammer.png in Resources */,
 				65436D5E198EE3E00038C985 /* makersfinderslogo.png in Resources */,
 				65C6EE78198969F800E7DD13 /* user@2x.png in Resources */,
-				65CF9AFB198AAAF7009ACA3D /* Contents.json in Resources */,
 				C99B5D65198FE2D90079F2B6 /* hammer_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,7 +759,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C99B5D63198FE2D90079F2B6 /* MPSProfileViewController.m in Sources */,
 				65CF9B28198AAE8B009ACA3D /* FISProductDetailViewController.m in Sources */,
 				65CF9B27198AAE8B009ACA3D /* FISFeedTableViewController.m in Sources */,
 				65CF9B26198AAE8B009ACA3D /* FISDataStore.m in Sources */,
@@ -782,6 +779,7 @@
 				659E5C4B198C108000A4EE77 /* MakersFinders_Master.xcdatamodeld in Sources */,
 				F8DC8A64198C03E400197301 /* FlickrPhoto.m in Sources */,
 				65ACF8C9198BD691002CDBED /* MFConstants.m in Sources */,
+				657238CB1992A12D00C1F023 /* MPSProfileViewController.m in Sources */,
 				65C6EE451989615200E7DD13 /* MFAppDelegate.m in Sources */,
 				65E65521198C18B5003DA661 /* MFUser.m in Sources */,
 				65CF9AEF198AA984009ACA3D /* AALInterest.m in Sources */,
