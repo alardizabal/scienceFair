@@ -338,8 +338,8 @@
 				65CF9AE5198A9B47009ACA3D /* ExploreRoot_Images */,
 				65CF9AE2198A9174009ACA3D /* MFExploreRootViewController.h */,
 				65CF9AE3198A9174009ACA3D /* MFExploreRootViewController.m */,
-				65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */,
 				65D15817198AEC82000F958D /* MFExploreCustomTableViewCell.h */,
+				65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */,
 			);
 			name = Explore;
 			sourceTree = "<group>";

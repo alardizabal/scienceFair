@@ -209,6 +209,7 @@
     UIStoryboard *alMain = [UIStoryboard storyboardWithName:@"AALMain" bundle:nil];
     AALTestViewController *vc1 = [alMain instantiateViewControllerWithIdentifier:@"interests"];
     UINavigationController *navvc1 = [[UINavigationController alloc] initWithRootViewController:vc1];
+    navvc1.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:navvc1 animated:YES completion:nil];
 }
 
