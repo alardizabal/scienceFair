@@ -284,7 +284,6 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="RBA-Ok-TRe" secondAttribute="centerY" id="0Ka-qk-X5F"/>
-                                                <constraint firstItem="RBA-Ok-TRe" firstAttribute="leading" secondItem="uEI-qx-cS1" secondAttribute="trailing" constant="55" id="4I0-SY-OIy"/>
                                                 <constraint firstAttribute="bottom" secondItem="uEI-qx-cS1" secondAttribute="bottom" id="4Zw-2u-4QC"/>
                                                 <constraint firstItem="RBA-Ok-TRe" firstAttribute="leading" secondItem="uEI-qx-cS1" secondAttribute="trailing" constant="20" id="5Jh-An-yEZ"/>
                                                 <constraint firstItem="uEI-qx-cS1" firstAttribute="top" secondItem="R26-nN-6Ix" secondAttribute="top" id="Qib-Vi-GsB"/>
