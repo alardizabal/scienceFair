@@ -13,11 +13,11 @@
 #import "MFDataStore.h"
 #import "FISFeedTableViewController.h"
 
+
 @interface MFExploreRootViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *makersFindersButton;
 @property (weak, nonatomic) IBOutlet UIView *collectivesButton;
-@property (weak, nonatomic) IBOutlet UIImageView *collectivesImage;
-@property (weak, nonatomic) IBOutlet UIImageView *makersFindersImage;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchField;
 @property (strong, nonatomic) NSMutableArray *recentSearchesArray;
@@ -25,6 +25,9 @@
 @property (strong, nonatomic) NSMutableArray *categoryNamesArray;
 @property (nonatomic) NSInteger counter;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (weak, nonatomic) IBOutlet UILabel *makersLabel;
+@property (weak, nonatomic) IBOutlet UILabel *collectivesLabel;
+@property (weak, nonatomic) IBOutlet UIView *collectivesView;
 
 @end
 
@@ -45,6 +48,7 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.collectivesView.hidden = YES;
     
     self.categoryImagesArray = [[NSMutableArray alloc] init];
     self.categoryNamesArray = [[NSMutableArray alloc] init];
@@ -63,6 +67,8 @@
     
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = MFnavBarColor;
+    
+
     
     //Setting up custom buttons on navigation bar
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -83,8 +89,14 @@
     //Setting up menu button images and text
     self.makersFindersButton.backgroundColor = MFtealColor;
     self.collectivesButton.backgroundColor = MFdarkTealColor;
-    self.makersFindersImage.image = [UIImage imageNamed:@"explore"];
-    self.collectivesImage.image = [UIImage imageNamed:@"collectives"];
+    self.makersLabel.font = MFhelvetica;
+    self.makersLabel.text = @"MakersFinders";
+    self.makersLabel.textColor = [UIColor whiteColor];
+    
+    self.collectivesLabel.font = MFhelvetica;
+    self.collectivesLabel.text = @"Collectives";
+    self.collectivesLabel.textColor = [UIColor whiteColor];
+
     
     //Add tap gesture recognizers to the two menu items: Makers & Finder and Collectives.
 
@@ -94,13 +106,7 @@
     UITapGestureRecognizer *tapRecognizerForCollectivesButton = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleCollectivesButtonTapped:)];
     [self.collectivesButton addGestureRecognizer:tapRecognizerForCollectivesButton];
     
-    //Add tap gesture to hide keyboard to get out of search
-    
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-//                                   initWithTarget:self
-//                                   action:@selector(dismissKeyboard)];
-//    
-//    [self.view addGestureRecognizer:tap];
+    //getting categories
     
     MFDataStore *store = [MFDataStore sharedStore];
     NSFetchRequest *categoryFetch = [NSFetchRequest fetchRequestWithEntityName:@"MFCategory"];
@@ -111,26 +117,7 @@
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:categoryFetch managedObjectContext:store.context sectionNameKeyPath:nil cacheName:nil];
     [self.fetchedResultsController performFetch:nil];
     
-    //Calling API for categories
-//    self.counter = 0;
-//
-//    [AALAPIClient getCategoryImagesWithCompletion:^(NSDictionary *dictionary) {
-//        for (NSDictionary *category in dictionary) {
-//            
-//            NSString *name = category[@"name"];
-//            NSString *tempImageURLString = category[@"images"][@"retina"];
-//            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tempImageURLString]]];
-//            
-//            [self.categoryNamesArray replaceObjectAtIndex:self.counter withObject:name];
-//            [self.categoryImagesArray replaceObjectAtIndex:self.counter withObject:image];
-//            
-//            NSIndexPath *insertIndexpath = [NSIndexPath indexPathForRow:self.counter inSection:1];
-//            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//                [self.tableView reloadRowsAtIndexPaths:@[insertIndexpath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//            }];
-//            self.counter ++;
-//        }
-//    }];
+
 }
 
 -(void)peopleButtonTapped:(UITapGestureRecognizer *)recognizer
@@ -143,6 +130,7 @@
     UIStoryboard *alMain = [UIStoryboard storyboardWithName:@"AALMain" bundle:nil];
     AALTestViewController *vc1 = [alMain instantiateViewControllerWithIdentifier:@"interests"];
     UINavigationController *navvc1 = [[UINavigationController alloc] initWithRootViewController:vc1];
+    navvc1.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:navvc1 animated:YES completion:nil];
 }
 
@@ -157,12 +145,16 @@
 {
     self.makersFindersButton.backgroundColor = MFtealColor;
     self.collectivesButton.backgroundColor = MFdarkTealColor;
+    self.collectivesView.hidden = YES;
+    self.tableView.hidden = NO;
 }
 
 -(void)handleCollectivesButtonTapped:(UITapGestureRecognizer *)recognizer
 {
     self.makersFindersButton.backgroundColor = MFdarkTealColor;
     self.collectivesButton.backgroundColor = MFtealColor;
+    self.collectivesView.hidden = NO;
+    self.tableView.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
