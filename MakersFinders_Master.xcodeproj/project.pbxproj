@@ -197,9 +197,9 @@
 		65C6EE91198975C700E7DD13 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
 		65C6EE92198975C700E7DD13 /* top_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_bar.png; sourceTree = "<group>"; };
 		65C6EE93198975C700E7DD13 /* bottom_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_bar.png; sourceTree = "<group>"; };
-		65CF8532198FC59C001A77BE /* heartbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartbutton.png; sourceTree = "<group>"; };
-		65CF8533198FC59C001A77BE /* peoplebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peoplebutton.png; sourceTree = "<group>"; };
-		65CF8536198FD8EC001A77BE /* categoryImagePlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryImagePlaceholder.png; sourceTree = "<group>"; };
+		65CF8532198FC59C001A77BE /* heartbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heartbutton.png; path = ../heartbutton.png; sourceTree = "<group>"; };
+		65CF8533198FC59C001A77BE /* peoplebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = peoplebutton.png; path = ../peoplebutton.png; sourceTree = "<group>"; };
+		65CF8536198FD8EC001A77BE /* categoryImagePlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = categoryImagePlaceholder.png; path = ../categoryImagePlaceholder.png; sourceTree = "<group>"; };
 		65CF853E199155A1001A77BE /* MFBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFBackground.h; sourceTree = "<group>"; };
 		65CF853F199155A1001A77BE /* MFBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFBackground.m; sourceTree = "<group>"; };
 		65CF9ADD198A8BAF009ACA3D /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LaunchImage@2x.png"; path = "MakersFinders_Master/LaunchImage@2x.png"; sourceTree = "<group>"; };
@@ -296,6 +296,8 @@
 		65436D5B198EE3C40038C985 /* loginScreenImages */ = {
 			isa = PBXGroup;
 			children = (
+				65CF9ADD198A8BAF009ACA3D /* LaunchImage@2x.png */,
+				6537869F198AC580000B0A62 /* LaunchImage4@2x.png */,
 				65436D5C198EE3E00038C985 /* makersfinderslogo.png */,
 				65436D5D198EE3E00038C985 /* loginMainImage.png */,
 			);
@@ -324,6 +326,51 @@
 				657238F01992ABE300C1F023 /* MFNotification.m */,
 			);
 			name = "Core Data Model";
+			sourceTree = "<group>";
+		};
+		657239041992AF7900C1F023 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				6543482B19927EAF00324F59 /* MFNotificationsFollowingViewController.h */,
+				6543482C19927EAF00324F59 /* MFNotificationsFollowingViewController.m */,
+				6543482E19927FC500324F59 /* MFNotificationsTableViewCell.h */,
+				6543482F19927FC500324F59 /* MFNotificationsTableViewCell.m */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
+		657239051992AF8200C1F023 /* Login and Signup */ = {
+			isa = PBXGroup;
+			children = (
+				65436D5B198EE3C40038C985 /* loginScreenImages */,
+				659E5C2D198BF0A800A4EE77 /* MFSignupViewController.h */,
+				659E5C2E198BF0A800A4EE77 /* MFSignupViewController.m */,
+				65CF9ADF198A8D10009ACA3D /* MFLoginViewController.h */,
+				65CF9AE0198A8D10009ACA3D /* MFLoginViewController.m */,
+			);
+			name = "Login and Signup";
+			sourceTree = "<group>";
+		};
+		657239061992AF9700C1F023 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				65CF9AE5198A9B47009ACA3D /* ExploreRoot_Images */,
+				65CF9AE2198A9174009ACA3D /* MFExploreRootViewController.h */,
+				65CF9AE3198A9174009ACA3D /* MFExploreRootViewController.m */,
+				65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */,
+				65D15817198AEC82000F958D /* MFExploreCustomTableViewCell.h */,
+			);
+			name = Explore;
+			sourceTree = "<group>";
+		};
+		657239071992AFA000C1F023 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				65C6EE9D198975CA00E7DD13 /* UploadRoot_Images */,
+				65C6EE88198971BB00E7DD13 /* MFUploadRootViewController.h */,
+				65C6EE89198971BB00E7DD13 /* MFUploadRootViewController.m */,
+			);
+			name = Upload;
 			sourceTree = "<group>";
 		};
 		659E5C33198BFBBA00A4EE77 /* Global */ = {
@@ -422,6 +469,9 @@
 		65C6EE7D19896A2800E7DD13 /* TabBarImages */ = {
 			isa = PBXGroup;
 			children = (
+				65CF8532198FC59C001A77BE /* heartbutton.png */,
+				65CF8536198FD8EC001A77BE /* categoryImagePlaceholder.png */,
+				65CF8533198FC59C001A77BE /* peoplebutton.png */,
 				65C6EE6F1989689D00E7DD13 /* home@2x.png */,
 				65C6EE7919896A2400E7DD13 /* notifications@2x.png */,
 				65C6EE7A19896A2400E7DD13 /* search@2x.png */,
@@ -507,31 +557,13 @@
 			isa = PBXGroup;
 			children = (
 				65C6EE461989615200E7DD13 /* Main.storyboard */,
-				6543482B19927EAF00324F59 /* MFNotificationsFollowingViewController.h */,
-				6543482C19927EAF00324F59 /* MFNotificationsFollowingViewController.m */,
-				6543482E19927FC500324F59 /* MFNotificationsTableViewCell.h */,
-				6543482F19927FC500324F59 /* MFNotificationsTableViewCell.m */,
-				659E5C2D198BF0A800A4EE77 /* MFSignupViewController.h */,
-				659E5C2E198BF0A800A4EE77 /* MFSignupViewController.m */,
 				65C6EE691989616D00E7DD13 /* MFCustomTabBarControllerViewController.h */,
 				65C6EE6A1989616D00E7DD13 /* MFCustomTabBarControllerViewController.m */,
-				65CF9AE2198A9174009ACA3D /* MFExploreRootViewController.h */,
-				65CF9AE3198A9174009ACA3D /* MFExploreRootViewController.m */,
-				65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */,
-				65C6EE88198971BB00E7DD13 /* MFUploadRootViewController.h */,
-				65CF9ADF198A8D10009ACA3D /* MFLoginViewController.h */,
-				65CF9AE0198A8D10009ACA3D /* MFLoginViewController.m */,
-				65D15817198AEC82000F958D /* MFExploreCustomTableViewCell.h */,
-				65C6EE89198971BB00E7DD13 /* MFUploadRootViewController.m */,
-				65CF8532198FC59C001A77BE /* heartbutton.png */,
-				65CF8536198FD8EC001A77BE /* categoryImagePlaceholder.png */,
-				65CF8533198FC59C001A77BE /* peoplebutton.png */,
+				657239051992AF8200C1F023 /* Login and Signup */,
+				657239041992AF7900C1F023 /* Notifications */,
+				657239061992AF9700C1F023 /* Explore */,
+				657239071992AFA000C1F023 /* Upload */,
 				65C6EE4C1989615200E7DD13 /* Images.xcassets */,
-				65CF9ADD198A8BAF009ACA3D /* LaunchImage@2x.png */,
-				6537869F198AC580000B0A62 /* LaunchImage4@2x.png */,
-				65436D5B198EE3C40038C985 /* loginScreenImages */,
-				65CF9AE5198A9B47009ACA3D /* ExploreRoot_Images */,
-				65C6EE9D198975CA00E7DD13 /* UploadRoot_Images */,
 				65C6EE7D19896A2800E7DD13 /* TabBarImages */,
 			);
 			name = Dan;
