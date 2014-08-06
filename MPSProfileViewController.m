@@ -15,13 +15,16 @@
 @interface MPSProfileViewController ()
 
 @property (strong, nonatomic) CIContext *context;
+
 @property (weak, nonatomic) IBOutlet UIView *headerContainerView;
 @property (weak, nonatomic) IBOutlet UIView *makerContainerView;
 @property (weak, nonatomic) IBOutlet UIView *findContainerView;
 @property (strong, nonatomic) NSString *userImageURL;
+@property (strong, nonatomic) NSString *userHeaderURL;
+
 - (IBAction)makerIsTapped:(id)sender;
 - (IBAction)finderIsTapped:(id)sender;
-@property (strong, nonatomic) NSString *userHeaderURL;
+
 @end
 
 @implementation MPSProfileViewController
@@ -46,6 +49,7 @@
                                                                     };
     
     self.navigationController.navigationBar.translucent = NO;
+    
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/255.0 green:62/255.0 blue:81/255.0 alpha:1];
     
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -69,10 +73,14 @@
     //    self.profileImageView.bounds
     //if square image is 100 then the corner radius is (divided) / 2
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+    //self.profileImageView.layer.cornerRadius = 30.0;
+    
     //this clips the bounds of the radius
     self.profileImageView.clipsToBounds = YES;
+    
     //this sets the border thickness
     self.profileImageView.layer.borderWidth = 3.0f;
+    
     //this sets the border color
     self.profileImageView.layer.borderColor = [UIColor colorWithRed:0.0 green:80.0/255.0 blue:86.0/255.0 alpha:1.0].CGColor;
     
@@ -101,7 +109,6 @@
     
     
     
-    
     //sets the glow effect filter for profile name and profile job title
     self.profileName.layer.shadowColor = [[UIColor whiteColor] CGColor];
     self.profileName.layer.shadowRadius = 4.0f;
@@ -127,6 +134,10 @@
     self.headerImageView.image = [UIImage imageWithCGImage:outImage];
     // headerImage = [CIImage imageWithColor:[CIColor colorWithRed:1 green:1 blue:1 alpha:1]];
     
+    
+    
+    
+    //sets the location values for the image containers inside the make and find views
     NSMutableArray *imagePositions = [[NSMutableArray alloc]init];
     [imagePositions addObject:[NSValue valueWithCGRect:CGRectMake(0, 0, 155, 155)]];
     [imagePositions addObject:[NSValue valueWithCGRect:CGRectMake(0, 157, 51, 51)]];
@@ -135,7 +146,6 @@
     
 
     NSMutableArray *makerImageViews = [[NSMutableArray alloc]init];
-    
     for (NSInteger i = 0; i<4; i++) {
         UIImageView *image = [[UIImageView alloc] initWithFrame:[imagePositions[i] CGRectValue]];
         image.contentMode = UIViewContentModeScaleAspectFill;
