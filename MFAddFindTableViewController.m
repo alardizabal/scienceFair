@@ -33,6 +33,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.title = @"Upload";
+    self.navigationController.navigationBar.titleTextAttributes = @{
+                                                                    NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                                    NSFontAttributeName: MFmenuFont
+                                                                    };
+    
+    
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.barTintColor = MFnavBarColor;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
