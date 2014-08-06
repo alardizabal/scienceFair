@@ -240,7 +240,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="GcE-gI-Hg3" customClass="MFNotificationsTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notificationCell" rowHeight="70" id="GcE-gI-Hg3" customClass="MFNotificationsTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GcE-gI-Hg3" id="sdE-ce-nsd">
@@ -294,12 +294,11 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="gJp-L0-hzM" secondAttribute="bottom" constant="5" id="0d2-MA-eMF"/>
                                                 <constraint firstItem="PXz-Eo-t75" firstAttribute="top" secondItem="C1a-jv-pdG" secondAttribute="bottom" constant="3" id="7X2-cN-kLC"/>
-                                                <constraint firstItem="gJp-L0-hzM" firstAttribute="top" secondItem="sdE-ce-nsd" secondAttribute="top" constant="5" id="A1q-mA-fgM"/>
                                                 <constraint firstItem="hV5-iV-MY4" firstAttribute="leading" secondItem="Pop-4L-m5N" secondAttribute="trailing" id="E1C-xs-r60"/>
                                                 <constraint firstItem="hV5-iV-MY4" firstAttribute="top" secondItem="Pnr-xM-WNK" secondAttribute="bottom" constant="3" id="IxV-vu-YK7"/>
                                                 <constraint firstItem="gJp-L0-hzM" firstAttribute="leading" secondItem="sdE-ce-nsd" secondAttribute="leading" constant="5" id="Nib-Ya-wxP"/>
+                                                <constraint firstAttribute="centerY" secondItem="gJp-L0-hzM" secondAttribute="centerY" constant="-0.5" id="OVU-i1-vpU"/>
                                                 <constraint firstItem="Pop-4L-m5N" firstAttribute="top" secondItem="Pnr-xM-WNK" secondAttribute="bottom" constant="3" id="OxJ-ca-JA2"/>
                                                 <constraint firstItem="Pnr-xM-WNK" firstAttribute="top" secondItem="sdE-ce-nsd" secondAttribute="top" constant="5" id="Qcd-QG-9KM"/>
                                                 <constraint firstItem="Pnr-xM-WNK" firstAttribute="leading" secondItem="C1a-jv-pdG" secondAttribute="trailing" constant="3" id="Rug-0w-9bg"/>
@@ -313,6 +312,14 @@
                                                 <constraint firstItem="C1a-jv-pdG" firstAttribute="height" secondItem="Pnr-xM-WNK" secondAttribute="height" id="pxd-Bq-hJL"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageOne" destination="PXz-Eo-t75" id="Fc2-3Q-a65"/>
+                                            <outlet property="imageThree" destination="hV5-iV-MY4" id="zrt-Xc-G2q"/>
+                                            <outlet property="imageTwo" destination="Pop-4L-m5N" id="qc6-PF-yoE"/>
+                                            <outlet property="infoLabel" destination="Pnr-xM-WNK" id="QLt-3h-d5t"/>
+                                            <outlet property="nameLabel" destination="C1a-jv-pdG" id="dfw-GK-DPk"/>
+                                            <outlet property="profileImage" destination="gJp-L0-hzM" id="lc6-Ly-ydQ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -333,6 +340,7 @@
                         <outlet property="followingLabel" destination="kQc-4O-3lP" id="aFz-72-fbr"/>
                         <outlet property="newsButton" destination="Sjx-CU-9J6" id="23W-UX-WMX"/>
                         <outlet property="newsLabel" destination="STa-Jh-siT" id="2Z3-xY-pIg"/>
+                        <outlet property="tableView" destination="WLt-CA-wlL" id="NGt-fo-c8k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="puG-TT-F7U" userLabel="First Responder" sceneMemberID="firstResponder"/>

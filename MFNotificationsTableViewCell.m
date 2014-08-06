@@ -21,7 +21,12 @@
 
 - (void)awakeFromNib
 {
-    // Initialization code
+    self.profileImage.image = [UIImage imageNamed:@"placeholder"];
+    self.imageOne.image = [UIImage imageNamed:@"placeholder"];
+    self.imageTwo.image = [UIImage imageNamed:@"placeholder"];
+    self.imageThree.image = [UIImage imageNamed:@"placeholder"];
+    self.nameLabel.text = @"Daniel Sun";
+    self.infoLabel.text = @"liked three Makes";
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

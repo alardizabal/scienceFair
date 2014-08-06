@@ -8,13 +8,15 @@
 
 #import "MFNotificationsFollowingViewController.h"
 #import "AALTestViewController.h"
+#import "MFNotificationsTableViewCell.h"
 
-@interface MFNotificationsFollowingViewController ()
+@interface MFNotificationsFollowingViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *followingButton;
 @property (weak, nonatomic) IBOutlet UIView *newsButton;
 @property (weak, nonatomic) IBOutlet UILabel *followingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *newsLabel;
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *notificationsArray;
 
 @end
 
@@ -32,6 +34,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //setupTableView
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
     self.navigationItem.title = @"Notifications";
     self.navigationController.navigationBar.titleTextAttributes = @{
                                                                     NSForegroundColorAttributeName: [UIColor whiteColor],
@@ -57,6 +64,7 @@
     [rightButton addTarget:self action:@selector(heartButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = rightButtonItem;
     
+    //setup sub menu bar
     self.followingButton.backgroundColor = MFtealColor;
     self.newsButton.backgroundColor = MFdarkTealColor;
     
@@ -68,7 +76,27 @@
     self.newsLabel.font = MFhelvetica;
     self.newsLabel.textColor = [UIColor whiteColor];
     
+    //add tap gestures to sub menu
+    UITapGestureRecognizer *tapRecognizerForFollowingButton = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleFollowingButtonTapped:)];
+    [self.followingButton addGestureRecognizer:tapRecognizerForFollowingButton];
+    
+    UITapGestureRecognizer *tapRecognizerForNewsButton = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleNewsButtonTapped:)];
+    [self.newsButton addGestureRecognizer:tapRecognizerForNewsButton];
+    
 }
+
+- (void)handleFollowingButtonTapped:(UITapGestureRecognizer *)recognizer
+{
+    self.followingButton.backgroundColor = MFtealColor;
+    self.newsButton.backgroundColor = MFdarkTealColor;
+}
+
+-(void)handleNewsButtonTapped:(UITapGestureRecognizer *)recognizer
+{
+    self.followingButton.backgroundColor = MFdarkTealColor;
+    self.newsButton.backgroundColor = MFtealColor;
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -88,6 +116,44 @@
     UINavigationController *navvc1 = [[UINavigationController alloc] initWithRootViewController:vc1];
     [self presentViewController:navvc1 animated:YES completion:nil];
 }
+
+
+//setup TableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 6;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    MFNotificationsTableViewCell *notificationsCell = [tableView dequeueReusableCellWithIdentifier:@"notificationCell" forIndexPath:indexPath];
+    
+    [self tableView:tableView heightForRowAtIndexPath:indexPath];
+    
+    
+    return notificationsCell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    FISFeedTableViewController *feedTVC = [[FISFeedTableViewController alloc]init];
+//    [self.navigationController pushViewController:feedTVC animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 75;
+}
+
+
 
 /*
 #pragma mark - Navigation
