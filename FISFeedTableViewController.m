@@ -9,7 +9,7 @@
 #import "FISFeedTableViewController.h"
 #import "FISCustomPugCell.h"
 #import "FISProductDetailViewController.h"
-//#import "AALTestViewController.h"
+#import "AALInterestsViewController.h"
 #import "MFDataStore.h"
 #import "MFAPIClient.h"
 
@@ -97,11 +97,11 @@
 
 -(void)heartButtonTapped:(UITapGestureRecognizer *)recognizer
 {
-//    UIStoryboard *alMain = [UIStoryboard storyboardWithName:@"AALMain" bundle:nil];
-//    AALTestViewController *vc1 = [alMain instantiateViewControllerWithIdentifier:@"interests"];
-//    UINavigationController *navvc1 = [[UINavigationController alloc] initWithRootViewController:vc1];
-//    navvc1.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-//    [self presentViewController:navvc1 animated:YES completion:nil];
+    UIStoryboard *alMain = [UIStoryboard storyboardWithName:@"AALMain" bundle:nil];
+    AALInterestsViewController *vc1 = [alMain instantiateViewControllerWithIdentifier:@"interests"];
+    UINavigationController *navvc1 = [[UINavigationController alloc] initWithRootViewController:vc1];
+    navvc1.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:navvc1 animated:YES completion:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated
