@@ -33,16 +33,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    MFDataStore *store = [MFDataStore sharedStore];
-    NSFetchRequest *currentUserFetch = [[NSFetchRequest alloc] initWithEntityName:@"MFUser"];
-    NSSortDescriptor *sortByName = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    currentUserFetch.sortDescriptors = @[sortByName];
-    NSArray *currentUser = [store.context executeFetchRequest:currentUserFetch error:nil];
-    MFUser *user = currentUser[0];
+    MFUser *currentUser = [MFUser currentUser];
     
-    self.userNameLabel.text = user.name;
-    self.userEmailLabel.text = user.email;
-    self.userTokenField.text = user.token;
+    self.userNameLabel.text = currentUser.name;
+    self.userEmailLabel.text = currentUser.email;
+    self.userTokenField.text = currentUser.token;
     
     // Do any additional setup after loading the view.
 }
