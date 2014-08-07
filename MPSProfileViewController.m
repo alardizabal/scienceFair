@@ -7,8 +7,6 @@
 //
 
 #import "MPSProfileViewController.h"
-#import "FISDataStore.h"
-#import "FlickrPhoto.h"
 #import "FISFeedTableViewController.h"
 #import "AALTestViewController.h"
 
@@ -165,21 +163,21 @@
     
     
     
-    FISDataStore *store = [FISDataStore sharedDataStore];
-    [store flickrFeedImages:^(NSArray *flickrPhotosArray) {
-        for (NSInteger i = 0; i<4; i++) {
-            UIImageView *makerImageView = makerImageViews[i];
-            FlickrPhoto *flickrmake = store.flickrPhotoFeed[i];
-
-            UIImageView *findsImageView = findsImageViews[i];
-            FlickrPhoto *flickrfind = store.flickrPhotoFeed[i+4];
-
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                makerImageView.image = flickrmake.thumbnail;
-                findsImageView.image = flickrfind.thumbnail;
-            }];
-        }
-    }];
+//    FISDataStore *store = [FISDataStore sharedDataStore];
+//    [store flickrFeedImages:^(NSArray *flickrPhotosArray) {
+//        for (NSInteger i = 0; i<4; i++) {
+//            UIImageView *makerImageView = makerImageViews[i];
+//            FlickrPhoto *flickrmake = store.flickrPhotoFeed[i];
+//
+//            UIImageView *findsImageView = findsImageViews[i];
+//            FlickrPhoto *flickrfind = store.flickrPhotoFeed[i+4];
+//
+//            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//                makerImageView.image = flickrmake.thumbnail;
+//                findsImageView.image = flickrfind.thumbnail;
+//            }];
+//        }
+//    }];
 }
 
 - (void)didReceiveMemoryWarning

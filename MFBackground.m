@@ -68,7 +68,7 @@
 
 +(void)saveImage: (UIImage*)image WithName:(NSString *)name
 {
-    
+
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
                                                          NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
