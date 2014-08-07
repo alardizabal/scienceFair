@@ -9,10 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface MFAPIClient : NSObject
--(void)createNewUserWithName:(NSString *)name Email:(NSString *)email Password:(NSString *)password PasswordConfirmation:(NSString *)passwordConfirmation Completion:(void (^)(id responseObject))completionBlock;
++(void)createNewUserWithName:(NSString *)name Email:(NSString *)email Password:(NSString *)password PasswordConfirmation:(NSString *)passwordConfirmation Completion:(void (^)(id responseObject))completionBlock;
 
--(void)loginNewUserWithEmail:(NSString *)email Password:(NSString *)password  Completion:(void (^)())completionBlock;
++(void)loginNewUserWithEmail:(NSString *)email Password:(NSString *)password  Completion:(void (^)(id responseObject))completionBlock;
 
 + (void) getCategoryImagesWithCompletion:(void (^)(NSDictionary *dictionary))completionBlock;
+
++ (void) getUserProfiles:(void (^)(NSDictionary *dictionary))completionBlock;
+
 
 @end

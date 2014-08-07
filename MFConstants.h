@@ -19,5 +19,6 @@
 extern NSString *const kUSER_CREATE_URL;
 extern NSString *const kUSER_LOGIN_URL;
 extern NSString *const kCATEGORY_API_URL;
+extern NSString *const kUSER_PROFILE_API_URL;
 
 @end

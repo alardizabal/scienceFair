@@ -12,9 +12,10 @@
 #import "AALAPIClient.h"
 #import "MFDataStore.h"
 #import "FISFeedTableViewController.h"
+#import "MFSecretViewController.h"
 
 
-@interface MFExploreRootViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
+@interface MFExploreRootViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UIView *makersFindersButton;
 @property (weak, nonatomic) IBOutlet UIView *collectivesButton;
 
@@ -48,6 +49,8 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.searchField.delegate = self;
+    
     self.collectivesView.hidden = YES;
     
     self.categoryImagesArray = [[NSMutableArray alloc] init];
@@ -238,6 +241,20 @@
     NSData *pngData = [NSData dataWithContentsOfFile:filePath];
     UIImage *image = [UIImage imageWithData:pngData];
     return image;
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    if ([searchBar.text isEqualToString:@"1337"])
+    {
+        UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        MFSecretViewController *secretvc = [main instantiateViewControllerWithIdentifier:@"secret"];
+        [self presentViewController:secretvc animated:NO completion:nil];
+    }
+    else
+    {
+        [searchBar resignFirstResponder];
+    }
 }
 
 /*

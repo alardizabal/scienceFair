@@ -62,8 +62,8 @@
 */
 
 - (IBAction)signupTapped:(id)sender {
-    MFAPIClient *client = [[MFAPIClient alloc] init];
-    [client createNewUserWithName:self.fullNameField.text Email:self.emailField.text Password:self.passwordField.text PasswordConfirmation:self.passwordConfirmField.text Completion:^(id responseObject) {
+
+    [MFAPIClient createNewUserWithName:self.fullNameField.text Email:self.emailField.text Password:self.passwordField.text PasswordConfirmation:self.passwordConfirmField.text Completion:^(id responseObject) {
         NSDictionary *response = responseObject;
         MFUser *createdUser = [self.store createUser];
         createdUser.name = response[@"name"];
