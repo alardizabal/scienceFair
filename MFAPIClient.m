@@ -68,27 +68,27 @@
 }
 
 +(void)getUserProfiles:(void (^)(NSDictionary *))completionBlock {
-
-NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
-
+    
+    NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
+    
     MFUser *currentUser = [MFUser currentUser];
-NSString *getUserProfiles = [NSString stringWithFormat:@"%@%@", kUSER_PROFILE_API_URL, currentUser.token];
-
-AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-[manager GET:getUserProfiles
-  parameters:nil
-     success:^(NSURLSessionDataTask *task, id responseObject)
- {
-     [backgroundQueue addOperationWithBlock:^{
-         completionBlock(responseObject);
+    NSString *getUserProfiles = [NSString stringWithFormat:@"%@%@", kUSER_PROFILE_API_URL, currentUser.token];
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:getUserProfiles
+      parameters:nil
+         success:^(NSURLSessionDataTask *task, id responseObject)
+     {
+         [backgroundQueue addOperationWithBlock:^{
+             completionBlock(responseObject);
+         }];
+         
+         
+     } failure:^(NSURLSessionDataTask *task, NSError *error)
+     {
+         NSLog(@"Fail: %@",error.localizedDescription);
      }];
-     
-     
- } failure:^(NSURLSessionDataTask *task, NSError *error)
- {
-     NSLog(@"Fail: %@",error.localizedDescription);
- }];
-
+    
 }
 
 + (void) getUserInterestsWithCompletion:(void (^)(NSDictionary *dictionary))completionBlock {
@@ -110,7 +110,8 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
      {
          NSLog(@"Fail: %@",error.localizedDescription);
      }];
-
+}
+    
 +(void)retrieveFeedAPIImages:(void (^)(BOOL, NSArray *))completionHandler
 {
     NSOperationQueue *separateQueue = [[NSOperationQueue alloc] init];
@@ -129,8 +130,6 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
             NSArray *responseArray = (NSArray *)responseObject;
             completionHandler(YES, responseArray);
         }];
-//        NSArray *responseArray = (NSArray *)responseObject;
-//        completionHandler(YES, responseArray);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error doing API Feed request: %@", error.localizedDescription);
         completionHandler(NO, nil);
