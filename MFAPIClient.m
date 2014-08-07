@@ -72,7 +72,7 @@
 NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
 
     MFUser *currentUser = [MFUser currentUser];
-NSString *getUserProfiles = [NSString stringWithFormat:@"%@%@", kUSER_PROFILE_API_URL, currentuser.token];
+NSString *getUserProfiles = [NSString stringWithFormat:@"%@%@", kUSER_PROFILE_API_URL, currentUser.token];
 
 AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
 [manager GET:getUserProfiles
@@ -89,6 +89,29 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
      NSLog(@"Fail: %@",error.localizedDescription);
  }];
 
+}
+
++ (void) getUserInterestsWithCompletion:(void (^)(NSDictionary *dictionary))completionBlock {
+    
+    NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
+    NSString *getCategoryImagesURL = [NSString stringWithFormat:@"%@", kCATEGORY_API_URL];
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:getCategoryImagesURL
+      parameters:nil
+         success:^(NSURLSessionDataTask *task, id responseObject)
+     {
+         [backgroundQueue addOperationWithBlock:^{
+             completionBlock(responseObject);
+         }];
+         
+         
+     } failure:^(NSURLSessionDataTask *task, NSError *error)
+     {
+         NSLog(@"Fail: %@",error.localizedDescription);
+     }];
+    
+}
 
 @end
 

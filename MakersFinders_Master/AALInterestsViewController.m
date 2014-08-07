@@ -14,6 +14,7 @@
 #import "MFDataStore.h"
 #import "MFCategory.h"
 #import "MFAPIClient.h"
+#import "MFUser.h"
 
 @interface AALInterestsViewController ()
 
@@ -43,6 +44,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    MFUser *currentUser = [MFUser currentUser];
+    
+    
     
     self.containerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 44)];
     self.containerView.backgroundColor = [UIColor whiteColor];
@@ -204,6 +209,9 @@
     // Retrieve from Core Data
     
     MFDataStore *store = [MFDataStore sharedStore];
+    
+    
+    
     NSFetchRequest *fetchCategories = [[NSFetchRequest alloc] initWithEntityName:@"MFCategory"];
     NSSortDescriptor *sortByName = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     fetchCategories.sortDescriptors = @[sortByName];
