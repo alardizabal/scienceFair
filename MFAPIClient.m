@@ -110,6 +110,31 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
      {
          NSLog(@"Fail: %@",error.localizedDescription);
      }];
+
++(void)retrieveFeedAPIImages:(void (^)(BOOL, NSArray *))completionHandler
+{
+    NSOperationQueue *separateQueue = [[NSOperationQueue alloc] init];
+    
+    NSURL *feedAPIURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@token=%@", kFEED_API_URL, [MFUser currentUser].token]];
+    
+    NSURLRequest *feedAPIURLRequest = [[NSURLRequest alloc] initWithURL:feedAPIURL];
+    
+    AFHTTPRequestOperation *feedAPIURLOperation = [[AFHTTPRequestOperation alloc] initWithRequest:feedAPIURLRequest];
+    feedAPIURLOperation.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [separateQueue addOperation:feedAPIURLOperation];
+    
+    [feedAPIURLOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [separateQueue addOperationWithBlock:^{
+            NSArray *responseArray = (NSArray *)responseObject;
+            completionHandler(YES, responseArray);
+        }];
+//        NSArray *responseArray = (NSArray *)responseObject;
+//        completionHandler(YES, responseArray);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error doing API Feed request: %@", error.localizedDescription);
+        completionHandler(NO, nil);
+    }];
     
 }
 

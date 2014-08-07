@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class FISDataStore;
+@class MFDataStore;
 
 @interface FISFeedTableViewController : UITableViewController
 
-@property (strong, nonatomic) FISDataStore *store;
+@property (strong, nonatomic) MFDataStore *store;
+
+@property (strong, nonatomic) NSMutableArray *arrayOfFeedImages;
 
 @end
