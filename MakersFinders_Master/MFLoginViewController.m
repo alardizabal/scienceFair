@@ -90,7 +90,7 @@
 -(void)loginTapped:(UITapGestureRecognizer *)recognizer
 {
     MFAPIClient *client = [[MFAPIClient alloc] init];
-    [client loginNewUserWithEmail:@"dansundsun@gmail.com" Password:@"test" Completion:^{
+    [client loginNewUserWithEmail:@"sophia@oliver.com" Password:@"test" Completion:^{
         MFCustomTabBarControllerViewController *tabBarController = [[MFCustomTabBarControllerViewController alloc] init];
         [self.navigationController pushViewController:tabBarController animated:YES];
     }];

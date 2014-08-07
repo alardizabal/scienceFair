@@ -44,12 +44,14 @@
 
 - (void)viewDidLoad
 {
-    //Navigation Bar Setup (title, font, size, color, translucency)
+    
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.collectivesView.hidden = YES;
     
+    
+    //adding placeholder images
     self.categoryImagesArray = [[NSMutableArray alloc] init];
     self.categoryNamesArray = [[NSMutableArray alloc] init];
     for (NSInteger x = 0; x<9; x++)
@@ -58,6 +60,7 @@
         [self.categoryNamesArray addObject:@""];
     }
     
+    //Navigation Bar Setup (title, font, size, color, translucency)
     self.navigationItem.title = @"Explore";
     self.navigationController.navigationBar.titleTextAttributes = @{
                                                                     NSForegroundColorAttributeName: [UIColor whiteColor],
@@ -96,6 +99,8 @@
     self.collectivesLabel.font = MFhelvetica;
     self.collectivesLabel.text = @"Collectives";
     self.collectivesLabel.textColor = [UIColor whiteColor];
+    
+    self.searchField.placeholder = @"Search Categories";
 
     
     //Add tap gesture recognizers to the two menu items: Makers & Finder and Collectives.
@@ -147,6 +152,7 @@
     self.collectivesButton.backgroundColor = MFdarkTealColor;
     self.collectivesView.hidden = YES;
     self.tableView.hidden = NO;
+    self.searchField.placeholder = @"Search Categories";
 }
 
 -(void)handleCollectivesButtonTapped:(UITapGestureRecognizer *)recognizer
@@ -155,6 +161,7 @@
     self.collectivesButton.backgroundColor = MFtealColor;
     self.collectivesView.hidden = NO;
     self.tableView.hidden = YES;
+    self.searchField.placeholder = @"Search Collectives";
 }
 
 - (void)didReceiveMemoryWarning
