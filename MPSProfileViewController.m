@@ -144,6 +144,11 @@
     [imagePositions addObject:[NSValue valueWithCGRect:CGRectMake(52, 157, 51, 51)]];
     [imagePositions addObject:[NSValue valueWithCGRect:CGRectMake(104, 157, 51, 51)]];
     
+//    NSInteger arrayCount = [apiArray count];
+//
+    
+    
+    
 
     NSMutableArray *makerImageViews = [[NSMutableArray alloc]init];
     for (NSInteger i = 0; i<4; i++) {

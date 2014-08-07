@@ -15,5 +15,7 @@
 NSString *const kUSER_CREATE_URL = @"http://makersfinders.firehawkcreative.com/api/v1/users";
 NSString *const kUSER_LOGIN_URL =  @"http://makersfinders.firehawkcreative.com/api/v1/sessions";
 NSString *const kCATEGORY_API_URL = @"http://makersfinders.firehawkcreative.com/api/v1/sectors";
+NSString *const kUSER_PROFILE_API_URL = @"http://makersfinders.firehawkcreative.com/api/v1/users/";
 
 @end
+

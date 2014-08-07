@@ -32,6 +32,8 @@
 @interface MFUser (CoreDataGeneratedAccessors)
 
 +(instancetype)userWithContext: (NSManagedObjectContext *)context;
++(MFUser *)currentUser;
+
 
 - (void)addMakesObject:(MFMake *)value;
 - (void)removeMakesObject:(MFMake *)value;

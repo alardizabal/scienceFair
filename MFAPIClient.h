@@ -15,4 +15,7 @@
 
 + (void) getCategoryImagesWithCompletion:(void (^)(NSDictionary *dictionary))completionBlock;
 
++ (void) getUserProfiles:(void (^)(NSDictionary *dictionary))completionBlock;
+
+
 @end
