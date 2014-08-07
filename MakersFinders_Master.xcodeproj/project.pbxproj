@@ -13,7 +13,6 @@
 		6543482D19927EAF00324F59 /* MFNotificationsFollowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6543482C19927EAF00324F59 /* MFNotificationsFollowingViewController.m */; };
 		6543483019927FC500324F59 /* MFNotificationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6543482F19927FC500324F59 /* MFNotificationsTableViewCell.m */; };
 		65436D5E198EE3E00038C985 /* makersfinderslogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 65436D5C198EE3E00038C985 /* makersfinderslogo.png */; };
-		65436D5F198EE3E00038C985 /* loginMainImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 65436D5D198EE3E00038C985 /* loginMainImage.png */; };
 		657238CB1992A12D00C1F023 /* MPSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238CA1992A12D00C1F023 /* MPSProfileViewController.m */; };
 		657238CF1992A1E400C1F023 /* Main_Matt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657238CE1992A1E400C1F023 /* Main_Matt.storyboard */; };
 		657238F11992ABE300C1F023 /* MFNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238F01992ABE300C1F023 /* MFNotification.m */; };
@@ -85,6 +84,7 @@
 		65D15810198AE8B4000F958D /* explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580E198AE8B4000F958D /* explore@2x.png */; };
 		65D15819198AEC82000F958D /* MFExploreCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */; };
 		65D29DD71993FF32004C9BC4 /* MFItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D29DD61993FF32004C9BC4 /* MFItem.m */; };
+		65D29DD919940FD8004C9BC4 /* loginMainImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D29DD819940FD8004C9BC4 /* loginMainImage.png */; };
 		A237321B1993991F00997FDB /* Backup in Resources */ = {isa = PBXBuildFile; fileRef = A237321A1993991F00997FDB /* Backup */; };
 		C56655F0365F48A6B3D637EA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F66FE788A7C4C7DB8EB1BC8 /* libPods.a */; };
 		C99B5D64198FE2D90079F2B6 /* MPSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C99B5D5C198FE2D90079F2B6 /* MPSViewController.m */; };
@@ -117,7 +117,6 @@
 		6543482E19927FC500324F59 /* MFNotificationsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFNotificationsTableViewCell.h; sourceTree = "<group>"; };
 		6543482F19927FC500324F59 /* MFNotificationsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFNotificationsTableViewCell.m; sourceTree = "<group>"; };
 		65436D5C198EE3E00038C985 /* makersfinderslogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makersfinderslogo.png; sourceTree = "<group>"; };
-		65436D5D198EE3E00038C985 /* loginMainImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginMainImage.png; sourceTree = "<group>"; };
 		657238C91992A12D00C1F023 /* MPSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSProfileViewController.h; sourceTree = "<group>"; };
 		657238CA1992A12D00C1F023 /* MPSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSProfileViewController.m; sourceTree = "<group>"; };
 		657238CE1992A1E400C1F023 /* Main_Matt.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_Matt.storyboard; sourceTree = "<group>"; };
@@ -217,6 +216,7 @@
 		65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFExploreCustomTableViewCell.m; sourceTree = "<group>"; };
 		65D29DD51993FF32004C9BC4 /* MFItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFItem.h; sourceTree = "<group>"; };
 		65D29DD61993FF32004C9BC4 /* MFItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFItem.m; sourceTree = "<group>"; };
+		65D29DD819940FD8004C9BC4 /* loginMainImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginMainImage.png; sourceTree = "<group>"; };
 		A237321A1993991F00997FDB /* Backup */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Backup; sourceTree = "<group>"; };
 		C99B5D5B198FE2D90079F2B6 /* MPSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSViewController.h; sourceTree = "<group>"; };
 		C99B5D5C198FE2D90079F2B6 /* MPSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSViewController.m; sourceTree = "<group>"; };
@@ -261,10 +261,10 @@
 		65436D5B198EE3C40038C985 /* loginScreenImages */ = {
 			isa = PBXGroup;
 			children = (
+				65D29DD819940FD8004C9BC4 /* loginMainImage.png */,
 				65CF9ADD198A8BAF009ACA3D /* LaunchImage@2x.png */,
 				6537869F198AC580000B0A62 /* LaunchImage4@2x.png */,
 				65436D5C198EE3E00038C985 /* makersfinderslogo.png */,
-				65436D5D198EE3E00038C985 /* loginMainImage.png */,
 			);
 			name = loginScreenImages;
 			sourceTree = "<group>";
@@ -724,9 +724,9 @@
 				65CF9AFC198AAAF7009ACA3D /* times_square.png in Resources */,
 				C99B5D67198FE2D90079F2B6 /* toughcowboy.png in Resources */,
 				65C6EE9A198975C700E7DD13 /* question.png in Resources */,
+				65D29DD919940FD8004C9BC4 /* loginMainImage.png in Resources */,
 				65CF8535198FC59C001A77BE /* peoplebutton.png in Resources */,
 				65C6EE94198975C700E7DD13 /* circle.png in Resources */,
-				65436D5F198EE3E00038C985 /* loginMainImage.png in Resources */,
 				65CF9B1F198AAE8B009ACA3D /* Detail.storyboard in Resources */,
 				65C6EE8419896F9600E7DD13 /* home_selected@2x.png in Resources */,
 				65C6EE99198975C700E7DD13 /* hammer.png in Resources */,

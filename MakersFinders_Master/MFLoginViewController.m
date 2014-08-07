@@ -19,11 +19,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
-
-
 @property (weak, nonatomic) IBOutlet UIView *bottomContainer;
 @property (weak, nonatomic) IBOutlet UILabel *MakersFindersLogo;
 @property (weak, nonatomic) IBOutlet UIView *loginButton;
+@property (weak, nonatomic) IBOutlet UIImageView *topImage;
 
 @end
 
@@ -52,20 +51,56 @@
     self.emailField.delegate = self;
     self.passwordField.delegate = self;
     
-    self.bottomContainer.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"loginMainImage"]];
     self.MakersFindersLogo.text = @"MakersFinders";
     self.MakersFindersLogo.font = [UIFont fontWithName:@"NeutraText-BookSC" size:40];
-    self.MakersFindersLogo.textColor = [UIColor whiteColor];
-    self.MakersFindersLogo.shadowColor = [UIColor blackColor];
-    self.MakersFindersLogo.shadowOffset = CGSizeMake(1,1);
+    self.topImage.image = [UIImage imageNamed:@"loginMainImage"];
+    
+    self.MakersFindersLogo.textColor = [UIColor blackColor];
     self.loginButton.layer.cornerRadius = 6.0f;
     
     UITapGestureRecognizer *loginTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loginTapped:)];
     [self.loginButton addGestureRecognizer:loginTapped];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 
 }
+
+-(void)keyboardWillShow:(NSNotification *)aNotification
+{
+//    self.bottomContainer.frame = CGRectMake(0,20,self.bottomContainer.frame.size.width,self.bottomContainer.frame.size.height);
+//    self.topImage.hidden = YES;
+    NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    CGRect frame = self.view.frame;
+    frame.origin.y -= self.bottomContainer.frame.size.height;
+//    self.topImage.hidden = YES;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    self.view.frame = frame;
+    [UIView commitAnimations];
+
+
+    
+}
+
+
+
+-(void)keyboardWillHide:(NSNotification *)aNotification
+{
+//    self.bottomContainer.frame = CGRectMake(0,self.bottomContainer.frame.size.height+20,self.bottomContainer.frame.size.width,self.bottomContainer.frame.size.height);
+//    self.topImage.hidden = NO;
+    NSTimeInterval animationDuration =
+    [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    CGRect frame = self.view.frame;
+    frame.origin.y += self.bottomContainer.frame.size.height;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    self.view.frame = frame;
+    [UIView commitAnimations];
+//    self.topImage.hidden = NO;
+}
+
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {

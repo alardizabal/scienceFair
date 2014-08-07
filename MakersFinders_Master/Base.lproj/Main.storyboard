@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JvK-LW-sN6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mCf-0Y-xt5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="N3Y-Fp-knd">
             <objects>
-                <viewController id="EXA-CT-byF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="EXA-CT-byF" customClass="MFLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GcJ-O3-diJ"/>
                         <viewControllerLayoutGuide type="bottom" id="5Ed-W4-y00"/>
@@ -25,7 +25,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MakersFinders" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0o-8t-OnY">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="10" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="02r-Kq-vTn"/>
@@ -35,11 +35,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLX-rb-qAE">
-                                        <rect key="frame" x="0.0" y="50" width="320" height="224"/>
+                                        <rect key="frame" x="0.0" y="60" width="320" height="214"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lyw-AO-rZB">
-                                                <rect key="frame" x="0.0" y="27" width="320" height="135"/>
+                                                <rect key="frame" x="0.0" y="24" width="320" height="135"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TT0-GU-mvp">
@@ -66,8 +66,8 @@
                                                         <rect key="frame" x="20" y="70" width="280" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <subviews>
-                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g20-ey-XfL">
-                                                                <rect key="frame" x="119" y="5" width="42" height="21"/>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g20-ey-XfL">
+                                                                <rect key="frame" x="119" y="5" width="43" height="21"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -94,7 +94,6 @@
                                                         </state>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.64735478940000002" green="0.64735478940000002" blue="0.64735478940000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="320" id="2Fi-AN-xin"/>
                                                     <constraint firstItem="TT0-GU-mvp" firstAttribute="top" secondItem="Lyw-AO-rZB" secondAttribute="top" id="7dc-nx-rrP"/>
@@ -112,21 +111,19 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="centerX" secondItem="Lyw-AO-rZB" secondAttribute="centerX" id="4tH-9y-AIT"/>
-                                            <constraint firstAttribute="centerY" secondItem="Lyw-AO-rZB" secondAttribute="centerY" constant="17.5" id="Xkh-ym-zSh"/>
+                                            <constraint firstAttribute="centerY" secondItem="Lyw-AO-rZB" secondAttribute="centerY" constant="15" id="Xkh-ym-zSh"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.091803485919999997" blue="0.287900765" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="fLX-rb-qAE" firstAttribute="leading" secondItem="xb8-cD-nwQ" secondAttribute="leading" id="DR5-QK-QHt"/>
                                     <constraint firstAttribute="trailing" secondItem="fLX-rb-qAE" secondAttribute="trailing" id="NvG-sG-k3y"/>
                                     <constraint firstAttribute="trailing" secondItem="j0o-8t-OnY" secondAttribute="trailing" id="TIf-It-jXO"/>
                                     <constraint firstAttribute="bottom" secondItem="fLX-rb-qAE" secondAttribute="bottom" id="ofb-dy-AwR"/>
                                     <constraint firstItem="fLX-rb-qAE" firstAttribute="top" secondItem="j0o-8t-OnY" secondAttribute="bottom" id="rcJ-wg-fIb"/>
-                                    <constraint firstItem="j0o-8t-OnY" firstAttribute="top" secondItem="xb8-cD-nwQ" secondAttribute="top" id="vyj-sO-UdX"/>
+                                    <constraint firstItem="j0o-8t-OnY" firstAttribute="top" secondItem="xb8-cD-nwQ" secondAttribute="top" constant="10" id="vyj-sO-UdX"/>
                                     <constraint firstItem="j0o-8t-OnY" firstAttribute="leading" secondItem="xb8-cD-nwQ" secondAttribute="leading" id="x5F-ln-GZ9"/>
                                 </constraints>
                             </view>
@@ -145,104 +142,18 @@
                             <constraint firstAttribute="trailing" secondItem="xb8-cD-nwQ" secondAttribute="trailing" id="ub1-8Y-4QG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="MakersFindersLogo" destination="j0o-8t-OnY" id="N6y-oq-rOl"/>
+                        <outlet property="bottomContainer" destination="xb8-cD-nwQ" id="rTZ-Gi-iR2"/>
+                        <outlet property="emailField" destination="TT0-GU-mvp" id="sOF-I5-5DZ"/>
+                        <outlet property="loginButton" destination="GEK-hV-xr8" id="7cM-6U-1h8"/>
+                        <outlet property="passwordField" destination="pZt-SM-f8g" id="kc5-pB-nmV"/>
+                        <outlet property="topImage" destination="Xp9-Lo-Epq" id="pFA-2e-6KJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nP-dw-xPD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="173" y="-1454"/>
-        </scene>
-        <!--Login View Controller-->
-        <scene sceneID="DN2-TB-hhJ">
-            <objects>
-                <viewController storyboardIdentifier="login" id="JvK-LW-sN6" customClass="MFLoginViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="j4d-Lo-AZS"/>
-                        <viewControllerLayoutGuide type="bottom" id="Se5-ih-hmL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Q3f-x5-cwz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WvJ-Kh-K8c">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dnF-JT-c2P">
-                                        <rect key="frame" x="20" y="122" width="280" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LTT-DP-cNa">
-                                        <rect key="frame" x="20" y="160" width="280" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQc-yO-qYe">
-                                        <rect key="frame" x="64" y="504" width="192" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Sign Up For MakersFinders">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="FeF-3o-pmp" kind="modal" modalTransitionStyle="crossDissolve" id="O6r-FJ-9DN"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MakersFinders" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukE-3S-VVY">
-                                        <rect key="frame" x="38" y="32" width="244" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="inI-gU-AzH"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EeB-9I-MQv">
-                                        <rect key="frame" x="20" y="200" width="280" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udD-R2-vGM">
-                                                <rect key="frame" x="119" y="4" width="43" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="ukE-3S-VVY" firstAttribute="top" secondItem="WvJ-Kh-K8c" secondAttribute="top" constant="40" id="C0U-3B-KXE"/>
-                                    <constraint firstAttribute="bottom" secondItem="rQc-yO-qYe" secondAttribute="bottom" constant="10" id="KtC-W7-VOE"/>
-                                    <constraint firstAttribute="trailing" secondItem="ukE-3S-VVY" secondAttribute="trailing" constant="25" id="TFH-19-2M5"/>
-                                    <constraint firstItem="ukE-3S-VVY" firstAttribute="leading" secondItem="WvJ-Kh-K8c" secondAttribute="leading" constant="25" id="gUJ-yB-zLX"/>
-                                    <constraint firstAttribute="centerX" secondItem="rQc-yO-qYe" secondAttribute="centerX" id="p10-mm-oDI"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Se5-ih-hmL" firstAttribute="top" secondItem="WvJ-Kh-K8c" secondAttribute="bottom" id="P8b-jL-LIb"/>
-                            <constraint firstAttribute="trailing" secondItem="WvJ-Kh-K8c" secondAttribute="trailing" id="TTx-Hf-2bb"/>
-                            <constraint firstItem="WvJ-Kh-K8c" firstAttribute="leading" secondItem="Q3f-x5-cwz" secondAttribute="leading" id="d89-GN-N8w"/>
-                            <constraint firstItem="WvJ-Kh-K8c" firstAttribute="top" secondItem="j4d-Lo-AZS" secondAttribute="bottom" id="wCh-ct-Urw"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="MakersFindersLogo" destination="ukE-3S-VVY" id="ODY-hN-j9n"/>
-                        <outlet property="bottomContainer" destination="WvJ-Kh-K8c" id="v42-J5-D10"/>
-                        <outlet property="emailField" destination="dnF-JT-c2P" id="xOJ-ST-zfU"/>
-                        <outlet property="loginButton" destination="EeB-9I-MQv" id="ba5-Wo-J4Y"/>
-                        <outlet property="passwordField" destination="LTT-DP-cNa" id="ivN-Xc-f3O"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Qx-fu-6Zj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="163" y="-775"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="Dc7-4z-Bok">
