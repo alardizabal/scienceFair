@@ -7,8 +7,6 @@
 //
 
 #import "FISProductDetailViewController.h"
-//Delete after test data is done
-#import "FlickrPhoto.h"
 
 @interface FISProductDetailViewController ()
 
@@ -46,7 +44,7 @@
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/225.0 green:62/225.0 blue:81/225.0 alpha:1];
     
-    self.mainImageOfInterest.image = self.flickrPhoto.thumbnail;
+//    self.mainImageOfInterest.image = self.flickrPhoto.thumbnail;
     
 //    [self.tabBarController setTabBarHidden:NO animated:YES];
 }

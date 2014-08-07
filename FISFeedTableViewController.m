@@ -7,12 +7,13 @@
 //
 
 #import "FISFeedTableViewController.h"
-#import "FISDataStore.h"
 #import "FISCustomPugCell.h"
 #import "FISProductDetailViewController.h"
-//Delete after feed test data is finished
-#import "FlickrPhoto.h"
 #import "AALTestViewController.h"
+#import "MFDataStore.h"
+
+//Delete this
+#import "MFAPIClient.h"
 
 @interface FISFeedTableViewController ()
 
@@ -65,20 +66,30 @@
     [rightButton addTarget:self action:@selector(heartButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = rightButtonItem;
     
-    self.store = [FISDataStore sharedDataStore];
-    [self.store placeHolderImages];
-    [self.store flickrFeedImages:^(NSArray *flickrPhotosArray) {
-        for (NSInteger i=0; i<[flickrPhotosArray count]; i++)
-        {
-            FlickrPhoto *eachPhoto = flickrPhotosArray[i];
-            [self.store.flickrPhotoFeed replaceObjectAtIndex:i withObject:eachPhoto];
+    self.store = [MFDataStore sharedStore];
+    [self placeHolderImages];
+    
+    [MFAPIClient retrieveFeedAPIImages:^(BOOL success, NSArray *responseObjectArray) {
+        if (success) {
+            for (NSInteger i=0; i<[responseObjectArray count]; i++) {
+                //Grab each item
+                NSDictionary *responseDictionary = responseObjectArray[i];
+                
+                //Download image
+                NSURL *retinaImageURL = [NSURL URLWithString:responseDictionary[@"images"][@"retina"]];
+                NSData *retinaImageDataToBeDownloaded = [NSData dataWithContentsOfURL:retinaImageURL];
+                UIImage *retinaImage = [UIImage imageWithData:retinaImageDataToBeDownloaded];
+                
+                //Add image to array to be displayed in FeedTVC
+                [self.arrayOfFeedImages replaceObjectAtIndex:i withObject:retinaImage];
+            }
+            //Refresh tableView
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.tableView reloadData];
+            }];
+            NSLog(@"Success!");
         }
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [self.tableView reloadData];
-        }];
     }];
-    //Added here
-//    hidden = NO;
 }
 
 -(void)peopleButtonTapped:(UITapGestureRecognizer *)recognizer
@@ -112,6 +123,16 @@
     [super didReceiveMemoryWarning];
 }
 
+-(void)placeHolderImages
+{
+    self.arrayOfFeedImages = [NSMutableArray new];
+    for (NSInteger i=0; i<30; i++)
+    {
+        UIImage *placeHolderImage = [UIImage imageNamed:@"placeholder.png"];
+        [self.arrayOfFeedImages addObject:placeHolderImage];
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -121,7 +142,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.store.flickrPhotoFeed count];
+    return [self.arrayOfFeedImages count];
 }
 
 
@@ -129,8 +150,8 @@
 {
     FISCustomPugCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pugCell" forIndexPath:indexPath];
     
-    FlickrPhoto *eachPhoto = self.store.flickrPhotoFeed[indexPath.row];
-    cell.pugCellImageView.image = eachPhoto.thumbnail;
+    UIImage *eachPlaceholderImage = self.arrayOfFeedImages[indexPath.row];
+    cell.pugCellImageView.image = eachPlaceholderImage;
     
     return cell;
 }
@@ -140,14 +161,14 @@
     return 300.0f;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    UIStoryboard *productDetailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:[NSBundle mainBundle]];
-    FISProductDetailViewController *productDetailVC = [productDetailStoryboard instantiateViewControllerWithIdentifier:@"productDetailVC"];
-    productDetailVC.flickrPhoto = self.store.flickrPhotoFeed[indexPath.row];
-    [self.navigationController pushViewController:productDetailVC animated:YES];
-}
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [self.navigationController setNavigationBarHidden:NO animated:YES];
+//    UIStoryboard *productDetailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:[NSBundle mainBundle]];
+//    FISProductDetailViewController *productDetailVC = [productDetailStoryboard instantiateViewControllerWithIdentifier:@"productDetailVC"];
+//    productDetailVC.flickrPhoto = self.store.flickrPhotoFeed[indexPath.row];
+//    [self.navigationController pushViewController:productDetailVC animated:YES];
+//}
 
 #pragma mark UIScrollViewDelegate Methods
 
