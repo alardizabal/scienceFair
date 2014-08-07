@@ -84,6 +84,7 @@
 		65D1580F198AE8B4000F958D /* collectives@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580D198AE8B4000F958D /* collectives@2x.png */; };
 		65D15810198AE8B4000F958D /* explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580E198AE8B4000F958D /* explore@2x.png */; };
 		65D15819198AEC82000F958D /* MFExploreCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */; };
+		65D29DD71993FF32004C9BC4 /* MFItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D29DD61993FF32004C9BC4 /* MFItem.m */; };
 		A237321B1993991F00997FDB /* Backup in Resources */ = {isa = PBXBuildFile; fileRef = A237321A1993991F00997FDB /* Backup */; };
 		C56655F0365F48A6B3D637EA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F66FE788A7C4C7DB8EB1BC8 /* libPods.a */; };
 		C99B5D64198FE2D90079F2B6 /* MPSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C99B5D5C198FE2D90079F2B6 /* MPSViewController.m */; };
@@ -214,6 +215,8 @@
 		65D1580E198AE8B4000F958D /* explore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explore@2x.png"; sourceTree = "<group>"; };
 		65D15817198AEC82000F958D /* MFExploreCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFExploreCustomTableViewCell.h; sourceTree = "<group>"; };
 		65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFExploreCustomTableViewCell.m; sourceTree = "<group>"; };
+		65D29DD51993FF32004C9BC4 /* MFItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFItem.h; sourceTree = "<group>"; };
+		65D29DD61993FF32004C9BC4 /* MFItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFItem.m; sourceTree = "<group>"; };
 		A237321A1993991F00997FDB /* Backup */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Backup; sourceTree = "<group>"; };
 		C99B5D5B198FE2D90079F2B6 /* MPSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSViewController.h; sourceTree = "<group>"; };
 		C99B5D5C198FE2D90079F2B6 /* MPSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSViewController.m; sourceTree = "<group>"; };
@@ -272,6 +275,8 @@
 				659E5C37198C0C6200A4EE77 /* MFDataStore.h */,
 				659E5C38198C0C6200A4EE77 /* MFDataStore.m */,
 				659E5C49198C108000A4EE77 /* MakersFinders_Master.xcdatamodeld */,
+				65D29DD51993FF32004C9BC4 /* MFItem.h */,
+				65D29DD61993FF32004C9BC4 /* MFItem.m */,
 				657239011992ABE400C1F023 /* MFInterest.h */,
 				657239021992ABE400C1F023 /* MFInterest.m */,
 				657238FE1992ABE400C1F023 /* MFComment.h */,
@@ -796,6 +801,7 @@
 				659E5C2F198BF0A800A4EE77 /* MFSignupViewController.m in Sources */,
 				659E5C4B198C108000A4EE77 /* MakersFinders_Master.xcdatamodeld in Sources */,
 				65ACF8C9198BD691002CDBED /* MFConstants.m in Sources */,
+				65D29DD71993FF32004C9BC4 /* MFItem.m in Sources */,
 				657238CB1992A12D00C1F023 /* MPSProfileViewController.m in Sources */,
 				65C6EE451989615200E7DD13 /* MFAppDelegate.m in Sources */,
 				657239031992ABE400C1F023 /* MFInterest.m in Sources */,

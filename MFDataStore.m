@@ -63,7 +63,10 @@
 {
     return [MFInterest interestWithContext:self.context];
 }
-
+-(MFItem *)createItem
+{
+    return [MFItem itemWithContext:self.context];
+}
 
 
 

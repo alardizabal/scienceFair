@@ -10,6 +10,7 @@
 #import "MFUser.h"
 #import "MFCategory.h"
 #import "MFInterest.h"
+#import "MFItem.h"
 
 
 @interface MFDataStore : NSObject

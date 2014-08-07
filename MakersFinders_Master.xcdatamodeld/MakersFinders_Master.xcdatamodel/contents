@@ -16,7 +16,7 @@
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MFCategory" inverseName="interests" inverseEntity="MFCategory" syncable="YES"/>
         <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MFUser" inverseName="interests" inverseEntity="MFUser" syncable="YES"/>
     </entity>
-    <entity name="MFItem" syncable="YES">
+    <entity name="MFItem" representedClassName="MFItem" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="itemDescription" optional="YES" attributeType="String" syncable="YES"/>
@@ -48,8 +48,8 @@
         <element name="MFCategory" positionX="-63" positionY="167" width="128" height="103"/>
         <element name="MFComment" positionX="-468" positionY="423" width="128" height="73"/>
         <element name="MFInterest" positionX="-74" positionY="-63" width="128" height="103"/>
+        <element name="MFItem" positionX="-252" positionY="99" width="128" height="165"/>
         <element name="MFNotification" positionX="-2" positionY="306" width="128" height="58"/>
         <element name="MFUser" positionX="-369" positionY="14" width="128" height="238"/>
-        <element name="MFItem" positionX="-252" positionY="99" width="128" height="163"/>
     </elements>
 </model>

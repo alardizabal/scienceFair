@@ -29,7 +29,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *makersLabel;
 @property (weak, nonatomic) IBOutlet UILabel *collectivesLabel;
 @property (weak, nonatomic) IBOutlet UIView *collectivesView;
-
+@property (strong, nonatomic) UIGestureRecognizer *getOutOfSearchTap;
 @end
 
 @implementation MFExploreRootViewController
@@ -125,12 +125,32 @@
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:categoryFetch managedObjectContext:store.context sectionNameKeyPath:nil cacheName:nil];
     [self.fetchedResultsController performFetch:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide) name:UIKeyboardDidHideNotification object:nil];
+    
 
 }
 
 -(void)peopleButtonTapped:(UITapGestureRecognizer *)recognizer
 {
     
+}
+
+-(void)keyboardDidShow
+{
+    self.getOutOfSearchTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleScreenTapped:)];
+    [self.view addGestureRecognizer:self.getOutOfSearchTap];
+}
+
+-(void)keyboardDidHide
+{
+    [self.view removeGestureRecognizer:self.getOutOfSearchTap];
+}
+
+
+-(void)handleScreenTapped:(UITapGestureRecognizer *)recognizer
+{
+    [self.searchField resignFirstResponder];
 }
 
 -(void)heartButtonTapped:(UITapGestureRecognizer *)recognizer
