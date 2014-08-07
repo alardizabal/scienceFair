@@ -9,7 +9,8 @@
 #import "MFBackground.h"
 #import "MFDataStore.h"
 #import "MFCategory.h"
-#import "AALAPIClient.h"
+//#import "AALAPIClient.h"
+#import "MFAPIClient.h"
 
 @implementation MFBackground
 
@@ -20,7 +21,7 @@
 +(void)LoadCategoryAndInterestImagesInBackGround
 {
     MFDataStore *store = [MFDataStore sharedStore];
-    [AALAPIClient getCategoryImagesWithCompletion:^(NSDictionary *dictionary) {
+    [MFAPIClient getCategoryImagesWithCompletion:^(NSDictionary *dictionary) {
         for (NSDictionary *eachCategory in dictionary)
         {
             MFCategory *category = [store createCategory];
@@ -41,7 +42,7 @@
     NSOperationQueue *imageFetchingQueue = [[NSOperationQueue alloc] init];
     [imageFetchingQueue addOperationWithBlock:^{
         
-        [AALAPIClient getCategoryImagesWithCompletion:^(NSDictionary *dictionary) {
+        [MFAPIClient getCategoryImagesWithCompletion:^(NSDictionary *dictionary) {
             for (NSDictionary *eachCategory in dictionary) {
                 
                 NSString *name = eachCategory[@"name"];

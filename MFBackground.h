@@ -11,5 +11,6 @@
 @interface MFBackground : NSObject
 
 +(void)LoadCategoryAndInterestImagesInBackGround;
++(void)getCategoryImagesWithCompletion:(void (^)(NSDictionary *dictionary))completionBlock;
 
 @end

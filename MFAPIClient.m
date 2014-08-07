@@ -43,6 +43,29 @@
         }];
     }];
 }
+
++ (void) getCategoryImagesWithCompletion:(void (^)(NSDictionary *dictionary))completionBlock {
+    
+    NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
+    NSString *getCategoryImagesURL = [NSString stringWithFormat:@"%@", kCATEGORY_API_URL];
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:getCategoryImagesURL
+      parameters:nil
+         success:^(NSURLSessionDataTask *task, id responseObject)
+     {
+         [backgroundQueue addOperationWithBlock:^{
+             completionBlock(responseObject);
+         }];
+         
+         
+     } failure:^(NSURLSessionDataTask *task, NSError *error)
+     {
+         NSLog(@"Fail: %@",error.localizedDescription);
+     }];
+    
+}
+
 @end
 
 

@@ -13,4 +13,6 @@
 
 -(void)loginNewUserWithEmail:(NSString *)email Password:(NSString *)password  Completion:(void (^)())completionBlock;
 
++ (void) getCategoryImagesWithCompletion:(void (^)(NSDictionary *dictionary))completionBlock;
+
 @end

@@ -88,6 +88,7 @@
 		65D1580F198AE8B4000F958D /* collectives@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580D198AE8B4000F958D /* collectives@2x.png */; };
 		65D15810198AE8B4000F958D /* explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580E198AE8B4000F958D /* explore@2x.png */; };
 		65D15819198AEC82000F958D /* MFExploreCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */; };
+		A237321B1993991F00997FDB /* Backup in Resources */ = {isa = PBXBuildFile; fileRef = A237321A1993991F00997FDB /* Backup */; };
 		A2A631BE198C4DAB00C5ECD2 /* AALAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A631BD198C4DAB00C5ECD2 /* AALAPIClient.m */; };
 		C56655F0365F48A6B3D637EA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F66FE788A7C4C7DB8EB1BC8 /* libPods.a */; };
 		C99B5D64198FE2D90079F2B6 /* MPSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C99B5D5C198FE2D90079F2B6 /* MPSViewController.m */; };
@@ -228,6 +229,7 @@
 		65D1580E198AE8B4000F958D /* explore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explore@2x.png"; sourceTree = "<group>"; };
 		65D15817198AEC82000F958D /* MFExploreCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFExploreCustomTableViewCell.h; sourceTree = "<group>"; };
 		65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFExploreCustomTableViewCell.m; sourceTree = "<group>"; };
+		A237321A1993991F00997FDB /* Backup */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Backup; sourceTree = "<group>"; };
 		A2A631BC198C4DAB00C5ECD2 /* AALAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AALAPIClient.h; sourceTree = "<group>"; };
 		A2A631BD198C4DAB00C5ECD2 /* AALAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AALAPIClient.m; sourceTree = "<group>"; };
 		C99B5D5B198FE2D90079F2B6 /* MPSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSViewController.h; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 				65CF9AED198AA984009ACA3D /* AALTestViewController.m */,
 				65CF9AF2198AAAF7009ACA3D /* checkmark.imageset */,
 				65CF9AF5198AAAF7009ACA3D /* times_square.imageset */,
+				A237321A1993991F00997FDB /* Backup */,
 			);
 			name = Al;
 			path = ..;
@@ -725,6 +728,7 @@
 				65CF9B1F198AAE8B009ACA3D /* Detail.storyboard in Resources */,
 				65C6EE8419896F9600E7DD13 /* home_selected@2x.png in Resources */,
 				65C6EE99198975C700E7DD13 /* hammer.png in Resources */,
+				A237321B1993991F00997FDB /* Backup in Resources */,
 				65436D5E198EE3E00038C985 /* makersfinderslogo.png in Resources */,
 				65C6EE78198969F800E7DD13 /* user@2x.png in Resources */,
 				C99B5D65198FE2D90079F2B6 /* hammer_1.png in Resources */,
