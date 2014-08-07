@@ -19,10 +19,9 @@
 		657238F11992ABE300C1F023 /* MFNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238F01992ABE300C1F023 /* MFNotification.m */; };
 		657238F41992ABE400C1F023 /* MFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238F31992ABE400C1F023 /* MFUser.m */; };
 		657238F71992ABE400C1F023 /* MFCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238F61992ABE400C1F023 /* MFCategory.m */; };
-		657238FA1992ABE400C1F023 /* MFMake.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238F91992ABE400C1F023 /* MFMake.m */; };
-		657238FD1992ABE400C1F023 /* MFFind.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238FC1992ABE400C1F023 /* MFFind.m */; };
 		657239001992ABE400C1F023 /* MFComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238FF1992ABE400C1F023 /* MFComment.m */; };
 		657239031992ABE400C1F023 /* MFInterest.m in Sources */ = {isa = PBXBuildFile; fileRef = 657239021992ABE400C1F023 /* MFInterest.m */; };
+		6597DE8D1993CB460031F773 /* MFSecretViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6597DE8C1993CB460031F773 /* MFSecretViewController.m */; };
 		659E5C2F198BF0A800A4EE77 /* MFSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E5C2E198BF0A800A4EE77 /* MFSignupViewController.m */; };
 		659E5C32198BFBA400A4EE77 /* MFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E5C31198BFBA400A4EE77 /* MFAPIClient.m */; };
 		659E5C39198C0C6200A4EE77 /* MFDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E5C38198C0C6200A4EE77 /* MFDataStore.m */; };
@@ -133,14 +132,12 @@
 		657238F31992ABE400C1F023 /* MFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFUser.m; sourceTree = "<group>"; };
 		657238F51992ABE400C1F023 /* MFCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCategory.h; sourceTree = "<group>"; };
 		657238F61992ABE400C1F023 /* MFCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCategory.m; sourceTree = "<group>"; };
-		657238F81992ABE400C1F023 /* MFMake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFMake.h; sourceTree = "<group>"; };
-		657238F91992ABE400C1F023 /* MFMake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFMake.m; sourceTree = "<group>"; };
-		657238FB1992ABE400C1F023 /* MFFind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFFind.h; sourceTree = "<group>"; };
-		657238FC1992ABE400C1F023 /* MFFind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFFind.m; sourceTree = "<group>"; };
 		657238FE1992ABE400C1F023 /* MFComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFComment.h; sourceTree = "<group>"; };
 		657238FF1992ABE400C1F023 /* MFComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFComment.m; sourceTree = "<group>"; };
 		657239011992ABE400C1F023 /* MFInterest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFInterest.h; sourceTree = "<group>"; };
 		657239021992ABE400C1F023 /* MFInterest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFInterest.m; sourceTree = "<group>"; };
+		6597DE8B1993CB460031F773 /* MFSecretViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSecretViewController.h; sourceTree = "<group>"; };
+		6597DE8C1993CB460031F773 /* MFSecretViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSecretViewController.m; sourceTree = "<group>"; };
 		659E5C2D198BF0A800A4EE77 /* MFSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSignupViewController.h; sourceTree = "<group>"; };
 		659E5C2E198BF0A800A4EE77 /* MFSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSignupViewController.m; sourceTree = "<group>"; };
 		659E5C30198BFBA400A4EE77 /* MFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAPIClient.h; sourceTree = "<group>"; };
@@ -297,10 +294,6 @@
 				657239021992ABE400C1F023 /* MFInterest.m */,
 				657238FE1992ABE400C1F023 /* MFComment.h */,
 				657238FF1992ABE400C1F023 /* MFComment.m */,
-				657238FB1992ABE400C1F023 /* MFFind.h */,
-				657238FC1992ABE400C1F023 /* MFFind.m */,
-				657238F81992ABE400C1F023 /* MFMake.h */,
-				657238F91992ABE400C1F023 /* MFMake.m */,
 				657238F51992ABE400C1F023 /* MFCategory.h */,
 				657238F61992ABE400C1F023 /* MFCategory.m */,
 				657238F21992ABE400C1F023 /* MFUser.h */,
@@ -541,6 +534,8 @@
 			isa = PBXGroup;
 			children = (
 				65C6EE461989615200E7DD13 /* Main.storyboard */,
+				6597DE8B1993CB460031F773 /* MFSecretViewController.h */,
+				6597DE8C1993CB460031F773 /* MFSecretViewController.m */,
 				65C6EE691989616D00E7DD13 /* MFCustomTabBarControllerViewController.h */,
 				65C6EE6A1989616D00E7DD13 /* MFCustomTabBarControllerViewController.m */,
 				657239051992AF8200C1F023 /* Login and Signup */,
@@ -789,10 +784,8 @@
 				657238F41992ABE400C1F023 /* MFUser.m in Sources */,
 				659E5C32198BFBA400A4EE77 /* MFAPIClient.m in Sources */,
 				65CF9AEE198AA984009ACA3D /* AALCategory.m in Sources */,
-				657238FD1992ABE400C1F023 /* MFFind.m in Sources */,
 				6543483019927FC500324F59 /* MFNotificationsTableViewCell.m in Sources */,
 				65CF8540199155A1001A77BE /* MFBackground.m in Sources */,
-				657238FA1992ABE400C1F023 /* MFMake.m in Sources */,
 				657239001992ABE400C1F023 /* MFComment.m in Sources */,
 				F8384DEF199270AF000F7D80 /* MFAddMakeTableViewController.m in Sources */,
 				65CF9AF0198AA984009ACA3D /* AALTestViewController.m in Sources */,
@@ -800,6 +793,7 @@
 				6543482D19927EAF00324F59 /* MFNotificationsFollowingViewController.m in Sources */,
 				F8DC8A63198C03E400197301 /* Flickr.m in Sources */,
 				65CF9AE1198A8D10009ACA3D /* MFLoginViewController.m in Sources */,
+				6597DE8D1993CB460031F773 /* MFSecretViewController.m in Sources */,
 				A2A631BE198C4DAB00C5ECD2 /* AALAPIClient.m in Sources */,
 				659E5C2F198BF0A800A4EE77 /* MFSignupViewController.m in Sources */,
 				659E5C4B198C108000A4EE77 /* MakersFinders_Master.xcdatamodeld in Sources */,

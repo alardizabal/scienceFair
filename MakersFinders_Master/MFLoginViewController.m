@@ -10,6 +10,8 @@
 #import "MFAPIClient.h"
 #import "MFCustomTabBarControllerViewController.h"
 #import "MFBackground.h"
+#import "MFUser.h"
+#import "MFDataStore.h"
 
 
 
@@ -89,10 +91,19 @@
 */
 -(void)loginTapped:(UITapGestureRecognizer *)recognizer
 {
-    MFAPIClient *client = [[MFAPIClient alloc] init];
-    [client loginNewUserWithEmail:@"dansundsun@gmail.com" Password:@"test" Completion:^{
+
+    [MFAPIClient loginNewUserWithEmail:@"dansundsun@gmail.com" Password:@"test" Completion:^(id responseObject) {
+        NSDictionary *response = responseObject;
+        MFDataStore *store = [MFDataStore sharedStore];
+        MFUser *createdUser = [store createUser];
+        createdUser.name = response[@"name"];
+        createdUser.userID = response[@"id"];
+        createdUser.token = response[@"token"];
+        createdUser.email = response[@"email"];
+        
         MFCustomTabBarControllerViewController *tabBarController = [[MFCustomTabBarControllerViewController alloc] init];
-        [self.navigationController pushViewController:tabBarController animated:YES];
+        [self.navigationController pushViewController:tabBarController animated:NO];
+        
     }];
 }
 

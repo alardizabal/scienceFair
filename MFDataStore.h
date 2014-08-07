@@ -10,7 +10,7 @@
 #import "MFUser.h"
 #import "MFCategory.h"
 #import "MFInterest.h"
-#import "MFMake.h"
+
 
 @interface MFDataStore : NSObject
 @property (strong, nonatomic, readonly) NSManagedObjectContext *context;
@@ -18,6 +18,6 @@
 -(MFUser *) createUser;
 -(MFCategory *)createCategory;
 -(MFInterest *)createInterest;
--(MFMake *)createMake;
+
 
 @end
