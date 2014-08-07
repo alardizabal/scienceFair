@@ -39,7 +39,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lyw-AO-rZB">
-                                                <rect key="frame" x="0.0" y="24" width="320" height="135"/>
+                                                <rect key="frame" x="0.0" y="19" width="320" height="145"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TT0-GU-mvp">
@@ -83,7 +83,7 @@
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUr-PK-6k4">
-                                                        <rect key="frame" x="21" y="105" width="280" height="30"/>
+                                                        <rect key="frame" x="21" y="115" width="280" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="WZY-HH-jsh"/>
@@ -92,6 +92,9 @@
                                                         <state key="normal" title="Signup For MakersFinders">
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="FeF-3o-pmp" kind="modal" modalTransitionStyle="flipHorizontal" id="0mt-YC-3LK"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -99,10 +102,10 @@
                                                     <constraint firstItem="TT0-GU-mvp" firstAttribute="top" secondItem="Lyw-AO-rZB" secondAttribute="top" id="7dc-nx-rrP"/>
                                                     <constraint firstItem="pZt-SM-f8g" firstAttribute="top" secondItem="TT0-GU-mvp" secondAttribute="bottom" constant="5" id="B8s-GO-Hqe"/>
                                                     <constraint firstItem="GEK-hV-xr8" firstAttribute="top" secondItem="pZt-SM-f8g" secondAttribute="bottom" constant="5" id="NPW-lt-uFn"/>
-                                                    <constraint firstAttribute="height" constant="135" id="PfM-kl-pou"/>
+                                                    <constraint firstAttribute="height" constant="145" id="PfM-kl-pou"/>
                                                     <constraint firstAttribute="centerX" secondItem="TT0-GU-mvp" secondAttribute="centerX" id="UiP-J1-agx"/>
                                                     <constraint firstAttribute="centerX" secondItem="GEK-hV-xr8" secondAttribute="centerX" id="WCZ-T0-9cF"/>
-                                                    <constraint firstItem="uUr-PK-6k4" firstAttribute="top" secondItem="GEK-hV-xr8" secondAttribute="bottom" constant="5" id="e47-DM-MTF"/>
+                                                    <constraint firstItem="uUr-PK-6k4" firstAttribute="top" secondItem="GEK-hV-xr8" secondAttribute="bottom" constant="15" id="e47-DM-MTF"/>
                                                     <constraint firstAttribute="centerX" secondItem="pZt-SM-f8g" secondAttribute="centerX" id="gyt-nx-ySx"/>
                                                     <constraint firstItem="GEK-hV-xr8" firstAttribute="top" secondItem="pZt-SM-f8g" secondAttribute="bottom" constant="5" id="qZI-nd-2TO"/>
                                                     <constraint firstItem="pZt-SM-f8g" firstAttribute="top" secondItem="TT0-GU-mvp" secondAttribute="bottom" constant="5" id="teY-zX-wQE"/>
@@ -153,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nP-dw-xPD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="173" y="-1454"/>
+            <point key="canvasLocation" x="93" y="-775"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="Dc7-4z-Bok">
@@ -223,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dce-1V-peY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="555" y="-775"/>
+            <point key="canvasLocation" x="93" y="-1504"/>
         </scene>
         <!--Notifications Following View Controller-->
         <scene sceneID="D9q-fY-ev1">

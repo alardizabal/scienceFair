@@ -58,6 +58,12 @@
     self.MakersFindersLogo.textColor = [UIColor blackColor];
     self.loginButton.layer.cornerRadius = 6.0f;
     
+    //added some white space so animation doesn't look weird
+    UIView *extraWhiteSpace = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.bounds.size.height, 320, 100)];
+    extraWhiteSpace.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:extraWhiteSpace];
+    
+    
     UITapGestureRecognizer *loginTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loginTapped:)];
     [self.loginButton addGestureRecognizer:loginTapped];
     
