@@ -9,7 +9,7 @@
 #import "MFCustomTabBarControllerViewController.h"
 #import "MFUploadRootViewController.h"
 #import "MFExploreRootViewController.h"
-#import "AALTestViewController.h"
+#import "AALInterestsViewController.h"
 #import "FISFeedTableViewController.h"
 #import "MPSProfileViewController.h"
 #import "MFLoginViewController.h"
@@ -51,7 +51,7 @@
     MFUploadRootViewController *vc3 = [main instantiateViewControllerWithIdentifier:@"uploadRoot"];
     UINavigationController *navvc3 = [[UINavigationController alloc] initWithRootViewController:vc3];
     
-    AALTestViewController *vc4 = [main instantiateViewControllerWithIdentifier:@"notificationsFollowing"];
+    AALInterestsViewController *vc4 = [main instantiateViewControllerWithIdentifier:@"notificationsFollowing"];
     UINavigationController *navvc4 = [[UINavigationController alloc] initWithRootViewController:vc4];
     
     MPSProfileViewController *vc5 = [mattMain instantiateViewControllerWithIdentifier:@"profileRoot"];

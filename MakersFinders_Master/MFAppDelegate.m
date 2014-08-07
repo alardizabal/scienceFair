@@ -9,7 +9,7 @@
 #import "MFAppDelegate.h"
 #import "MFCustomTabBarControllerViewController.h"
 #import "MFLoginViewController.h"
-#import "AALTestViewController.h"
+#import "AALInterestsViewController.h"
 
 @implementation MFAppDelegate
 

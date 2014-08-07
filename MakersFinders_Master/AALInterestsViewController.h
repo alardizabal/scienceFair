@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AALTestViewController : UIViewController
+@interface AALInterestsViewController : UIViewController
 
 @property (nonatomic) NSMutableArray *selectedInterests;
 

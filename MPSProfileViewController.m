@@ -10,7 +10,7 @@
 #import "FISDataStore.h"
 #import "FlickrPhoto.h"
 #import "FISFeedTableViewController.h"
-#import "AALTestViewController.h"
+#import "AALInterestsViewController.h"
 
 @interface MPSProfileViewController ()
 
@@ -207,7 +207,7 @@
 -(void)heartButtonTapped:(UITapGestureRecognizer *)recognizer
 {
     UIStoryboard *alMain = [UIStoryboard storyboardWithName:@"AALMain" bundle:nil];
-    AALTestViewController *vc1 = [alMain instantiateViewControllerWithIdentifier:@"interests"];
+    AALInterestsViewController *vc1 = [alMain instantiateViewControllerWithIdentifier:@"interests"];
     UINavigationController *navvc1 = [[UINavigationController alloc] initWithRootViewController:vc1];
     navvc1.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:navvc1 animated:YES completion:nil];

@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Test View Controller - makersfinders-->
+        <!--Interests View Controller - makersfinders-->
         <scene sceneID="Hps-MB-RC1">
             <objects>
-                <viewController storyboardIdentifier="interests" id="dMI-xV-XNs" customClass="AALTestViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="interests" id="dMI-xV-XNs" customClass="AALInterestsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6GZ-V4-gCm"/>
                         <viewControllerLayoutGuide type="bottom" id="H1l-lQ-GiW"/>

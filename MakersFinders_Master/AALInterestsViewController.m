@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Albert Lardizabal. All rights reserved.
 //
 
-#import "AALTestViewController.h"
+#import "AALInterestsViewController.h"
 //#import "AALAPIClient.h"
 //#import "AALCategory.h"
 //#import "AALInterest.h"
@@ -15,7 +15,7 @@
 #import "MFCategory.h"
 #import "MFAPIClient.h"
 
-@interface AALTestViewController ()
+@interface AALInterestsViewController ()
 
 @property (nonatomic) UIScrollView *categoryScrollView;
 @property (nonatomic) UIScrollView *interestScrollView;
@@ -29,7 +29,7 @@
 
 @end
 
-@implementation AALTestViewController
+@implementation AALInterestsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
