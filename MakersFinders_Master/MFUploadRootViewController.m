@@ -13,13 +13,13 @@
 #import "MFDataStore.h"
 #import "AALTestViewController.h"
 
-@interface MFUploadRootViewController ()
+@interface MFUploadRootViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *rightButton;
 @property (weak, nonatomic) IBOutlet UIView *leftButton;
 @property (weak, nonatomic) IBOutlet UILabel *topTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *madeTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *foundTextLabel;
-
+@property (strong, nonatomic) NSString *madeOrFoundPressed;
 @property (strong, nonatomic) NSMutableArray *images;
 
 
@@ -116,16 +116,43 @@
 
 -(void)handleMadeButtonTapped:(UITapGestureRecognizer *)recognizer
 {
-    UIStoryboard *marcusStoryBoard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
-    UIViewController *tempVC = [marcusStoryBoard instantiateViewControllerWithIdentifier:@"madeUpload"];
-    [self presentViewController:tempVC animated:YES completion:nil];
+
+    self.madeOrFoundPressed = @"made";
+    UIImagePickerController *imagePicker =
+    [[UIImagePickerController alloc] init];
+    imagePicker.allowsEditing = YES;
+    
+    imagePicker.delegate = self;
+    
+    imagePicker.sourceType =
+    UIImagePickerControllerSourceTypeCamera;
+    
+    imagePicker.mediaTypes =
+    @[(NSString *) kUTTypeImage];
+    
+    imagePicker.allowsEditing = YES;
+    [self presentViewController:imagePicker
+                       animated:YES completion:nil];
 }
 
 -(void)handleFoundButtonTapped:(UITapGestureRecognizer *)recognizer
 {
-    UIStoryboard *marcusStoryBoard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
-    UIViewController *tempVC2 = [marcusStoryBoard instantiateViewControllerWithIdentifier:@"foundUpload"];
-    [self presentViewController:tempVC2 animated:YES completion:nil];
+    self.madeOrFoundPressed = @"found";
+    UIImagePickerController *imagePicker =
+    [[UIImagePickerController alloc] init];
+    imagePicker.allowsEditing = YES;
+    
+    imagePicker.delegate = self;
+    
+    imagePicker.sourceType =
+    UIImagePickerControllerSourceTypeCamera;
+    
+    imagePicker.mediaTypes =
+    @[(NSString *) kUTTypeImage];
+    
+    imagePicker.allowsEditing = YES;
+    [self presentViewController:imagePicker
+                       animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -133,6 +160,40 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    
+    UIImage* editedImage = [info objectForKey:UIImagePickerControllerEditedImage];
+    UIImageWriteToSavedPhotosAlbum(editedImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+    UIStoryboard *marcusStoryBoard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
+    
+    if ([self.madeOrFoundPressed isEqualToString:@"made"])
+    {
+        UIViewController *tempVC2 = [marcusStoryBoard instantiateViewControllerWithIdentifier:@"madeUpload"];
+        [self dismissViewControllerAnimated:NO completion:^{
+            [self presentViewController:tempVC2 animated:NO completion:nil];
+        }];
+    }
+    else
+    {
+        UIViewController *tempVC2 = [marcusStoryBoard instantiateViewControllerWithIdentifier:@"foundUpload"];
+        [self dismissViewControllerAnimated:NO completion:^{
+            [self presentViewController:tempVC2 animated:NO completion:nil];
+        }];
+    }
+}
+
+- (void)image:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo{
+    if (!error) {
+        NSLog(@"no error");
+    }
+    else
+    {
+        NSLog(@"error occured while saving the picture%@", error);
+    }
+}
+
 
 /*
 #pragma mark - Navigation
