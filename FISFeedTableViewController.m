@@ -124,7 +124,7 @@
 -(void)placeHolderImages
 {
     self.arrayOfFeedImages = [NSMutableArray new];
-    for (NSInteger i=0; i<30; i++)
+    for (NSInteger i=0; i<10; i++)
     {
         UIImage *placeHolderImage = [UIImage imageNamed:@"placeholder.png"];
         [self.arrayOfFeedImages addObject:placeHolderImage];
