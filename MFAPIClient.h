@@ -15,6 +15,8 @@
 
 + (void) getCategoryImagesWithCompletion:(void (^)(NSDictionary *dictionary))completionBlock;
 
-+(void)retrieveFeedAPIImages:(void (^)(BOOL success, NSArray *responseObjectArray))completionHandler; 
++(void)retrieveFeedAPIImages:(void (^)(BOOL success, NSArray *responseObjectArray))completionHandler;
+
++(void)getUserProfiles:(void (^)(NSDictionary *))completionBlock;
 
 @end

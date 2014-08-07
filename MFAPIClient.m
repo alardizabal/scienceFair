@@ -67,15 +67,15 @@
     
 }
 
-+(void)getUserProfiles:(void (^)(NSDictionary *))completionBlock {
-    
++(void)getUserProfiles:(void (^)(NSDictionary *))completionBlock
+{
     NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
     
     MFUser *currentUser = [MFUser currentUser];
-    NSString *getUserProfiles = [NSString stringWithFormat:@"%@%@", kUSER_PROFILE_API_URL, currentUser.token];
+    NSString *getUserProfile = [NSString stringWithFormat:@"%@%@", kUSER_PROFILE_API_URL, currentUser.userID];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:getUserProfiles
+    [manager GET:getUserProfile
       parameters:nil
          success:^(NSURLSessionDataTask *task, id responseObject)
      {

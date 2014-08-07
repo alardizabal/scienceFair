@@ -9,6 +9,7 @@
 #import "MPSProfileViewController.h"
 #import "FISFeedTableViewController.h"
 #import "AALInterestsViewController.h"
+#import "MFAPIClient.h"
 
 @interface MPSProfileViewController ()
 
@@ -90,20 +91,20 @@
     //    } else {
     //        self.userImageURL = @"link/to/default.png";
     //    }
-    self.userImageURL = @"http://media-cache-ak0.pinimg.com/236x/e3/d9/b7/e3d9b77c19a3bcce0f2ac43428018a83.jpg";
+//    self.userImageURL = @"http://media-cache-ak0.pinimg.com/236x/e3/d9/b7/e3d9b77c19a3bcce0f2ac43428018a83.jpg";
     
     //    if (self.user.headerPicture) {
     //        self.userHeaderURL = self.user.headerPicture;
     //    } else {
     //        self.userHeaderURL = self.userImageURL;
     //    }
-  self.userHeaderURL = self.userImageURL;
+//  self.userHeaderURL = self.userImageURL;
 //    [self.userHeaderURL stringByAppendingString:self.userImageURL];
 //    NSLog(@"%@", self.userHeaderURL);
     
-    self.profileImageView.image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString:self.userImageURL]]];
+//    self.profileImageView.image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString:self.userImageURL]]];
     
-    self.headerImageView.image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString:self.userHeaderURL]]];
+//    self.headerImageView.image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString:self.userHeaderURL]]];
     
     
     
@@ -166,7 +167,16 @@
         [self.findContainerView addSubview:image];
     }
     
-    
+    [MFAPIClient getUserProfiles:^(NSDictionary *dictionary) {
+        
+        NSURL *imageURL = [NSURL URLWithString:dictionary[@"images"][@"retina"]];
+        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+        UIImage *profileRetinaImage = [UIImage imageWithData:imageData];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            self.profileImageView.image = profileRetinaImage;
+            self.headerImageView.image = self.profileImageView.image;
+        }];
+    }];
     
 //    FISDataStore *store = [FISDataStore sharedDataStore];
 //    [store flickrFeedImages:^(NSArray *flickrPhotosArray) {
