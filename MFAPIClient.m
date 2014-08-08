@@ -72,7 +72,7 @@
     NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
     
     MFUser *currentUser = [MFUser currentUser];
-    NSString *getUserProfile = [NSString stringWithFormat:@"%@%@", kUSER_PROFILE_API_URL, currentUser.userID];
+    NSString *getUserProfile = [NSString stringWithFormat:@"%@%@", kUSER_PROFILE_API_URL, currentUser.uniqueID];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:getUserProfile

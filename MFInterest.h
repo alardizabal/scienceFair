@@ -2,7 +2,7 @@
 //  MFInterest.h
 //  MakersFinders_Master
 //
-//  Created by Daniel Sun on 8/6/14.
+//  Created by Daniel Sun on 8/8/14.
 //  Copyright (c) 2014 ADMM. All rights reserved.
 //
 
@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSString * imageURL;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * uniqueID;
 @property (nonatomic, retain) MFCategory *category;
 @property (nonatomic, retain) NSSet *users;
 @end
@@ -27,5 +28,6 @@
 - (void)removeUsersObject:(MFUser *)value;
 - (void)addUsers:(NSSet *)values;
 - (void)removeUsers:(NSSet *)values;
+
 
 @end

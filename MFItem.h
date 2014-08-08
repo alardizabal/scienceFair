@@ -2,7 +2,7 @@
 //  MFItem.h
 //  MakersFinders_Master
 //
-//  Created by Daniel Sun on 8/7/14.
+//  Created by Daniel Sun on 8/8/14.
 //  Copyright (c) 2014 ADMM. All rights reserved.
 //
 
@@ -13,7 +13,7 @@
 
 @interface MFItem : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSNumber * uniqueID;
 @property (nonatomic, retain) NSString * imageURL;
 @property (nonatomic, retain) NSString * itemDescription;
 @property (nonatomic, retain) NSString * itemType;
