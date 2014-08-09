@@ -16,8 +16,6 @@
 
 
 
-
-
 +(void)LoadCategoryAndInterestImagesInBackGround
 {
     MFDataStore *store = [MFDataStore sharedStore];
@@ -27,6 +25,7 @@
             MFCategory *category = [store createCategory];
             category.name = eachCategory[@"name"];
             category.imageURL = [self getNameOfImageURLWithName:category.name];
+           
             
             NSArray *interestsDictionary = eachCategory[@"categories"];
             for (NSUInteger i = 0; i < [interestsDictionary count]; i++) {

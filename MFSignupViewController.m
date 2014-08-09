@@ -21,7 +21,10 @@
 - (IBAction)signupTapped:(id)sender;
 
 - (IBAction)cancelTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UITextView *signUpLabel;
 
+@property (strong, nonatomic) UITapGestureRecognizer *getOutOfSearchTap;
 @end
 
 @implementation MFSignupViewController
@@ -38,9 +41,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = MFtealColor;
+    
     self.passwordField.secureTextEntry = YES;
     self.passwordConfirmField.secureTextEntry = YES;
     self.store = [MFDataStore sharedStore];
+    
+    self.signUpLabel.text = @"Sign up for MakersFinders";
+    self.signUpLabel.font = [UIFont fontWithName:@"NeutraText-BookSC" size:30];
+    self.signUpLabel.textColor = [UIColor whiteColor];
+    self.signUpLabel.textAlignment = NSTextAlignmentCenter;
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -49,6 +66,46 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)keyboardWillShow:(NSNotification *)aNotification
+{
+    //    self.bottomContainer.frame = CGRectMake(0,20,self.bottomContainer.frame.size.width,self.bottomContainer.frame.size.height);
+    //    self.topImage.hidden = YES;
+    NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    CGRect frame = self.containerView.frame;
+    frame.origin.y -= 50;
+    //    self.topImage.hidden = YES;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    self.containerView.frame = frame;
+    [UIView commitAnimations];
+    
+    //add gesture to get out
+    self.getOutOfSearchTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleScreenTapped:)];
+    [self.view addGestureRecognizer:self.getOutOfSearchTap];
+    
+}
+
+-(void)handleScreenTapped:(UITapGestureRecognizer *)recognizer
+{
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];}
+
+-(void)keyboardWillHide:(NSNotification *)aNotification
+{
+
+    NSTimeInterval animationDuration =
+    [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    CGRect frame = self.containerView.frame;
+    frame.origin.y += 50;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    self.containerView.frame = frame;
+    [UIView commitAnimations];
+    
+    //remove tap gesture
+    [self.view removeGestureRecognizer:self.getOutOfSearchTap];
+}
+
 
 /*
 #pragma mark - Navigation
@@ -67,7 +124,7 @@
         NSDictionary *response = responseObject;
         MFUser *createdUser = [self.store createUser];
         createdUser.name = response[@"name"];
-        createdUser.userID = response[@"id"];
+        createdUser.uniqueID = response[@"id"];
         createdUser.token = response[@"token"];
         createdUser.email = response[@"email"];
         [self dismissViewControllerAnimated:YES completion:nil];

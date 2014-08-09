@@ -2,7 +2,7 @@
 //  MFInterest.m
 //  MakersFinders_Master
 //
-//  Created by Daniel Sun on 8/6/14.
+//  Created by Daniel Sun on 8/8/14.
 //  Copyright (c) 2014 ADMM. All rights reserved.
 //
 
@@ -15,6 +15,7 @@
 
 @dynamic imageURL;
 @dynamic name;
+@dynamic uniqueID;
 @dynamic category;
 @dynamic users;
 
@@ -22,5 +23,6 @@
 {
     return [NSEntityDescription insertNewObjectForEntityForName:@"MFInterest" inManagedObjectContext:context];
 }
+
 
 @end

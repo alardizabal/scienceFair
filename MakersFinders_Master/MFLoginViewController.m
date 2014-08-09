@@ -138,7 +138,7 @@
         MFDataStore *store = [MFDataStore sharedStore];
         MFUser *createdUser = [store createUser];
         createdUser.name = response[@"name"];
-        createdUser.userID = response[@"id"];
+        createdUser.uniqueID = response[@"id"];
         createdUser.token = response[@"token"];
         createdUser.email = response[@"email"];
         
