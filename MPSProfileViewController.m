@@ -151,7 +151,7 @@
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             
             
-            
+            //this layouts the arrays being passed to the maker or find container views
             [self setImages:dictionary[@"makes"] forView: self.makerContainerView];
             [self setImages:dictionary[@"finds"] forView: self.findContainerView];
             self.profileImageView.image = profileRetinaImage;
@@ -176,11 +176,11 @@
         return;
     }
     NSUInteger layoutIndex = [images count] >= [self.layouts count] ? [self.layouts count] -1 : [images count] -1;
-    NSLog(@"%i",layoutIndex);
-    NSMutableArray *imageLayout = [self.layouts objectAtIndex:layoutIndex];
     
-    for (NSInteger i = 0; i < [imageLayout count]; i++) {
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:[imageLayout[i] CGRectValue]];
+    NSMutableArray *imagePositions = [self.layouts objectAtIndex:layoutIndex];
+    
+    for (NSInteger i = 0; i < [imagePositions count]; i++) {
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:[imagePositions[i] CGRectValue]];
         
         NSURL *imageURL = [NSURL URLWithString:images[i][@"images"][@"retina"]];
         NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
