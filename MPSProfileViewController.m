@@ -41,6 +41,8 @@
 {
     [super viewDidLoad];
     
+    
+    
     self.navigationItem.title = @"makersfinders";
     self.navigationController.navigationBar.titleTextAttributes = @{
                                                                     NSForegroundColorAttributeName: [UIColor whiteColor],
@@ -68,8 +70,7 @@
     
     
     
-    //this sets the profil image properties to be a radial view.
-    //    self.profileImageView.bounds
+    //this sets the profile image properties to be a radial view.
     //if square image is 100 then the corner radius is (divided) / 2
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
     //self.profileImageView.layer.cornerRadius = 30.0;
@@ -82,30 +83,6 @@
     
     //this sets the border color
     self.profileImageView.layer.borderColor = [UIColor colorWithRed:0.0 green:80.0/255.0 blue:86.0/255.0 alpha:1.0].CGColor;
-    
-    
-    
-    //will set a profile picture if one exists. If not, then set default picure
-    //    if (self.user.profilePicture) {
-    //        self.userImageURL = self.user.profilePicture;
-    //    } else {
-    //        self.userImageURL = @"link/to/default.png";
-    //    }
-//    self.userImageURL = @"http://media-cache-ak0.pinimg.com/236x/e3/d9/b7/e3d9b77c19a3bcce0f2ac43428018a83.jpg";
-    
-    //    if (self.user.headerPicture) {
-    //        self.userHeaderURL = self.user.headerPicture;
-    //    } else {
-    //        self.userHeaderURL = self.userImageURL;
-    //    }
-//  self.userHeaderURL = self.userImageURL;
-//    [self.userHeaderURL stringByAppendingString:self.userImageURL];
-//    NSLog(@"%@", self.userHeaderURL);
-    
-//    self.profileImageView.image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString:self.userImageURL]]];
-    
-//    self.headerImageView.image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString:self.userHeaderURL]]];
-    
     
     
     //sets the glow effect filter for profile name and profile job title
@@ -131,68 +108,89 @@
     self.context = [CIContext contextWithOptions:nil];
     CGImageRef outImage = [self.context createCGImage:outputImage fromRect: [outputImage extent]];
     self.headerImageView.image = [UIImage imageWithCGImage:outImage];
-    // headerImage = [CIImage imageWithColor:[CIColor colorWithRed:1 green:1 blue:1 alpha:1]];
     
     
     
     
-    //sets the location values for the image containers inside the make and find views
-    NSMutableArray *imagePositions = [[NSMutableArray alloc]init];
-    [imagePositions addObject:[NSValue valueWithCGRect:CGRectMake(0, 0, 155, 155)]];
-    [imagePositions addObject:[NSValue valueWithCGRect:CGRectMake(0, 157, 51, 51)]];
-    [imagePositions addObject:[NSValue valueWithCGRect:CGRectMake(52, 157, 51, 51)]];
-    [imagePositions addObject:[NSValue valueWithCGRect:CGRectMake(104, 157, 51, 51)]];
+    NSMutableArray *oneImageLayout = [[NSMutableArray alloc] initWithObjects:[NSValue valueWithCGRect:CGRectMake(0, 0, 155, 210)], nil];
+    // CGRectMake(0, 0, 155, 210)
     
-//    NSInteger arrayCount = [apiArray count];
-//
+    NSMutableArray *twoImageLayout = [[NSMutableArray alloc] initWithObjects:[NSValue valueWithCGRect:CGRectMake(0, 0, 155, 105)], [NSValue valueWithCGRect:CGRectMake(0, 105, 155, 105)], nil];
+                               
+    // 2 images
+    // (0, 0, 155, 105)
+    // (0,105, 155, 105)
+   
+    NSMutableArray *threeImageLayout = [[NSMutableArray alloc] initWithObjects:[NSValue valueWithCGRect:CGRectMake(0, 0, 155, 105)], [NSValue valueWithCGRect:CGRectMake(0, 105, 77.5, 105)], [NSValue valueWithCGRect:CGRectMake(77.5, 105, 77.5, 105)], nil];
     
+    // 3 images
+    // CGRectMake(0, 0, 155, 105)
+    // CGRectMake(0, 105, 77.5, 105)
+    // CGRectMake(77.5, 105, 77.5, 105)
+    
+   
+    NSMutableArray *fourImageLayout = [[NSMutableArray alloc] initWithObjects:[NSValue valueWithCGRect:CGRectMake(0, 0, 155, 155)], [NSValue valueWithCGRect:CGRectMake(0, 157, 51, 51)], [NSValue valueWithCGRect:CGRectMake(52, 157, 51, 51)], [NSValue valueWithCGRect:CGRectMake(104, 157, 51, 51)], nil];
+    // 4 images
+    // CGRectMake(0, 0, 155, 155)
+    // CGRectMake(0, 157, 51, 51)
+    // CGRectMake(52, 157, 51, 51)
+    // CGRectMake(104, 157, 51, 51)
+    
+    
+    
+    // contains all of the sets of layout arrays
+    self.layouts = [[NSMutableArray alloc]initWithObjects:oneImageLayout, twoImageLayout, threeImageLayout, fourImageLayout, nil];
     
     
 
-    NSMutableArray *makerImageViews = [[NSMutableArray alloc]init];
-    for (NSInteger i = 0; i<4; i++) {
-        UIImageView *image = [[UIImageView alloc] initWithFrame:[imagePositions[i] CGRectValue]];
-        image.contentMode = UIViewContentModeScaleAspectFill;
-        [image setClipsToBounds:YES];
-        [makerImageViews addObject:image];
-        [self.makerContainerView addSubview:image];
-    }
-    
-    NSMutableArray *findsImageViews = [[NSMutableArray alloc]init];
-    for (NSInteger i = 0; i<4; i++) {
-        UIImageView *image = [[UIImageView alloc] initWithFrame:[imagePositions[i] CGRectValue]];
-        image.contentMode = UIViewContentModeScaleAspectFill;
-        [image setClipsToBounds:YES];
-        [findsImageViews addObject:image];
-        [self.findContainerView addSubview:image];
-    }
-    
     [MFAPIClient getUserProfiles:^(NSDictionary *dictionary) {
         
         NSURL *imageURL = [NSURL URLWithString:dictionary[@"images"][@"retina"]];
         NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
         UIImage *profileRetinaImage = [UIImage imageWithData:imageData];
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            
+            
+            
+            [self setImages:dictionary[@"makes"] forView: self.makerContainerView];
+            [self setImages:dictionary[@"finds"] forView: self.findContainerView];
             self.profileImageView.image = profileRetinaImage;
             self.headerImageView.image = self.profileImageView.image;
         }];
     }];
     
-//    FISDataStore *store = [FISDataStore sharedDataStore];
-//    [store flickrFeedImages:^(NSArray *flickrPhotosArray) {
-//        for (NSInteger i = 0; i<4; i++) {
-//            UIImageView *makerImageView = makerImageViews[i];
-//            FlickrPhoto *flickrmake = store.flickrPhotoFeed[i];
-//
-//            UIImageView *findsImageView = findsImageViews[i];
-//            FlickrPhoto *flickrfind = store.flickrPhotoFeed[i+4];
-//
-//            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//                makerImageView.image = flickrmake.thumbnail;
-//                findsImageView.image = flickrfind.thumbnail;
-//            }];
-//        }
-//    }];
+}
+
+
+
+-(void)setImages: (NSMutableArray *)images forView:(UIView *)view  {
+    
+    if ([images count] <=0) {
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:[self.layouts[0][0] CGRectValue]];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        UIImage *defaultImage = [UIImage imageNamed:@"hammer_1"];
+        imageView.image = defaultImage;
+        [imageView setClipsToBounds:YES];
+        [view addSubview:imageView];
+        
+        return;
+    }
+    NSUInteger layoutIndex = [images count] >= [self.layouts count] ? [self.layouts count] -1 : [images count] -1;
+    NSLog(@"%i",layoutIndex);
+    NSMutableArray *imageLayout = [self.layouts objectAtIndex:layoutIndex];
+    
+    for (NSInteger i = 0; i < [imageLayout count]; i++) {
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:[imageLayout[i] CGRectValue]];
+        
+        NSURL *imageURL = [NSURL URLWithString:images[i][@"images"][@"retina"]];
+        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+        UIImage *retinaImage = [UIImage imageWithData:imageData];
+        imageView.image = retinaImage;
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        [imageView setClipsToBounds:YES];
+        [view addSubview:imageView];
+
+    }
 }
 
 - (void)didReceiveMemoryWarning
