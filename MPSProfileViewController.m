@@ -167,8 +167,8 @@
     
     if ([images count] <=0) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:[self.layouts[0][0] CGRectValue]];
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
         UIImage *defaultImage = [UIImage imageNamed:@"hammer_1"];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.image = defaultImage;
         [imageView setClipsToBounds:YES];
         [view addSubview:imageView];

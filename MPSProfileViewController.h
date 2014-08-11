@@ -26,7 +26,5 @@
 
 -(void)setImages: (NSMutableArray *)images forView:(UIView *)view;
 
--(void)setUsersFindImages: (NSMutableArray *)userFindImages;
-
 
 @end
