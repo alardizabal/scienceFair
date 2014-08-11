@@ -13,15 +13,18 @@
 @interface MPSProfileViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
-
-//@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
 @property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
 @property (weak, nonatomic) IBOutlet UILabel *profileName;
 @property (weak, nonatomic) IBOutlet UILabel *profileJobTitle;
+@property (strong, nonatomic) NSMutableArray *layouts;
+@property (strong, nonatomic)MFUser *user;
+@property (strong, nonatomic) UIImageView *defaultImageView;
+
 - (IBAction)followButton:(id)sender;
 
-@property (strong, nonatomic)MFUser *user;
 
+
+-(void)setImages: (NSMutableArray *)images forView:(UIView *)view;
 
 
 @end

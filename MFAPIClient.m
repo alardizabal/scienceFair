@@ -91,6 +91,7 @@
     
 }
 
+
 + (void) getUserInterestsWithCompletion:(void (^)(NSDictionary *dictionary))completionBlock {
     
     NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];

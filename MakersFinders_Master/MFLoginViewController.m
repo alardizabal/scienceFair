@@ -133,7 +133,7 @@
 -(void)loginTapped:(UITapGestureRecognizer *)recognizer
 {
 
-    [MFAPIClient loginNewUserWithEmail:@"sophia@oliver.com" Password:@"test" Completion:^(id responseObject) {
+    [MFAPIClient loginNewUserWithEmail:@"arianna@colton.com" Password:@"test" Completion:^(id responseObject) {
         NSDictionary *response = responseObject;
         MFDataStore *store = [MFDataStore sharedStore];
         MFUser *createdUser = [store createUser];
