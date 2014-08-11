@@ -12,5 +12,6 @@
 
 +(void)LoadCategoryAndInterestImagesInBackGround;
 +(void)getCategoryImagesWithCompletion:(void (^)(NSDictionary *dictionary))completionBlock;
++(UIImage *)getImageWithUniqueIdentifier:(NSString *)identifier;
 
 @end

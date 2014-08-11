@@ -8,28 +8,34 @@
 
 #import "MFExploreRootViewController.h"
 #import "MFExploreCustomTableViewCell.h"
-#import "AALInterestsViewController.h"
-//#import "AALAPIClient.h"
 #import "MFDataStore.h"
-#import "FISFeedTableViewController.h"
+#import "MFInterestsFeedTableViewController.h"
 #import "MFSecretViewController.h"
+#import "MFAPIClient.h"
+#import "MFInterest.h"
+#import "MFBackground.h"
+#import "AALInterestsViewController.h"
 
 
 @interface MFExploreRootViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UISearchBarDelegate>
+
 @property (weak, nonatomic) IBOutlet UIView *makersFindersButton;
 @property (weak, nonatomic) IBOutlet UIView *collectivesButton;
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchField;
+@property (weak, nonatomic) IBOutlet UILabel *makersLabel;
+@property (weak, nonatomic) IBOutlet UILabel *collectivesLabel;
+@property (weak, nonatomic) IBOutlet UIView *collectivesView;
+
 @property (strong, nonatomic) NSMutableArray *recentSearchesArray;
 @property (strong, nonatomic) NSMutableArray *categoryImagesArray;
 @property (strong, nonatomic) NSMutableArray *categoryNamesArray;
 @property (nonatomic) NSInteger counter;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (weak, nonatomic) IBOutlet UILabel *makersLabel;
-@property (weak, nonatomic) IBOutlet UILabel *collectivesLabel;
-@property (weak, nonatomic) IBOutlet UIView *collectivesView;
 @property (strong, nonatomic) UIGestureRecognizer *getOutOfSearchTap;
+
+@property (strong, nonatomic) NSMutableArray *interests;
+
 @end
 
 @implementation MFExploreRootViewController
@@ -50,18 +56,28 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.searchField.delegate = self;
-    
+
     self.collectivesView.hidden = YES;
+    self.interests = [[NSMutableArray alloc] init];
+    
+    //adding placeholder images and then getting appropriate images
+    
+    MFDataStore *store = [MFDataStore sharedStore];
+    NSFetchRequest *fetchInterests = [[NSFetchRequest alloc] initWithEntityName:@"MFInterest"];
+    NSSortDescriptor *sortByName = [[NSSortDescriptor alloc] initWithKey:@"uniqueID" ascending:YES];
+    fetchInterests.sortDescriptors = @[sortByName];
+//    NSArray *interestsArray = [store.context executeFetchRequest:fetchInterests error:nil];
+    [self.interests addObjectsFromArray:[store.context executeFetchRequest:fetchInterests error:nil]];
+    
+//    for (NSInteger i = 0; i<[interestsArray count]; i++)
+//    {
+//        [self.interests addObject:[UIImage imageNamed:@"placeholder"]];
+//    }
     
     
-    //adding placeholder images
-    self.categoryImagesArray = [[NSMutableArray alloc] init];
-    self.categoryNamesArray = [[NSMutableArray alloc] init];
-    for (NSInteger x = 0; x<9; x++)
-    {
-        [self.categoryImagesArray addObject:[UIImage imageNamed:@"categoryImagePlaceholder"]];
-        [self.categoryNamesArray addObject:@""];
-    }
+    
+    
+    
     
     //Navigation Bar Setup (title, font, size, color, translucency)
     self.navigationItem.title = @"Explore";
@@ -114,22 +130,25 @@
     UITapGestureRecognizer *tapRecognizerForCollectivesButton = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleCollectivesButtonTapped:)];
     [self.collectivesButton addGestureRecognizer:tapRecognizerForCollectivesButton];
     
-    //getting categories
-    
-    MFDataStore *store = [MFDataStore sharedStore];
-    NSFetchRequest *categoryFetch = [NSFetchRequest fetchRequestWithEntityName:@"MFCategory"];
-    NSSortDescriptor *categorySort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    categoryFetch.sortDescriptors = @[categorySort];
-    
-    self.fetchedResultsController.delegate = self;
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:categoryFetch managedObjectContext:store.context sectionNameKeyPath:nil cacheName:nil];
-    [self.fetchedResultsController performFetch:nil];
-    
+//    //getting categories
+//    
+//    MFDataStore *store = [MFDataStore sharedStore];
+//    NSFetchRequest *categoryFetch = [NSFetchRequest fetchRequestWithEntityName:@"MFCategory"];
+//    NSSortDescriptor *categorySort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+//    categoryFetch.sortDescriptors = @[categorySort];
+//    
+//    self.fetchedResultsController.delegate = self;
+//    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:categoryFetch managedObjectContext:store.context sectionNameKeyPath:nil cacheName:nil];
+//    [self.fetchedResultsController performFetch:nil];
+//    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide) name:UIKeyboardDidHideNotification object:nil];
     
-
+    
+    
 }
+
+
 
 -(void)peopleButtonTapped:(UITapGestureRecognizer *)recognizer
 {
@@ -211,7 +230,7 @@
     else
     {
 //        return 10;
-        return [self.fetchedResultsController.fetchedObjects count];
+        return [self.interests count];
     }
     
 }
@@ -232,18 +251,17 @@
     [self tableView:tableView heightForRowAtIndexPath:indexPath];
     if (indexPath.section == 0)
     {
-        MFCategory *category = self.fetchedResultsController.fetchedObjects[indexPath.row];
-        UIImage *image = [self getImageWithName:category.name];
+        MFInterest *interest = self.interests[indexPath.row];
+        UIImage *image = [MFBackground getImageWithUniqueIdentifier:interest.imageURL];
         exploreCell.categoryImage.image = image;
-        
         exploreCell.categoryLabel.text = @"Recent Search";
     }
     else if (indexPath.section == 1)
     {
-        MFCategory *category = self.fetchedResultsController.fetchedObjects[indexPath.row];
-        UIImage *image = [self getImageWithName:category.name];
+        MFInterest *interest = self.interests[indexPath.row];
+        UIImage *image = [MFBackground getImageWithUniqueIdentifier:interest.imageURL];
         exploreCell.categoryImage.image = image;
-        exploreCell.categoryLabel.text = category.name;
+        exploreCell.categoryLabel.text = interest.name;
     }
     
     return exploreCell;
@@ -251,8 +269,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FISFeedTableViewController *feedTVC = [[FISFeedTableViewController alloc]init];
-    [self.navigationController pushViewController:feedTVC animated:YES];
+    MFInterestsFeedTableViewController *interestsFeedVC = [[MFInterestsFeedTableViewController alloc] init];
+    interestsFeedVC.currentInterest = self.interests[indexPath.row];
+    [self.navigationController pushViewController:interestsFeedVC animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -260,15 +279,7 @@
     return 65;
 }
 
--(UIImage *)getImageWithName:(NSString *)name
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsPath = [paths objectAtIndex:0];
-    NSString *filePath = [documentsPath stringByAppendingPathComponent:name];
-    NSData *pngData = [NSData dataWithContentsOfFile:filePath];
-    UIImage *image = [UIImage imageWithData:pngData];
-    return image;
-}
+
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
@@ -284,15 +295,14 @@
     }
 }
 
-/*
-#pragma mark - Navigation
+
+//#pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    
+//}
+
 
 @end
