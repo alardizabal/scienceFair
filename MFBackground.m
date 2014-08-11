@@ -29,7 +29,8 @@
             for (NSUInteger i = 0; i < [interestsDictionary count]; i++) {
                 MFInterest *interest = [store createInterest];
                 interest.name = interestsDictionary[i][@"name"];
-                interest.imageURL = [self getNameOfImageURLWithName:interest.name];
+                interest.uniqueID = interestsDictionary[i][@"id"];
+                interest.imageURL = [self getNameOfImageURLWithName:[NSString stringWithFormat:@"interest%@",interest.uniqueID]];
                 interest.category = category;
                 
             }
@@ -46,17 +47,18 @@
                 NSString *tempImageURLString = eachCategory[@"images"][@"retina"];
                 UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tempImageURLString]]];
                 [self saveImage:image WithName:name];
-                
+                NSLog(@"Saved a category");
                 NSArray *interestsDictionary = eachCategory[@"categories"];
                 
                 for (NSUInteger i = 0; i < [interestsDictionary count]; i++) {
                     
-                    NSString *interestName = interestsDictionary[i][@"name"];
+                    NSNumber *interestIDNumber = interestsDictionary[i][@"id"];
+                    NSString *interestID = [NSString stringWithFormat:@"interest%@",interestIDNumber];
                     NSString *tempImageURLString = interestsDictionary[i][@"images"][@"retina"];
                     
                     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tempImageURLString]]];
-                    [self saveImage:image WithName:interestName];
-                
+                    [self saveImage:image WithName:interestID];
+                    NSLog(@"Saved an Interest");
                 }
             }
         }];
@@ -88,5 +90,11 @@
     return path;
 }
 
++(UIImage *)getImageWithUniqueIdentifier:(NSString *)identifier
+{
+    NSData *pngData = [NSData dataWithContentsOfFile:identifier];
+    UIImage *image = [UIImage imageWithData:pngData];
+    return image;
+}
 
 @end

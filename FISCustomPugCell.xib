@@ -13,7 +13,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="299"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DefaultProfilePic.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yxk-Rj-PG6">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yxk-Rj-PG6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
@@ -61,7 +61,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="DefaultProfilePic.png" width="217" height="249"/>
         <image name="binoculars.png" width="512" height="512"/>
         <image name="hammer_1.png" width="512" height="512"/>
         <image name="placeholder.png" width="1280" height="800"/>

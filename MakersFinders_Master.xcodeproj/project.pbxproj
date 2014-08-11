@@ -19,6 +19,7 @@
 		6543482D19927EAF00324F59 /* MFNotificationsFollowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6543482C19927EAF00324F59 /* MFNotificationsFollowingViewController.m */; };
 		6543483019927FC500324F59 /* MFNotificationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6543482F19927FC500324F59 /* MFNotificationsTableViewCell.m */; };
 		65436D5E198EE3E00038C985 /* makersfinderslogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 65436D5C198EE3E00038C985 /* makersfinderslogo.png */; };
+		6545702D199928CF00A07C1F /* MFInterestsFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545702C199928CF00A07C1F /* MFInterestsFeedTableViewController.m */; };
 		657238CB1992A12D00C1F023 /* MPSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 657238CA1992A12D00C1F023 /* MPSProfileViewController.m */; };
 		657238CF1992A1E400C1F023 /* Main_Matt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657238CE1992A1E400C1F023 /* Main_Matt.storyboard */; };
 		6597DE8D1993CB460031F773 /* MFSecretViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6597DE8C1993CB460031F773 /* MFSecretViewController.m */; };
@@ -129,6 +130,8 @@
 		6543482E19927FC500324F59 /* MFNotificationsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFNotificationsTableViewCell.h; sourceTree = "<group>"; };
 		6543482F19927FC500324F59 /* MFNotificationsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFNotificationsTableViewCell.m; sourceTree = "<group>"; };
 		65436D5C198EE3E00038C985 /* makersfinderslogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makersfinderslogo.png; sourceTree = "<group>"; };
+		6545702B199928CF00A07C1F /* MFInterestsFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFInterestsFeedTableViewController.h; path = MakersFinders_Master/MFInterestsFeedTableViewController.h; sourceTree = "<group>"; };
+		6545702C199928CF00A07C1F /* MFInterestsFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFInterestsFeedTableViewController.m; path = MakersFinders_Master/MFInterestsFeedTableViewController.m; sourceTree = "<group>"; };
 		657238C91992A12D00C1F023 /* MPSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSProfileViewController.h; sourceTree = "<group>"; };
 		657238CA1992A12D00C1F023 /* MPSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSProfileViewController.m; sourceTree = "<group>"; };
 		657238CE1992A1E400C1F023 /* Main_Matt.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_Matt.storyboard; sourceTree = "<group>"; };
@@ -322,6 +325,8 @@
 				65CF9AE3198A9174009ACA3D /* MFExploreRootViewController.m */,
 				65D15817198AEC82000F958D /* MFExploreCustomTableViewCell.h */,
 				65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */,
+				6545702B199928CF00A07C1F /* MFInterestsFeedTableViewController.h */,
+				6545702C199928CF00A07C1F /* MFInterestsFeedTableViewController.m */,
 			);
 			name = Explore;
 			sourceTree = "<group>";
@@ -792,6 +797,7 @@
 				6543483019927FC500324F59 /* MFNotificationsTableViewCell.m in Sources */,
 				65CF8540199155A1001A77BE /* MFBackground.m in Sources */,
 				F8384DEF199270AF000F7D80 /* MFAddMakeTableViewController.m in Sources */,
+				6545702D199928CF00A07C1F /* MFInterestsFeedTableViewController.m in Sources */,
 				65CF9AF0198AA984009ACA3D /* AALInterestsViewController.m in Sources */,
 				65C6EE411989615200E7DD13 /* main.m in Sources */,
 				6543482D19927EAF00324F59 /* MFNotificationsFollowingViewController.m in Sources */,

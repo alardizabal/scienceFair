@@ -19,7 +19,6 @@
 -(MFUser *) createUser;
 -(MFCategory *)createCategory;
 -(MFInterest *)createInterest;
--(MFItem *)createItem; 
-
+-(MFItem *)createItem;
 
 @end

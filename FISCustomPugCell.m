@@ -18,7 +18,7 @@
     self.profileImageImageView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.profileImageImageView.layer.masksToBounds = YES;
     
-    self.profileImageImageView.image = [UIImage imageNamed:@"DefaultProfilePic.png"];
+    self.profileImageImageView.image = [UIImage imageNamed:@"placeholder.png"];
     self.pugCellCustomLabel.alpha = 0.4;
 }
 

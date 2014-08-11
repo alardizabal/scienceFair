@@ -40,6 +40,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //check to see if there are already images
+//    MFDataStore *store = [MFDataStore sharedStore];
+//    NSFetchRequest *fetchCategories = [[NSFetchRequest alloc] initWithEntityName:@"MFCategory"];
+//    NSSortDescriptor *sortByName = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+//    fetchCategories.sortDescriptors = @[sortByName];
+//    NSArray *categoriesArray = [store.context executeFetchRequest:fetchCategories error:nil];
+    
 
     [MFBackground LoadCategoryAndInterestImagesInBackGround];
 

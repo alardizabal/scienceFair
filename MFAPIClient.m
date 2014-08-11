@@ -138,6 +138,27 @@
     
 }
 
++(void)getInterestFeedItemForIdNumber:(NSNumber *)uniqueIDNumber WithCompletion:(void (^)(NSArray *items))completionBlock
+{
+    NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
+    NSString *interestsAPIURL = [NSString stringWithFormat:@"http://makersfinders.firehawkcreative.com/api/v1/categories/%@",uniqueIDNumber];
+    
+    [backgroundQueue addOperationWithBlock:^{
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        [manager GET:interestsAPIURL
+          parameters:nil
+             success:^(NSURLSessionDataTask *task, id responseObject)
+         {
+             completionBlock(responseObject);
+             
+         } failure:^(NSURLSessionDataTask *task, NSError *error)
+         {
+             NSLog(@"Fail: %@",error.localizedDescription);
+         }];
+    }];
+}
+
+
 @end
 
 

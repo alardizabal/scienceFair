@@ -15,6 +15,7 @@
 #import "MFCategory.h"
 #import "MFAPIClient.h"
 #import "MFUser.h"
+#import "MFBackground.h"
 
 @interface AALInterestsViewController ()
 
@@ -315,7 +316,7 @@
                 interestImageView.layer.cornerRadius = interestImageView.frame.size.height/2;
                 interestImageView.clipsToBounds = YES;
                 
-                UIImage *image = [self getImageWithName:tempInterest.name];
+                UIImage *image = [MFBackground getImageWithUniqueIdentifier:tempInterest.imageURL];
                 [interestImageView setImage:image];
                 [interestContainerView addSubview:interestImageView];
                 

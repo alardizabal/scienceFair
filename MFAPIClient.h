@@ -19,4 +19,8 @@
 
 +(void)getUserProfiles:(void (^)(NSDictionary *))completionBlock;
 
++ (void) getUserInterestsWithCompletion:(void (^)(NSDictionary *dictionary))completionBlock;
+
++(void)getInterestFeedItemForIdNumber:(NSNumber *)uniqueIDNumber WithCompletion:(void (^)(NSArray *items))completionBlock;
+
 @end
