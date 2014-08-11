@@ -13,5 +13,7 @@
 +(void)LoadCategoryAndInterestImagesInBackGround;
 +(void)getCategoryImagesWithCompletion:(void (^)(NSDictionary *dictionary))completionBlock;
 +(UIImage *)getImageWithUniqueIdentifier:(NSString *)identifier;
++(NSString *)getNameOfImageURLWithName: (NSString *)name;
++(void)saveImage: (UIImage*)image WithName:(NSString *)name;
 
 @end

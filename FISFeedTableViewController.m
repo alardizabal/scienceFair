@@ -179,7 +179,7 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     UIStoryboard *productDetailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:[NSBundle mainBundle]];
     FISProductDetailViewController *productDetailVC = [productDetailStoryboard instantiateViewControllerWithIdentifier:@"productDetailVC"];
-    productDetailVC.currentItem = self.stringOfURLOfImage;
+//    productDetailVC.currentItem = self.stringOfURLOfImage;
     [self.navigationController pushViewController:productDetailVC animated:YES];
 }
 
