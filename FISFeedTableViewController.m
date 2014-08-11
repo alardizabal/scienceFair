@@ -14,6 +14,7 @@
 #import "MFAPIClient.h"
 #import "MFItem.h"
 #import "MFBackground.h"
+#import "MFUser.h"
 
 @interface FISFeedTableViewController ()
 
@@ -109,17 +110,17 @@
                 //Grab each item
                 NSDictionary *responseDictionary = responseObjectArray[i];
                 
-                //Make MFItem from data retrieval
                 MFItem *eachItem = [self.store createItem];
+                //Make MFItem from data retrieval
                 eachItem.uniqueID = responseDictionary[@"id"];
                 eachItem.name = responseDictionary[@"name"];
                 eachItem.itemType = responseDictionary[@"make_or_find"];
                 eachItem.loves = responseDictionary[@"favorites_count"];
-                //Get user info for item
+                    //Get user info for item
+                eachItem.user = [self.store createUser];
                 eachItem.user.uniqueID = responseDictionary[@"user"][@"id"];
-                eachItem.user.profileImageURL = responseDictionary[@"user"][@"thumb_retina"];
+                eachItem.user.profileImageURL = responseDictionary[@"user"][@"images"][@"thumb_retina"];
                 eachItem.user.name = responseDictionary[@"user"][@"name"];
-                
                 eachItem.imageURL = [MFBackground getNameOfImageURLWithName:[NSString stringWithFormat:@"item%@",eachItem.uniqueID]];
                 
                 [self.arrayOfItemsObjects addObject:eachItem];

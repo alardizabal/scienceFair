@@ -10,6 +10,7 @@
 #import "AALInterestsViewController.h"
 #import "MFItem.h"
 #import "MFBackground.h"
+#import "MFUser.h"
 
 @interface FISProductDetailViewController ()
 
@@ -37,7 +38,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    [self.navigationController setNavigationBarHidden:NO animated:NO]; 
     self.navigationItem.title = @"Your Curated Feed";
     self.navigationController.navigationBar.titleTextAttributes = @{
                                                                     NSForegroundColorAttributeName: [UIColor whiteColor],
@@ -47,16 +47,27 @@
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/225.0 green:62/225.0 blue:81/225.0 alpha:1];
     
+    //Pull image from NSDocumentDirectory
+    UIImage *imageToBeDisplayed = [self getImageWithName:self.currentItem.imageURL];
+    self.mainImageOfInterest.image = imageToBeDisplayed;
+    
+    //Not working
+    NSURL *profileImageURL = [NSURL URLWithString:self.currentItem.user.profileImageURL];
+    NSData *profileImageData = [NSData dataWithContentsOfURL:profileImageURL];
+    self.profileImage.image = [UIImage imageWithData:profileImageData];
+    
+    //Favorites
+    self.numberOfLikesLabel.text = [NSString stringWithFormat:@"%@", self.currentItem.loves];
+    
+    //Name
+    self.shortDetailLabel.text = self.currentItem.name;
+    
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    //Pull image from NSDocumentDirectory
-    UIImage *imageToBeDisplayed = [self getImageWithName:self.currentItem.imageURL];
-    
-    self.mainImageOfInterest.image = imageToBeDisplayed;
 }
 
 - (void)didReceiveMemoryWarning
