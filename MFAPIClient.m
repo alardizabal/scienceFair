@@ -132,8 +132,16 @@
             completionHandler(YES, responseArray);
         }];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error doing API Feed request: %@", error.localizedDescription);
-        completionHandler(NO, nil);
+        [separateQueue addOperationWithBlock:^{
+            NSLog(@"Error doing API Feed request: %@", error.localizedDescription);
+            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                 message:@"Connection messed up"
+                                                                delegate:self
+                                                       cancelButtonTitle:@"Cancel"
+                                                       otherButtonTitles:@"OK", nil];
+            [errorAlert show];
+            completionHandler(NO, nil);
+        }];
     }];
     
 }

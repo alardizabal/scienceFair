@@ -8,6 +8,8 @@
 
 #import "FISProductDetailViewController.h"
 #import "AALInterestsViewController.h"
+#import "MFItem.h"
+#import "MFBackground.h"
 
 @interface FISProductDetailViewController ()
 
@@ -52,8 +54,7 @@
     [super viewDidAppear:animated];
     
     //Pull image from NSDocumentDirectory
-    AALInterestsViewController *tempController = [[AALInterestsViewController alloc] init];
-    UIImage *imageToBeDisplayed = [tempController getImageWithName:self.urlStringOfImage];
+    UIImage *imageToBeDisplayed = [self getImageWithName:self.currentItem.imageURL];
     
     self.mainImageOfInterest.image = imageToBeDisplayed;
 }
@@ -74,5 +75,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(UIImage *)getImageWithName:(NSString *)name
+{
+    NSData *pngData = [NSData dataWithContentsOfFile:name];
+    UIImage *image = [UIImage imageWithData:pngData];
+    return image;
+}
 
 @end
