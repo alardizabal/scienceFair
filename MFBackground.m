@@ -14,8 +14,6 @@
 
 @implementation MFBackground
 
-
-
 +(void)LoadCategoryAndInterestImagesInBackGround
 {
     MFDataStore *store = [MFDataStore sharedStore];
@@ -76,6 +74,7 @@
                       [NSString stringWithFormat: @"%@",fixedString]];
     NSData* data = UIImagePNGRepresentation(image);
     [data writeToFile:path atomically:YES];
+    
 }
 
 +(NSString *)getNameOfImageURLWithName: (NSString *)name
