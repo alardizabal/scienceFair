@@ -12,7 +12,6 @@
 
 @interface FISProductDetailViewController : UIViewController
 
-@property (strong, nonatomic) NSString *urlStringOfImage;
 @property (strong, nonatomic) MFItem *currentItem;
 
 @end

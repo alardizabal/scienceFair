@@ -67,31 +67,29 @@
     self.navigationItem.rightBarButtonItem = rightButtonItem;
     
     self.store = [MFDataStore sharedStore];
+    self.arrayOfItemsObjects = [NSMutableArray new];
     [self placeHolderImages];
     
+    //Downloading on background queue of images
     [MFAPIClient retrieveFeedAPIImages:^(BOOL success, NSArray *responseObjectArray) {
         if (success) {
             for (NSInteger i=0; i<[responseObjectArray count]; i++) {
                 //Grab each item
                 NSDictionary *responseDictionary = responseObjectArray[i];
 
-                //Download image and make MFItem object
+                //Download image
                 NSString *urlOfImage = responseDictionary[@"images"][@"retina"];
-                
-                MFItem *tempItem = [self.store createItem];
-                tempItem.name = responseDictionary[@"name"];
-                tempItem.uniqueID = responseDictionary[@"id"];
-                tempItem.itemType = responseDictionary[@"make_or_find"];
                 
                 NSURL *retinaImageURL = [NSURL URLWithString:urlOfImage];
                 NSData *retinaImageDataToBeDownloaded = [NSData dataWithContentsOfURL:retinaImageURL];
                 UIImage *retinaImage = [UIImage imageWithData:retinaImageDataToBeDownloaded];
                 
                 //Cache image in NSDocumentsDirectory
-                NSString *uniqueIdentifer = [NSString stringWithFormat:@"item%@",tempItem.uniqueID];
+                MFItem *eachItem = [self.store createItem];
+                eachItem.uniqueID = responseDictionary[@"id"];
+                NSString *uniqueIdentifer = [NSString stringWithFormat:@"item%@", eachItem.uniqueID];
                 
                 [MFBackground saveImage:retinaImage WithName:uniqueIdentifer];
-                tempItem.imageURL = [MFBackground getNameOfImageURLWithName:uniqueIdentifer];
                 
                 //Add image to array to be displayed in FeedTVC
                 [self.arrayOfFeedImages replaceObjectAtIndex:i withObject:retinaImage];
@@ -103,6 +101,32 @@
             NSLog(@"Success!");
         }
     }];
+    
+    //Creating MFItem objects from data retrieval
+    [MFAPIClient retrieveFeedAPIImages:^(BOOL success, NSArray *responseObjectArray) {
+        if (success) {
+            for (NSInteger i=0; i<[responseObjectArray count]; i++) {
+                //Grab each item
+                NSDictionary *responseDictionary = responseObjectArray[i];
+                
+                //Make MFItem from data retrieval
+                MFItem *eachItem = [self.store createItem];
+                eachItem.uniqueID = responseDictionary[@"id"];
+                eachItem.name = responseDictionary[@"name"];
+                eachItem.itemType = responseDictionary[@"make_or_find"];
+                eachItem.loves = responseDictionary[@"favorites_count"];
+                //Get user info for item
+                eachItem.user.uniqueID = responseDictionary[@"user"][@"id"];
+                eachItem.user.profileImageURL = responseDictionary[@"user"][@"thumb_retina"];
+                eachItem.user.name = responseDictionary[@"user"][@"name"];
+                
+                eachItem.imageURL = [MFBackground getNameOfImageURLWithName:[NSString stringWithFormat:@"item%@",eachItem.uniqueID]];
+                
+                [self.arrayOfItemsObjects addObject:eachItem];
+            }
+        }
+    }];
+    
 }
 
 -(void)peopleButtonTapped:(UITapGestureRecognizer *)recognizer
@@ -179,7 +203,8 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     UIStoryboard *productDetailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:[NSBundle mainBundle]];
     FISProductDetailViewController *productDetailVC = [productDetailStoryboard instantiateViewControllerWithIdentifier:@"productDetailVC"];
-//    productDetailVC.currentItem = self.stringOfURLOfImage;
+    MFItem *currentItem = self.arrayOfItemsObjects[indexPath.row];
+    productDetailVC.currentItem = currentItem;
     [self.navigationController pushViewController:productDetailVC animated:YES];
 }
 
