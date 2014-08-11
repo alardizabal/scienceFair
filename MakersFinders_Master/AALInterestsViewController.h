@@ -13,5 +13,6 @@
 @property (nonatomic) NSMutableArray *selectedInterests;
 
 - (void) showCategories;
+-(UIImage *)getImageWithName:(NSString *)name;
 
 @end

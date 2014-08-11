@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-//Delete afterwards
-@class FlickrPhoto;
+@class MFItem;
 
 @interface FISProductDetailViewController : UIViewController
 
-@property (strong, nonatomic) FlickrPhoto *flickrPhoto;
+@property (strong, nonatomic) NSString *urlStringOfImage;
+@property (strong, nonatomic) MFItem *currentItem;
 
 @end

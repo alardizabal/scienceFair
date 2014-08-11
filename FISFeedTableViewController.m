@@ -12,6 +12,8 @@
 #import "AALInterestsViewController.h"
 #import "MFDataStore.h"
 #import "MFAPIClient.h"
+#import "MFItem.h"
+#import "MFBackground.h"
 
 @interface FISFeedTableViewController ()
 
@@ -72,11 +74,24 @@
             for (NSInteger i=0; i<[responseObjectArray count]; i++) {
                 //Grab each item
                 NSDictionary *responseDictionary = responseObjectArray[i];
+
+                //Download image and make MFItem object
+                NSString *urlOfImage = responseDictionary[@"images"][@"retina"];
                 
-                //Download image
-                NSURL *retinaImageURL = [NSURL URLWithString:responseDictionary[@"images"][@"retina"]];
+                MFItem *tempItem = [self.store createItem];
+                tempItem.name = responseDictionary[@"name"];
+                tempItem.uniqueID = responseDictionary[@"id"];
+                tempItem.itemType = responseDictionary[@"make_or_find"];
+                
+                NSURL *retinaImageURL = [NSURL URLWithString:urlOfImage];
                 NSData *retinaImageDataToBeDownloaded = [NSData dataWithContentsOfURL:retinaImageURL];
                 UIImage *retinaImage = [UIImage imageWithData:retinaImageDataToBeDownloaded];
+                
+                //Cache image in NSDocumentsDirectory
+                NSString *uniqueIdentifer = [NSString stringWithFormat:@"item%@",tempItem.uniqueID];
+                
+                [MFBackground saveImage:retinaImage WithName:uniqueIdentifer];
+                tempItem.imageURL = [MFBackground getNameOfImageURLWithName:uniqueIdentifer];
                 
                 //Add image to array to be displayed in FeedTVC
                 [self.arrayOfFeedImages replaceObjectAtIndex:i withObject:retinaImage];
@@ -159,14 +174,14 @@
     return 300.0f;
 }
 
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    [self.navigationController setNavigationBarHidden:NO animated:YES];
-//    UIStoryboard *productDetailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:[NSBundle mainBundle]];
-//    FISProductDetailViewController *productDetailVC = [productDetailStoryboard instantiateViewControllerWithIdentifier:@"productDetailVC"];
-//    productDetailVC.flickrPhoto = self.store.flickrPhotoFeed[indexPath.row];
-//    [self.navigationController pushViewController:productDetailVC animated:YES];
-//}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    UIStoryboard *productDetailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:[NSBundle mainBundle]];
+    FISProductDetailViewController *productDetailVC = [productDetailStoryboard instantiateViewControllerWithIdentifier:@"productDetailVC"];
+    productDetailVC.currentItem = self.stringOfURLOfImage;
+    [self.navigationController pushViewController:productDetailVC animated:YES];
+}
 
 #pragma mark UIScrollViewDelegate Methods
 

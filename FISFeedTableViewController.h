@@ -15,5 +15,6 @@
 @property (strong, nonatomic) MFDataStore *store;
 
 @property (strong, nonatomic) NSMutableArray *arrayOfFeedImages;
+@property (strong, nonatomic) NSString *stringOfURLOfImages;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "FISProductDetailViewController.h"
+#import "AALInterestsViewController.h"
 
 @interface FISProductDetailViewController ()
 
@@ -44,9 +45,17 @@
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45/225.0 green:62/225.0 blue:81/225.0 alpha:1];
     
-//    self.mainImageOfInterest.image = self.flickrPhoto.thumbnail;
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
-//    [self.tabBarController setTabBarHidden:NO animated:YES];
+    //Pull image from NSDocumentDirectory
+    AALInterestsViewController *tempController = [[AALInterestsViewController alloc] init];
+    UIImage *imageToBeDisplayed = [tempController getImageWithName:self.urlStringOfImage];
+    
+    self.mainImageOfInterest.image = imageToBeDisplayed;
 }
 
 - (void)didReceiveMemoryWarning
