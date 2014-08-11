@@ -115,13 +115,16 @@
     NSMutableArray *oneImageLayout = [[NSMutableArray alloc] initWithObjects:[NSValue valueWithCGRect:CGRectMake(0, 0, 155, 210)], nil];
     // CGRectMake(0, 0, 155, 210)
     
-    NSMutableArray *twoImageLayout = [[NSMutableArray alloc] initWithObjects:[NSValue valueWithCGRect:CGRectMake(0, 0, 155, 105)], [NSValue valueWithCGRect:CGRectMake(0, 105, 155, 105)], nil];
+    NSMutableArray *twoImageLayout = [[NSMutableArray alloc] initWithObjects:[NSValue valueWithCGRect:CGRectMake(0, 0, 155, 104)],
+                                      [NSValue valueWithCGRect:CGRectMake(0, 105, 155, 105)], nil];
                                
     // 2 images
     // (0, 0, 155, 105)
     // (0,105, 155, 105)
    
-    NSMutableArray *threeImageLayout = [[NSMutableArray alloc] initWithObjects:[NSValue valueWithCGRect:CGRectMake(0, 0, 155, 105)], [NSValue valueWithCGRect:CGRectMake(0, 105, 77.5, 105)], [NSValue valueWithCGRect:CGRectMake(77.5, 105, 77.5, 105)], nil];
+    NSMutableArray *threeImageLayout = [[NSMutableArray alloc] initWithObjects:[NSValue valueWithCGRect:CGRectMake(0, 0, 155, 104)],
+                                        [NSValue valueWithCGRect:CGRectMake(0, 105, 77.5, 105)],
+                                        [NSValue valueWithCGRect:CGRectMake(77.5, 105, 77.5, 105)], nil];
     
     // 3 images
     // CGRectMake(0, 0, 155, 105)
@@ -129,12 +132,15 @@
     // CGRectMake(77.5, 105, 77.5, 105)
     
    
-    NSMutableArray *fourImageLayout = [[NSMutableArray alloc] initWithObjects:[NSValue valueWithCGRect:CGRectMake(0, 0, 155, 155)], [NSValue valueWithCGRect:CGRectMake(0, 157, 51, 51)], [NSValue valueWithCGRect:CGRectMake(52, 157, 51, 51)], [NSValue valueWithCGRect:CGRectMake(104, 157, 51, 51)], nil];
+    NSMutableArray *fourImageLayout = [[NSMutableArray alloc] initWithObjects:[NSValue valueWithCGRect:CGRectMake(0, 0, 155, 155)],
+                                       [NSValue valueWithCGRect:CGRectMake(0, 156, 51, 54)],
+                                       [NSValue valueWithCGRect:CGRectMake(52, 156, 51, 54)],
+                                       [NSValue valueWithCGRect:CGRectMake(104, 156, 51, 54)], nil];
     // 4 images
     // CGRectMake(0, 0, 155, 155)
-    // CGRectMake(0, 157, 51, 51)
-    // CGRectMake(52, 157, 51, 51)
-    // CGRectMake(104, 157, 51, 51)
+    // CGRectMake(0, 156, 51, 51)
+    // CGRectMake(52, 156, 51, 51)
+    // CGRectMake(104, 156, 51, 51)
     
     
     
