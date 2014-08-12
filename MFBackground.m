@@ -47,7 +47,7 @@
                 NSString *tempImageURLString = eachCategory[@"images"][@"retina"];
                 UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tempImageURLString]]];
                 [self saveImage:image WithName:name];
-                NSLog(@"Saved a category");
+//                NSLog(@"Saved a category");
                 NSArray *interestsDictionary = eachCategory[@"categories"];
                 
                 for (NSUInteger i = 0; i < [interestsDictionary count]; i++) {
@@ -58,7 +58,7 @@
                     
                     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tempImageURLString]]];
                     [self saveImage:image WithName:interestID];
-                    NSLog(@"Saved an Interest");
+//                    NSLog(@"Saved an Interest");
                 }
             }
         }];

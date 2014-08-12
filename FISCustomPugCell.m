@@ -25,8 +25,10 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
-    self.pugCellCustomLabel.backgroundColor = [UIColor colorWithHue:0.5 saturation:195.6/255 brightness:247.4/255.0 alpha:0.7];
+    
+    if (selected) {
+        self.pugCellCustomLabel.backgroundColor = [UIColor colorWithRed:97.0/255.0 green:188.0/255.0 blue:248.0/255.0 alpha:0.7];
+    }
 }
 
 @end

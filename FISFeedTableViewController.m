@@ -124,6 +124,7 @@
                 eachItem.imageURL = [MFBackground getNameOfImageURLWithName:[NSString stringWithFormat:@"item%@",eachItem.uniqueID]];
                 
                 [self.arrayOfItemsObjects addObject:eachItem];
+            
             }
         }
     }];
@@ -201,21 +202,20 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    UIStoryboard *productDetailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:[NSBundle mainBundle]];
+    UIStoryboard *productDetailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
     FISProductDetailViewController *productDetailVC = [productDetailStoryboard instantiateViewControllerWithIdentifier:@"productDetailVC"];
-    MFItem *currentItem = self.arrayOfItemsObjects[indexPath.row];
-    productDetailVC.currentItem = currentItem;
+//    MFItem *currentItem = self.arrayOfItemsObjects[indexPath.row];
+//    productDetailVC.currentItem = currentItem;
     [self.navigationController pushViewController:productDetailVC animated:YES];
 }
 
 #pragma mark UIScrollViewDelegate Methods
 
-- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
-{
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-    return YES;
-}
+//- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
+//{
+//    [self.navigationController setNavigationBarHidden:YES animated:YES];
+//    return YES;
+//}
 
 #pragma mark - Navigation hide methods
 
