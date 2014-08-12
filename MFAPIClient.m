@@ -41,7 +41,9 @@
             completionBlock(responseObject);
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             NSLog(@"Error signing up, %@",error.localizedDescription);
-        }];
+            NSDictionary *errorResponse = @{@"error":error};
+            completionBlock(errorResponse);
+            }];
     }];
 }
 
