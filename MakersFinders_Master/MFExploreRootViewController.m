@@ -49,6 +49,11 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+   self.navigationItem.title = @"Explore";
+}
+
 - (void)viewDidLoad
 {
     
@@ -262,6 +267,7 @@
         UIImage *image = [MFBackground getImageWithUniqueIdentifier:interest.imageURL];
         exploreCell.categoryImage.image = image;
         exploreCell.categoryLabel.text = interest.name;
+        
     }
     
     return exploreCell;
@@ -271,6 +277,7 @@
 {
     MFInterestsFeedTableViewController *interestsFeedVC = [[MFInterestsFeedTableViewController alloc] init];
     interestsFeedVC.currentInterest = self.interests[indexPath.row];
+    
     [self.navigationController pushViewController:interestsFeedVC animated:YES];
 }
 
@@ -298,7 +305,6 @@
 
 //#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 //{
 //    

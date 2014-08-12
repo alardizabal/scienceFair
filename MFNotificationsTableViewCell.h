@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageThree;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeStampLabel;
 
 @end
