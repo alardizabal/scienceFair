@@ -19,8 +19,15 @@
 
 +(void)getUserProfiles:(void (^)(NSDictionary *))completionBlock;
 
+
 + (void) getUserInterestsWithCompletion:(void (^)(NSDictionary *dictionary))completionBlock;
 
 +(void)getInterestFeedItemForIdNumber:(NSNumber *)uniqueIDNumber WithCompletion:(void (^)(NSArray *items))completionBlock;
+
++ (void) getUserInterestsWithCompletion:(void (^)(NSArray *array))completionBlock;
+
++ (void) createUserInterest:(NSString *)interestIndices
+                 completion:(void (^)(void))completionBlock;
+>>>>>>> no need to tap categories
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AALInterestsViewController : UIViewController
+@interface AALInterestsViewController : UIViewController <UIScrollViewDelegate>
 
 @property (nonatomic) NSMutableArray *selectedInterests;
 

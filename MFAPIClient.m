@@ -93,15 +93,18 @@
     
 }
 
-
-+ (void) getUserInterestsWithCompletion:(void (^)(NSDictionary *dictionary))completionBlock {
++ (void) getUserInterestsWithCompletion:(void (^)(NSArray *array))completionBlock {
     
     NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
-    NSString *getCategoryImagesURL = [NSString stringWithFormat:@"%@", kCATEGORY_API_URL];
+    NSString *getUserInterests = [NSString stringWithFormat:@"%@", kCREATE_UPDATE_INTERESTS_URL];
+    
+    MFUser *currentUser = [MFUser currentUser];
+    
+    NSDictionary *params = @{@"token": currentUser.token};
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:getCategoryImagesURL
-      parameters:nil
+    [manager GET:getUserInterests
+      parameters:params
          success:^(NSURLSessionDataTask *task, id responseObject)
      {
          [backgroundQueue addOperationWithBlock:^{
@@ -114,7 +117,35 @@
          NSLog(@"Fail: %@",error.localizedDescription);
      }];
 }
+
++ (void) createUserInterest:(NSString *)interestIndices
+                 completion:(void (^)(void))completionBlock {
     
+    NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
+    NSString *postUserInterests = [NSString stringWithFormat:@"%@", kCREATE_UPDATE_INTERESTS_URL];
+    
+    MFUser *currentUser = [MFUser currentUser];
+    
+    NSDictionary *params = @{@"token": currentUser.token, @"interests[ids]":interestIndices};
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager POST:postUserInterests
+      parameters:params
+         success:^(NSURLSessionDataTask *task, id responseObject)
+     {
+         [backgroundQueue addOperationWithBlock:^{
+             completionBlock();
+         }];
+         
+         NSLog(@"%@", responseObject);
+         
+     } failure:^(NSURLSessionDataTask *task, NSError *error)
+     {
+         NSLog(@"Fail: %@",error.localizedDescription);
+     }];
+}
+
+
 +(void)retrieveFeedAPIImages:(void (^)(BOOL, NSArray *))completionHandler
 {
     NSOperationQueue *separateQueue = [[NSOperationQueue alloc] init];

@@ -1,0 +1,99 @@
+       [self.containerView removeConstraints:self.containerView.constraints];
+    self.containerView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+      //    [self.view removeConstraints:self.view.constraints];
+    //    self.view.translatesAutoresizingMaskIntoConstraints = NO;
+
+    NSDictionary *views = NSDictionaryOfVariableBindings(_containerView);
+    //
+    //    NSLayoutConstraint *containerViewTopConstraint =
+    //    [NSLayoutConstraint constraintWithItem:self.containerView
+    //                                 attribute:NSLayoutAttributeTop
+    //                                 relatedBy:NSLayoutRelationEqual
+    //                                    toItem:self.view
+    //                                 attribute:NSLayoutAttributeTop
+    //                                multiplier:1.0
+    //                                  constant:0.0];
+    //    [self.view addConstraint:containerViewTopConstraint];
+    
+    //    NSArray *topContainerViewVerticalConstraints =
+    //    [NSLayoutConstraint constraintsWithVisualFormat:@"V:[_containerView]"
+    //                                            options:0
+    //                                            metrics:nil
+    //                                              views:views];
+    //    [self.view addConstraints:topContainerViewVerticalConstraints];
+    //
+    //    NSArray *topContainerViewHorizontalConstraints =
+    //    [NSLayoutConstraint constraintsWithVisualFormat:@"H:[_containerView]"
+    //                                            options:0
+    //                                            metrics:nil
+    //                                              views:views];
+    //    [self.view addConstraints:topContainerViewHorizontalConstraints];
+    
+    //        NSArray *containerViewVerticalConstraints =
+    //        [NSLayoutConstraint constraintsWithVisualFormat:@"V:[_containerView]|"
+    //                                                options:0
+    //                                                metrics:nil
+    //                                                  views:views];
+    //        [self.view addConstraints:containerViewVerticalConstraints];
+    //
+    //        NSLayoutConstraint *containerViewTopConstraint =
+    //        [NSLayoutConstraint constraintWithItem:self.containerView
+    //                                     attribute:NSLayoutAttributeTop
+    //                                     relatedBy:NSLayoutRelationEqual
+    //                                        toItem:self.topLayoutGuide
+    //                                     attribute:NSLayoutAttributeBottom
+    //                                    multiplier:1.5
+    //                                      constant:0.0];
+    //        [self.view addConstraint:containerViewTopConstraint];
+    
+    NSLayoutConstraint *topContainerViewCenterXConstraint =
+    [NSLayoutConstraint constraintWithItem:self.containerView
+                                 attribute:NSLayoutAttributeCenterX
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.view
+                                 attribute:NSLayoutAttributeCenterX
+                                multiplier:1.0
+                                  constant:0.0];
+    [self.view addConstraint:topContainerViewCenterXConstraint];
+    
+    NSLayoutConstraint *topContainerViewYConstraint =
+    [NSLayoutConstraint constraintWithItem:self.containerView
+                                 attribute:NSLayoutAttributeCenterY
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.view
+                                 attribute:NSLayoutAttributeCenterY
+                                multiplier:1.0
+                                  constant:40.0];
+    [self.view addConstraint:topContainerViewYConstraint];
+    
+    NSLayoutConstraint *topContainerViewHeight =
+    [NSLayoutConstraint constraintWithItem:self.containerView
+                                 attribute:NSLayoutAttributeHeight
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.view
+                                 attribute:NSLayoutAttributeHeight
+                                multiplier:1.0
+                                  constant:0.0];
+    [self.view addConstraint:topContainerViewHeight];
+    
+    NSLayoutConstraint *topContainerViewWidth =
+    [NSLayoutConstraint constraintWithItem:self.containerView
+                                 attribute:NSLayoutAttributeWidth
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.view
+                                 attribute:NSLayoutAttributeWidth
+                                multiplier:1.0
+                                  constant:0.0];
+    [self.view addConstraint:topContainerViewWidth];
+//    
+//    [button setTranslatesAutoresizingMaskIntoConstraints: NO];
+//    id bottomGuide = .bottomLayoutGuide;
+//    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings (button, bottomGuide);
+//    [myViewController.view addConstraints:
+//     [NSLayoutConstraint constraintsWithVisualFormat: @"V: [button]-20-[bottomGuide]"
+//                                             options: 0
+//                                             metrics: nil
+//                                               views: viewsDictionary]
+//     self.view layoutSubviews; // You must call this method here or the system raises an exception
+//     ];

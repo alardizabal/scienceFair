@@ -97,7 +97,9 @@
 		65F30C33199A647E00A6E888 /* DSimageSix.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65F30C2D199A647E00A6E888 /* DSimageSix.jpg */; };
 		65F30C36199A6CB500A6E888 /* ray.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F30C35199A6CB500A6E888 /* ray.png */; };
 		65F30C39199A902000A6E888 /* MFNotificationsNoImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F30C38199A902000A6E888 /* MFNotificationsNoImageTableViewCell.m */; };
+		A23080DB1999003E00DB5EF3 /* checkmark_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A23080DA1999003E00DB5EF3 /* checkmark_2x.png */; };
 		A237321B1993991F00997FDB /* Backup in Resources */ = {isa = PBXBuildFile; fileRef = A237321A1993991F00997FDB /* Backup */; };
+		A2717D3119984FCE00F1EE80 /* Auto Layout in Resources */ = {isa = PBXBuildFile; fileRef = A2717D3019984FCE00F1EE80 /* Auto Layout */; };
 		C56655F0365F48A6B3D637EA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F66FE788A7C4C7DB8EB1BC8 /* libPods.a */; };
 		C99B5D64198FE2D90079F2B6 /* MPSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C99B5D5C198FE2D90079F2B6 /* MPSViewController.m */; };
 		C99B5D65198FE2D90079F2B6 /* hammer_1.png in Resources */ = {isa = PBXBuildFile; fileRef = C99B5D5D198FE2D90079F2B6 /* hammer_1.png */; };
@@ -243,7 +245,9 @@
 		65F30C35199A6CB500A6E888 /* ray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ray.png; sourceTree = "<group>"; };
 		65F30C37199A902000A6E888 /* MFNotificationsNoImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFNotificationsNoImageTableViewCell.h; sourceTree = "<group>"; };
 		65F30C38199A902000A6E888 /* MFNotificationsNoImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFNotificationsNoImageTableViewCell.m; sourceTree = "<group>"; };
+		A23080DA1999003E00DB5EF3 /* checkmark_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark_2x.png; sourceTree = "<group>"; };
 		A237321A1993991F00997FDB /* Backup */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Backup; sourceTree = "<group>"; };
+		A2717D3019984FCE00F1EE80 /* Auto Layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Auto Layout"; sourceTree = "<group>"; };
 		C99B5D5B198FE2D90079F2B6 /* MPSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSViewController.h; sourceTree = "<group>"; };
 		C99B5D5C198FE2D90079F2B6 /* MPSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSViewController.m; sourceTree = "<group>"; };
 		C99B5D5D198FE2D90079F2B6 /* hammer_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hammer_1.png; sourceTree = "<group>"; };
@@ -511,6 +515,7 @@
 		65CF9AF2198AAAF7009ACA3D /* checkmark.imageset */ = {
 			isa = PBXGroup;
 			children = (
+				A23080DA1999003E00DB5EF3 /* checkmark_2x.png */,
 				65CF9AF3198AAAF7009ACA3D /* Contents.json */,
 				65CF9AF4198AAAF7009ACA3D /* checkmark.png */,
 			);
@@ -536,6 +541,7 @@
 				65CF9AED198AA984009ACA3D /* AALInterestsViewController.m */,
 				65CF9AF2198AAAF7009ACA3D /* checkmark.imageset */,
 				65CF9AF5198AAAF7009ACA3D /* times_square.imageset */,
+				A2717D3019984FCE00F1EE80 /* Auto Layout */,
 				A237321A1993991F00997FDB /* Backup */,
 			);
 			name = Al;
@@ -703,7 +709,7 @@
 				ORGANIZATIONNAME = ADMM;
 				TargetAttributes = {
 					65C6EE301989615200E7DD13 = {
-						DevelopmentTeam = KXY9EDFTF5;
+						DevelopmentTeam = DRH5873Z32;
 					};
 					65C6EE511989615200E7DD13 = {
 						TestTargetID = 65C6EE301989615200E7DD13;
@@ -737,6 +743,7 @@
 				65CF9AD8198A877D009ACA3D /* Main.storyboard in Resources */,
 				6509068D1989811000E02CB1 /* Neutra-Text-SC.ttf in Resources */,
 				65F30C36199A6CB500A6E888 /* ray.png in Resources */,
+				A2717D3119984FCE00F1EE80 /* Auto Layout in Resources */,
 				65C6EE9C198975C700E7DD13 /* bottom_bar.png in Resources */,
 				65C6EE7C19896A2400E7DD13 /* search@2x.png in Resources */,
 				65F30C26199A631800A6E888 /* Marcus.png in Resources */,
@@ -785,6 +792,7 @@
 				65CF9B1F198AAE8B009ACA3D /* Detail.storyboard in Resources */,
 				65F30C2F199A647E00A6E888 /* DSimageTwo.png in Resources */,
 				65F30C2E199A647E00A6E888 /* DSimageOne.png in Resources */,
+				A23080DB1999003E00DB5EF3 /* checkmark_2x.png in Resources */,
 				65C6EE8419896F9600E7DD13 /* home_selected@2x.png in Resources */,
 				65C6EE99198975C700E7DD13 /* hammer.png in Resources */,
 				A237321B1993991F00997FDB /* Backup in Resources */,
