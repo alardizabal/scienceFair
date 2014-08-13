@@ -51,23 +51,27 @@
     UIImage *imageToBeDisplayed = [self getImageWithName:self.currentItem.imageURL];
     self.mainImageOfInterest.image = imageToBeDisplayed;
     
-    //Not working
-    NSURL *profileImageURL = [NSURL URLWithString:self.currentItem.user.profileImageURL];
-    NSData *profileImageData = [NSData dataWithContentsOfURL:profileImageURL];
-    self.profileImage.image = [UIImage imageWithData:profileImageData];
-    
     //Favorites
     self.numberOfLikesLabel.text = [NSString stringWithFormat:@"%@", self.currentItem.loves];
     
     //Name
     self.shortDetailLabel.text = self.currentItem.name;
     
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(downloadProfileImage) name:@"startProfileDownload" object:nil];
     
+    [self downloadProfileImage];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+}
+
+-(void)downloadProfileImage
+{
+    NSURL *profileImageURL = [NSURL URLWithString:self.currentItem.user.profileImageURL];
+    NSData *profileImageData = [NSData dataWithContentsOfURL:profileImageURL];
+    self.profileImage.image = [UIImage imageWithData:profileImageData];
 }
 
 - (void)didReceiveMemoryWarning

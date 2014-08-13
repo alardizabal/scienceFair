@@ -116,14 +116,16 @@
                 eachItem.name = responseDictionary[@"name"];
                 eachItem.itemType = responseDictionary[@"make_or_find"];
                 eachItem.loves = responseDictionary[@"favorites_count"];
-                    //Get user info for item
-                eachItem.user = [self.store createUser];
+                //Get user info for item
+                eachItem.user = [MFUser currentUser];
+//                eachItem.user = [self.store createUser];
                 eachItem.user.uniqueID = responseDictionary[@"user"][@"id"];
                 eachItem.user.profileImageURL = responseDictionary[@"user"][@"images"][@"thumb_retina"];
                 eachItem.user.name = responseDictionary[@"user"][@"name"];
                 eachItem.imageURL = [MFBackground getNameOfImageURLWithName:[NSString stringWithFormat:@"item%@",eachItem.uniqueID]];
                 
                 [self.arrayOfItemsObjects addObject:eachItem];
+            
             }
         }
     }];
@@ -164,7 +166,7 @@
 -(void)placeHolderImages
 {
     self.arrayOfFeedImages = [NSMutableArray new];
-    for (NSInteger i=0; i<10; i++)
+    for (NSInteger i=0; i<45; i++)
     {
         UIImage *placeHolderImage = [UIImage imageNamed:@"placeholder.png"];
         [self.arrayOfFeedImages addObject:placeHolderImage];
@@ -201,21 +203,20 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    UIStoryboard *productDetailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:[NSBundle mainBundle]];
+    UIStoryboard *productDetailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
     FISProductDetailViewController *productDetailVC = [productDetailStoryboard instantiateViewControllerWithIdentifier:@"productDetailVC"];
-    MFItem *currentItem = self.arrayOfItemsObjects[indexPath.row];
-    productDetailVC.currentItem = currentItem;
+//    MFItem *currentItem = self.arrayOfItemsObjects[indexPath.row];
+//    productDetailVC.currentItem = currentItem;
     [self.navigationController pushViewController:productDetailVC animated:YES];
 }
 
 #pragma mark UIScrollViewDelegate Methods
 
-- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
-{
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-    return YES;
-}
+//- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
+//{
+//    [self.navigationController setNavigationBarHidden:YES animated:YES];
+//    return YES;
+//}
 
 #pragma mark - Navigation hide methods
 
