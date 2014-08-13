@@ -232,6 +232,7 @@
 
 - (IBAction)followButton:(id)sender {
 }
+
 - (IBAction)makerIsTapped:(id)sender {
     FISFeedTableViewController *feedTVC = [[FISFeedTableViewController alloc]init];
     [self.navigationController pushViewController:feedTVC animated:YES];

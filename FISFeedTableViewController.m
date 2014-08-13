@@ -116,8 +116,9 @@
                 eachItem.name = responseDictionary[@"name"];
                 eachItem.itemType = responseDictionary[@"make_or_find"];
                 eachItem.loves = responseDictionary[@"favorites_count"];
-                    //Get user info for item
-                eachItem.user = [self.store createUser];
+                //Get user info for item
+                eachItem.user = [MFUser currentUser];
+//                eachItem.user = [self.store createUser];
                 eachItem.user.uniqueID = responseDictionary[@"user"][@"id"];
                 eachItem.user.profileImageURL = responseDictionary[@"user"][@"images"][@"thumb_retina"];
                 eachItem.user.name = responseDictionary[@"user"][@"name"];
