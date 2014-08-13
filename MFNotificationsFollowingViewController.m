@@ -9,6 +9,7 @@
 #import "MFNotificationsFollowingViewController.h"
 #import "AALInterestsViewController.h"
 #import "MFNotificationsTableViewCell.h"
+#import "MFNotificationsNoImageTableViewCell.h"
 
 @interface MFNotificationsFollowingViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *followingButton;
@@ -17,6 +18,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *newsLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *notificationsArray;
+
+@property (strong, nonatomic) NSArray *peopleNames;
+@property (strong, nonatomic) NSArray *images;
+@property (strong, nonatomic) NSArray *info;
+@property (nonatomic) BOOL isOnFollowingView;
 
 @end
 
@@ -38,6 +44,11 @@
     //setupTableView
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.isOnFollowingView = YES;
+    
+    
+    //Makes extra cells on bottom disappear
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     self.navigationItem.title = @"Notifications";
     self.navigationController.navigationBar.titleTextAttributes = @{
@@ -48,6 +59,10 @@
     
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = MFnavBarColor;
+
+
+    
+    
     
     //Setting up custom buttons on navigation bar
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -89,12 +104,16 @@
 {
     self.followingButton.backgroundColor = MFtealColor;
     self.newsButton.backgroundColor = MFdarkTealColor;
+    self.isOnFollowingView = YES;
+    [self.tableView reloadData];
 }
 
 -(void)handleNewsButtonTapped:(UITapGestureRecognizer *)recognizer
 {
     self.followingButton.backgroundColor = MFdarkTealColor;
     self.newsButton.backgroundColor = MFtealColor;
+    self.isOnFollowingView = NO;
+    [self.tableView reloadData];
 }
 
 
@@ -129,18 +148,113 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    if (self.isOnFollowingView == YES)
+        return 3;
+    else
+        return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    MFNotificationsTableViewCell *notificationsCell = [tableView dequeueReusableCellWithIdentifier:@"notificationCell" forIndexPath:indexPath];
+//    MFNotificationsTableViewCell *notificationsCell = [tableView dequeueReusableCellWithIdentifier:@"notificationCell" forIndexPath:indexPath];
     
     [self tableView:tableView heightForRowAtIndexPath:indexPath];
     
-    
-    return notificationsCell;
+    if (self.isOnFollowingView == YES)
+    {
+        if (indexPath.row == 0)
+        {
+            MFNotificationsTableViewCell *notificationsCell = [tableView dequeueReusableCellWithIdentifier:@"notificationCell" forIndexPath:indexPath];
+            notificationsCell.profileImage.image = [UIImage imageNamed:@"Dan.png"];
+            notificationsCell.nameLabel.text = @"Dan S.";
+            notificationsCell.infoLabel.text = @"liked 3 Makes";
+            notificationsCell.timeStampLabel.text = @"3h";
+            notificationsCell.imageOne.image = [UIImage imageNamed:@"DSimageOne.png"];
+            notificationsCell.imageTwo.image = [UIImage imageNamed:@"DSimageTwo.png"];
+            notificationsCell.imageThree.image = [UIImage imageNamed:@"DSimageThree.jpg"];
+            notificationsCell.imageThree.hidden = NO;
+            notificationsCell.imageOne.hidden = NO;
+            notificationsCell.imageTwo.hidden = NO;
+            return notificationsCell;
+            
+        }
+        else if (indexPath.row == 1)
+        {
+            MFNotificationsTableViewCell *notificationsCell = [tableView dequeueReusableCellWithIdentifier:@"notificationCell" forIndexPath:indexPath];
+            notificationsCell.profileImage.image = [UIImage imageNamed:@"Al.png"];
+            notificationsCell.nameLabel.text = @"Al L.";
+            notificationsCell.infoLabel.text = @"liked 2 Finds";
+            notificationsCell.timeStampLabel.text = @"4h";
+            notificationsCell.imageOne.image = [UIImage imageNamed:@"DSimageFour.jpg"];
+            notificationsCell.imageTwo.image = [UIImage imageNamed:@"DSimageFive.jpg"];
+            notificationsCell.imageThree.hidden = YES;
+            notificationsCell.imageOne.hidden = NO;
+            notificationsCell.imageTwo.hidden = NO;
+            return notificationsCell;
+        }
+        else
+        {
+            MFNotificationsTableViewCell *notificationsCell = [tableView dequeueReusableCellWithIdentifier:@"notificationCell" forIndexPath:indexPath];
+            notificationsCell.profileImage.image = [UIImage imageNamed:@"Marcus.png"];
+            notificationsCell.nameLabel.text = @"Matt S.";
+            notificationsCell.infoLabel.text = @"commented on a Make";
+            notificationsCell.timeStampLabel.text = @"8h";
+            notificationsCell.imageOne.image = [UIImage imageNamed:@"DSImageSix.jpg"];
+            notificationsCell.imageThree.hidden = YES;
+            notificationsCell.imageOne.hidden = NO;
+            notificationsCell.imageTwo.hidden = YES;
+            return notificationsCell;
+        }
+        
+    }
+    else
+    {
+        if (indexPath.row == 0)
+        {
+            MFNotificationsNoImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"noImageCell" forIndexPath:indexPath];
+            cell.profileImage.image = [UIImage imageNamed:@"Al.png"];
+            cell.userLabel.text = @"Dan S.";
+            cell.infoLabel.text = @"is following you";
+            cell.timeStampLabel.text = @"1h";
+            return cell;
+        }
+        else if (indexPath.row == 1)
+        {
+            MFNotificationsTableViewCell *notificationsCell = [tableView dequeueReusableCellWithIdentifier:@"notificationCell" forIndexPath:indexPath];
+            notificationsCell.profileImage.image = [UIImage imageNamed:@"ray.png"];
+            notificationsCell.nameLabel.text = @"Al L.";
+            notificationsCell.infoLabel.text = @"commented on your Make";
+            notificationsCell.timeStampLabel.text = @"3h";
+            notificationsCell.imageOne.image = [UIImage imageNamed:@"DSimageFour.jpg"];
+            notificationsCell.imageThree.hidden = YES;
+            notificationsCell.imageOne.hidden = NO;
+            notificationsCell.imageTwo.hidden = YES;
+            return notificationsCell;
+        }
+        else if (indexPath.row == 2)
+        {
+            MFNotificationsTableViewCell *notificationsCell = [tableView dequeueReusableCellWithIdentifier:@"notificationCell" forIndexPath:indexPath];
+            notificationsCell.profileImage.image = [UIImage imageNamed:@"Dan.png"];
+            notificationsCell.nameLabel.text = @"Matt S.";
+            notificationsCell.infoLabel.text = @"purchased your Make";
+            notificationsCell.timeStampLabel.text = @"6h";
+            notificationsCell.imageOne.image = [UIImage imageNamed:@"DSImageSix.jpg"];
+            notificationsCell.imageThree.hidden = YES;
+            notificationsCell.imageOne.hidden = NO;
+            notificationsCell.imageTwo.hidden = YES;
+            return notificationsCell;
+        }
+        else
+        {
+            MFNotificationsNoImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"noImageCell" forIndexPath:indexPath];
+            cell.profileImage.image = [UIImage imageNamed:@"Marcus.png"];
+            cell.userLabel.text = @"Jay M.";
+            cell.infoLabel.text = @"is following you";
+            cell.timeStampLabel.text = @"8h";
+            return cell;
+        }
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

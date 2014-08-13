@@ -41,7 +41,9 @@
             completionBlock(responseObject);
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             NSLog(@"Error signing up, %@",error.localizedDescription);
-        }];
+            NSDictionary *errorResponse = @{@"error":error};
+            completionBlock(errorResponse);
+            }];
     }];
 }
 
@@ -157,8 +159,10 @@
           parameters:nil
              success:^(NSURLSessionDataTask *task, id responseObject)
          {
-             completionBlock(responseObject);
-             
+             NSOperationQueue *newQueue = [[NSOperationQueue alloc] init];
+             [newQueue addOperationWithBlock:^{
+                 completionBlock(responseObject);
+             }];
          } failure:^(NSURLSessionDataTask *task, NSError *error)
          {
              NSLog(@"Fail: %@",error.localizedDescription);

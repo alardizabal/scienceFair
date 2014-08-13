@@ -86,6 +86,17 @@
 		65D15810198AE8B4000F958D /* explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D1580E198AE8B4000F958D /* explore@2x.png */; };
 		65D15819198AEC82000F958D /* MFExploreCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */; };
 		65D29DD919940FD8004C9BC4 /* loginMainImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D29DD819940FD8004C9BC4 /* loginMainImage.png */; };
+		65F30C25199A631800A6E888 /* Dan.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F30C22199A631800A6E888 /* Dan.png */; };
+		65F30C26199A631800A6E888 /* Marcus.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F30C23199A631800A6E888 /* Marcus.png */; };
+		65F30C27199A631800A6E888 /* Al.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F30C24199A631800A6E888 /* Al.png */; };
+		65F30C2E199A647E00A6E888 /* DSimageOne.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F30C28199A647E00A6E888 /* DSimageOne.png */; };
+		65F30C2F199A647E00A6E888 /* DSimageTwo.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F30C29199A647E00A6E888 /* DSimageTwo.png */; };
+		65F30C30199A647E00A6E888 /* DSimageThree.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65F30C2A199A647E00A6E888 /* DSimageThree.jpg */; };
+		65F30C31199A647E00A6E888 /* DSimageFour.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65F30C2B199A647E00A6E888 /* DSimageFour.jpg */; };
+		65F30C32199A647E00A6E888 /* DSimageFive.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65F30C2C199A647E00A6E888 /* DSimageFive.jpg */; };
+		65F30C33199A647E00A6E888 /* DSimageSix.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65F30C2D199A647E00A6E888 /* DSimageSix.jpg */; };
+		65F30C36199A6CB500A6E888 /* ray.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F30C35199A6CB500A6E888 /* ray.png */; };
+		65F30C39199A902000A6E888 /* MFNotificationsNoImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F30C38199A902000A6E888 /* MFNotificationsNoImageTableViewCell.m */; };
 		A237321B1993991F00997FDB /* Backup in Resources */ = {isa = PBXBuildFile; fileRef = A237321A1993991F00997FDB /* Backup */; };
 		C56655F0365F48A6B3D637EA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F66FE788A7C4C7DB8EB1BC8 /* libPods.a */; };
 		C99B5D64198FE2D90079F2B6 /* MPSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C99B5D5C198FE2D90079F2B6 /* MPSViewController.m */; };
@@ -220,6 +231,18 @@
 		65D15817198AEC82000F958D /* MFExploreCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFExploreCustomTableViewCell.h; sourceTree = "<group>"; };
 		65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFExploreCustomTableViewCell.m; sourceTree = "<group>"; };
 		65D29DD819940FD8004C9BC4 /* loginMainImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginMainImage.png; sourceTree = "<group>"; };
+		65F30C22199A631800A6E888 /* Dan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dan.png; sourceTree = "<group>"; };
+		65F30C23199A631800A6E888 /* Marcus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Marcus.png; sourceTree = "<group>"; };
+		65F30C24199A631800A6E888 /* Al.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Al.png; sourceTree = "<group>"; };
+		65F30C28199A647E00A6E888 /* DSimageOne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DSimageOne.png; sourceTree = "<group>"; };
+		65F30C29199A647E00A6E888 /* DSimageTwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DSimageTwo.png; sourceTree = "<group>"; };
+		65F30C2A199A647E00A6E888 /* DSimageThree.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSimageThree.jpg; sourceTree = "<group>"; };
+		65F30C2B199A647E00A6E888 /* DSimageFour.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSimageFour.jpg; sourceTree = "<group>"; };
+		65F30C2C199A647E00A6E888 /* DSimageFive.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSimageFive.jpg; sourceTree = "<group>"; };
+		65F30C2D199A647E00A6E888 /* DSimageSix.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSimageSix.jpg; sourceTree = "<group>"; };
+		65F30C35199A6CB500A6E888 /* ray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ray.png; sourceTree = "<group>"; };
+		65F30C37199A902000A6E888 /* MFNotificationsNoImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFNotificationsNoImageTableViewCell.h; sourceTree = "<group>"; };
+		65F30C38199A902000A6E888 /* MFNotificationsNoImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFNotificationsNoImageTableViewCell.m; sourceTree = "<group>"; };
 		A237321A1993991F00997FDB /* Backup */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Backup; sourceTree = "<group>"; };
 		C99B5D5B198FE2D90079F2B6 /* MPSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSViewController.h; sourceTree = "<group>"; };
 		C99B5D5C198FE2D90079F2B6 /* MPSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSViewController.m; sourceTree = "<group>"; };
@@ -301,6 +324,9 @@
 				6543482C19927EAF00324F59 /* MFNotificationsFollowingViewController.m */,
 				6543482E19927FC500324F59 /* MFNotificationsTableViewCell.h */,
 				6543482F19927FC500324F59 /* MFNotificationsTableViewCell.m */,
+				65F30C37199A902000A6E888 /* MFNotificationsNoImageTableViewCell.h */,
+				65F30C38199A902000A6E888 /* MFNotificationsNoImageTableViewCell.m */,
+				65F30C34199A648300A6E888 /* images */,
 			);
 			name = Notifications;
 			sourceTree = "<group>";
@@ -320,11 +346,11 @@
 		657239061992AF9700C1F023 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				65D15817198AEC82000F958D /* MFExploreCustomTableViewCell.h */,
+				65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */,
 				65CF9AE5198A9B47009ACA3D /* ExploreRoot_Images */,
 				65CF9AE2198A9174009ACA3D /* MFExploreRootViewController.h */,
 				65CF9AE3198A9174009ACA3D /* MFExploreRootViewController.m */,
-				65D15817198AEC82000F958D /* MFExploreCustomTableViewCell.h */,
-				65D15818198AEC82000F958D /* MFExploreCustomTableViewCell.m */,
 				6545702B199928CF00A07C1F /* MFInterestsFeedTableViewController.h */,
 				6545702C199928CF00A07C1F /* MFInterestsFeedTableViewController.m */,
 			);
@@ -566,6 +592,23 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		65F30C34199A648300A6E888 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				65F30C22199A631800A6E888 /* Dan.png */,
+				65F30C23199A631800A6E888 /* Marcus.png */,
+				65F30C24199A631800A6E888 /* Al.png */,
+				65F30C35199A6CB500A6E888 /* ray.png */,
+				65F30C28199A647E00A6E888 /* DSimageOne.png */,
+				65F30C29199A647E00A6E888 /* DSimageTwo.png */,
+				65F30C2A199A647E00A6E888 /* DSimageThree.jpg */,
+				65F30C2B199A647E00A6E888 /* DSimageFour.jpg */,
+				65F30C2C199A647E00A6E888 /* DSimageFive.jpg */,
+				65F30C2D199A647E00A6E888 /* DSimageSix.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		F8B4D20E1993F9BB00E5FDE2 /* FeedVCs */ = {
 			isa = PBXGroup;
 			children = (
@@ -693,8 +736,10 @@
 			files = (
 				65CF9AD8198A877D009ACA3D /* Main.storyboard in Resources */,
 				6509068D1989811000E02CB1 /* Neutra-Text-SC.ttf in Resources */,
+				65F30C36199A6CB500A6E888 /* ray.png in Resources */,
 				65C6EE9C198975C700E7DD13 /* bottom_bar.png in Resources */,
 				65C6EE7C19896A2400E7DD13 /* search@2x.png in Resources */,
+				65F30C26199A631800A6E888 /* Marcus.png in Resources */,
 				65CF9B25198AAE8B009ACA3D /* FISCustomPugCell.xib in Resources */,
 				65CF9B2C198AAE8B009ACA3D /* hearts-512.png in Resources */,
 				65C6EE4D1989615200E7DD13 /* Images.xcassets in Resources */,
@@ -706,7 +751,9 @@
 				65C6EE8619896F9600E7DD13 /* upload_selected@2x.png in Resources */,
 				C99B5D66198FE2D90079F2B6 /* roundedRectangle.png in Resources */,
 				65D1580F198AE8B4000F958D /* collectives@2x.png in Resources */,
+				65F30C33199A647E00A6E888 /* DSimageSix.jpg in Resources */,
 				65C6EE95198975C700E7DD13 /* foundtext.png in Resources */,
+				65F30C25199A631800A6E888 /* Dan.png in Resources */,
 				65C6EE77198969F800E7DD13 /* upload@2x.png in Resources */,
 				65CF9B2E198AAE8B009ACA3D /* placeholder.png in Resources */,
 				C99B5D68198FE2D90079F2B6 /* hearts.png in Resources */,
@@ -723,6 +770,7 @@
 				65CF9B2D198AAE8B009ACA3D /* pen-512.png in Resources */,
 				65C6EE7F19896CED00E7DD13 /* tabbarbackground@2x.png in Resources */,
 				65C6EE8719896F9600E7DD13 /* user_selected@2x.png in Resources */,
+				65F30C32199A647E00A6E888 /* DSimageFive.jpg in Resources */,
 				657238CF1992A1E400C1F023 /* Main_Matt.storyboard in Resources */,
 				65CF9AFA198AAAF7009ACA3D /* checkmark.png in Resources */,
 				65C6EE9B198975C700E7DD13 /* top_bar.png in Resources */,
@@ -730,15 +778,20 @@
 				C99B5D67198FE2D90079F2B6 /* toughcowboy.png in Resources */,
 				65C6EE9A198975C700E7DD13 /* question.png in Resources */,
 				65D29DD919940FD8004C9BC4 /* loginMainImage.png in Resources */,
+				65F30C31199A647E00A6E888 /* DSimageFour.jpg in Resources */,
 				65CF8535198FC59C001A77BE /* peoplebutton.png in Resources */,
+				65F30C27199A631800A6E888 /* Al.png in Resources */,
 				65C6EE94198975C700E7DD13 /* circle.png in Resources */,
 				65CF9B1F198AAE8B009ACA3D /* Detail.storyboard in Resources */,
+				65F30C2F199A647E00A6E888 /* DSimageTwo.png in Resources */,
+				65F30C2E199A647E00A6E888 /* DSimageOne.png in Resources */,
 				65C6EE8419896F9600E7DD13 /* home_selected@2x.png in Resources */,
 				65C6EE99198975C700E7DD13 /* hammer.png in Resources */,
 				A237321B1993991F00997FDB /* Backup in Resources */,
 				65436D5E198EE3E00038C985 /* makersfinderslogo.png in Resources */,
 				65C6EE78198969F800E7DD13 /* user@2x.png in Resources */,
 				C99B5D65198FE2D90079F2B6 /* hammer_1.png in Resources */,
+				65F30C30199A647E00A6E888 /* DSimageThree.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -806,6 +859,7 @@
 				659E5C2F198BF0A800A4EE77 /* MFSignupViewController.m in Sources */,
 				651DD27B199521C300B60495 /* MFInterest.m in Sources */,
 				659E5C4B198C108000A4EE77 /* MakersFinders_Master.xcdatamodeld in Sources */,
+				65F30C39199A902000A6E888 /* MFNotificationsNoImageTableViewCell.m in Sources */,
 				65ACF8C9198BD691002CDBED /* MFConstants.m in Sources */,
 				651DD281199521C300B60495 /* MFComment.m in Sources */,
 				651DD278199521C200B60495 /* MFUser.m in Sources */,

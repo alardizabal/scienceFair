@@ -141,18 +141,33 @@
 -(void)loginTapped:(UITapGestureRecognizer *)recognizer
 {
 
-    [MFAPIClient loginNewUserWithEmail:@"arianna@colton.com" Password:@"test" Completion:^(id responseObject) {
+    [MFAPIClient loginNewUserWithEmail:self.emailField.text Password:self.passwordField.text Completion:^(id responseObject) {
         NSDictionary *response = responseObject;
-        MFDataStore *store = [MFDataStore sharedStore];
-        MFUser *createdUser = [store createUser];
-        createdUser.name = response[@"name"];
-        createdUser.uniqueID = response[@"id"];
-        createdUser.token = response[@"token"];
-        createdUser.email = response[@"email"];
-        
-        MFCustomTabBarControllerViewController *tabBarController = [[MFCustomTabBarControllerViewController alloc] init];
-        [self.navigationController pushViewController:tabBarController animated:NO];
-        
+        if (response[@"error"] != nil)
+        {
+            NSString *errorMessage = @"";
+            if([self.emailField.text isEqualToString:@""] || [self.passwordField.text isEqualToString:@""])
+            {
+               errorMessage = @"You can't leave a field empty";
+            }
+            else
+            {
+                errorMessage = @"You've entered an invalid username/password combination";
+            }
+            UIAlertView *invalidCredentials = [[UIAlertView alloc] initWithTitle:@"Oops" message:errorMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [invalidCredentials show];
+        }
+        else{
+            MFDataStore *store = [MFDataStore sharedStore];
+            MFUser *createdUser = [store createUser];
+            createdUser.name = response[@"name"];
+            createdUser.uniqueID = response[@"id"];
+            createdUser.token = response[@"token"];
+            createdUser.email = response[@"email"];
+            
+            MFCustomTabBarControllerViewController *tabBarController = [[MFCustomTabBarControllerViewController alloc] init];
+            [self.navigationController pushViewController:tabBarController animated:NO];
+        }
     }];
 }
 

@@ -14,9 +14,13 @@
 
 @interface MFInterestsFeedTableViewController ()
 
-@property (strong, nonatomic) NSMutableArray *items;
+//@property (strong, nonatomic) NSMutableArray *items;
 @property (strong, nonatomic) MFDataStore *store;
 @property (nonatomic) NSInteger counter;
+@property (strong, nonatomic) NSMutableArray *itemImages;
+@property (strong, nonatomic) NSMutableArray *userProfileImages;
+@property (strong, nonatomic) NSMutableArray *productTexts;
+
 @end
 
 @implementation MFInterestsFeedTableViewController
@@ -30,20 +34,35 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //setting up navigation bar
+    
+//    self.navigationItem.backBarButtonItem.title = @"";
+    self.navigationController.navigationBar.topItem.title = @"";
+    
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.barTintColor = MFnavBarColor;
     
     static NSString *CellIdentifier = @"pugCell";
     [self.tableView registerNib:[UINib nibWithNibName:@"FISCustomPugCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:CellIdentifier];
     
     self.store = [MFDataStore sharedStore];
-    self.items = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i < 50; i ++)
+//    self.items = [[NSMutableArray alloc] init];
+    self.itemImages = [[NSMutableArray alloc] init];
+    self.userProfileImages = [[NSMutableArray alloc] init];
+    self.productTexts = [[NSMutableArray alloc] init];
+    
+    for (NSInteger i = 0; i < 10; i ++)
     {
-        MFItem *blankItem = [self.store createItem];
-        [self.items addObject:blankItem];
+        [self.itemImages addObject:[UIImage imageNamed:@"placeholder"]];
+        [self.userProfileImages addObject:[UIImage imageNamed:@"placeholder"]];
+        [self.productTexts addObject: @""];
     }
+
     
     self.counter = 0;
     
@@ -55,16 +74,25 @@
             item.uniqueID = eachItem[@"id"];
             item.loves = eachItem[@"loves"];
             item.itemType = eachItem[@"make_or_find"];
-            item.imageURL = eachItem[@"images"][@"retina"]; //NOTE THIS IS INCONSISTENT WITH OTHER IMAGEURLS
+            
+            UIImage *itemImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:eachItem[@"images"][@"retina"]]]];
+            
             MFUser *itemUser = [self.store createUser];
             itemUser.name = eachItem[@"user"][@"name"];
             itemUser.uniqueID = eachItem[@"user"][@"id"];
-            itemUser.profileImageURL = eachItem[@"images"][@"thumb_retina"]; //NOTE THIS IS INCONSISTENT WITH OTHER IMAGEURLS
+            UIImage *profileImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:eachItem[@"user"][@"images"][@"thumb_retina"]]]];
+
             item.user = itemUser;
+
             
-            [self.items replaceObjectAtIndex:self.counter withObject:item];
+            [self.itemImages replaceObjectAtIndex:self.counter withObject:itemImage];
+            [self.userProfileImages replaceObjectAtIndex:self.counter withObject:profileImage];
+            [self.productTexts replaceObjectAtIndex:self.counter withObject:item.name];
+            
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.counter inSection:0];
-            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }];
             self.counter++;
         }
     }];
@@ -95,18 +123,17 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 50;
+    return 10;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FISCustomPugCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pugCell" forIndexPath:indexPath];
-    
-    MFItem *item = self.items[indexPath.row];
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.imageURL]]];
-    cell.pugCellImageView.image = image;
 
+    cell.pugCellImageView.image = self.itemImages[indexPath.row];
+    cell.profileImageImageView.image = self.userProfileImages[indexPath.row];
+    cell.profileNameLabel.text = self.productTexts[indexPath.row];
     return cell;
 }
 

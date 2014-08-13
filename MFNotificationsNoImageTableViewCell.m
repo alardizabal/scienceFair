@@ -1,14 +1,14 @@
 //
-//  MFNotificationsTableViewCell.m
+//  MFNotificationsNoImageTableViewCell.m
 //  MakersFinders_Master
 //
-//  Created by Daniel Sun on 8/6/14.
+//  Created by Daniel Sun on 8/12/14.
 //  Copyright (c) 2014 ADMM. All rights reserved.
 //
 
-#import "MFNotificationsTableViewCell.h"
+#import "MFNotificationsNoImageTableViewCell.h"
 
-@implementation MFNotificationsTableViewCell
+@implementation MFNotificationsNoImageTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -22,23 +22,19 @@
 - (void)awakeFromNib
 {
     self.profileImage.image = [UIImage imageNamed:@"placeholder"];
-    self.imageOne.image = [UIImage imageNamed:@"placeholder"];
-    self.imageTwo.image = [UIImage imageNamed:@"placeholder"];
-    self.imageThree.image = [UIImage imageNamed:@"placeholder"];
-    self.nameLabel.text = @"";
+    self.userLabel.text = @"";
     self.infoLabel.text = @"";
     self.timeStampLabel.text = @"";
     
     self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width/2;
     self.profileImage.layer.masksToBounds = YES;
     
-    self.nameLabel.textColor = MFtealColor;
+    self.userLabel.textColor = MFtealColor;
     self.infoLabel.textColor = [UIColor grayColor];
     self.timeStampLabel.textColor = [UIColor grayColor];
-    self.nameLabel.font = MFhelvetica;
+    self.userLabel.font = MFhelvetica;
     self.infoLabel.font = MFhelveticaNotifications;
     self.timeStampLabel.font = MFhelveticaNotifications;
-    
     
 }
 
