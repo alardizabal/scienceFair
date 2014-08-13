@@ -15,4 +15,6 @@
 - (void) showCategories;
 -(UIImage *)getImageWithName:(NSString *)name;
 
+- (void)categorySelected;
+
 @end

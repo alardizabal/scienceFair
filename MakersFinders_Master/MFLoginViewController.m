@@ -50,7 +50,7 @@
     
 
     [MFBackground LoadCategoryAndInterestImagesInBackGround];
-
+    self.bottomContainer.backgroundColor = [UIColor whiteColor];
     
     
     self.navigationController.navigationBarHidden = YES;
@@ -86,12 +86,12 @@
 //    self.bottomContainer.frame = CGRectMake(0,20,self.bottomContainer.frame.size.width,self.bottomContainer.frame.size.height);
 //    self.topImage.hidden = YES;
     NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    CGRect frame = self.view.frame;
-    frame.origin.y -= self.bottomContainer.frame.size.height;
+    CGRect frame = self.bottomContainer.frame;
+    frame.origin.y -= self.bottomContainer.frame.size.height *.8;
 //    self.topImage.hidden = YES;
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:animationDuration];
-    self.view.frame = frame;
+    self.bottomContainer.frame = frame;
     [UIView commitAnimations];
 
 
@@ -106,11 +106,11 @@
 //    self.topImage.hidden = NO;
     NSTimeInterval animationDuration =
     [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    CGRect frame = self.view.frame;
-    frame.origin.y += self.bottomContainer.frame.size.height;
+    CGRect frame = self.bottomContainer.frame;
+    frame.origin.y += self.bottomContainer.frame.size.height * .8;
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:animationDuration];
-    self.view.frame = frame;
+    self.bottomContainer.frame = frame;
     [UIView commitAnimations];
 //    self.topImage.hidden = NO;
 }

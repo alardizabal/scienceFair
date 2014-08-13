@@ -375,6 +375,7 @@
     
     [self.interestScrollView addSubview:contentView];
     [self.containerView addSubview:self.interestScrollView];
+    }
 }
 
 - (void)categorySelected
