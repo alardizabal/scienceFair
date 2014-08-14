@@ -79,7 +79,7 @@
     //
     // self.containerView -> self.categoryScrollView -> contentView -> categoryContainerView -> categorySelectedHighlight (Color Border)/CategoryImageView/Label
     
-    self.containerView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.center.y - 235, self.view.bounds.size.width, self.view.bounds.size.height)];
+    self.containerView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.center.y - 240, self.view.bounds.size.width, self.view.bounds.size.height)];
     self.containerView.backgroundColor = [UIColor whiteColor];
     
     // Auto layout
@@ -398,9 +398,12 @@
         
         [contentView addSubview:interestContainerView];
 
-        UILabel *interestLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 110, interestContainerView.frame.size.width, 20)];
-        interestLabel.text = tempInterest.name;
+        NSString *formattedInterest = [tempInterest.name stringByReplacingOccurrencesOfString:@"/" withString:@"/\n"];
+        
+        UILabel *interestLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 100, interestContainerView.frame.size.width, 40)];
+        interestLabel.text = formattedInterest;
         interestLabel.font = [UIFont boldSystemFontOfSize:10];
+        interestLabel.numberOfLines = 3;
         interestLabel.textColor = MFtealColor;
         interestLabel.textAlignment = NSTextAlignmentCenter;
         [interestContainerView addSubview:interestLabel];
