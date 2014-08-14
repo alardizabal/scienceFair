@@ -77,16 +77,16 @@
             
             UIImage *itemImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:eachItem[@"images"][@"retina"]]]];
             
-            MFUser *itemUser = [self.store createUser];
-            itemUser.name = eachItem[@"user"][@"name"];
-            itemUser.uniqueID = eachItem[@"user"][@"id"];
-            UIImage *profileImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:eachItem[@"user"][@"images"][@"thumb_retina"]]]];
-
-            item.user = itemUser;
+//            MFUser *itemUser = [self.store createUser];
+//            itemUser.name = eachItem[@"user"][@"name"];
+//            itemUser.uniqueID = eachItem[@"user"][@"id"];
+//            UIImage *profileImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:eachItem[@"user"][@"images"][@"thumb_retina"]]]];
+//
+//            item.user = itemUser;
 
             
             [self.itemImages replaceObjectAtIndex:self.counter withObject:itemImage];
-            [self.userProfileImages replaceObjectAtIndex:self.counter withObject:profileImage];
+//            [self.userProfileImages replaceObjectAtIndex:self.counter withObject:profileImage];
             [self.productTexts replaceObjectAtIndex:self.counter withObject:item.name];
             
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.counter inSection:0];
